@@ -4,4 +4,4 @@ The below keymap is generated using [this tool](https://caksoylar.github.io/keym
 
 ## Keymap
 
-![img](img/keymap.png)
+!(img)[img/keymap.png]
