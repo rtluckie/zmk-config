@@ -10,43 +10,37 @@
 
 / {
 
-  // Tap Dance behaviour between base layer and lower layer
-
     behaviors {
+        // Tap Dance behaviour between base layer and lower layer
         td01: tap_dance_0_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp GRAVE>, <&tog 1>;
         };
-    };
 
-    behaviors {
         td10: tap_dance_1_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LCTRL>, <&tog 0>;
         };
-    };
 
-// Tap Dance behaviour between base layer and raise layer
+        // Tap Dance behaviour between base layer and raise layer
 
-    behaviors {
         td02: tap_dance_0_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp MINUS>, <&tog 2>;
         };
-    };
 
-    behaviors {
         td20: tap_dance_2_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp RCTL>, <&tog 0>;
+        };
     };
 
     keymap {
