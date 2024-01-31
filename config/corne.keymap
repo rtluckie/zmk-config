@@ -51,7 +51,7 @@
                          &kp LBKT &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I &kp O &kp P &kp MINUS
 &kp RBKT &ht_bl LSHFT A &ht_bl LALT S &ht_bl LCTRL D &ht_bl LCMD F &kp G &kp H  &ht_bl RCMD J  &ht_bl RCTRL K &ht_bl  RALT L  &ht_bl RSHFT SEMI &kp SQT
                         &kp GRAVE &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                                   &lt 1 SPACE &lt 2 TAB &kp ESC    &kp CMD &lt 2 BSPC &lt 1 RET
+                                   &lt 1 SPACE &lt 2 TAB &kp ESC    &kp RCMD &lt 2 BSPC &lt 1 RET
                         >;
                 };
                 lower_layer {
@@ -65,10 +65,10 @@
 
                 raise_layer {
                         bindings = <
-   &none  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp LPAR &kp RPAR &kp UNDER &kp PLUS &kp RPAR &kp DEL 
-   &none &kp CARET &kp AMPS &kp KP_ASTERISK &kp LPAR &kp RPAR      &kp LBKT &kp RBKT &kp MINUS &kp EQUAL &kp BSLH &kp GRAVE
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp LBKT &kp RBKT &kp LT &kp GT &kp PIPE &td20
-                             &kp SPACE &trans &kp ESC   &kp CMD &trans &kp RET
+   &none  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp LPAR &kp RPAR &kp UNDER &kp PLUS &kp RPAR &none
+   &none &kp CARET &kp AMPS &kp KP_ASTERISK &kp LPAR &kp RPAR      &kp LBKT &kp RBKT &kp MINUS &kp EQUAL &kp BSLH &none
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp LBKT &kp RBKT &kp LT &kp GT &kp PIPE &none
+                             &kp SPACE &trans &kp ESC   &kp RCMD &trans &kp RET
                         >;
                 };
         };
