@@ -104,7 +104,7 @@
                         display-name = "base";
                         bindings = <
                          &kp LBKT &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U  &kp I &kp O &kp P &kp MINUS
-&kp RBKT &kp A &hrml LALT S &hrml LCTRL D &hrml LCMD F &kp G &kp H  &hrmr RCMD J  &hrmr RCTRL K &hrmr  RALT L  &kp SEMI &kp SQT
+&kp RBKT &hrml LSHFT A &hrml LALT S &hrml LCTRL D &hrml LCMD F &kp G   &kp H &hrmr RCMD J &hrmr RCTRL K &hrmr RALT L &hrmr RSHFT SEMI &kp SQT
                         &kp GRAVE &kp Z &kp X &kp C &hrml LSHFT V &kp B    &kp N &hrmr RSHFT M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
                                    &lthp 1 BSPC &lthp 2 SPACE &lthp 3 ESC    &lthp 3 ESC &lthp 2 RET &lthp 1 TAB
                         >;
