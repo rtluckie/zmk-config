@@ -97,6 +97,8 @@
         };
     };
 
+    /{
+    
       macros {
         vim_save: vim_save {
             compatible = "zmk,behavior-macro";
@@ -130,7 +132,9 @@
                 <&macro_tap>,
                 <&kp LCTRL &kp D>;
         };
-      }
+      };
+      
+     };
 
     keymap {
                 compatible = "zmk,keymap";
