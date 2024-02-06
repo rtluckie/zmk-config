@@ -97,9 +97,7 @@
         };
     };
 
-    /{
-    
-      macros {
+    macros {
         vim_save: vim_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -132,12 +130,11 @@
                 <&macro_tap>,
                 <&kp LCTRL &kp D>;
         };
+
       };
       
-     };
-
     keymap {
-                compatible = "zmk,keymap";
+      compatible = "zmk,keymap";
 
                 default_layer {
                         display-name = "base";
