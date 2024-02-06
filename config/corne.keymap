@@ -106,7 +106,7 @@
                 <&kp ESC &kp COLON &kp W &kp RETURN>;
         };
 
-        vim_quit: vim_save {
+        vim_quit: vim_quit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -114,8 +114,7 @@
                 <&kp ESC &kp COLON &kp Q &kp RETURN>;
         };
 
-        
-        vim_quit: vim_up {
+        vim_up: vim_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -123,7 +122,7 @@
                 <&kp LCTRL &kp U>;
         };
 
-        vim_quit: vim_down {
+        vim_down: vim_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -132,7 +131,7 @@
         };
 
       };
-      
+
     keymap {
       compatible = "zmk,keymap";
 
