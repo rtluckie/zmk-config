@@ -97,7 +97,6 @@
         };
     };
 
-  / {
       macros {
         vim_save: vim_save {
             compatible = "zmk,behavior-macro";
