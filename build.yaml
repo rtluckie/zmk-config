@@ -15,7 +15,10 @@
 include:
   - board: nice_nano_v2
     shield: corne_left
+    artifact-name: keebmaker-corne-42-zmk-left
   - board: nice_nano_v2
     shield: corne_right
+    artifact-name: keebmaker-corne-42-zmk-right
   - board: nice_nano_v2
     shield: settings_reset
+    artifact-name: keebmaker-corne-42-settings-reset
