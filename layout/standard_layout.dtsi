@@ -1,0 +1,355 @@
+/*
+ * Copyright (c) 2024 Thiago Alves
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+// WARN:
+// If you're open this file on a text editor, make sure your editor is not "wrapping" long lines,
+// and is capable of rendering Unicode characters and it's using a font with symbols from the
+// Nerd Fonts fonts (https://www.nerdfonts.com).
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#include "specialkeys.dtsi"
+#include "homerowmods.dtsi"
+#include "autoshift.dtsi"
+
+// Layers definitions
+// ------------------
+// The next define macros represent each layer my layout has, so I can reference
+// them by name instead of numbers.
+//
+// NOTE: Check the README.md file for a detailed explanation of my layers
+//       system, but notice that all "base layers" are defined before the
+//       adjustment ones, this way, if we switch to a different layout, you can
+//       still toggle all the other layers in the layout.
+
+// Current main layout: QWERTY
+#define L_QWT 0
+// Alternative layout I'm planning to explore: COLEMAK
+#define L_CMK 1
+// Numbers layer
+#define L_NUM 2
+// Symbols layer
+#define L_SYM 3
+// Navigation layer
+#define L_NAV 4
+// Media layer
+#define L_MED 5
+// Buttons layer
+#define L_BUT 6
+// Keyboard system layer
+#define L_SYS 7
+
+// I like to have couple more keys to not break the CAPS_WORD streak, like the
+// backspace key. Since I make too many mistakes while typing, I find extremely
+// annoying to stop the CAPS_WORD whenever I want to fix an error.
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BSPC>;
+};
+
+// Generic ZMK behaviors are defined on their own `dtsi` file, but some
+// behaviors that I create simply to make the layout work, like a hold-tap for
+// the backspace and the activation of layer 2, are all defined inline in this
+// file.
+/ {
+  behaviors {
+    // Tap: Backspace
+    // Shift-tap: -
+    // Double-tap: -
+    // Hold: Symbol Layer
+    // Morph: with Shift => Forward delete ('⌦')
+    bspcsym: backspace_or_del_and_layer_sym {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&hll L_SYM BSPC>, <&kp DEL>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    // Tap: -
+    // Shift-tap: -
+    // Double-tap: Toggle System Layer
+    // Hold: Symbol System
+    // Morph: -
+    motg_sys: momentary_or_toggle_layer_sys {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo L_SYS>, <&tog L_SYS>;
+    };
+
+    // Tap: -
+    // Shift-tap: -
+    // Double-tap: Toggle Button Layer
+    // Hold: Symbol System
+    // Morph: -
+    motg_but: momentary_or_toggle_layer_but {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo L_BUT>, <&tog L_BUT>;
+    };
+
+    // Tap: Backslash ('\')
+    // Shift-tap: Pipe ('|')
+    // Double-tap: Turn on CAPS_WORD
+    // Hold: Apple Globe key
+    // Morph: -
+    globebslhcaps: globe_or_backslash_or_caps_word {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&hml GLOBE BSLH>, <&caps_word>;
+    };
+
+    // Tap: Backslash ('\')
+    // Shift-tap: Pipe ('|')
+    // Double-tap: Turn on CAPS_WORD
+    // Hold: Apple Globe key
+    // Morph: with Cmd => Command + tilde ('⌘~')
+    globebslh: globe_caps_or_backslash {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&globebslhcaps>, <&kp TILDE>;
+      mods = <(MOD_LGUI|MOD_RGUI)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+    };
+
+    // Tap: Backslash ('=')
+    // Shift-tap: Plus ('+')
+    // Double-tap: Turn on CAPS_WORD
+    // Hold: Apple Globe key
+    // Morph: -
+    globeequal: globe_or_equal_or_caps_word {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&hmr GLOBE EQUAL>, <&caps_word>;
+    };
+
+    // Tap: Left square bracket ('[')
+    // Shift-tap: Left curly brace ('{')
+    // Double-tap: -
+    // Hold: -
+    // Morph: with Cmd => Command + grave ('⌘`')
+    lbktgrave: left_bracket_or_cmd_grave {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp LBKT>, <&kp GRAVE>;
+      mods = <(MOD_LGUI|MOD_RGUI)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+    };
+  };
+};
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+
+    // Layer: MAIN
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │ [ ┊ ⌘`│   !   │   @   │   #   │   $   │   %   │                  │   ^   │   &   │   *   │   (   │   )   │   ]   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   󰌒   │   Q   │   W   │   E   │   R   │   T   │                  │   Y   │   U   │   I   │   O   │   P   │   -   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   `   │ A ┊ 󰘴 │ S ┊ 󰘵 │ D ┊ 󰘳 │ F ┊ 󰘶 │   G   ├───────╮  ╭───────┤   H   │ J ┊ 󰘶 │ K ┊ 󰘳 │ L ┊ 󰘵 │ ; ┊ 󰘴 │   '   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤  HYP  │  │  HYP  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │ \ ┊  │   Z   │   X   │   C   │   V   │   B   ├───────╯  ╰───────┤   N   │   M   │   ,   │   .   │   /   │ = ┊  │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │   󰎴   │       │   󰎯   │ 󰭜 ┊ 󰎫 │ ⎋ ┊󰎲  │  │ ⏎ ┊󰎨  │ 󱁐 ┊ 󰎥 │   󰎯   │       │   󰎴   │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    MAIN {
+      display-name = "QWERTY";
+      bindings = <LAYER_ADAPTER(
+        &lbktgrave, &kp_rN1, &kp_rN2,   &kp_rN3, &kp_rN4,   &kp_rN5,                 /**/                &kp_rN6,          &kp_rN7,   &kp_rN8,   &kp_rN9,  &kp_rN0,    &kp EQUAL,
+        &kp TAB,    &kp Q,   &kp W,     &kp E,   &kp R,     &kp T,                   /**/                &kp Y,            &kp U,     &kp I,     &kp O,    &kp P,      &kp MINUS,
+        &kp GRAVE,  LHM4(A), LHM3(S),   LHM2(D), LHM1(F),   &kp G,                   /**/                &kp H,            RHM1(J),   RHM2(K),   RHM3(L),  RHM4(SEMI), &kp SQT,
+        &globebslh, &kp Z,   &kp X,     &kp C,   AS(V),     &kp B,    &kp LHYP,      /**/ &kp RHYP,      &kp N,            &kp M,     &kp COMMA, &kp DOT,  &kp FSLH,   &globeequal,
+                             &motg_sys, &none,   &motg_but, &bspcsym, &lt L_NAV ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: COLEMAK
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │   `   │   !   │   @   │   #   │   $   │   %   │                  │   ^   │   &   │   *   │   (   │   )   │   =   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   󰌒   │   Q   │   W   │   F   │   P   │   B   │                  │   J   │   L   │   U   │   Y   │   ;   │   -   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   `   │ A ┊ 󰘴 │ R ┊ 󰘵 │ S ┊ 󰘳 │ T ┊ 󰘶 │   G   ├───────╮  ╭───────┤   M   │ N ┊ 󰘶 │ E ┊ 󰘳 │ I ┊ 󰘵 │ O ┊ 󰘴 │   '   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤   󰈆   │  │   󰈆   ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │ \ ┊  │   Z   │   X   │   C   │   D   │   V   ├───────╯  ╰───────┤   K   │   H   │   ,   │   .   │   /   │ = ┊  │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │   󰎴   │       │   󰎯   │ 󰭜 ┊ 󰎫 │ ⎋ ┊󰎲  │  │ ⏎ ┊󰎨  │ 󱁐 ┊ 󰎥 │   󰎯   │       │   󰎴   │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    COLEMAK {
+      display-name = "COLEMAK";
+      bindings = <LAYER_ADAPTER(
+        &lbktgrave, &kp_rN1, &kp_rN2,   &kp_rN3, &kp_rN4,   &kp_rN5,                 /**/                &kp_rN6,          &kp_rN7,   &kp_rN8,   &kp_rN9,  &kp_rN0,  &kp EQUAL,
+        &kp TAB,    &kp Q,   &kp W,     &kp F,   &kp P,     &kp B,                   /**/                &kp J,            &kp L,     &kp U,     &kp Y,    &kp SEMI, &kp MINUS,
+        &kp GRAVE,  LHM4(A), LHM3(R),   LHM2(S), LHM1(T),   &kp G,                   /**/                &kp M,            RHM1(N),   RHM2(E),   RHM3(I),  RHM4(O),  &kp SQT,
+        &globebslh, &kp Z,   &kp X,     &kp C,   &kp D,     &kp V,    &to L_QWT,     /**/ &to L_QWT,     &kp K,            &kp H,     &kp COMMA, &kp DOT,  &kp FSLH, &globeequal,
+                             &motg_sys, &none,   &motg_but, &bspcsym, &lt L_NAV ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: NUM
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │       │   [   │   *   │   /   │   ]   │   ^   │                  │       │       │       │       │       │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   󰌒   │   1   │   2   │   3   │   4   │   5   │                  │       │       │       │       │       │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   ⏎   │   6   │   7   │   8   │   9   │   0   ├───────╮  ╭───────┤       │   󰘶   │   󰘳   │   󰘵   │   󰘴   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤   󰍁   │  │       ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   =   │   (   │   +   │   -   │   )   │   .   ├───────╯  ╰───────┤       │       │       │       │       │      │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │       │       │   ,   │   󰭜   │   󱁐   │  │       │ -=〿=- │       │       │       │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    NUM {
+      display-name = "Numbers";
+      bindings = <LAYER_ADAPTER(
+        &none,        &kp LBKT, &kp STAR, &kp FSLH,  &kp RBKT,  &kp CARET,              /**/         &none,      &none,     &none,     &none,     &none,     &none,
+        &kp TAB,      &kp N1,   &kp N2,   &kp N3,    &kp N4,    &kp N5,                 /**/         &none,      &none,     &none,     &none,     &none,     &none,
+        &kp KP_ENTER, &kp N6,   &kp N7,   &kp N8,    &kp N9,    &kp N0,                 /**/         &none,      &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
+        &kp EQUAL,    &kp LPAR, &kp PLUS, &kp MINUS, &kp RPAR,  &kp KP_DOT,  &molock,   /**/  &none, &none,      &none,     &none,     &none,     &none,     &kp GLOBE,
+                                &none,    &none,     &kp COMMA, &kp_bspcdel, &kp SPACE, /**/  &none, &tog L_NUM, &none,     &none,     &none
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: SYMBOL
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │       │       │       │       │       │       │                  │   ?   │   +   │   -   │   .   │   /   │   \   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │       │       │       │       │       │                  │   [   │   <   │   =   │   >   │   ]   │   #   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │   󰘴   │   󰘵   │   󰘳   │   󰘶   │       ├───────╮  ╭───────┤   {   │   (   │   :   │   )   │   }   │   %   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤       │  │   󰍁   ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │      │   󰕌   │   󰆐   │   󰆏   │   󰆒   │       ├───────╯  ╰───────┤   $   │   &   │   *   │   |   │   ^   │   !   │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │       │       │       │ -=〿=- │       │  │   @   │   󱁐   │       │       │       │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    SYMBOL {
+      display-name = "Symbols";
+      bindings = <LAYER_ADAPTER(
+        &none,     &none,        &none,       &none,        &none,         &none,             /**/           &kp QMARK, &kp PLUS, &kp MINUS, &kp DOT,  &kp FSLH,  &kp BSLH,
+        &none,     &none,        &none,       &none,        &none,         &none,             /**/           &kp LBKT,  &kp LT,   &kp EQUAL, &kp GT,   &kp RBKT,  &kp HASH,
+        &none,     &kp LHRM4,    &kp LHRM3,   &kp LHRM2,    &kp LHRM1,     &none,             /**/           &kp LBRC,  &kp LPAR, &kp COLON, &kp RPAR, &kp RBRC,  &kp PRCNT,
+        &kp GLOBE, &kp MAC_UNDO, &kp MAC_CUT, &kp MAC_COPY, &kp MAC_PASTE, &none,      &none, /**/  &molock, &kp DLLR,  &kp AMPS, &kp STAR,  &kp PIPE, &kp CARET, &kp EXCL,
+                                 &none,       &none,        &none,         &tog L_SYM, &none, /**/  &kp AT,  &kp SPACE, &none,    &none,     &none
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: NAV
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │       │       │       │       │       │       │                  │       │   󰌥   │  ←   │   →  │   󰌒   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │       │       │       │       │       │                  │       │   ↖   │   ⇟   │   ⇞   │   ↘   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │   󰘴   │   󰘵   │   󰘳   │   󰘶   │       ├───────╮  ╭───────┤       │   ←   │   ↓   │   ↑   │   →   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤       │  │   󰍁   ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │      │       │       │       │       │       ├───────╯  ╰───────┤       │   󰆒   │   󰆏   │   󰆐   │   󰕌   │   󰑎   │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │       │       │       │       │ -=〿=- │  │       │       │       │       │       │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    NAV {
+      display-name = "Navigation";
+      bindings = <LAYER_ADAPTER(
+        &none,     &none,     &none,     &none,     &none,     &none,             /**/           &none,     &kp BTAB,      &kp MAC_FDPRV, &kp MAC_FDNXT, &kp TAB,      &none,
+        &none,     &none,     &none,     &none,     &none,     &none,             /**/           &none,     &kp HOME,      &kp PG_DN,     &kp PG_UP,     &kp END,      &none,
+        &none,     &kp LHRM4, &kp LHRM3, &kp LHRM2, &kp LHRM1, &none,             /**/           &none,     &kp LEFT,      &kp DOWN,      &kp UP,        &kp RIGHT,    &none,
+        &kp GLOBE, &none,     &none,     &none,     &none,     &none, &none,      /**/  &molock, &none,     &kp MAC_PASTE, &kp MAC_COPY,  &kp MAC_CUT,   &kp MAC_UNDO, &kp MAC_REDO,
+                              &none,     &none,     &none,     &none, &tog L_NAV, /**/  &none,   &kp SPACE, &none,         &none,         &none
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: MEDIA
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │       │       │       │       │       │       │                  │       │       │       │       │       │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │       │      │   󰖨   │       │       │                  │       │       │       │       │       │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │   󰒮   │      │      │   󰒭   │       ├───────╮  ╭───────┤       │   󰘶   │   󰘳   │   󰘵   │   󰘴   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤   󰍁   │  │       ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │   󰹐   │   󱩐   │   󱩖   │      │       ├───────╯  ╰───────┤       │       │       │       │       │      │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │       │       │       │   󰐎   │   󰓛   │  │ -=〿=- │       │       │       │       │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    MEDIA {
+      display-name = "Media";
+      bindings = <LAYER_ADAPTER(
+        &none, &none,      &none,        &none,        &none,      &none,                /**/              &none, &none,     &none,     &none,     &none,     &none,
+        &none, &none,      &kp C_BRI_DN, &kp C_BRI_UP, &none,      &none,                /**/              &none, &none,     &none,     &none,     &none,     &none,
+        &none, &kp C_PREV, &kp C_VOL_DN, &kp C_VOL_UP, &kp C_NEXT, &none,                /**/              &none, &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
+        &none, &bl BL_TOG, &bl BL_DEC,   &bl BL_INC,   &kp C_MUTE, &none,    &molock,    /**/  &none,      &none, &none,     &none,     &none,     &none,     &kp GLOBE,
+                           &none,        &none,        &none,      &kp C_PP, &kp C_STOP, /**/  &tog L_MED, &none, &none,     &none,     &none
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: BUTTON
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │       │   󰌥   │  ←   │   →  │   󰌒   │   󰀻   │                  │   󰀻   │   󰌥   │  ←   │   →  │   󰌒   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │  ← 󰘔  │  ← 󰖲  │  󰖲 →  │  󰘔 →  │   󱂬   │                  │   󱂬   │  ← 󰘔  │  ← 󰖲  │  󰖲 →  │  󰘔 →  │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │   󰘴   │   󰘵   │   󰘳   │   󰘶   │   󰧨   ├───────╮  ╭───────┤   󰧨   │   󰘶   │   󰘳   │   󰘵   │   󰘴   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤   󰍁   │  │   󰍁   ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │ 󰑎 ┊  │   󰕌   │   󰆐   │   󰆏   │   󰆒   │   󰥩   ├───────╯  ╰───────┤   󰥩   │   󰆒   │   󰆏   │   󰆐   │   󰕌   │ 󰑎 ┊  │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │       │       │ -=〿=- │       │       │  │       │       │ -=〿=- │       │       │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    BUTTON {
+      display-name = "Buttons";
+      bindings = <LAYER_ADAPTER(
+        &none,              &kp BTAB,     &kp MAC_FDPRV, &kp MAC_FDNXT, &kp TAB,       &kp MAC_LP,              /**/           &kp MAC_LP,     &kp BTAB,      &kp MAC_FDPRV, &kp MAC_FDNXT, &kp TAB,      &none,
+        &none,              &kp MAC_DKTP, &kp MAC_WINP,  &kp MAC_WINN,  &kp MAC_DKTN,  &kp MAC_APPWIN,          /**/           &kp MAC_APPWIN, &kp MAC_DKTP,  &kp MAC_WINP,  &kp MAC_WINN,  &kp MAC_DKTN, &none,
+        &none,              &kp LHRM4,    &kp LHRM3,     &kp LHRM2,     &kp LHRM1,     &kp MAC_MC,              /**/           &kp MAC_MC,     &kp RHRM1,     &kp RHRM2,     &kp RHRM3,     &kp RHRM4,    &none,
+        &mt GLOBE MAC_REDO, &kp MAC_UNDO, &kp MAC_CUT,   &kp MAC_COPY,  &kp MAC_PASTE, &kp MAC_SP,     &molock, /**/  &molock, &kp MAC_SP,     &kp MAC_PASTE, &kp MAC_COPY,  &kp MAC_CUT,   &kp MAC_UNDO, &mt GLOBE MAC_REDO,
+                                          &none,         &none,         &tog L_BUT,    &none,          &none,   /**/  &none,   &none,          &tog L_BUT,    &none,         &none
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: SYSTEM
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │       │  F13  │  F14  │  F15  │  F16  │       │                  │       │       │       │       │       │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │      │  F9   │  F10  │  F11  │  F12  │   󱐥   │                  │   󰌓   │       │       │       │       │      │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │   󰜉   │  F5   │  F6   │  F7   │  F8   │      ├───────╮  ╭───────┤       │       │       │       │       │   󰜉   │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤   󰍁   │  │   󰍁   ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │  F1   │  F2   │  F3   │  F4   │      ├───────╯  ╰───────┤  󰂱 1  │  󰂱 2  │  󰂱 3  │  󰂱 4  │  󰂱 5  │   󰂲   │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │ -=〿=- │       │       │       │       │  │       │       │       │       │ -=〿=- │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    SYSTEM {
+      display-name = "System";
+      bindings = <LAYER_ADAPTER(
+        &none,       &kp F13, &kp F14, &kp F15,    &kp F16, &none,                      /**/           &none,        &none,        &none,        &none,        &none,        &none,
+        &bootloader, &kp F9,  &kp F10, &kp F11,    &kp F12, &ext_power EP_TOG,          /**/           &tog L_CMK,   &none,        &none,        &none,        &none,        &bootloader,
+        &sys_reset,  &kp F5,  &kp F6,  &kp F7,     &kp F8,  &out OUT_TOG,               /**/           &none,        &none,        &none,        &none,        &none,        &sys_reset,
+        &none,       &kp F1,  &kp F2,  &kp F3,     &kp F4,  &kp C_PWR,         &molock, /**/  &molock, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, &bt BT_SEL 4, &bt BT_CLR,
+                              &none,   &tog L_SYS, &none,   &none,             &none,   /**/  &none,   &none,        &none,        &tog L_SYS,   &none
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+  };
+};

@@ -1,12 +1,49 @@
-# Corne-42 Coding Layout
+# Corne-42 Layout
 
-![](images/corne-42.svg)
+![](images/corne-keyboard.webp)
 
-I'm pretty sure the above image conveys most (if not everything) that you need
-to know about my layout, but I still want to touch on some particularities of
-it.
+My small split keyboard layout is a mashup of several excelent layouts I found
+online, with a heavy season of my own imagination. So yes, you probably already
+saw some (if not most) of the things I put in this layout somewhere else.
+Nevertheless, there are some modifications I made that are worth reading about.
 
-## 6 vs. 5 columns
+The first recomendation I got after jumping into the sub-50 keyboard world, was
+to try the Miriolku layout. I heard and read so much of this recomendation, that
+I started to think that this should be the defactor layout to use with a Corne.
+
+The problem I have with things "ready to use", is that everything about it, must
+resonate with me if I want to use it.
+
+Some things do... most dont!
+
+After deep diving into the Mirioky layout concepts, I found more interested on
+the Layout UX Design then on its implementation, so I decided to try to apply
+the same concepts the layout has, on the ideas and other layouts that I already
+created in the past.
+
+The result of this, is what you're reading in this document!
+
+Some of the notable features are:
+
+- **Single-sided layers**: An extra layer should never have functional keys on
+  both sides of the keyboard. If you bring a layout up using your left hand, all
+  its functional keys should be located on the right side of the keyboard. This
+  allows you to have accessible modifiers on the same hand that invoked the
+  layer, making every layer key able to be combined with a modifier;
+- **Sepatate layers for Symbols and Numbers**: I tried to put each one of these
+  layers on different sides of the keyboard, to help my brain to identify what
+  hand to use in which situation;
+- **Dedicated layer of shortcuts**: The only layer that is mirrored on both
+  sides of the keyboard;
+- All layers are momentary, but you can lock them in plpace;
+- Keys morph into other keys depending on the situation and requirement;
+- Homerow mods from @urob;
+
+## Base Layer
+
+![](./images/corne42-layer0-main.svg)
+
+### 6 vs. 5 columns
 
 Many Corne layouts out there have have a big number of layers that help with the
 overall _flow_ while using a keyboard with them. While this is a great way to
@@ -52,42 +89,9 @@ which I, initially, tried to avoid.
 If you plan to adapt this layout to a 3x5 keyboard, make sure this use-case is
 not something you will miss.
 
-## Double-shift
+## Numbers Layer
 
-If you are a developer, you might have found some IDEs that have a peculiar
-shortcut: `⇧⇧` (double-shift).
-
-If you read the [Tap-Hold Behavior](../README.md#tap-hold-behavior) section of
-the `README` file of this repository, you'll see that I use a quick double-tap
-on my keys on the home row when I want them to output a repeat sequence. This,
-basically, prevents me from using `⇧⇧` where my shift is located.
-
-The solution I found here was to add an extra tap to the key that I already have
-a "Tap-Dance" behavior defined, the _"Globe"_ key.
-
-![](images/globe-key.svg)
-
-So, even though it is not documented in my layout (there is not enough space to
-have triple-tap description together with a double-tap one), when you press the
-_"Globe"_ once, or when you hold it down, it will output the Apple Globe
-keycode. When you tap it twice, it will start the `CAPS_WORD` behavior, and when
-you tap it three times, it will output a double-shift.
-
-## Off-home layer key
-
-You can see in the layout map that most of the "modifier" keys are located on
-the home-row or the thumb cluster.
-
-Except for the _"Functions"_ layer key.
-
-The reason for that is the keys such layer have. I'm not even near confident
-on my typing skills that I will not miss-type a key or a layer toggle by
-accident. To avoid reseting the keyboard, putting it on bootloader mode, or
-disconnecting the bluetooth by accident during a type session, I decided to move
-the _"Functions"_ layer key to a position that would not be so hard to reach,
-but very unlikely for me to type by accident.
-
-## Numbers
+![](./images/corne42-layer1-numbers.svg)
 
 While looking into other layouts out there, I notice that most people tend to
 position their numbers like an inverted phone keypad, mimicking the numeric
@@ -128,7 +132,9 @@ layout became more "intuitive" for me.
 > right way to do things. I spend quite some time adapting everything for my
 > personal needs, which most likely, are not the same as yours.
 
-## Symbols
+## Symbols Layer
+
+![](./images/corne42-layer2-symbols.svg)
 
 One of the things I always avoided in the past was to deal with my symbols
 layers. I always defined them, but barely use them. Because of comfort or strong
@@ -177,6 +183,26 @@ much.
 I did some other minor changes due to my method of finding better places for my
 keys, but I can say that the core of my symbols layers is a direct descendant of
 this "Spaceship Layout", even though I do not know where it came from.
+
+## Navigation Layer
+
+![](./images/corne42-layer3-navigation.svg)
+
+## Media Layer
+
+![](./images/corne42-layer4-media.svg)
+
+## Buttons Layer
+
+![](./images/corne42-layer5-buttons.svg)
+
+## System Layer
+
+![](./images/corne42-layer6-system.svg)
+
+## Alternative Layout
+
+![](./images/corne42-layer7-colemak.svg)
 
 ## My methodology
 

@@ -22,17 +22,30 @@
 [![firmware build](https://img.shields.io/github/actions/workflow/status/Townk/zmk-config/build.yml?label=firmware%20build)](https://github.com/Townk/zmk-config/actions/workflows/build.yml)
 
 This repository contains the ZMK user configuration for all my keyboards that
-use pure ZMK firmware.
+use the [ZMK](https://zmk.dev/) firmware.
 
-Each keyboard in this configuration has its own documentation which you can find
-under the `docs` directory, but for your convenience, you can use the following
-links to access what you want:
+The way I organize the keyboards' layouts is to have a single _master layout_,
+with more keys defined then any keyboard I have, and each individual Keyboard
+map would define a _"layer adapter"_ mapping the keys in the layout that it uses
+to its physical position.
 
-- [Corne-42](docs/corne.md)
+Every keyboard layout has its own layout documentation (located under the `docs`
+directory), but since they all share the majority of my layout, you should
+expect lots of repeating texts between them.
+
+My suggestion is to read the layout documentation for the keyboard you're
+looking for, then, when you understand it, go check out the other docs. This
+way, you won't have to read explanations for things you don't care in the first
+place, and then you can just look the layout images and read anything that is
+different.
+
+Currently, in this repository, I have layout for:
+
+- [Corne (6 columns)](docs/corne.md)
 - [Lily58](docs/lily58.md)
 
-If you did not click on the layout links yet, there are some general information
-I would like you to have to help you understand my layouts better.
+If you did not click on any of the layout links yet, there are some general
+information I would like you to have to help you understand them better.
 
 ## Symbols Glossary
 
@@ -40,44 +53,71 @@ Inside the keymap files and on the layout map images, you'll see a series of
 symbols that are not well-used in ZMK configurations out there, so to understand
 the layout easily, here is a table with all symbols I use:
 
- Symbols                                   | Description
-:-----------------------------------------:| ---------------------------
-![](docs/symbols/keyboard_command_key.svg) | Command (Super)
-![](docs/symbols/keyboard_control_key.svg) | Control (Ctrl)
-![](docs/symbols/keyboard_option_key.svg)  | Option (Alt or Meta)
-⇪                                          | Caps lock
-![](docs/symbols/shift.svg)                | Shift
-![](docs/symbols/language.svg)             | Globe
-![](docs/symbols/space_bar.svg)            | Space
-![](docs/symbols/keyboard_return.svg)      | Enter (Return)
-![](docs/symbols/backspace.svg)            | Delete backwards (Backspace)
-![](docs/symbols/north_west.svg)           | Home
-⇞                                          | Page Up
-⇟                                          | Page Down
-![](docs/symbols/south_east.svg)           | End
-![](docs/symbols/keyboard_tab_rtl.svg)     | Backtab
-![](docs/symbols/keyboard_tab.svg)         | Tab
-![](docs/symbols/volume_up.svg)            | Volume up
-![](docs/symbols/volume_down.svg)          | Volume down
-![](docs/symbols/volume_off.svg)           | Mute
-![](docs/symbols/brightness_7.svg)         | Screen brightness up
-![](docs/symbols/brightness_5.svg)         | Screen brightness down
-![](docs/symbols/skip_previous.svg)        | Previous song
-![](docs/symbols/play_pause.svg)           | Play / pause
-![](docs/symbols/skip_next.svg)            | Next song
-![](docs/symbols/bluetooth_connected.svg)  | Bluetooth profile
-![](docs/symbols/bluetooth_disabled.svg)   | Bluetooth profile clear
-![](docs/symbols/fit_screen.svg)           | Toggle OLED display
-![](docs/symbols/restart_alt.svg)          | Reset firmware
-![](docs/symbols/keyboard.svg)             | Bootload mode
-![](docs/symbols/filter_1.svg)             | Numbers & Navigation Layer (L1)
-![](docs/symbols/filter_2.svg)             | Symbols Layer (L2)
-![](docs/symbols/filter_3.svg)             | Functions Layer (L3)
+ Symbols                                               | Description
+:-----------------------------------------------------:| ---------------------------
+![](./docs/symbols/apple-keyboard-command.svg)         | Command (Super)
+![](./docs/symbols/apple-keyboard-control.svg)         | Control (Ctrl)
+![](./docs/symbols/apple-keyboard-option.svg)          | Option (Alt / Meta)
+⇪                                                      | Caps Word
+![](./docs/symbols/apple-keyboard-shift.svg)           | Shift
+![](./docs/symbols/web.svg)                            | Globe
+![](./docs/symbols/keyboard-space.svg)                 | Space
+![](./docs/symbols/keyboard-return.svg)                | Enter (Return / Ret)
+![](./docs/symbols/backspace.svg)                      | Delete backwards (Backspace / Bksp)
+![](./docs/symbols/backspace-reverse.svg)              | Delete forward (Del)
+↖                                                      | Home
+⇞                                                      | Page Up
+⇟                                                      | Page Down
+↘                                                      | End
+![](./docs/symbols/keyboard-tab-reverse.svg)           | Backtab
+![](./docs/symbols/keyboard-tab.svg)                   | Tab
+![](./docs/symbols/volume-high.svg)                    | Volume up
+![](./docs/symbols/volume-medium.svg)                  | Volume down
+![](./docs/symbols/volume-off.svg)                     | Mute
+![](./docs/symbols/brightness-7.svg)                   | Screen brightness up
+![](./docs/symbols/brightness-5.svg)                   | Screen brightness down
+![](./docs/symbols/lightbulb-off-outline.svg)          | Keyboard backlight off
+![](./docs/symbols/lightbulb-on-20.svg)                | Keyboard backlight decrease
+![](./docs/symbols/lightbulb-on-90.svg)                | Keyboard backlight increase
+![](./docs/symbols/skip-backward.svg)                  | Previous song
+![](./docs/symbols/play-pause.svg)                     | Play / pause
+![](./docs/symbols/skip-forward.svg)                   | Next song
+![](./docs/symbols/stop.svg)                           | Stop media
+![](./docs/symbols/apps.svg)                           | Launchpad
+![](./docs/symbols/view-dashboard-outline.svg)         | Mission Control (`⌘ ⌃ ↑`)
+![](./docs/symbols/dock-window.svg)                    | Show application windows (`⌘ ⌃ ↓`)
+![](./docs/symbols/folder-search-outline.svg)          | Spotlight
+![](./docs/symbols/content-cut.svg)                    | Cut ( `⌘ X` )
+![](./docs/symbols/content-copy.svg)                   | Copy ( `⌘ C` )
+![](./docs/symbols/content-paste.svg)                  | Paste ( `⌘ V` )
+![](./docs/symbols/undo.svg)                           | Undo ( `⌘ Z` )
+![](./docs/symbols/redo.svg)                           | Redo ( `⇧ ⌘ Z` )
+![](./docs/symbols/magnify.svg) →                      | Find Next ( `⌘ G` )
+← ![](./docs/symbols/magnify.svg)                      | Find Previous ( `⇧ ⌘ G` )
+![](./docs/symbols/window-maximize.svg) →              | Go to Virtual Desktop on the Right ( `⌘ ⌃ →` )
+← ![](./docs/symbols/window-maximize.svg)              | Go to Virtual Desktop on the Left ( `⌘ ⌃ ←` )
+![](./docs/symbols/window-restore.svg) →               | Next window ( `` ⌘ ` `` )
+← ![](./docs/symbols/window-restore.svg)               | Previous window ( `⌘ ~` )
+![](./docs/symbols/keyboard-variant.svg)               | Alternate layout (COLEMAK)
+![](./docs/symbols/bluetooth-connect.svg)              | Bluetooth profile
+![](./docs/symbols/bluetooth-off.svg)                  | Bluetooth profile clear
+![](./docs/symbols/power-plug-outline.svg)             | Toggle OLED display
+![](./docs/symbols/usb.svg)                            | Output mode (USB / BLE)
+![](./docs/symbols/power.svg)                          | Turn off host computer
+![](./docs/symbols/restart.svg)                        | Reset firmware
+![](./docs/symbols/code-block-tags.svg)                | Bootload mode
+![](./docs/symbols/numeric-1-box-multiple-outline.svg) | Numbers Layer
+![](./docs/symbols/numeric-2-box-multiple-outline.svg) | Symbols Layer
+![](./docs/symbols/numeric-3-box-multiple-outline.svg) | Navigation Layer
+![](./docs/symbols/numeric-4-box-multiple-outline.svg) | Media Layer
+![](./docs/symbols/numeric-5-box-multiple-outline.svg) | Buttons Layer
+![](./docs/symbols/numeric-6-box-multiple-outline.svg) | System Layer
+![](./docs/symbols/lock-outline.svg)                   | Lock layer in place
 
 ## Key Representation
 
 When looking at the layout map images, you'll see that some keys have their
-background highlighted with a different color then the rest, and many keys have
+background highlighted with a different colors then the rest, and many keys have
 more than one symbol as their labels.
 
 To understand what all those symbols mean, lets first, look how a key that has
@@ -97,7 +137,7 @@ key caused the keyboard to _"switch layers"_, for instance:
 
 This is the _Shift_ key, which force other keys to output the uppercase version
 of itself, or in certain cases, it can force the key to output a completely
-different symbol then the normal one (e.g. the number keys in most standard
+different symbol then the normal one (e.g., the number keys in most standard
 keyboards).
 
 When a key outputs a different symbol than the uppercase version of the normal
@@ -119,9 +159,10 @@ displayed bellow the normal symbol. For instance:
 
 ![](docs/images/f-shift-key.svg)
 
-This hey is a normal `F` key that output `f` when tapped, and `F` when tapped
+This key is a normal `F` key that output `f` when tapped, and `F` when tapped
 while holding down the _"Shift"_ key. However, when I hold this key down, it
-behaves like the _"Shift"_ key.
+behaves like the _"Shift"_ key, meaning that if I hold it down, and then press
+the key for number `2`, the keyboard will output an `@` character.
 
 > [!NOTE]
 >
@@ -134,18 +175,18 @@ behaves like the _"Shift"_ key.
 >
 > ![](docs/images/labels-syntax.svg)
 >
-> When you see a symbold followed by `:`, followed by another symbol on the
-> _shifted symbol_ position, this label is indicating a _morph_ behavior,
-> meaning: `<morph trigger>: <output symbol>`. On the example above, when the
-> `A` key is tapped while holding down the _Command_ key, the result outt will
-> be the `` ` `` key.
+> When you see a symbol followed by `:`, followed by another symbol on either,
+> the _shifted symbol_ or _held symbol_ positions, it is indicating a _morph_
+> behavior, meaning: `<morph trigger>: <output symbol>`. On the example above,
+> when the `A` key is tapped while holding down the _Command_ key, the result
+> output will be the `` ` `` key.
 >
 > When you see a counter on the form of `<N>x`, followed by `:`, followed by a
-> symbol on the _held symbol_ position, this label indicates a _tap-dance_
-> behavior, meaning: `<tap count>x: <output symbol>`. On the example above, when
-> the `A` key is tapped twice, it will output a `CAPS_LOCK`.
+> symbol on either the _held symbol_ or _shifted symbol_ positions, it indicates
+> a _tap-dance_ behavior, meaning: `<tap count>x: <output symbol>`. On the
+> example above, when the `A` key is tapped twice, it will output a `CAPS_LOCK`.
 
-When we put all this together, and we see the following key on a layout map:
+When we put all this together, and we see the following key in a layout map:
 
 ![](docs/images/backspace-del-key.svg)
 
@@ -189,12 +230,12 @@ product.
 
 I think `CAPS_LOCK` is evil. No keyboard should ever have that key available.
 That being said, I admit that sometime is very convenient to type a fully
-capitalized word without having to hold down the the _Shift_ key.
+capitalized word without having to hold down the _Shift_ key.
 
 Fortunately, ZMK solved this by allowing us to use the
-[CAPS_WORD](https://zmk.dev/docs/behaviors/caps-word) behavior, where you can
-have the `CAPS_LOCK` turned on just to the next word. After that, the keyboard
-will put you on a normal typing mode.
+[CAPS_WORD](https://zmk.dev/docs/behaviors/caps-word) behavior, where, when
+tapped, it will turn on the `CAPS_LOCK` just to the next word. After that, the
+keyboard will put you on a normal typing mode again.
 
 ## Disclaimers
 
@@ -202,7 +243,18 @@ Layout map images are all generated with
 [Keymap-Drawer](https://keymap-drawer.streamlit.app/) from Cem Aksoylar. If you
 have your own custom ZMK or QMK config, I highly recommend you to check it out.
 
-Although I don't use a visual layout editor, I checked that my layouts work
-with [Keymap Editor](https://nickcoutsos.github.io/keymap-editor/) from Nick
-Coutsos, so you can fork this repo and head to the editor's page to start making
-this layout your own.
+<!-- Although I don't use a visual layout editor, I checked that my layouts work -->
+<!-- with [Keymap Editor](https://nickcoutsos.github.io/keymap-editor/) from Nick -->
+<!-- Coutsos, so you can fork this repo and head to the editor's page to start making -->
+<!-- this layout your own. -->
+
+My homerow mod configuration is based on the fantastic _"timeless homerow mods"_
+from [Robert U (urob)'s ZMK Configuration](https://github.com/urob/zmk-config).
+You should absolutely check this configuration for examples.
+
+The pattern I used to share my layout across multiple keyboards was a suggestion
+from Rafael Romão ([rafaelromao](https://github.com/rafaelromao/keyboards)) and
+Cem Aksoylar ([caksoylar](https://github.com/caksoylar)) on the [ZMK Discord
+server](https://discord.com/channels/719497620560543766/813882537436905552/1253152742910984282),
+so I spent some time digging through their ZMK configurations to learn, and copy
+the pattern into my own layout.
