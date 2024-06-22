@@ -23,9 +23,9 @@
 #include "autoshift.dtsi"
 
 #ifndef USE_MOLOCK
-#define LOCK_LAYER &molock
-#else
 #define LOCK_LAYER &none
+#else
+#define LOCK_LAYER &molock
 #endif
 
 // Layers definitions
