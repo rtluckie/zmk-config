@@ -78,8 +78,8 @@ the layout easily, here is a table with all the symbols I use:
 | ← ![Search](./docs/symbols/magnify.svg)                       | Find Previous (`⇧ ⌘ G`)                       |
 | ![Previous word](./docs/symbols/format-letter-starts-with.svg)| Previous word (`⌥ ←`)                         |
 | ![Next word](./docs/symbols/format-letter-ends-with.svg)      | Next word (`⌥ →`)                             |
-| ![Line start](./docs/symbols/.svg)                            | Beginning of line (`⌘ ←`)                     |
-| ![Line end](./docs/symbols/.svg)                              | End of line (`⌘ →`)                           |
+| ![Line start](./docs/symbols/format-pilcrow-arrow-left.svg)   | Beginning of line (`⌘ ←`)                     |
+| ![Line end](./docs/symbols/format-pilcrow-arrow-right.svg)    | End of line (`⌘ →`)                           |
 | ![Virtual desktop](./docs/symbols/window-maximize.svg) →      | Go to Virtual Desktop on the Right (`⌘ ⌃ →`)  |
 | ← ![Virtual desktop](./docs/symbols/window-maximize.svg)      | Go to Virtual Desktop on the Left (`⌘ ⌃ ←`)   |
 | ![Window](./docs/symbols/window-restore.svg) →                | Next window (`` ⌘ ` ``)                       |
