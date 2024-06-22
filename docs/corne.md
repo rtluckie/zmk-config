@@ -7,9 +7,9 @@ online, with a heavy seasoning of my imagination. So yes, you probably already
 saw some (if not most) of the things I put in this layout somewhere else.
 Nevertheless, there are some modifications I made that are worth reading about.
 
-The first recommendation I got after jumping into the sub-50 keyboard world, was
-to try the [Miryoku](https://github.com/manna-harbour/miryoku) layout. I heard
-and read so much of this recommendation, that I started to think that this
+The first recommendation I got, after jumping into the sub-50 keyboard world,
+was to try the [Miryoku](https://github.com/manna-harbour/miryoku) layout. I
+heard and read so much of this recommendation, that I started to think that this
 should be the standard layout to use with a Corne.
 
 The problem I have with things “ready to use”, is that everything about it, must
@@ -34,12 +34,14 @@ Some notable features are:
 - **Separate layers for Symbols and Numbers**: I tried to put each one of these
   layers on different sides of the keyboard, to help my brain to identify what
   hand to use in which situation;
-- **Dedicated layer of shortcuts**: The only layer that is mirrored on both
-  sides of the keyboard;
-- All layers are momentary, but you can lock them in place;
-- Keys morph into other keys depending on the situation and requirement;
-- Homerow mod configuration based on [Robert U (@urob)'s ZMK
-  configuration](https://github.com/urob/zmk-config);
+- **Momentary layers**: All layers require you to keep a key pressed to use
+  them, but you can lock them in place (this requires [PR
+  #1984](https://github.com/zmkfirmware/zmk/pull/1984) to work, and it's not
+  built with GitHub actions in this repository);
+- **Dynamic keys**: Keys morph into other keys depending on the situation and
+  requirement;
+- **Timeless homerow mods**: Homerow mod configuration based on [Robert U
+  (@urob)'s ZMK configuration](https://github.com/urob/zmk-config);
 
 ## Base Layer
 
