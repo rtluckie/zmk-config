@@ -241,10 +241,10 @@ layers:
     # Row 1
     - - ""
       - ""
-      - "$$mdi:brightness-5$$"
-      - "$$mdi:brightness-7$$"
       - ""
       - ""
+      - { t: "$$mdi:palette-outline$$", h: "reset" }
+      - { t: "$$mdi:palette-outline$$", h: "Hue" }
 
       - ""
       - ""
@@ -254,12 +254,12 @@ layers:
       - ""
 
     # Row 2
-    - - ""
+    - - { t: "$$mdi:volume-minus$$", s: "$$mdi:volume-plus$$" }
+      - "$$mdi:brightness-7$$"
+      - { t: "$$mdi:lightbulb-on-20$$", s: "$$mdi:lightbulb-on-90$$" }
       - "$$mdi:skip-backward$$"
-      - "$$mdi:volume-medium$$"
-      - "$$mdi:volume-high$$"
       - "$$mdi:skip-forward$$"
-      - ""
+      - { t: "$$mdi:palette-outline$$", h: "sat" }
 
       - ""
       - { t: "$$mdi:apple-keyboard-shift$$", type: "held" }
@@ -269,12 +269,12 @@ layers:
       - ""
 
     # Row 3
-    - - ""
+    - - "$$mdi:volume-off$$"
+      - "$$mdi:brightness-5$$"
       - "$$mdi:lightbulb-off-outline$$"
-      - "$$mdi:lightbulb-on-20$$"
-      - "$$mdi:lightbulb-on-90$$"
-      - "$$mdi:volume-off$$"
       - ""
+      - { t: "$$mdi:palette-outline$$", h: "tog" }
+      - { t: "$$mdi:palette-outline$$", h: "light" }
 
       - ""
       - ""

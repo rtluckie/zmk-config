@@ -88,6 +88,7 @@ the layout easily, here is a table with all the symbols I use:
 | ![Bluetooth profile](./docs/symbols/bluetooth-connect.svg)    | Bluetooth profile                             |
 | ![Bluetooth clear](./docs/symbols/bluetooth-off.svg)          | Bluetooth profile clear                       |
 | ![Keyboard power](./docs/symbols/power-plug-outline.svg)      | Toggle OLED display                           |
+| ![LED underglow actions](./docs/symbols/palette-outline.svg)  | LED RGB underglow actions                     |
 | ![USB](./docs/symbols/usb.svg)                                | Output mode (USB / BLE)                       |
 | ![Computer power](./docs/symbols/power.svg)                   | Turn off host computer                        |
 | ![Keyboard reset](./docs/symbols/restart.svg)                 | Reset firmware                                |

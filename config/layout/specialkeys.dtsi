@@ -63,6 +63,9 @@
 #define MAC_END_OF_LINE      LG(RIGHT)
 #define MAC_ENDL             MAC_END_OF_LINE
 
+// RGB Helpers
+#define RGB_RESET            RGB_COLOR_HSB(0, 0, 60)
+
 // This helper macro allow one to define a normal key with a special output with
 // pressing shift. This is useful when you want to create a key that, its
 // shifted value, differs from the standard behavior.
@@ -103,6 +106,19 @@
     __NUM_REVERSE(N8, ASTERISK);
     __NUM_REVERSE(N9, LEFT_PARENTHESIS);
     __NUM_REVERSE(N0, RIGHT_PARENTHESIS);
+
+    // Media keys, usually, have action keys as symetric pairs. This means that
+    // if we have a key to raise the volume, we have a key to lower it. On
+    // small-factor keyboards, this is a waste of key real-state, so for each
+    // symetric pair of media keys I have, I'll creat a key that performs the
+    // "down" action when pressed, and the "up" action when tapped with `Shift`
+    // held down:
+    DEFINE_SHIFT_KEY(kp_volume,  &kp C_VOLUME_DOWN,    &kp C_VOLUME_UP);      // Volume
+    DEFINE_SHIFT_KEY(kp_bklight, &bl BL_DEC,           &bl BL_INC);           // Keyboard backlight
+    DEFINE_SHIFT_KEY(kp_scrbri,  &kp C_BRIGHTNESS_DEC, &kp C_BRIGHTNESS_INC); // Screen brightness
+    DEFINE_SHIFT_KEY(kp_rgbhue,  &rgb_ug RGB_HUD,      &rgb_ug RGB_HUI);      // RGB HSL Hue
+    DEFINE_SHIFT_KEY(kp_rgbsat,  &rgb_ug RGB_SAD,      &rgb_ug RGB_SAI);      // RGB HSL Saturation
+    DEFINE_SHIFT_KEY(kp_rgbbri,  &rgb_ug RGB_BRD,      &rgb_ug RGB_BRI);      // RGB HSL Brightness
 
     // The GLOBE key does not have all the functionalities Apple's version of
     // the key has, so I'm adding a new one to it:

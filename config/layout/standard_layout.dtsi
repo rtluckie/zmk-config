@@ -16,6 +16,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #include "specialkeys.dtsi"
 #include "homerowmods.dtsi"
@@ -283,22 +284,23 @@
     // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
     // │       │       │       │       │       │       │                  │       │       │       │       │       │       │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │       │      │   󰖨   │       │       │                  │       │       │       │       │       │       │
+    // │       │       │       │       │  󰸌 󰜉  │  󰸌 H  │                  │       │       │       │       │       │       │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │   󰒮   │      │      │   󰒭   │       ├───────╮  ╭───────┤       │   󰘶   │   󰘳   │   󰘵   │   󰘴   │       │
+    // │  ┊  │   󰖨   │ 󱩐 ┊ 󱩖 │   󰒮   │   󰒭   │  󰸌 S  ├───────╮  ╭───────┤       │   󰘶   │   󰘳   │   󰘵   │   󰘴   │       │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤  HYP  │  │  HYP  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │   󰹐   │   󱩐   │   󱩖   │      │       ├───────╯  ╰───────┤       │       │       │       │       │      │
+    // │      │      │   󰹐   │       │  󰸌 󰨚  │  󰸌 L  ├───────╯  ╰───────┤       │       │       │       │       │      │
     // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
     //                 │   󰍁   │       │       │   󰐎   │   󰓛   │  │ -=〿=- │       │       │       │       │
     //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
     MEDIA {
+      // &rgb_ug RGB_TOG
       display-name = "Media";
       bindings = <LAYER_ADAPTER(
-        &none, &none,      &none,        &none,        &none,      &none,                /**/              &none, &none,     &none,     &none,     &none,     &none,
-        &none, &none,      &kp C_BRI_DN, &kp C_BRI_UP, &none,      &none,                /**/              &none, &none,     &none,     &none,     &none,     &none,
-        &none, &kp C_PREV, &kp C_VOL_DN, &kp C_VOL_UP, &kp C_NEXT, &none,                /**/              &none, &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
-        &none, &bl BL_TOG, &bl BL_DEC,   &bl BL_INC,   &kp C_MUTE, &none,    &trans,     /**/  &trans,     &none, &none,     &none,     &none,     &none,     &kp GLOBE,
-                           &molock,      &none,        &none,      &kp C_PP, &kp C_STOP, /**/  &tog L_MED, &none, &none,     &none,     &none
+        &none,      &none,        &none,       &none,      &none,             &none,                  /**/              &none, &none,     &none,     &none,     &none,     &none,
+        &none,      &none,        &none,       &none,      &rgb_ug RGB_RESET, &kp_rgbhue,             /**/              &none, &none,     &none,     &none,     &none,     &none,
+        &kp_volume, &kp C_BRI_UP, &kp_bklight, &kp C_PREV, &kp C_NEXT,        &kp_rgbsat,             /**/              &none, &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
+        &kp C_MUTE, &kp C_BRI_DN, &bl BL_TOG,  &none,      &rgb_ug RGB_TOG,   &kp_rgbbri, &trans,     /**/  &trans,     &none, &none,     &none,     &none,     &none,     &kp GLOBE,
+                                  &molock,     &none,      &none,             &kp C_PP,   &kp C_STOP, /**/  &tog L_MED, &none, &none,     &none,     &none
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
