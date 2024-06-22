@@ -19,7 +19,7 @@ Some things do… Most don't!
 
 After deep diving into the [Miryoku](https://github.com/manna-harbour/miryoku)
 layout concepts, I found myself more interested in the Layout UX Design than in
-its implementation, so I decided to try to apply its concepts, on the ideas and
+its implementation, so I decided to try to apply its concepts, to the ideas and
 other layouts that I already created in the past.
 
 The result of this, is what you're reading in this document!
@@ -43,7 +43,7 @@ Some notable features are:
 
 ## Base Layer
 
-![](./images/corne42-layer0-main.svg)
+![Default base layer layout](./images/corne42-layer0-main.svg)
 
 My base layer, currently, uses a QWERTY layout, and it is where I have cramped
 most features unique to this layout, like “morphed keys”, homerow mods, etc.
@@ -122,7 +122,7 @@ apps and windows with my layout.
 
 ## Numbers Layer
 
-![](./images/corne42-layer1-numbers.svg)
+![Numbers layer layout](./images/corne42-layer1-numbers.svg)
 
 While looking into other layouts out there, I noticed that most people tend to
 position their numbers like an inverted phone keypad, mimicking the numeric
@@ -164,7 +164,7 @@ layout became more “intuitive” for me.
 
 ## Symbols Layer
 
-![](./images/corne42-layer2-symbols.svg)
+![Symbols layer layout](./images/corne42-layer2-symbols.svg)
 
 One of the things I always avoided in the past was dealing with my symbols
 layers. I always defined them, but barely use them. Because of comfort or strong
@@ -185,7 +185,7 @@ start on this, but everything looked a bit too weird for my personal taste.
 
 Until I stumbled into this image on Reddit:
 
-![](images/spaceship-layout.webp)
+![Spaceship layout definition](images/spaceship-layout.webp)
 
 > [!NOTE]
 > I tried to find the author of this image, or the original source for it, but I
@@ -213,7 +213,7 @@ I do not know where it came from.
 
 ## Navigation Layer
 
-![](./images/corne42-layer3-navigation.svg)
+![Navigation layer layout](./images/corne42-layer3-navigation.svg)
 
 The navigation layer is meant to control the text cursor on the screen.
 
@@ -226,15 +226,15 @@ _“End”_ respectively).
 
 ## Media Layer
 
-![](./images/corne42-layer4-media.svg)
+![Media layer layout](./images/corne42-layer4-media.svg)
 
 ## System Layer
 
-![](./images/corne42-layer6-system.svg)
+![System layer layout](./images/corne42-layer6-system.svg)
 
 ## Alternative Layout
 
-![](./images/corne42-layer7-colemak.svg)
+![COLEMAK base layout layer](./images/corne42-layer7-colemak.svg)
 
 ## My methodology
 

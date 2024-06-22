@@ -5,9 +5,10 @@
  */
 
 // WARN:
-// If you're open this file on a text editor, make sure your editor is not "wrapping" long lines,
-// and is capable of rendering Unicode characters and it's using a font with symbols from the
-// Nerd Fonts fonts (https://www.nerdfonts.com).
+// If you're open this file on a text editor, make sure your editor is not
+// "wrapping" long lines, is capable of rendering Unicode characters, and it's
+// using a font with symbols from the Nerd Fonts fonts
+// (https://www.nerdfonts.com).
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/backlight.h>

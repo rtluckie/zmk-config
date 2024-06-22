@@ -1,24 +1,7 @@
-> [!NOTE]
-> Before anything, let me address the obvious, before you have a chance to check
-> the layouts themselves:
->
-> _I use QWERTY layout keys on my keyboards._
->
-> I know QWERTY is not the most optimal layout out there, and I know I could
-> improve my typing speed tremendously if I adopted something better like
-> COLEMAK, but the reality is that I want to use my custom layouts with the
-> standard layout, so others can adopt them easily.
->
-> That being said, I still designed these layouts from a perspective that I
-> might want to change the default layout without much of an effort, so I made
-> sure that my main layer contains almost the entire QWERTY layout. This way,
-> you can just change that layer to whatever you want, and still get everything
-> else that I put together here.
-
 # ZMK Custom Layouts
 
-[![zmk version](https://img.shields.io/badge/ZMK-3.5-blue)](https://zmk.dev/)
-[![firmware build](https://img.shields.io/github/actions/workflow/status/Townk/zmk-config/build.yml?label=firmware%20build)](https://github.com/Townk/zmk-config/actions/workflows/build.yml)
+[![ZMK version](https://img.shields.io/badge/ZMK-3.5-blue)](https://zmk.dev/)
+[![Firmware build](https://img.shields.io/github/actions/workflow/status/Townk/zmk-config/build.yml?label=firmware%20build)](https://github.com/Townk/zmk-config/actions/workflows/build.yml)
 
 This repository contains the ZMK user configuration for all my keyboards that
 use the [ZMK](https://zmk.dev/) firmware.
@@ -52,66 +35,70 @@ Inside the keymap files and on the layout map images, you'll see a series of
 symbols that are not well-used in ZMK configurations out there, so to understand
 the layout easily, here is a table with all the symbols I use:
 
-| Symbols                                                | Description                                   |
-|:------------------------------------------------------:| ----------------------------------------------|
-| ![](./docs/symbols/apple-keyboard-command.svg)         | Command (Super)                               |
-| ![](./docs/symbols/apple-keyboard-control.svg)         | Control (Ctrl)                                |
-| ![](./docs/symbols/apple-keyboard-option.svg)          | Option (Alt / Meta)                           |
-| ⇪                                                      | Caps Word                                     |
-| ![](./docs/symbols/apple-keyboard-shift.svg)           | Shift                                         |
-| ![](./docs/symbols/web.svg)                            | Globe                                         |
-| ![](./docs/symbols/keyboard-space.svg)                 | Space                                         |
-| ![](./docs/symbols/keyboard-return.svg)                | Enter (Return / Ret)                          |
-| ![](./docs/symbols/backspace.svg)                      | Delete backwards (Backspace / Bksp)           |
-| ![](./docs/symbols/backspace-reverse.svg)              | Delete forward (Del)                          |
-| ↖                                                      | Home                                          |
-| ⇞                                                      | Page Up                                       |
-| ⇟                                                      | Page Down                                     |
-| ↘                                                      | End                                           |
-| ![](./docs/symbols/keyboard-tab-reverse.svg)           | Backtab                                       |
-| ![](./docs/symbols/keyboard-tab.svg)                   | Tab                                           |
-| ![](./docs/symbols/volume-high.svg)                    | Volume up                                     |
-| ![](./docs/symbols/volume-medium.svg)                  | Volume down                                   |
-| ![](./docs/symbols/volume-off.svg)                     | Mute                                          |
-| ![](./docs/symbols/brightness-7.svg)                   | Screen brightness up                          |
-| ![](./docs/symbols/brightness-5.svg)                   | Screen brightness down                        |
-| ![](./docs/symbols/lightbulb-off-outline.svg)          | Keyboard backlight off                        |
-| ![](./docs/symbols/lightbulb-on-20.svg)                | Keyboard backlight decrease                   |
-| ![](./docs/symbols/lightbulb-on-90.svg)                | Keyboard backlight increase                   |
-| ![](./docs/symbols/skip-backward.svg)                  | Previous song                                 |
-| ![](./docs/symbols/play-pause.svg)                     | Play / pause                                  |
-| ![](./docs/symbols/skip-forward.svg)                   | Next song                                     |
-| ![](./docs/symbols/stop.svg)                           | Stop media                                    |
-| ![](./docs/symbols/apps.svg)                           | Launchpad                                     |
-| ![](./docs/symbols/view-dashboard-outline.svg)         | Mission Control (`⌘ ⌃ ↑`)                     |
-| ![](./docs/symbols/dock-window.svg)                    | Show application windows (`⌘ ⌃ ↓`)            |
-| ![](./docs/symbols/folder-search-outline.svg)          | Spotlight                                     |
-| ![](./docs/symbols/content-cut.svg)                    | Cut (`⌘ X`)                                   |
-| ![](./docs/symbols/content-copy.svg)                   | Copy (`⌘ C`)                                  |
-| ![](./docs/symbols/content-paste.svg)                  | Paste (`⌘ V`)                                 |
-| ![](./docs/symbols/undo.svg)                           | Undo (`⌘ Z`)                                  |
-| ![](./docs/symbols/redo.svg)                           | Redo (`⇧ ⌘ Z`)                                |
-| ![](./docs/symbols/magnify.svg) →                      | Find Next (`⌘ G`)                             |
-| ← ![](./docs/symbols/magnify.svg)                      | Find Previous (`⇧ ⌘ G`)                       |
-| ![](./docs/symbols/window-maximize.svg) →              | Go to Virtual Desktop on the Right (`⌘ ⌃ →`)  |
-| ← ![](./docs/symbols/window-maximize.svg)              | Go to Virtual Desktop on the Left (`⌘ ⌃ ←`)   |
-| ![](./docs/symbols/window-restore.svg) →               | Next window (`` ⌘ ` ``)                       |
-| ← ![](./docs/symbols/window-restore.svg)               | Previous window (`⌘ ~`)                       |
-| ![](./docs/symbols/keyboard-variant.svg)               | Alternate layout (COLEMAK)                    |
-| ![](./docs/symbols/bluetooth-connect.svg)              | Bluetooth profile                             |
-| ![](./docs/symbols/bluetooth-off.svg)                  | Bluetooth profile clear                       |
-| ![](./docs/symbols/power-plug-outline.svg)             | Toggle OLED display                           |
-| ![](./docs/symbols/usb.svg)                            | Output mode (USB / BLE)                       |
-| ![](./docs/symbols/power.svg)                          | Turn off host computer                        |
-| ![](./docs/symbols/restart.svg)                        | Reset firmware                                |
-| ![](./docs/symbols/code-block-tags.svg)                | Bootload mode                                 |
-| ![](./docs/symbols/numeric-1-box-multiple-outline.svg) | Numbers Layer                                 |
-| ![](./docs/symbols/numeric-2-box-multiple-outline.svg) | Symbols Layer                                 |
-| ![](./docs/symbols/numeric-3-box-multiple-outline.svg) | Navigation Layer                              |
-| ![](./docs/symbols/numeric-4-box-multiple-outline.svg) | Media Layer                                   |
-| ![](./docs/symbols/numeric-5-box-multiple-outline.svg) | Buttons Layer                                 |
-| ![](./docs/symbols/numeric-6-box-multiple-outline.svg) | System Layer                                  |
-| ![](./docs/symbols/lock-outline.svg)                   | Lock layer in place                           |
+| Symbols                                                       | Description                                   |
+|:-------------------------------------------------------------:| ----------------------------------------------|
+| ![Command](./docs/symbols/apple-keyboard-command.svg)         | Command (Super)                               |
+| ![Control](./docs/symbols/apple-keyboard-control.svg)         | Control (Ctrl)                                |
+| ![Option](./docs/symbols/apple-keyboard-option.svg)           | Option (Alt / Meta)                           |
+| ⇪                                                             | Caps Word                                     |
+| ![Shift](./docs/symbols/apple-keyboard-shift.svg)             | Shift                                         |
+| ![Globe](./docs/symbols/web.svg)                              | Globe                                         |
+| ![Space](./docs/symbols/keyboard-space.svg)                   | Space                                         |
+| ![Return](./docs/symbols/keyboard-return.svg)                 | Enter (Return / Ret)                          |
+| ![Backspace](./docs/symbols/backspace.svg)                    | Delete backwards (Backspace / Bksp)           |
+| ![Forward Delete](./docs/symbols/backspace-reverse.svg)       | Delete forward (Del)                          |
+| ↖                                                             | Home                                          |
+| ⇞                                                             | Page Up                                       |
+| ⇟                                                             | Page Down                                     |
+| ↘                                                             | End                                           |
+| ![Backtab](./docs/symbols/keyboard-tab-reverse.svg)           | Backtab                                       |
+| ![Tab](./docs/symbols/keyboard-tab.svg)                       | Tab                                           |
+| ![Volume up](./docs/symbols/volume-plus.svg)                  | Volume up                                     |
+| ![Volume down](./docs/symbols/volume-minus.svg)               | Volume down                                   |
+| ![Volume off](./docs/symbols/volume-off.svg)                  | Mute                                          |
+| ![Brightness up](./docs/symbols/brightness-7.svg)             | Screen brightness up                          |
+| ![Brightness down](./docs/symbols/brightness-5.svg)           | Screen brightness down                        |
+| ![Backlight off](./docs/symbols/lightbulb-off-outline.svg)    | Keyboard backlight off                        |
+| ![Backlight down](./docs/symbols/lightbulb-on-20.svg)         | Keyboard backlight decrease                   |
+| ![Backlight up](./docs/symbols/lightbulb-on-90.svg)           | Keyboard backlight increase                   |
+| ![Skip back](./docs/symbols/skip-backward.svg)                | Previous song                                 |
+| ![Play or pause](./docs/symbols/play-pause.svg)               | Play / pause                                  |
+| ![Skip forward](./docs/symbols/skip-forward.svg)              | Next song                                     |
+| ![Stop](./docs/symbols/stop.svg)                              | Stop media                                    |
+| ![Launchpad](./docs/symbols/apps.svg)                         | Launchpad                                     |
+| ![Mission Control](./docs/symbols/view-dashboard-outline.svg) | Mission Control (`⌘ ⌃ ↑`)                     |
+| ![Show all windows](./docs/symbols/dock-window.svg)           | Show application windows (`⌘ ⌃ ↓`)            |
+| ![Spotlight](./docs/symbols/folder-search-outline.svg)        | Spotlight                                     |
+| ![Cut](./docs/symbols/content-cut.svg)                        | Cut (`⌘ X`)                                   |
+| ![Copy](./docs/symbols/content-copy.svg)                      | Copy (`⌘ C`)                                  |
+| ![Paste](./docs/symbols/content-paste.svg)                    | Paste (`⌘ V`)                                 |
+| ![Undo](./docs/symbols/undo.svg)                              | Undo (`⌘ Z`)                                  |
+| ![Redo](./docs/symbols/redo.svg)                              | Redo (`⇧ ⌘ Z`)                                |
+| ![Search](./docs/symbols/magnify.svg) →                       | Find Next (`⌘ G`)                             |
+| ← ![Search](./docs/symbols/magnify.svg)                       | Find Previous (`⇧ ⌘ G`)                       |
+| ![Previous word](./docs/symbols/format-letter-starts-with.svg)| Previous word (`⌥ ←`)                         |
+| ![Next word](./docs/symbols/format-letter-ends-with.svg)      | Next word (`⌥ →`)                             |
+| ![Line start](./docs/symbols/.svg)                            | Beginning of line (`⌘ ←`)                     |
+| ![Line end](./docs/symbols/.svg)                              | End of line (`⌘ →`)                           |
+| ![Virtual desktop](./docs/symbols/window-maximize.svg) →      | Go to Virtual Desktop on the Right (`⌘ ⌃ →`)  |
+| ← ![Virtual desktop](./docs/symbols/window-maximize.svg)      | Go to Virtual Desktop on the Left (`⌘ ⌃ ←`)   |
+| ![Window](./docs/symbols/window-restore.svg) →                | Next window (`` ⌘ ` ``)                       |
+| ← ![Window](./docs/symbols/window-restore.svg)                | Previous window (`⌘ ~`)                       |
+| ![Keyboard](./docs/symbols/keyboard-variant.svg)              | Alternate layout (COLEMAK)                    |
+| ![Bluetooth profile](./docs/symbols/bluetooth-connect.svg)    | Bluetooth profile                             |
+| ![Bluetooth clear](./docs/symbols/bluetooth-off.svg)          | Bluetooth profile clear                       |
+| ![Keyboard power](./docs/symbols/power-plug-outline.svg)      | Toggle OLED display                           |
+| ![USB](./docs/symbols/usb.svg)                                | Output mode (USB / BLE)                       |
+| ![Computer power](./docs/symbols/power.svg)                   | Turn off host computer                        |
+| ![Keyboard reset](./docs/symbols/restart.svg)                 | Reset firmware                                |
+| ![Bootload](./docs/symbols/code-block-tags.svg)               | Bootload mode                                 |
+| ![Layer 1](./docs/symbols/numeric-1-box-multiple-outline.svg) | Numbers Layer                                 |
+| ![Layer 2](./docs/symbols/numeric-2-box-multiple-outline.svg) | Symbols Layer                                 |
+| ![Layer 3](./docs/symbols/numeric-3-box-multiple-outline.svg) | Navigation Layer                              |
+| ![Layer 4](./docs/symbols/numeric-4-box-multiple-outline.svg) | Media Layer                                   |
+| ![Layer 5](./docs/symbols/numeric-5-box-multiple-outline.svg) | Buttons Layer                                 |
+| ![Layer 6](./docs/symbols/numeric-6-box-multiple-outline.svg) | System Layer                                  |
+| ![Layer lock](./docs/symbols/lock-outline.svg)                | Lock layer in place                           |
 
 ## Key Representation
 
@@ -122,7 +109,7 @@ have more than one symbol as their labels.
 To understand what all those symbols mean, let's first, look at how a key that
 has a single purpose is represented:
 
-![](docs/images/simple-key.svg)
+![Simple key representation](docs/images/simple-key.svg)
 
 This key has nothing special about it. When I tap it, it will output `a`, and if
 I hold it down, it will output `a` repeatedly, until I release it.
@@ -132,7 +119,7 @@ the standard ones that most people use), have keys that are used exclusively to
 alter what other keys output when held-down. When that happens, we say that the
 key caused the keyboard to _“switch layers”_, for instance:
 
-![](docs/images/shift-key.svg)
+![Shift key representation](docs/images/shift-key.svg)
 
 This is the _Shift_ key, which forces other keys to output the uppercase version
 of itself, or in certain cases, it can force the key to output an entirely
@@ -143,7 +130,7 @@ When a key outputs a different symbol than the uppercase version of the normal
 output while holding down the _Shift_ key, it has the extra symbol drawn above
 the normal one, for instance:
 
-![](docs/images/number-2-key.svg)
+![Number 2 key representation](docs/images/number-2-key.svg)
 
 When tapped while no other hey is held-down, it will output `2`, but if the
 _Shift_ key is held-down while tapping it, it will output `@`.
@@ -156,7 +143,7 @@ use them, specially layouts for keyboards with less than 50 keys.
 When those keys are shown in my layout maps, they have the _“hold-down”_ value
 displayed below the normal symbol. For instance:
 
-![](docs/images/f-shift-key.svg)
+![Tap-hold key “F” and “Shift”](docs/images/f-shift-key.svg)
 
 This key is a normal `F` key that output `f` when tapped, and `F` when tapped
 while holding down the _“Shift”_ key. However, when I hold this key down, it
@@ -169,7 +156,7 @@ the key for number `2`, the keyboard will output a `@` character.
 > [Tap-Dance](https://zmk.dev/docs/behaviors/tap-dance), so I had to come up
 > with a syntax to represent them:
 >
-> ![](docs/images/labels-syntax.svg)
+> ![Special labels on key representation](docs/images/labels-syntax.svg)
 >
 > When you see a symbol followed by `:`, followed by another symbol on either,
 > the _shifted symbol_ or _held symbol_ positions, it is indicating a _morph_
@@ -184,7 +171,7 @@ the key for number `2`, the keyboard will output a `@` character.
 
 When we put all this together, and we see the following key in a layout map:
 
-![](docs/images/backspace-del-key.svg)
+![Tap-hold key “Backspace” and “Forward Delete”](docs/images/backspace-del-key.svg)
 
 We know that this key is a normal _“Delete Backwards”_ when tapped by itself,
 and a _“Forward Delete”_ when tapped while holding down _“Shift”_. But when I
