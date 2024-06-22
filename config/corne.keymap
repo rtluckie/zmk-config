@@ -35,4 +35,4 @@
              k30 k31 k32 k33 k34 k35    k38 k39 k3A k3B k3C k3D           \
                          k40 k43 k44    k45 k46 k49
 
-#include "../layout/standard_layout.dtsi"
+#include "layout/standard_layout.dtsi"

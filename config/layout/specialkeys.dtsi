@@ -54,6 +54,14 @@
 #define MAC_FDNXT            MAC_FIND_NEXT
 #define MAC_FIND_PREVIOUS    LG(LS(G))
 #define MAC_FDPRV            MAC_FIND_PREVIOUS
+#define MAC_NEXT_WORD        LA(RIGHT)
+#define MAC_WRDN             MAC_NEXT_WORD
+#define MAC_PREVIOUS_WORD    LA(LEFT)
+#define MAC_WRDP             MAC_PREVIOUS_WORD
+#define MAC_START_OF_LINE    LG(LEFT)
+#define MAC_STTL             MAC_START_OF_LINE
+#define MAC_END_OF_LINE      LG(RIGHT)
+#define MAC_ENDL             MAC_END_OF_LINE
 
 // This helper macro allow one to define a normal key with a special output with
 // pressing shift. This is useful when you want to create a key that, its

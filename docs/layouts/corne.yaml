@@ -2,26 +2,11 @@
 # SPDX-License-Identifier: MIT
 
 # Layout visualization for Keymap Drawer
-layout: { qmk_keyboard: "lily58_rotated" }
+layout: { qmk_keyboard: "corne_rotated", qmk_layout: "LAYOUT_split_3x6_3" }
 
 layers:
   QWERTY:
     # Row 1
-    - - { t: "[", s: "{", h: "⌘:`" }
-      - { t: "!", s: "1" }
-      - { t: "@", s: "2" }
-      - { t: "#", s: "3" }
-      - { t: "$", s: "4" }
-      - { t: "%", s: "5" }
-
-      - { t: "^", s: "6" }
-      - { t: "&", s: "7" }
-      - { t: "*", s: "8" }
-      - { t: "(", s: "9" }
-      - { t: ")", s: "0" }
-      - { t: "]", s: "}" }
-
-    # Row 2
     - - "$$mdi:keyboard-tab$$"
       - "Q"
       - "W"
@@ -36,7 +21,7 @@ layers:
       - "P"
       - { t: "-", s: "_" }
 
-    # Row 3
+    # Row 2
     - - { t: "`", s: "~" }
       - { t: "A", h: "$$mdi:apple-keyboard-control$$", type: "held" }
       - { t: "S", h: "$$mdi:apple-keyboard-option$$", type: "held" }
@@ -50,16 +35,14 @@ layers:
       - { t: ";", s: ":", h: "$$mdi:apple-keyboard-control$$", type: "held" }
       - { t: "'", s: '"' }
 
-    # Row 4
+    # Row 3
     - - { t: '\', s: "|", h: "$$mdi:web$$", type: "held" }
       - "Z"
       - "X"
       - "C"
       - "V"
       - "B"
-      - { t: "HYPER", type: "held" }
 
-      - { t: "HYPER", type: "held" }
       - "N"
       - "M"
       - { t: ",", s: "<" }
@@ -69,7 +52,6 @@ layers:
 
     # Thumb Cluster
     - - { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
-      - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
       - {
           t: "$$mdi:backspace$$",
           s: "$$mdi:backspace-reverse$$",
@@ -88,26 +70,10 @@ layers:
           h: "$$mdi:numeric-1-box-multiple-outline$$",
           type: "held",
         }
-      - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
       - { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
 
   Numbers:
     # Row 1
-    - - ""
-      - "["
-      - "*"
-      - "/"
-      - "]"
-      - "^"
-
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-
-    # Row 2
     - - "$$mdi:keyboard-tab$$"
       - "1"
       - "2"
@@ -122,7 +88,7 @@ layers:
       - ""
       - ""
 
-    # Row 3
+    # Row 2
     - - "$$mdi:keyboard-return$$"
       - "6"
       - "7"
@@ -137,16 +103,14 @@ layers:
       - { t: "$$mdi:apple-keyboard-control$$", type: "held" }
       - ""
 
-    # Row 4
+    # Row 3
     - - "="
       - "("
       - "+"
       - "-"
       - ")"
       - "."
-      - "$$mdi:lock-outline$$"
 
-      - ""
       - ""
       - ""
       - ""
@@ -155,33 +119,16 @@ layers:
       - { t: "$$mdi:web$$", type: "held" }
 
     # Thumb Cluster
-    - - ""
-      - ","
+    - - "$$mdi:lock-outline$$"
       - { t: "$$mdi:backspace$$", s: "$$mdi:backspace-reverse$$" }
       - "$$mdi:keyboard-space$$"
 
       - ""
       - { t: "$$mdi:numeric-1-box-multiple-outline$$", type: "ghost" }
       - ""
-      - ""
 
   Symbols:
     # Row 1
-    - - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-
-      - "?"
-      - "+"
-      - "-"
-      - "."
-      - "/"
-      - "\\"
-
-    # Row 2
     - - ""
       - ""
       - ""
@@ -196,7 +143,7 @@ layers:
       - "]"
       - "#"
 
-    # Row 3
+    # Row 2
     - - ""
       - { t: "$$mdi:apple-keyboard-control$$", type: "held" }
       - { t: "$$mdi:apple-keyboard-option$$", type: "held" }
@@ -211,16 +158,14 @@ layers:
       - "}"
       - "%"
 
-    # Row 4
+    # Row 3
     - - { t: "$$mdi:web$$", type: "held" }
       - ""
       - ""
       - ""
       - ""
       - ""
-      - ""
 
-      - "$$mdi:lock-outline$$"
       - "$"
       - "&"
       - "*"
@@ -230,32 +175,15 @@ layers:
 
     # Thumb Cluster
     - - ""
-      - ""
       - { t: "$$mdi:numeric-2-box-multiple-outline$$", type: "ghost" }
       - ""
 
       - "@"
       - "$$mdi:keyboard-space$$"
-      - ""
-      - ""
+      - "$$mdi:lock-outline$$"
 
   Navigation:
     # Row 1
-    - - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-
-      - ""
-      - "$$mdi:keyboard-tab-reverse$$"
-      - { t: "$$mdi:magnify$$", h: "←" }
-      - { t: "$$mdi:magnify$$", h: "→" }
-      - "$$mdi:keyboard-tab$$"
-      - ""
-
-    # Row 2
     - - ""
       - ""
       - ""
@@ -270,7 +198,7 @@ layers:
       - "↘"
       - ""
 
-    # Row 3
+    # Row 2
     - - ""
       - { t: "$$mdi:apple-keyboard-control$$", type: "held" }
       - { t: "$$mdi:apple-keyboard-option$$", type: "held" }
@@ -285,51 +213,32 @@ layers:
       - "→"
       - ""
 
-    # Row 4
+    # Row 3
     - - { t: "$$mdi:web$$", type: "held" }
       - ""
       - ""
       - ""
       - ""
       - ""
-      - ""
 
-      - "$$mdi:lock-outline$$"
       - ""
-      - "$$mdi:content-paste$$"
-      - "$$mdi:content-copy$$"
-      - "$$mdi:content-cut$$"
-      - "$$mdi:undo$$"
-      - "$$mdi:redo$$"
+      - "$$mdi:format-letter-starts-with$$"
+      - "$$mdi:format-pilcrow-arrow-left$$"
+      - "$$mdi:format-pilcrow-arrow-right$$"
+      - "$$mdi:format-letter-ends-with$$"
+      - ""
 
     # Thumb Cluster
     - - ""
-      - ""
       - ""
       - { t: "$$mdi:numeric-3-box-multiple-outline$$", type: "ghost" }
 
       - ""
       - ""
-      - ""
-      - ""
+      - "$$mdi:lock-outline$$"
 
   Media:
     # Row 1
-    - - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-
-    # Row 2
     - - ""
       - ""
       - "$$mdi:brightness-5$$"
@@ -344,7 +253,7 @@ layers:
       - ""
       - ""
 
-    # Row 3
+    # Row 2
     - - ""
       - "$$mdi:skip-backward$$"
       - "$$mdi:volume-medium$$"
@@ -359,16 +268,14 @@ layers:
       - { t: "$$mdi:apple-keyboard-control$$", type: "held" }
       - ""
 
-    # Row 4
+    # Row 3
     - - ""
       - "$$mdi:lightbulb-off-outline$$"
       - "$$mdi:lightbulb-on-20$$"
       - "$$mdi:lightbulb-on-90$$"
       - "$$mdi:volume-off$$"
       - ""
-      - "$$mdi:lock-outline$$"
 
-      - ""
       - ""
       - ""
       - ""
@@ -377,107 +284,16 @@ layers:
       - { t: "$$mdi:web$$", type: "held" }
 
     # Thumb Cluster
-    - - ""
-      - ""
+    - - "$$mdi:lock-outline$$"
       - "$$mdi:play-pause$$"
       - "$$mdi:stop$$"
 
       - { t: "$$mdi:numeric-4-box-multiple-outline$$", type: "ghost" }
       - ""
       - ""
-      - ""
-
-  Buttons:
-    # Row 1
-    - - ""
-      - "$$mdi:keyboard-tab-reverse$$"
-      - { t: "$$mdi:magnify$$", h: "←" }
-      - { t: "$$mdi:magnify$$", h: "→" }
-      - "$$mdi:keyboard-tab$$"
-      - "$$mdi:apps$$"
-
-      - "$$mdi:apps$$"
-      - "$$mdi:keyboard-tab-reverse$$"
-      - { t: "$$mdi:magnify$$", h: "←" }
-      - { t: "$$mdi:magnify$$", h: "→" }
-      - "$$mdi:keyboard-tab$$"
-      - ""
-
-    # Row 2
-    - - ""
-      - { t: "$$mdi:window-maximize$$", h: "←" }
-      - { t: "$$mdi:window-restore$$", h: "←" }
-      - { t: "$$mdi:window-restore$$", h: "→" }
-      - { t: "$$mdi:window-maximize$$", h: "→" }
-      - "$$mdi:dock-window$$"
-
-      - "$$mdi:dock-window$$"
-      - { t: "$$mdi:window-maximize$$", h: "←" }
-      - { t: "$$mdi:window-restore$$", h: "←" }
-      - { t: "$$mdi:window-restore$$", h: "→" }
-      - { t: "$$mdi:window-maximize$$", h: "→" }
-      - ""
-
-    # Row 3
-    - - ""
-      - { t: "$$mdi:apple-keyboard-control$$", type: "held" }
-      - { t: "$$mdi:apple-keyboard-option$$", type: "held" }
-      - { t: "$$mdi:apple-keyboard-command$$", type: "held" }
-      - { t: "$$mdi:apple-keyboard-shift$$", type: "held" }
-      - "$$mdi:view-dashboard-outline$$"
-
-      - "$$mdi:view-dashboard-outline$$"
-      - { t: "$$mdi:apple-keyboard-shift$$", type: "held" }
-      - { t: "$$mdi:apple-keyboard-command$$", type: "held" }
-      - { t: "$$mdi:apple-keyboard-option$$", type: "held" }
-      - { t: "$$mdi:apple-keyboard-control$$", type: "held" }
-      - ""
-
-    # Row 4
-    - - { t: "$$mdi:redo$$", h: "$$mdi:web$$", type: "held" }
-      - "$$mdi:undo$$"
-      - "$$mdi:content-cut$$"
-      - "$$mdi:content-copy$$"
-      - "$$mdi:content-paste$$"
-      - "$$mdi:folder-search-outline$$"
-      - "$$mdi:lock-outline$$"
-
-      - "$$mdi:lock-outline$$"
-      - "$$mdi:folder-search-outline$$"
-      - "$$mdi:content-paste$$"
-      - "$$mdi:content-copy$$"
-      - "$$mdi:content-cut$$"
-      - "$$mdi:undo$$"
-      - { t: "$$mdi:redo$$", h: "$$mdi:web$$", type: "held" }
-
-    # Thumb Cluster
-    - - ""
-      - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "ghost" }
-      - ""
-      - ""
-
-      - ""
-      - ""
-      - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "ghost" }
-      - ""
 
   System:
     # Row 1
-    - - ""
-      - "F13"
-      - "F14"
-      - "F15"
-      - "F16"
-      - ""
-
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-
-    # Row 2
     - - "$$mdi:code-block-tags$$"
       - "F9"
       - "F10"
@@ -492,7 +308,7 @@ layers:
       - ""
       - "$$mdi:code-block-tags$$"
 
-    # Row 3
+    # Row 2
     - - "$$mdi:restart$$"
       - "F5"
       - "F6"
@@ -507,16 +323,14 @@ layers:
       - ""
       - "$$mdi:restart$$"
 
-    # Row 4
+    # Row 3
     - - ""
       - "F1"
       - "F2"
       - "F3"
       - "F4"
       - "$$mdi:power$$"
-      - ""
 
-      - ""
       - { t: "$$mdi:bluetooth-connect$$", h: "1" }
       - { t: "$$mdi:bluetooth-connect$$", h: "2" }
       - { t: "$$mdi:bluetooth-connect$$", h: "3" }
@@ -525,34 +339,16 @@ layers:
       - "$$mdi:bluetooth-off$$"
 
     # Thumb Cluster
-    - - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "ghost" }
-      - ""
+    - - { t: "$$mdi:lock-outline$$", type: "ghost" }
       - ""
       - ""
 
       - ""
       - ""
-      - ""
-      - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "ghost" }
+      - { t: "$$mdi:lock-outline$$", type: "ghost" }
 
   COLEMAK:
     # Row 1
-    # Row 1
-    - - { t: "[", s: "{", h: "⌘:`" }
-      - { t: "!", s: "1" }
-      - { t: "@", s: "2" }
-      - { t: "#", s: "3" }
-      - { t: "$", s: "4" }
-      - { t: "%", s: "5" }
-
-      - { t: "^", s: "6" }
-      - { t: "&", s: "7" }
-      - { t: "*", s: "8" }
-      - { t: "(", s: "9" }
-      - { t: ")", s: "0" }
-      - { t: "]", s: "}" }
-
-    # Row 2
     - - $$mdi:keyboard-tab$$
       - "Q"
       - "W"
@@ -567,7 +363,7 @@ layers:
       - { t: ";", s: ":" }
       - { t: "-", s: "_" }
 
-    # Row 3
+    # Row 2
     - - { t: "`", s: "~" }
       - { t: "A", h: "$$mdi:apple-keyboard-control$$", type: "held" }
       - { t: "R", h: "$$mdi:apple-keyboard-option$$", type: "held" }
@@ -581,16 +377,14 @@ layers:
       - { t: "O", h: "$$mdi:apple-keyboard-control$$", type: "held" }
       - { t: "'", s: '"' }
 
-    # Row 4
+    # Row 3
     - - { t: '\', s: "|", h: "$$mdi:web$$", type: "held" }
       - "Z"
       - "X"
       - "C"
       - "D"
       - "V"
-      - { t: "HYPER", type: "held" }
 
-      - { t: "HYPER", type: "held" }
       - "K"
       - "H"
       - { t: ",", s: "<" }
@@ -600,7 +394,6 @@ layers:
 
     # Thumb Cluster
     - - { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
-      - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
       - {
           t: "$$mdi:backspace$$",
           s: "$$mdi:backspace-reverse$$",
@@ -619,7 +412,6 @@ layers:
           h: "$$mdi:numeric-1-box-multiple-outline$$",
           type: "held",
         }
-      - { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
       - { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
 
 draw_config:
