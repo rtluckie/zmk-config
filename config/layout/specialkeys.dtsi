@@ -70,13 +70,13 @@
     _behavior_name: _behavior_name {                                \
       compatible = "zmk,behavior-mod-morph";                        \
       #binding-cells = <0>;                                         \
-      bindings = <&kp _normal_key>, <&kp _shifted_key>;             \
+      bindings = <_normal_key>, <_shifted_key>;                     \
       mods = <(MOD_LSFT|MOD_RSFT)>;                                 \
     }
 
 // Internal helper macro to allow us to define all our reversed number keys.
 // This macro should NOT be used outside this file!
-#define __NUM_REVERSE(_number, _symbol)  DEFINE_SHIFT_KEY(kp_r ## _number, _symbol, _number)
+#define __NUM_REVERSE(_number, _symbol)  DEFINE_SHIFT_KEY(kp_r ## _number, &kp _symbol, &kp _number)
 
 // Next are keys I want to modify their standard behavior, like sending an `@`
 // character when pressing the number `9` with a shift modifier, instead of a
@@ -86,7 +86,7 @@
   behaviors {
     // Make the `BACKSPACE` key behaves like `DEL`, when holding shift down.
     // This mimics the standard backspace behavior on Mac Books.
-    DEFINE_SHIFT_KEY(kp_bspcdel, BACKSPACE, DELETE);
+    DEFINE_SHIFT_KEY(kp_bspcdel, &kp BACKSPACE, &kp DELETE);
 
     // The next 10 key behaviors invert the normal number keys. This means that
     // instead of  a "number" with tap and a "symbol" with shift-tap, the key
