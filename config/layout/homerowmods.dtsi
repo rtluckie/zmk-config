@@ -44,10 +44,10 @@
 #define LHM4(_key)  &hml LHRM4 _key
 
 // Right side
-#define RHM1(_key)  &hsr LHRM1 _key
-#define RHM2(_key)  &hmr LHRM2 _key
-#define RHM3(_key)  &hmr LHRM3 _key
-#define RHM4(_key)  &hmr LHRM4 _key
+#define RHM1(_key)  &hsr RHRM1 _key
+#define RHM2(_key)  &hmr RHRM2 _key
+#define RHM3(_key)  &hmr RHRM3 _key
+#define RHM4(_key)  &hmr RHRM4 _key
 
 // This is a helper macro to allow me to define all home-row modifier without
 // having to type all the boilerplate configuration.
