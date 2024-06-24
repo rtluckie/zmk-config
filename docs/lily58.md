@@ -1,6 +1,6 @@
-# Lily58 Coding Layout
+# Lily58 Layout
 
-<div align="center"><img src="images/corne-keyboard.webp"></div>
+<div align="center"><img src="images/lily58-keyboard.webp"></div>
 
 This Lily58 keyboard layout is a mashup of several excellent layouts I found
 online, with a heavy seasoning of my imagination. So yes, you probably already
@@ -258,3 +258,8 @@ _“End”_ respectively).
 ## Alternative Layout
 
 ![COLEMAK base layout layer](./images/lily58-layer7-colemak.svg)
+
+## Disclaimers
+
+The Lily58 image, I used in the header of this document, is from
+[typeractive](https://typeractive.xyz/), the vendor where I purchase my Lily58.

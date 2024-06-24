@@ -238,18 +238,7 @@ _“End”_ respectively).
 
 ![COLEMAK base layout layer](./images/corne42-layer7-colemak.svg)
 
-## My methodology
+## Disclaimers
 
-You may be asking yourself (probably not, but I'll pretend you are) what is my
-process to choose where keys go?
-
-In all honesty, I don't have one. I usually use the keyboard and try to note
-repetitive mistakes or things that require a bigger effort to accomplish. When
-they become somewhat highly noticeable, I think about where the keys causing
-this issue should be for me to have less of these mistakes happening. Then, I
-change the layout to match my new hypothesis, flash the keyboard, and use the
-layout as if nothing happened.
-
-Over time, the fixes that worked will fade in the background while new issues
-that deserve my attention, as well as the fixes that did not work, will show up
-again and again. When that happens… Rinse and repeat.
+The Corne image, I used in the header of this document, is from
+[KeebMaker](https://keebmaker.com/), the vendor where I purchase my Corne-42.
