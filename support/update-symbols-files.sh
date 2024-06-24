@@ -6,6 +6,7 @@ export_layer() {
   local KEYMAP_NAME=$1
   local LAYER_NAME=$2
   local LAYOUR_FILE=$3
+
   echo "- Exporting layout map image for layer '$LAYER_NAME'"
   keymap -c "${CONFIG_ROOT}/support/keymap-config.yaml" draw \
     -s "$LAYER_NAME" \
@@ -17,8 +18,11 @@ export_layout_map() {
   local SHIELD_NAME="$1"
   local KEYS_COUNT="$2"
   local EXPORT_BUTTONS="$3"
-  local KEYMAP_NAME="$(echo "${SHIELD_NAME}" | tr "[:upper:]" "[:lower:]")"
-  local KD_KEYMAP="$(mktemp).yaml"
+  local KEYMAP_NAME
+  local KD_KEYMAP
+
+  KEYMAP_NAME="$(echo "${SHIELD_NAME}" | tr "[:upper:]" "[:lower:]")"
+  KD_KEYMAP="$(mktemp).yaml"
 
   echo "Generating layout map images for the ${SHIELD_NAME} keyboard..."
   echo "- Generating Keymap-Drawer YAML file"
@@ -39,7 +43,7 @@ export_layout_map() {
   # shoing their "Shift" symbol.
   keymap -c "$KD_CONFIG_NO_SYMBOLS" parse -z "${CONFIG_ROOT}/config/${KEYMAP_NAME}.keymap" \
     | sed -n '/Numbers:/,$ p' \
-    | sed 's/RGB COLOR HSB(0 0 60)/{t: "$$mdi:palette-outline$$", h: reset}/' >> "$KD_KEYMAP"
+    | sed "s/RGB COLOR HSB(0 0 60)/{t: '\$\$mdi:palette-outline\$\$', h: reset}/" >> "$KD_KEYMAP"
 
   export_layer "$KD_KEYMAP" "QWERTY" "${KEYMAP_NAME}${KEYS_COUNT}-layer0-main.svg"
   export_layer "$KD_KEYMAP" "Numbers" "${KEYMAP_NAME}${KEYS_COUNT}-layer1-numbers.svg"

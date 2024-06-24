@@ -48,6 +48,18 @@
 <svg id="mdi:folder-search-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-folder-search-outline" viewBox="0 0 24 24"><path d="M16.5,12C19,12 21,14 21,16.5C21,17.38 20.75,18.21 20.31,18.9L23.39,22L22,23.39L18.88,20.32C18.19,20.75 17.37,21 16.5,21C14,21 12,19 12,16.5C12,14 14,12 16.5,12M16.5,14A2.5,2.5 0 0,0 14,16.5A2.5,2.5 0 0,0 16.5,19A2.5,2.5 0 0,0 19,16.5A2.5,2.5 0 0,0 16.5,14M19,8H3V18H10.17C10.34,18.72 10.63,19.39 11,20H3C1.89,20 1,19.1 1,18V6C1,4.89 1.89,4 3,4H9L11,6H19A2,2 0 0,1 21,8V11.81C20.42,11.26 19.75,10.81 19,10.5V8Z" /></svg>
 </svg>
+<svg id="mdi:format-letter-ends-with">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-format-letter-ends-with" viewBox="0 0 24 24"><path d="M11.14 4L6.43 16H8.36L9.32 13.43H14.67L15.64 16H17.57L12.86 4M12 6.29L14.03 11.71H9.96M20 14V18H2V20H22V14Z" /></svg>
+</svg>
+<svg id="mdi:format-letter-starts-with">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-format-letter-starts-with" viewBox="0 0 24 24"><path d="M11.14 4L6.43 16H8.36L9.32 13.43H14.67L15.64 16H17.57L12.86 4M12 6.29L14.03 11.71H9.96M4 18V15H2V20H22V18Z" /></svg>
+</svg>
+<svg id="mdi:format-pilcrow-arrow-left">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-format-pilcrow-arrow-left" viewBox="0 0 24 24"><path d="M8,17V14L4,18L8,22V19H20V17M10,10V15H12V4H14V15H16V4H18V2H10A4,4 0 0,0 6,6A4,4 0 0,0 10,10Z" /></svg>
+</svg>
+<svg id="mdi:format-pilcrow-arrow-right">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-format-pilcrow-arrow-right" viewBox="0 0 24 24"><path d="M21,18L17,14V17H5V19H17V22M9,10V15H11V4H13V15H15V4H17V2H9A4,4 0 0,0 5,6A4,4 0 0,0 9,10Z" /></svg>
+</svg>
 <svg id="mdi:keyboard-return">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-return" viewBox="0 0 24 24"><path d="M19,7V11H5.83L9.41,7.41L8,6L2,12L8,18L9.41,16.58L5.83,13H21V7H19Z" /></svg>
 </svg>
@@ -69,6 +81,9 @@
 <svg id="mdi:lightbulb-on-90">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-lightbulb-on-90" viewBox="0 0 24 24"><path d="M7 5.6L5.6 7L3.5 4.9L4.9 3.5L7 5.6M10 22C10 22.6 10.4 23 11 23H13C13.6 23 14 22.6 14 22V21H10V22M1 13H4V11H1V13M13 1H11V4H13V1M20 11V13H23V11H20M19.1 3.5L17 5.6L18.4 7L20.5 4.9L19.1 3.5M18 12C18 14.2 16.8 16.2 15 17.2V19C15 19.6 14.6 20 14 20H10C9.4 20 9 19.6 9 19V17.2C7.2 16.2 6 14.2 6 12C6 8.7 8.7 6 12 6S18 8.7 18 12M12 8C11 8 10.09 8.38 9.39 9H14.61C13.91 8.38 13 8 12 8Z" /></svg>
 </svg>
+<svg id="mdi:lock-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-lock-outline" viewBox="0 0 24 24"><path d="M12,17C10.89,17 10,16.1 10,15C10,13.89 10.89,13 12,13A2,2 0 0,1 14,15A2,2 0 0,1 12,17M18,20V10H6V20H18M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10C4,8.89 4.89,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" /></svg>
+</svg>
 <svg id="mdi:numeric-1-box-multiple-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-numeric-1-box-multiple-outline" viewBox="0 0 24 24"><path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M14,15H16V5H12V7H14M3,5H1V21A2,2 0 0,0 3,23H19V21H3V5Z" /></svg>
 </svg>
@@ -81,11 +96,11 @@
 <svg id="mdi:numeric-4-box-multiple-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-numeric-4-box-multiple-outline" viewBox="0 0 24 24"><path d="M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M15,15H17V5H15V9H13V5H11V11H15M3,5H1V21A2,2 0 0,0 3,23H19V21H3V5Z" /></svg>
 </svg>
-<svg id="mdi:numeric-5-box-multiple-outline">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-numeric-5-box-multiple-outline" viewBox="0 0 24 24"><path d="M17,13V11C17,9.89 16.1,9 15,9H13V7H17V5H11V11H15V13H11V15H15A2,2 0 0,0 17,13M3,5H1V21A2,2 0 0,0 3,23H19V21H3M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1Z" /></svg>
-</svg>
 <svg id="mdi:numeric-6-box-multiple-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-numeric-6-box-multiple-outline" viewBox="0 0 24 24"><path d="M13,11H15V13H13M13,15H15A2,2 0 0,0 17,13V11C17,9.89 16.1,9 15,9H13V7H17V5H13A2,2 0 0,0 11,7V13C11,14.11 11.9,15 13,15M21,17H7V3H21M21,1H7A2,2 0 0,0 5,3V17A2,2 0 0,0 7,19H21A2,2 0 0,0 23,17V3A2,2 0 0,0 21,1M3,5H1V21A2,2 0 0,0 3,23H19V21H3V5Z" /></svg>
+</svg>
+<svg id="mdi:palette-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-palette-outline" viewBox="0 0 24 24"><path d="M12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2C17.5,2 22,6 22,11A6,6 0 0,1 16,17H14.2C13.9,17 13.7,17.2 13.7,17.5C13.7,17.6 13.8,17.7 13.8,17.8C14.2,18.3 14.4,18.9 14.4,19.5C14.5,20.9 13.4,22 12,22M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C12.3,20 12.5,19.8 12.5,19.5C12.5,19.3 12.4,19.2 12.4,19.1C12,18.6 11.8,18.1 11.8,17.5C11.8,16.1 12.9,15 14.3,15H16A4,4 0 0,0 20,11C20,7.1 16.4,4 12,4M6.5,10C7.3,10 8,10.7 8,11.5C8,12.3 7.3,13 6.5,13C5.7,13 5,12.3 5,11.5C5,10.7 5.7,10 6.5,10M9.5,6C10.3,6 11,6.7 11,7.5C11,8.3 10.3,9 9.5,9C8.7,9 8,8.3 8,7.5C8,6.7 8.7,6 9.5,6M14.5,6C15.3,6 16,6.7 16,7.5C16,8.3 15.3,9 14.5,9C13.7,9 13,8.3 13,7.5C13,6.7 13.7,6 14.5,6M17.5,10C18.3,10 19,10.7 19,11.5C19,12.3 18.3,13 17.5,13C16.7,13 16,12.3 16,11.5C16,10.7 16.7,10 17.5,10Z" /></svg>
 </svg>
 <svg id="mdi:play-pause">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
@@ -120,14 +135,14 @@
 <svg id="mdi:view-dashboard-outline">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-view-dashboard-outline" viewBox="0 0 24 24"><path d="M19,5V7H15V5H19M9,5V11H5V5H9M19,13V19H15V13H19M9,17V19H5V17H9M21,3H13V9H21V3M11,3H3V13H11V3M21,11H13V21H21V11M11,15H3V21H11V15Z" /></svg>
 </svg>
-<svg id="mdi:volume-high">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-high" viewBox="0 0 24 24"><path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>
-</svg>
-<svg id="mdi:volume-medium">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-medium" viewBox="0 0 24 24"><path d="M5,9V15H9L14,20V4L9,9M18.5,12C18.5,10.23 17.5,8.71 16,7.97V16C17.5,15.29 18.5,13.76 18.5,12Z" /></svg>
+<svg id="mdi:volume-minus">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-minus" viewBox="0 0 24 24"><path d="M3,9H7L12,4V20L7,15H3V9M14,11H22V13H14V11Z" /></svg>
 </svg>
 <svg id="mdi:volume-off">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-off" viewBox="0 0 24 24"><path d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z" /></svg>
+</svg>
+<svg id="mdi:volume-plus">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-volume-plus" viewBox="0 0 24 24"><path d="M3,9H7L12,4V20L7,15H3V9M14,11H17V8H19V11H22V13H19V16H17V13H14V11Z" /></svg>
 </svg>
 <svg id="mdi:web">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-web" viewBox="0 0 24 24"><path d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>
@@ -374,23 +389,22 @@ rect.ghost { fill: #7b7e81; }
 </g>
 <g transform="translate(588, 147)" class="key keypos-31">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key"/>
-<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:content-paste"/>
+<use href="#mdi:format-letter-starts-with" xlink:href="#mdi:format-letter-starts-with" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:format-letter-starts-with"/>
 </g>
 <g transform="translate(644, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key"/>
-<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:content-copy"/>
+<use href="#mdi:format-pilcrow-arrow-left" xlink:href="#mdi:format-pilcrow-arrow-left" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:format-pilcrow-arrow-left"/>
 </g>
 <g transform="translate(700, 147)" class="key keypos-33">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key"/>
-<use href="#mdi:content-cut" xlink:href="#mdi:content-cut" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:content-cut"/>
+<use href="#mdi:format-pilcrow-arrow-right" xlink:href="#mdi:format-pilcrow-arrow-right" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:format-pilcrow-arrow-right"/>
 </g>
 <g transform="translate(756, 161)" class="key keypos-34">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key"/>
-<use href="#mdi:undo" xlink:href="#mdi:undo" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:undo"/>
+<use href="#mdi:format-letter-ends-with" xlink:href="#mdi:format-letter-ends-with" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:format-letter-ends-with"/>
 </g>
 <g transform="translate(812, 161)" class="key keypos-35">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key"/>
-<use href="#mdi:redo" xlink:href="#mdi:redo" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:redo"/>
 </g>
 <g transform="translate(224, 205)" class="key keypos-36">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key"/>
@@ -410,6 +424,7 @@ rect.ghost { fill: #7b7e81; }
 </g>
 <g transform="translate(616, 205)" class="key keypos-41">
 <rect rx="6" ry="6" x="-24" y="-24" width="48" height="48" class="key"/>
+<use href="#mdi:lock-outline" xlink:href="#mdi:lock-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:lock-outline"/>
 </g>
 </g>
 </g>
