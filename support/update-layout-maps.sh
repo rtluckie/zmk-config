@@ -22,6 +22,8 @@ export_layout_map() {
   local KD_KEYMAP
   local KD_CONFIG_NO_SYMBOLS
   local KD_CONFIG_BACKGROUND
+  local -a LAYOUT_LAYERS
+  local -a LAYOUT_MAP_NAMES
 
   KEYMAP_NAME="$(echo "${SHIELD_NAME}" | tr "[:upper:]" "[:lower:]")"
   KD_KEYMAP="$(mktemp).yaml"
@@ -39,7 +41,6 @@ export_layout_map() {
   # the normal configuration, merged with the "no symbols" diff that we have on
   # the repository.
   KD_CONFIG_NO_SYMBOLS="$(mktemp).yaml"
-  echo "Config with no symbols: $KD_CONFIG_NO_SYMBOLS"
   python "${CONFIG_ROOT}/support/merge_yaml.py" \
     "${CONFIG_ROOT}/support/keymap-config.yaml" \
     "${CONFIG_ROOT}/support/keymap-config-no-shift-symbols.yaml" > "$KD_CONFIG_NO_SYMBOLS"
@@ -50,19 +51,33 @@ export_layout_map() {
     | sed -n '/Numbers:/,$ p' \
     | sed "s/RGB COLOR HSB(0 0 60)/{t: '\$\$mdi:palette-outline\$\$', h: reset}/" >> "$KD_KEYMAP"
 
-  export_layer "$KD_KEYMAP" "QWERTY" "${KEYMAP_NAME}${KEYS_COUNT}-layer0-main.svg"
-  export_layer "$KD_KEYMAP" "Numbers" "${KEYMAP_NAME}${KEYS_COUNT}-layer1-numbers.svg"
-  export_layer "$KD_KEYMAP" "Symbols" "${KEYMAP_NAME}${KEYS_COUNT}-layer2-symbols.svg"
-  export_layer "$KD_KEYMAP" "Navigation" "${KEYMAP_NAME}${KEYS_COUNT}-layer3-navigation.svg"
-  export_layer "$KD_KEYMAP" "Media" "${KEYMAP_NAME}${KEYS_COUNT}-layer4-media.svg"
+  LAYOUT_LAYERS=(
+    "QWERTY"
+    "Numbers"
+    "Symbols"
+    "Navigation"
+    "Media"
+  )
+  LAYOUT_MAP_NAMES=(
+    "layer0-main"
+    "layer1-numbers"
+    "layer2-symbols"
+    "layer3-navigation"
+    "layer4-media"
+  )
+
   if [[ -n "$EXPORT_BUTTONS" ]]; then
-    export_layer "$KD_KEYMAP" "Buttons" "${KEYMAP_NAME}${KEYS_COUNT}-layer5-buttons.svg"
+    LAYOUT_LAYERS+=("Buttons")
+    LAYOUT_MAP_NAMES+=("layer5-buttons")
   fi
-  export_layer "$KD_KEYMAP" "System" "${KEYMAP_NAME}${KEYS_COUNT}-layer6-system.svg"
-  export_layer "$KD_KEYMAP" "COLEMAK" "${KEYMAP_NAME}${KEYS_COUNT}-layer7-colemak.svg"
+  LAYOUT_LAYERS+=("System" "COLEMAK")
+  LAYOUT_MAP_NAMES+=("layer6-system" "layer7-colemak")
+
+  for i in "${!LAYOUT_LAYERS[@]}"; do
+    export_layer "$KD_KEYMAP" "${LAYOUT_LAYERS[$i]}" "${KEYMAP_NAME}${KEYS_COUNT}-${LAYOUT_MAP_NAMES[$i]}.svg"
+  done
 
   KD_CONFIG_BACKGROUND="$(mktemp).yaml"
-  echo "Config with background: $KD_CONFIG_BACKGROUND"
   python "${CONFIG_ROOT}/support/merge_yaml.py" \
     "${CONFIG_ROOT}/support/keymap-config.yaml" \
     "${CONFIG_ROOT}/support/keymap-config-background-color.yaml" > "$KD_CONFIG_BACKGROUND"
@@ -70,12 +85,13 @@ export_layout_map() {
   echo "- Exporting full layout map image for packaging"
   mkdir -p "${CONFIG_ROOT}/build"
   keymap -c "${KD_CONFIG_BACKGROUND}" draw \
+    -s "${LAYOUT_LAYERS[@]}" \
     -o "${CONFIG_ROOT}/build/${KEYMAP_NAME}${KEYS_COUNT}-layout-map.svg" \
     "$KD_KEYMAP"
 
   rm -rf "$KD_KEYMAP"
-  # rm -rf "$KD_CONFIG_NO_SYMBOLS"
-  # rm -rf "$KD_CONFIG_BACKGROUND"
+  rm -rf "$KD_CONFIG_NO_SYMBOLS"
+  rm -rf "$KD_CONFIG_BACKGROUND"
 
   echo "Done!"
   echo ""
