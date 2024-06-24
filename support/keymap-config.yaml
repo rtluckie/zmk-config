@@ -360,7 +360,7 @@ parse_config:
     # Output Selection
     "&out OUT_TOG": "$$mdi:usb$$"
     # RGB Underglow
-    "&rgb_ug RGB_COLOR_HSB": { t: "$$mdi:palette-outline$$", h: "reset" }
+    "&rgb_ug RGB_COLOR_HSB(0, 0, 60)": { t: "$$mdi:palette-outline$$", h: "reset" }
     "&rgb_ug RGB_TOG": { t: "$$mdi:palette-outline$$", h: "tog" }
     "&kp_rgbhue": { t: "$$mdi:palette-outline$$", h: "hue" }
     "&kp_rgbsat": { t: "$$mdi:palette-outline$$", h: "sat" }
