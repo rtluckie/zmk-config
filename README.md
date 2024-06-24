@@ -37,69 +37,69 @@ the layout easily, here is a table with all the symbols I use:
 
 | Symbols                                                       | Description                                   |
 |:-------------------------------------------------------------:| ----------------------------------------------|
-| ![Command](./docs/symbols/apple-keyboard-command.svg)         | Command (Super)                               |
-| ![Control](./docs/symbols/apple-keyboard-control.svg)         | Control (Ctrl)                                |
-| ![Option](./docs/symbols/apple-keyboard-option.svg)           | Option (Alt / Meta)                           |
+| ![Command](./docs/glyphs/apple-keyboard-command.svg)         | Command (Super)                               |
+| ![Control](./docs/glyphs/apple-keyboard-control.svg)         | Control (Ctrl)                                |
+| ![Option](./docs/glyphs/apple-keyboard-option.svg)           | Option (Alt / Meta)                           |
 | ⇪                                                             | Caps Word                                     |
-| ![Shift](./docs/symbols/apple-keyboard-shift.svg)             | Shift                                         |
-| ![Globe](./docs/symbols/web.svg)                              | Globe                                         |
-| ![Space](./docs/symbols/keyboard-space.svg)                   | Space                                         |
-| ![Return](./docs/symbols/keyboard-return.svg)                 | Enter (Return / Ret)                          |
-| ![Backspace](./docs/symbols/backspace.svg)                    | Delete backwards (Backspace / Bksp)           |
-| ![Forward Delete](./docs/symbols/backspace-reverse.svg)       | Delete forward (Del)                          |
+| ![Shift](./docs/glyphs/apple-keyboard-shift.svg)             | Shift                                         |
+| ![Globe](./docs/glyphs/web.svg)                              | Globe                                         |
+| ![Space](./docs/glyphs/keyboard-space.svg)                   | Space                                         |
+| ![Return](./docs/glyphs/keyboard-return.svg)                 | Enter (Return / Ret)                          |
+| ![Backspace](./docs/glyphs/backspace.svg)                    | Delete backwards (Backspace / Bksp)           |
+| ![Forward Delete](./docs/glyphs/backspace-reverse.svg)       | Delete forward (Del)                          |
 | ↖                                                             | Home                                          |
 | ⇞                                                             | Page Up                                       |
 | ⇟                                                             | Page Down                                     |
 | ↘                                                             | End                                           |
-| ![Backtab](./docs/symbols/keyboard-tab-reverse.svg)           | Backtab                                       |
-| ![Tab](./docs/symbols/keyboard-tab.svg)                       | Tab                                           |
-| ![Volume up](./docs/symbols/volume-plus.svg)                  | Volume up                                     |
-| ![Volume down](./docs/symbols/volume-minus.svg)               | Volume down                                   |
-| ![Volume off](./docs/symbols/volume-off.svg)                  | Mute                                          |
-| ![Brightness up](./docs/symbols/brightness-7.svg)             | Screen brightness up                          |
-| ![Brightness down](./docs/symbols/brightness-5.svg)           | Screen brightness down                        |
-| ![Backlight off](./docs/symbols/lightbulb-off-outline.svg)    | Keyboard backlight off                        |
-| ![Backlight down](./docs/symbols/lightbulb-on-20.svg)         | Keyboard backlight decrease                   |
-| ![Backlight up](./docs/symbols/lightbulb-on-90.svg)           | Keyboard backlight increase                   |
-| ![Skip back](./docs/symbols/skip-backward.svg)                | Previous song                                 |
-| ![Play or pause](./docs/symbols/play-pause.svg)               | Play / pause                                  |
-| ![Skip forward](./docs/symbols/skip-forward.svg)              | Next song                                     |
-| ![Stop](./docs/symbols/stop.svg)                              | Stop media                                    |
-| ![Launchpad](./docs/symbols/apps.svg)                         | Launchpad                                     |
-| ![Mission Control](./docs/symbols/view-dashboard-outline.svg) | Mission Control (`⌘ ⌃ ↑`)                     |
-| ![Show all windows](./docs/symbols/dock-window.svg)           | Show application windows (`⌘ ⌃ ↓`)            |
-| ![Spotlight](./docs/symbols/folder-search-outline.svg)        | Spotlight                                     |
-| ![Cut](./docs/symbols/content-cut.svg)                        | Cut (`⌘ X`)                                   |
-| ![Copy](./docs/symbols/content-copy.svg)                      | Copy (`⌘ C`)                                  |
-| ![Paste](./docs/symbols/content-paste.svg)                    | Paste (`⌘ V`)                                 |
-| ![Undo](./docs/symbols/undo.svg)                              | Undo (`⌘ Z`)                                  |
-| ![Redo](./docs/symbols/redo.svg)                              | Redo (`⇧ ⌘ Z`)                                |
-| ![Search](./docs/symbols/magnify.svg) →                       | Find Next (`⌘ G`)                             |
-| ← ![Search](./docs/symbols/magnify.svg)                       | Find Previous (`⇧ ⌘ G`)                       |
-| ![Previous word](./docs/symbols/format-letter-starts-with.svg)| Previous word (`⌥ ←`)                         |
-| ![Next word](./docs/symbols/format-letter-ends-with.svg)      | Next word (`⌥ →`)                             |
-| ![Line start](./docs/symbols/format-pilcrow-arrow-left.svg)   | Beginning of line (`⌘ ←`)                     |
-| ![Line end](./docs/symbols/format-pilcrow-arrow-right.svg)    | End of line (`⌘ →`)                           |
-| ![Virtual desktop](./docs/symbols/window-maximize.svg) →      | Go to Virtual Desktop on the Right (`⌘ ⌃ →`)  |
-| ← ![Virtual desktop](./docs/symbols/window-maximize.svg)      | Go to Virtual Desktop on the Left (`⌘ ⌃ ←`)   |
-| ![Window](./docs/symbols/window-restore.svg) →                | Next window (`` ⌘ ` ``)                       |
-| ← ![Window](./docs/symbols/window-restore.svg)                | Previous window (`⌘ ~`)                       |
-| ![Keyboard](./docs/symbols/keyboard-variant.svg)              | Alternate layout (COLEMAK)                    |
-| ![Bluetooth profile](./docs/symbols/bluetooth-connect.svg)    | Bluetooth profile                             |
-| ![Bluetooth clear](./docs/symbols/bluetooth-off.svg)          | Bluetooth profile clear                       |
-| ![Keyboard power](./docs/symbols/power-plug-outline.svg)      | Toggle OLED display                           |
-| ![LED underglow actions](./docs/symbols/palette-outline.svg)  | LED RGB underglow actions                     |
-| ![USB](./docs/symbols/usb.svg)                                | Output mode (USB / BLE)                       |
-| ![Computer power](./docs/symbols/power.svg)                   | Turn off host computer                        |
-| ![Keyboard reset](./docs/symbols/restart.svg)                 | Reset firmware                                |
-| ![Bootload](./docs/symbols/code-block-tags.svg)               | Bootload mode                                 |
-| ![Layer 1](./docs/symbols/numeric-1-box-multiple-outline.svg) | Numbers Layer                                 |
-| ![Layer 2](./docs/symbols/numeric-2-box-multiple-outline.svg) | Symbols Layer                                 |
-| ![Layer 3](./docs/symbols/numeric-3-box-multiple-outline.svg) | Navigation Layer                              |
-| ![Layer 4](./docs/symbols/numeric-4-box-multiple-outline.svg) | Media Layer                                   |
-| ![Layer 5](./docs/symbols/numeric-5-box-multiple-outline.svg) | Buttons Layer                                 |
-| ![Layer 6](./docs/symbols/numeric-6-box-multiple-outline.svg) | System Layer                                  |
-| ![Layer lock](./docs/symbols/lock-outline.svg)                | Lock layer in place                           |
+| ![Backtab](./docs/glyphs/keyboard-tab-reverse.svg)           | Backtab                                       |
+| ![Tab](./docs/glyphs/keyboard-tab.svg)                       | Tab                                           |
+| ![Volume up](./docs/glyphs/volume-plus.svg)                  | Volume up                                     |
+| ![Volume down](./docs/glyphs/volume-minus.svg)               | Volume down                                   |
+| ![Volume off](./docs/glyphs/volume-off.svg)                  | Mute                                          |
+| ![Brightness up](./docs/glyphs/brightness-7.svg)             | Screen brightness up                          |
+| ![Brightness down](./docs/glyphs/brightness-5.svg)           | Screen brightness down                        |
+| ![Backlight off](./docs/glyphs/lightbulb-off-outline.svg)    | Keyboard backlight off                        |
+| ![Backlight down](./docs/glyphs/lightbulb-on-20.svg)         | Keyboard backlight decrease                   |
+| ![Backlight up](./docs/glyphs/lightbulb-on-90.svg)           | Keyboard backlight increase                   |
+| ![Skip back](./docs/glyphs/skip-backward.svg)                | Previous song                                 |
+| ![Play or pause](./docs/glyphs/play-pause.svg)               | Play / pause                                  |
+| ![Skip forward](./docs/glyphs/skip-forward.svg)              | Next song                                     |
+| ![Stop](./docs/glyphs/stop.svg)                              | Stop media                                    |
+| ![Launchpad](./docs/glyphs/apps.svg)                         | Launchpad                                     |
+| ![Mission Control](./docs/glyphs/view-dashboard-outline.svg) | Mission Control (`⌘ ⌃ ↑`)                     |
+| ![Show all windows](./docs/glyphs/dock-window.svg)           | Show application windows (`⌘ ⌃ ↓`)            |
+| ![Spotlight](./docs/glyphs/folder-search-outline.svg)        | Spotlight                                     |
+| ![Cut](./docs/glyphs/content-cut.svg)                        | Cut (`⌘ X`)                                   |
+| ![Copy](./docs/glyphs/content-copy.svg)                      | Copy (`⌘ C`)                                  |
+| ![Paste](./docs/glyphs/content-paste.svg)                    | Paste (`⌘ V`)                                 |
+| ![Undo](./docs/glyphs/undo.svg)                              | Undo (`⌘ Z`)                                  |
+| ![Redo](./docs/glyphs/redo.svg)                              | Redo (`⇧ ⌘ Z`)                                |
+| ![Search](./docs/glyphs/magnify.svg) →                       | Find Next (`⌘ G`)                             |
+| ← ![Search](./docs/glyphs/magnify.svg)                       | Find Previous (`⇧ ⌘ G`)                       |
+| ![Previous word](./docs/glyphs/format-letter-starts-with.svg)| Previous word (`⌥ ←`)                         |
+| ![Next word](./docs/glyphs/format-letter-ends-with.svg)      | Next word (`⌥ →`)                             |
+| ![Line start](./docs/glyphs/format-pilcrow-arrow-left.svg)   | Beginning of line (`⌘ ←`)                     |
+| ![Line end](./docs/glyphs/format-pilcrow-arrow-right.svg)    | End of line (`⌘ →`)                           |
+| ![Virtual desktop](./docs/glyphs/window-maximize.svg) →      | Go to Virtual Desktop on the Right (`⌘ ⌃ →`)  |
+| ← ![Virtual desktop](./docs/glyphs/window-maximize.svg)      | Go to Virtual Desktop on the Left (`⌘ ⌃ ←`)   |
+| ![Window](./docs/glyphs/window-restore.svg) →                | Next window (`` ⌘ ` ``)                       |
+| ← ![Window](./docs/glyphs/window-restore.svg)                | Previous window (`⌘ ~`)                       |
+| ![Keyboard](./docs/glyphs/keyboard-variant.svg)              | Alternate layout (COLEMAK)                    |
+| ![Bluetooth profile](./docs/glyphs/bluetooth-connect.svg)    | Bluetooth profile                             |
+| ![Bluetooth clear](./docs/glyphs/bluetooth-off.svg)          | Bluetooth profile clear                       |
+| ![Keyboard power](./docs/glyphs/power-plug-outline.svg)      | Toggle OLED display                           |
+| ![LED underglow actions](./docs/glyphs/palette-outline.svg)  | LED RGB underglow actions                     |
+| ![USB](./docs/glyphs/usb.svg)                                | Output mode (USB / BLE)                       |
+| ![Computer power](./docs/glyphs/power.svg)                   | Turn off host computer                        |
+| ![Keyboard reset](./docs/glyphs/restart.svg)                 | Reset firmware                                |
+| ![Bootload](./docs/glyphs/code-block-tags.svg)               | Bootload mode                                 |
+| ![Layer 1](./docs/glyphs/numeric-1-box-multiple-outline.svg) | Numbers Layer                                 |
+| ![Layer 2](./docs/glyphs/numeric-2-box-multiple-outline.svg) | Symbols Layer                                 |
+| ![Layer 3](./docs/glyphs/numeric-3-box-multiple-outline.svg) | Navigation Layer                              |
+| ![Layer 4](./docs/glyphs/numeric-4-box-multiple-outline.svg) | Media Layer                                   |
+| ![Layer 5](./docs/glyphs/numeric-5-box-multiple-outline.svg) | Buttons Layer                                 |
+| ![Layer 6](./docs/glyphs/numeric-6-box-multiple-outline.svg) | System Layer                                  |
+| ![Layer lock](./docs/glyphs/lock-outline.svg)                | Lock layer in place                           |
 
 ## Key Representation
 
