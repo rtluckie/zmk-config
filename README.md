@@ -251,9 +251,38 @@ dependencies to it:
 $ pip install -r support/requirements.txt
 ```
 
-Build the framework the way you would do with normal ZMK, and update the layout
-map images on the docs running the `update-layout-maps.sh` script from the
-`support` directory.
+You can build the firmware for all keyboards I have with the following command:
+
+```sh
+$ west build -p -d build/corne-left -b nice_nano_v2 -- \
+    -DSHIELD=corne_left \
+    -DUSE_MOLOCK=1 \
+    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
+  && west build -p -d build/corne-right -b nice_nano_v2 -- \
+    -DSHIELD=corne_right \
+    -DUSE_MOLOCK=1 \
+    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
+  && west build -p -d build/lily-left -b nice_nano_v2 -- \
+    -DSHIELD="lily58_left nice_view_adapter nice_view" \
+    -DUSE_MOLOCK=1 \
+    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
+  && west build -p -d build/lily-right -b nice_nano_v2 -- \
+    -DSHIELD="lily58_right nice_view_adapter nice_view" \
+    -DUSE_MOLOCK=1 \
+    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
+  && west build -p -d build/settings-reset -b nice_nano_v2 -- \
+    -DSHIELD="settings_reset" \
+    -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config"
+```
+
+And if you make any modifications to the keymap, make sure you update the assets
+used in the documentation, by running the `update-layout-maps.sh` script from
+the `support` directory:
+
+```sh
+$ cd "$TOWNK_ZMK_CONFIG_DIR"
+$ ./support/update-layout-maps.sh
+```
 
 ## Disclaimers
 

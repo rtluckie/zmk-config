@@ -22,7 +22,7 @@
 #include "homerowmods.dtsi"
 #include "autoshift.dtsi"
 
-#ifdef USE_MOLOCK
+#ifndef USE_MOLOCK
 #define LOCK_LAYER &none
 #else
 #define LOCK_LAYER &molock
