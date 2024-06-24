@@ -20,6 +20,8 @@ export_layout_map() {
   local EXPORT_BUTTONS="$3"
   local KEYMAP_NAME
   local KD_KEYMAP
+  local KD_CONFIG_NO_SYMBOLS
+  local KD_CONFIG_BACKGROUND
 
   KEYMAP_NAME="$(echo "${SHIELD_NAME}" | tr "[:upper:]" "[:lower:]")"
   KD_KEYMAP="$(mktemp).yaml"
@@ -37,7 +39,10 @@ export_layout_map() {
   # the normal configuration, merged with the "no symbols" diff that we have on
   # the repository.
   KD_CONFIG_NO_SYMBOLS="$(mktemp).yaml"
-  yq ". * load(\"${CONFIG_ROOT}/support/keymap-config-no-shift-symbols.yaml\")" "${CONFIG_ROOT}/support/keymap-config.yaml" > "$KD_CONFIG_NO_SYMBOLS"
+  echo "Config with no symbols: $KD_CONFIG_NO_SYMBOLS"
+  python "${CONFIG_ROOT}/support/merge_yaml.py" \
+    "${CONFIG_ROOT}/support/keymap-config.yaml" \
+    "${CONFIG_ROOT}/support/keymap-config-no-shift-symbols.yaml" > "$KD_CONFIG_NO_SYMBOLS"
 
   # The second part of the file contains the rest of the layout map with keys NOT
   # shoing their "Shift" symbol.
@@ -56,8 +61,21 @@ export_layout_map() {
   export_layer "$KD_KEYMAP" "System" "${KEYMAP_NAME}${KEYS_COUNT}-layer6-system.svg"
   export_layer "$KD_KEYMAP" "COLEMAK" "${KEYMAP_NAME}${KEYS_COUNT}-layer7-colemak.svg"
 
+  KD_CONFIG_BACKGROUND="$(mktemp).yaml"
+  echo "Config with background: $KD_CONFIG_BACKGROUND"
+  python "${CONFIG_ROOT}/support/merge_yaml.py" \
+    "${CONFIG_ROOT}/support/keymap-config.yaml" \
+    "${CONFIG_ROOT}/support/keymap-config-background-color.yaml" > "$KD_CONFIG_BACKGROUND"
+
+  echo "- Exporting full layout map image for packaging"
+  mkdir -p "${CONFIG_ROOT}/build"
+  keymap -c "${KD_CONFIG_BACKGROUND}" draw \
+    -o "${CONFIG_ROOT}/build/${KEYMAP_NAME}${KEYS_COUNT}-layout-map.svg" \
+    "$KD_KEYMAP"
+
   rm -rf "$KD_KEYMAP"
-  rm -rf "$KD_CONFIG_NO_SYMBOLS"
+  # rm -rf "$KD_CONFIG_NO_SYMBOLS"
+  # rm -rf "$KD_CONFIG_BACKGROUND"
 
   echo "Done!"
   echo ""

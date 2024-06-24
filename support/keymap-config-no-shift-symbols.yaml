@@ -5,7 +5,7 @@
 # my keyboard configurations, and generate layout map images that are as close
 # as they can get to what I mannually created when this whole configration
 # stater.
-# 
+#
 # The goal of this file is to be diff betweem the full configuration and one
 # that does not have any "shift" values showing on keys. You can use this file
 # to update the full configuration, and you should have a valid config.
