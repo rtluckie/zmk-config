@@ -315,6 +315,7 @@ parse_config:
     # remove the System layer toggle from the keyboard, but I left its
     # definition hefe just in case I change my mind in the future.
     "&tog L_SYS": { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "ghost" }
+    "&syslocktog": { t: "$$mdi:lock-outline$$", type: "ghost" }
 
     # Homerow modifiers
     #---------------------------------------------------------------------------

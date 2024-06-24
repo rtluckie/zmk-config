@@ -256,23 +256,33 @@ You can build the firmware for all keyboards I have with the following command:
 ```sh
 $ west build -p -d build/corne-left -b nice_nano_v2 -- \
     -DSHIELD=corne_left \
-    -DUSE_MOLOCK=1 \
+    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
     -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
   && west build -p -d build/corne-right -b nice_nano_v2 -- \
     -DSHIELD=corne_right \
-    -DUSE_MOLOCK=1 \
+    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
     -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
   && west build -p -d build/lily-left -b nice_nano_v2 -- \
     -DSHIELD="lily58_left nice_view_adapter nice_view" \
-    -DUSE_MOLOCK=1 \
+    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
     -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
   && west build -p -d build/lily-right -b nice_nano_v2 -- \
     -DSHIELD="lily58_right nice_view_adapter nice_view" \
-    -DUSE_MOLOCK=1 \
+    -DDTS_EXTRA_CPPFLAGS="-DUSE_MOLOCK=1" \
     -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config" \
   && west build -p -d build/settings-reset -b nice_nano_v2 -- \
     -DSHIELD="settings_reset" \
     -DZMK_CONFIG="$TOWNK_ZMK_CONFIG_DIR/config"
+```
+
+After the first build, you can simplify the build command to the following:
+
+```sh
+$ west build -d build/corne-left \
+  && west build -d build/corne-right \
+  && west build -d build/lily-left \
+  && west build -d build/lily-right \
+  && west build -d build/settings-reset
 ```
 
 And if you make any modifications to the keymap, make sure you update the assets
