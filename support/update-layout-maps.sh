@@ -48,8 +48,7 @@ export_layout_map() {
   # The second part of the file contains the rest of the layout map with keys NOT
   # shoing their "Shift" symbol.
   keymap -c "$KD_CONFIG_NO_SYMBOLS" parse -z "${CONFIG_ROOT}/config/${KEYMAP_NAME}.keymap" \
-    | sed -n '/Numbers:/,$ p' \
-    | sed "s/RGB COLOR HSB(0 0 60)/{t: '\$\$mdi:palette-outline\$\$', h: reset}/" >> "$KD_KEYMAP"
+    | sed -n '/Numbers:/,$ p' >> "$KD_KEYMAP"
 
   LAYOUT_LAYERS=(
     "QWERTY"

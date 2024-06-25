@@ -1,2 +1,2 @@
-keymap-drawer
+keymap-drawer @ git+https://github.com/caksoylar/keymap-drawer@main
 PyYAML
