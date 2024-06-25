@@ -22,10 +22,10 @@
 #include "homerowmods.dtsi"
 #include "autoshift.dtsi"
 
-#ifndef USE_MOLOCK
-#define LOCK_LAYER &none
-#else
+#if defined(USE_MOLOCK) || defined(KEYMAP_DRAWER)
 #define LOCK_LAYER &molock
+#else
+#define LOCK_LAYER &none
 #endif
 
 // Layers definitions
@@ -64,22 +64,24 @@
 
 / {
   macros {
+#if defined(KEYMAP_DRAWER)
     // This is a helper macro to allow me to mark the `molock` key on the
     // System layer as a the key that enable the layer itself.
-    // If you don't care about the layout map images generated for this
-    // configuration, you can replace the use of `&syslocktog` with
-    // `LOCK_LAYER` directly.
+    // This is only used by Keymap-Drawer to color the key differently.
     syslocktog: system_layer_lock_or_toggle {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-#ifndef USE_MOLOCK
-      bindings = <&tog L_SYS>;
-#else
       bindings = <&molock>;
-#endif
     };
+#endif
   };
 };
+
+#if defined(KEYMAP_DRAWER)
+#define LOCK_SYS_LAYER &syslocktog
+#else
+#define LOCK_SYS_LAYER LOCK_LAYER
+#endif
 
 // Generic ZMK behaviors are defined on their own `dtsi` file, but some
 // behaviors that I create simply to make the layout work, like a hold-tap for
@@ -371,11 +373,11 @@
     SYSTEM {
       display-name = "System";
       bindings = <LAYER_ADAPTER(
-        &none,       &kp F13, &kp F14,     &kp F15, &kp F16, &none,                       /**/            &none,        &none,        &none,        &none,        &none,        &none,
-        &bootloader, &kp F9,  &kp F10,     &kp F11, &kp F12, &ext_power EP_TOG,           /**/            &tog L_CMK,   &none,        &none,        &none,        &none,        &bootloader,
-        &sys_reset,  &kp F5,  &kp F6,      &kp F7,  &kp F8,  &out OUT_TOG,                /**/            &none,        &none,        &none,        &none,        &none,        &sys_reset,
-        &none,       &kp F1,  &kp F2,      &kp F3,  &kp F4,  &kp C_PWR,         &kp LHYP, /**/  &kp RHYP, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3, &bt BT_SEL 4, &bt BT_CLR,
-                              &syslocktog, &none,   &none,   &none,             &none,    /**/  &none,    &none,        &none,        &none,        &syslocktog
+        &none,       &kp F13, &kp F14,        &kp F15, &kp F16, &none,                       /**/            &none,        &none,        &none,        &none,         &none,        &none,
+        &bootloader, &kp F9,  &kp F10,        &kp F11, &kp F12, &ext_power EP_TOG,           /**/            &tog L_CMK,   &none,        &none,        &none,         &none,        &bootloader,
+        &sys_reset,  &kp F5,  &kp F6,         &kp F7,  &kp F8,  &out OUT_TOG,                /**/            &none,        &none,        &none,        &none,         &none,        &sys_reset,
+        &none,       &kp F1,  &kp F2,         &kp F3,  &kp F4,  &kp C_PWR,         &kp LHYP, /**/  &kp RHYP, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3,  &bt BT_SEL 4, &bt BT_CLR,
+                              LOCK_SYS_LAYER, &none,   &none,   &none,             &none,    /**/  &none,    &none,        &none,        &none,        LOCK_SYS_LAYER
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
