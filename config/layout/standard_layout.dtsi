@@ -22,7 +22,7 @@
 #include "homerowmods.dtsi"
 #include "autoshift.dtsi"
 
-#if defined(USE_MOLOCK) || defined(KEYMAP_DRAWER)
+#if defined(USE_MOLOCK)
 #define LOCK_LAYER &molock
 #else
 #define LOCK_LAYER &none
@@ -71,7 +71,11 @@
     syslocktog: system_layer_lock_or_toggle {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
+#if defined(USE_MOLOCK)
       bindings = <&molock>;
+#else
+      bindings = <&tog L_SYS>;
+#endif
     };
 #endif
   };

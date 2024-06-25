@@ -22,6 +22,12 @@ draw_config:
 # This is  where most of the magic will happen by replacing the standard
 # symbols with my choice of graphical representation.
 parse_config:
+  # Set optional flags that I want Keymap-Drawer to use on all layout maps
+  # generation
+  zmk_preamble: |
+    #define KEYMAP_DRAWER
+    #define USE_MOLOCK
+
   # In most cases I won't need these labels defined here, but I decided to keep
   # them so the default behavior of Keymap Drawer matches my configuration
   # better.
