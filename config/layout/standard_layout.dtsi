@@ -145,39 +145,15 @@
 
     // Tap: Backslash ('\')
     // Shift-tap: Pipe ('|')
-    // Double-tap: Turn on CAPS_WORD
-    // Hold: Apple Globe key
-    // Morph: -
-    globebslhcaps: globe_or_backslash_or_caps_word {
-      compatible = "zmk,behavior-tap-dance";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&hml GLOBE BSLH>, <&caps_word>;
-    };
-
-    // Tap: Backslash ('\')
-    // Shift-tap: Pipe ('|')
-    // Double-tap: Turn on CAPS_WORD
+    // Double-tap: -
     // Hold: Apple Globe key
     // Morph: with Cmd => Command + tilde ('⌘~')
-    globebslh: globe_caps_or_backslash {
+    globebslh: globe_or_backslash {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&globebslhcaps>, <&kp TILDE>;
+      bindings = <&hml GLOBE BSLH>, <&kp TILDE>;
       mods = <(MOD_LGUI|MOD_RGUI)>;
       keep-mods = <(MOD_LGUI|MOD_RGUI)>;
-    };
-
-    // Tap: Backslash ('=')
-    // Shift-tap: Plus ('+')
-    // Double-tap: Turn on CAPS_WORD
-    // Hold: Apple Globe key
-    // Morph: -
-    globeequal: globe_or_equal_or_caps_word {
-      compatible = "zmk,behavior-tap-dance";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&hmr GLOBE EQUAL>, <&caps_word>;
     };
 
     // Tap: Left square bracket ('[')
@@ -192,7 +168,58 @@
       mods = <(MOD_LGUI|MOD_RGUI)>;
       keep-mods = <(MOD_LGUI|MOD_RGUI)>;
     };
+
+    // Tap: Grave ('`')
+    // Shift-tap: Tilde ('~')
+    // Double-tap: Turn on CAPS_WORD
+    // Hold: -
+    // Morph: -
+    gravecaps: grave_or_capsword {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp GRAVE>, <&caps_word>;
+    };
+
+    // Tap: Single quote  ("'")
+    // Shift-tap: Double quote ('"')
+    // Double-tap: Turn on CAPS_WORD
+    // Hold: -
+    // Morph: -
+    sqtcaps: singlequote_or_capsword {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp SQT>, <&caps_word>;
+    };
   };
+};
+
+// Combo keys
+// -----------------------------------------------------------------------------
+// Unfortunately, there is just that much keys one can use on a small keyboard,
+// and not all the functionalities I want for my base layer fit on a 42-keys
+// keyboard. The solution for that is to use Combo keys, so I can make two keys
+// that make sense to be pressed together, to behave in a different way.
+//
+// Notice that Combo keys require the keys to be defined as numbers
+// representing their physical position in the keyboard. Because of that, each
+// keyboard mapping will have to define a macro for each combo on this layout.
+// The names of these macros should follow the following syntax:
+//
+// COMBO_KEY_<combo-name>
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        // Turn on CAPS_WORD when pressing both shift keys together.
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = COMBO_KEY_CAPS_WORD;
+            layers = <L_QWT L_CMK>;
+            bindings = <&caps_word>;
+        };
+    };
 };
 
 // Keyboard Layout definition
@@ -223,7 +250,7 @@
         &lbktgrave, &kp_rN1, &kp_rN2,   &kp_rN3, &kp_rN4,   &kp_rN5,                 /**/                &kp_rN6,          &kp_rN7,   &kp_rN8,   &kp_rN9,  &kp_rN0,    &kp RBKT,
         &kp TAB,    &kp Q,   &kp W,     &kp E,   &kp R,     &kp T,                   /**/                &kp Y,            &kp U,     &kp I,     &kp O,    &kp P,      &kp MINUS,
         &kp GRAVE,  LHM4(A), LHM3(S),   LHM2(D), LHM1(F),   &kp G,                   /**/                &kp H,            RHM1(J),   RHM2(K),   RHM3(L),  RHM4(SEMI), &kp SQT,
-        &globebslh, &kp Z,   &kp X,     &kp C,   AS(V),     &kp B,    &kp LHYP,      /**/ &kp RHYP,      &kp N,            &kp M,     &kp COMMA, &kp DOT,  &kp FSLH,   &globeequal,
+        &globebslh, &kp Z,   &kp X,     &kp C,   AS(V),     &kp B,    &kp LHYP,      /**/ &kp RHYP,      &kp N,            &kp M,     &kp COMMA, &kp DOT,  &kp FSLH,   &hmr GLOBE EQUAL,
                              &motg_sys, &none,   &motg_but, &bspcsym, &lt L_NAV ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -247,8 +274,8 @@
       bindings = <LAYER_ADAPTER(
         &lbktgrave, &kp_rN1, &kp_rN2,   &kp_rN3, &kp_rN4,   &kp_rN5,                 /**/                &kp_rN6,          &kp_rN7,   &kp_rN8,   &kp_rN9,  &kp_rN0,  &kp RBKT,
         &kp TAB,    &kp Q,   &kp W,     &kp F,   &kp P,     &kp B,                   /**/                &kp J,            &kp L,     &kp U,     &kp Y,    &kp SEMI, &kp MINUS,
-        &kp GRAVE,  LHM4(A), LHM3(R),   LHM2(S), LHM1(T),   &kp G,                   /**/                &kp M,            RHM1(N),   RHM2(E),   RHM3(I),  RHM4(O),  &kp SQT,
-        &globebslh, &kp Z,   &kp X,     &kp C,   &kp D,     &kp V,    &kp LHYP,      /**/ &kp RHYP,      &kp K,            &kp H,     &kp COMMA, &kp DOT,  &kp FSLH, &globeequal,
+        &kp GRAVE,  LHM4(A), LHM3(R),   LHM2(S), LHM1(T),   &kp G,                   /**/                &kp M,            RHM1(N),   RHM2(E),   RHM3(I),  RHM4(O),  &sqtcaps,
+        &globebslh, &kp Z,   &kp X,     &kp C,   &kp D,     &kp V,    &kp LHYP,      /**/ &kp RHYP,      &kp K,            &kp H,     &kp COMMA, &kp DOT,  &kp FSLH, &hmr GLOBE EQUAL,
                              &motg_sys, &none,   &motg_but, &bspcsym, &lt L_NAV ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

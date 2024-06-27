@@ -206,9 +206,7 @@ features using my keyboard as I can using a standard Apple keyboard.
 
 ZMK has partial support for the _Globe_ key (check issue
 [#937](https://github.com/zmkfirmware/zmk/issues/947) for details on the mater),
-so I decided to add to my layouts as a _“hold”_ key, but it is important to
-notice that its behavior is not the same as the _“Globe”_ from an official Apple
-product.
+it can only be used as a _“holding”_ key.
 
 ## Caps Lock
 
@@ -220,6 +218,9 @@ Fortunately, ZMK solved this by allowing us to use the
 [`CAPS_WORD`](https://zmk.dev/docs/behaviors/caps-word) behavior, where, when
 tapped, it will turn on the `CAPS_LOCK` just to the next word typed. Thereafter,
 the keyboard will put you on a normal typing mode again.
+
+In this layout configuration, the `CAPS_WORD` feature is triggered when I press
+both _“Shift”_ keys together.
 
 ## My methodology
 

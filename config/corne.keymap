@@ -35,4 +35,6 @@
              k30 k31 k32 k33 k34 k35    k38 k39 k3A k3B k3C k3D           \
                          k40 k43 k44    k45 k46 k49
 
+#define COMBO_KEY_CAPS_WORD  <16 19>
+
 #include "layout/standard_layout.dtsi"
