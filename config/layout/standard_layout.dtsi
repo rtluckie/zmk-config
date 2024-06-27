@@ -22,14 +22,8 @@
 #include "homerowmods.dtsi"
 #include "autoshift.dtsi"
 
-#if defined(USE_MOLOCK)
-#define LOCK_LAYER &molock
-#else
-#define LOCK_LAYER &none
-#endif
-
 // Layers definitions
-// ------------------
+// -----------------------------------------------------------------------------
 // The next define macros represent each layer my layout has, so I can reference
 // them by name instead of numbers.
 //
@@ -55,6 +49,8 @@
 // Keyboard system layer
 #define L_SYS 7
 
+// Behavior configuration
+// -----------------------------------------------------------------------------
 // I like to have couple more keys to not break the CAPS_WORD streak, like the
 // backspace key. Since I make too many mistakes while typing, I find extremely
 // annoying to stop the CAPS_WORD whenever I want to fix an error.
@@ -62,12 +58,29 @@
   continue-list = <UNDERSCORE MINUS BSPC>;
 };
 
+// Feature-flag protected keys
+// -----------------------------------------------------------------------------
+// Macro defined to replace the use of the `&molock` feature. By using this
+// macro, whenever the feature is not available during compile time, it will be
+// replaced by a `&none` behavior.
+#if defined(USE_MOLOCK)
+#define LOCK_LAYER &molock
+#else
+#define LOCK_LAYER &none
+#endif
+
+// Keymp-Drawer helpers
+// -----------------------------------------------------------------------------
+// Thses definitions are only used by the Keymap-Drawer parser, and are not
+// intended to go to the firmware. Each helper definition has some kind of
+// translation or "no-op" key defined to be used when Keymap-Drawer is not
+// parsing.
+#if defined(KEYMAP_DRAWER)
 / {
   macros {
-#if defined(KEYMAP_DRAWER)
     // This is a helper macro to allow me to mark the `molock` key on the
-    // System layer as a the key that enable the layer itself.
-    // This is only used by Keymap-Drawer to color the key differently.
+    // System layer as a the key that enable the layer itself. This is only
+    // used by Keymap-Drawer to color the key differently.
     syslocktog: system_layer_lock_or_toggle {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -77,20 +90,21 @@
       bindings = <&tog L_SYS>;
 #endif
     };
-#endif
   };
 };
-
-#if defined(KEYMAP_DRAWER)
 #define LOCK_SYS_LAYER &syslocktog
 #else
 #define LOCK_SYS_LAYER LOCK_LAYER
 #endif
 
+// Special keys behaviors
+// -----------------------------------------------------------------------------
 // Generic ZMK behaviors are defined on their own `dtsi` file, but some
 // behaviors that I create simply to make the layout work, like a hold-tap for
 // the backspace and the activation of layer 2, are all defined inline in this
 // file.
+// This organiztion, is to make it easy to modify behaviors when a key position
+// changes.
 / {
   behaviors {
     // Tap: Backspace
@@ -181,6 +195,11 @@
   };
 };
 
+// Keyboard Layout definition
+// -----------------------------------------------------------------------------
+// Not all keys defined here are used in all keyboards this layout suppots. To
+// check where a key defined here is located on the physical layout of a
+// keyboard, look in the keyboard's '.keymap' file.
 / {
   keymap {
     compatible = "zmk,keymap";

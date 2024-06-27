@@ -247,6 +247,18 @@ _“End”_ respectively).
 
 ![Media layer layout](./images/lily58-layer4-media.svg)
 
+This layer is where I put all my media controlling buttons, on the e bottom rows
+so they align good with smaller keyboards.
+
+Except for media player keys, they're all aligned vertically, and go from
+increasing value on top, to toggling it off on the bottom.
+
+The media player keys are positioned so the _play/pause_ key is the key with the
+small mark of the physical key marking the start of the homerow fingers, and
+_back_ and _next_ are positioned on each side of the _play_ key.
+
+I made the usual _Escape_ key to be the _stop_, so it's easy to remember.
+
 ## Buttons Layer
 
 ![Buttons layer layout](./images/lily58-layer5-buttons.svg)
@@ -255,9 +267,43 @@ _“End”_ respectively).
 
 ![System layer layout](./images/lily58-layer6-system.svg)
 
+The System layer is the second full-keyboard layer in this layout, but is the
+only one that is not symmetric. I code it this way because it hosts several keys
+that act on the half of the keyboard where they're located.
+
+I added all the _Function_ keys on this layer too, but I aligned them from
+bottom to top so removing “higher” keys would be a lesser impact on small
+keyboards.
+
+This layer, also has the key that will change the base layout of the keyboard to
+a COLEMAK layout.
+
 ## Alternative Layout
 
 ![COLEMAK base layout layer](./images/lily58-layer7-colemak.svg)
+
+This alternate layout is something I'm flirting for a long time. I read more
+texts than I should about the mater, and while opinions about alternate layouts
+vary from source to source, there are 2 things that could conclude:
+
+1. Using COLEMAK or any other alternate layout, no mater how efficient it is, it
+   will **not** speed up your typing. You certainly can type at top speed using
+   those layouts, but the layout itself is not the reason you're typing fast;
+2. Pretty much every alternate layout out there has advantages over QWERTY when
+   it comes to ergonomics, and COLEMAK-DH is one of the most efficient one if
+   you type primarily English and are concerned with finger movements;
+
+To me, the biggest roadblock I have to adopt COLEMAK, is how am I going to
+handle the key differences on the layout when it comes to using Vim. The main
+movement keys of the editor are located where the `HJKL` keys are in QWERTY, so
+my muscle memory for that position is too strong after more than 20 years using
+the editor. Remapping the whole application to use the `MNEI` variant is,
+simply, not possible due to a good deal of other Vim core functionalities
+depending on one or more of those keys.
+
+The only solution for this conundrum is to use the arrow keys on the navigation
+layer, but I'm not sure that I can pull that off. I'm still going to try at some
+point, and that is the reason this layer is here, but this day is not today :).
 
 ## Disclaimers
 

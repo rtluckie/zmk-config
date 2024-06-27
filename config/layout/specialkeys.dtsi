@@ -5,66 +5,66 @@
  */
 
 // Hyper Key: ⇧ ⌥ ^ ⌘ (Shift + Alt + Control + Command)
-#define LEFT_HYPER  LS(LA(LC(LGUI)))
-#define LHYP        LEFT_HYPER
-#define RIGHT_HYPER RS(RA(RC(RGUI)))
-#define RHYP        RIGHT_HYPER
+#define LEFT_HYPER             LS(LA(LC(LGUI)))
+#define LHYP                   LEFT_HYPER
+#define RIGHT_HYPER            RS(RA(RC(RGUI)))
+#define RHYP                   RIGHT_HYPER
 
 // Hyper Key function like LG and RG
-#define LH(keycode) LS(LA(LC(LG(keycode))))
-#define RH(keycode) RS(RA(RC(RG(keycode))))
+#define LH(keycode)            LS(LA(LC(LG(keycode))))
+#define RH(keycode)            RS(RA(RC(RG(keycode))))
 
 // Meh Key: ⇧ ⌥ ^ (Shift + Alt + Control)
-#define LEFT_MEH    LS(LA(LCTRL))
-#define LMEH        LEFT_MEH
-#define RIGHT_MEH   RS(RA(RCTRL))
-#define RMEH        RIGHT_MEH
+#define LEFT_MEH               LS(LA(LCTRL))
+#define LMEH                   LEFT_MEH
+#define RIGHT_MEH              RS(RA(RCTRL))
+#define RMEH                   RIGHT_MEH
 
 // Meh Key function like LG and RG
-#define LM(keycode) LS(LA(LC(keycode)))
-#define RM(keycode) RS(RA(RC(keycode)))
+#define LM(keycode)            LS(LA(LC(keycode)))
+#define RM(keycode)            RS(RA(RC(keycode)))
 
 // Keys I feel should be part of ZMK
-#define BACK_TAB             LS(TAB)
-#define BTAB                 BACK_TAB
+#define BACK_TAB               LS(TAB)
+#define BTAB                   BACK_TAB
 
 // macOS Keys and common shortcuts
-#define MAC_LAUNCHPAD        C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
-#define MAC_LP               MAC_LAUNCHPAD
-#define MAC_MISSION_CONTROL  C_AC_DESKTOP_SHOW_ALL_WINDOWS
-#define MAC_MC               MAC_MISSION_CONTROL
-#define MAC_SPOTLIGHT        C_AC_SEARCH
-#define MAC_SP               MAC_SPOTLIGHT
-#define MAC_CUT              LG(X)
-#define MAC_COPY             LG(C)
-#define MAC_PASTE            LG(V)
-#define MAC_UNDO             LG(Z)
-#define MAC_REDO             LG(LS(Z))
-#define MAC_APP_WINDOWS      LG(LC(DOWN))   // Show windows from current application
-#define MAC_APPWIN           MAC_APP_WINDOWS
-#define MAC_NEXT_WINDOW      LG(GRAVE)      // Go to the next window on the same application
-#define MAC_WINN             MAC_NEXT_WINDOW
-#define MAC_PREVIOUS_WINDOW  LG(TILDE)      // Go to the previous window on the same application
-#define MAC_WINP             MAC_PREVIOUS_WINDOW
-#define MAC_NEXT_DESKTOP     LG(LC(RIGHT))  // Go to the next virtual desktop
-#define MAC_DKTN             MAC_NEXT_DESKTOP
-#define MAC_PREVIOUS_DESKTOP LG(LC(LEFT))   // Go to the previous virtual desktop
-#define MAC_DKTP             MAC_PREVIOUS_DESKTOP
-#define MAC_FIND_NEXT        LG(G)
-#define MAC_FDNXT            MAC_FIND_NEXT
-#define MAC_FIND_PREVIOUS    LG(LS(G))
-#define MAC_FDPRV            MAC_FIND_PREVIOUS
-#define MAC_NEXT_WORD        LA(RIGHT)
-#define MAC_WRDN             MAC_NEXT_WORD
-#define MAC_PREVIOUS_WORD    LA(LEFT)
-#define MAC_WRDP             MAC_PREVIOUS_WORD
-#define MAC_START_OF_LINE    LG(LEFT)
-#define MAC_STTL             MAC_START_OF_LINE
-#define MAC_END_OF_LINE      LG(RIGHT)
-#define MAC_ENDL             MAC_END_OF_LINE
+#define MAC_LAUNCHPAD          C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
+#define MAC_LP                 MAC_LAUNCHPAD
+#define MAC_MISSION_CONTROL    C_AC_DESKTOP_SHOW_ALL_WINDOWS
+#define MAC_MC                 MAC_MISSION_CONTROL
+#define MAC_SPOTLIGHT          C_AC_SEARCH
+#define MAC_SP                 MAC_SPOTLIGHT
+#define MAC_CUT                LG(X)
+#define MAC_COPY               LG(C)
+#define MAC_PASTE              LG(V)
+#define MAC_UNDO               LG(Z)
+#define MAC_REDO               LG(LS(Z))
+#define MAC_APP_WINDOWS        LG(LC(DOWN))   // Show windows from current application
+#define MAC_APPWIN             MAC_APP_WINDOWS
+#define MAC_NEXT_WINDOW        LG(GRAVE)      // Go to the next window on the same application
+#define MAC_WINN               MAC_NEXT_WINDOW
+#define MAC_PREVIOUS_WINDOW    LG(TILDE)      // Go to the previous window on the same application
+#define MAC_WINP               MAC_PREVIOUS_WINDOW
+#define MAC_NEXT_DESKTOP       LG(LC(RIGHT))  // Go to the next virtual desktop
+#define MAC_DKTN               MAC_NEXT_DESKTOP
+#define MAC_PREVIOUS_DESKTOP   LG(LC(LEFT))   // Go to the previous virtual desktop
+#define MAC_DKTP               MAC_PREVIOUS_DESKTOP
+#define MAC_FIND_NEXT          LG(G)
+#define MAC_FDNXT              MAC_FIND_NEXT
+#define MAC_FIND_PREVIOUS      LG(LS(G))
+#define MAC_FDPRV              MAC_FIND_PREVIOUS
+#define MAC_NEXT_WORD          LA(RIGHT)
+#define MAC_WRDN               MAC_NEXT_WORD
+#define MAC_PREVIOUS_WORD      LA(LEFT)
+#define MAC_WRDP               MAC_PREVIOUS_WORD
+#define MAC_START_OF_LINE      LG(LEFT)
+#define MAC_STTL               MAC_START_OF_LINE
+#define MAC_END_OF_LINE        LG(RIGHT)
+#define MAC_ENDL               MAC_END_OF_LINE
 
 // RGB Helpers
-#define RGB_RESET            RGB_COLOR_HSB(0, 0, 60)
+#define RGB_RESET              RGB_COLOR_HSB(0, 0, 60)
 
 // This helper macro allow one to define a normal key with a special output with
 // pressing shift. This is useful when you want to create a key that, its

@@ -13,6 +13,8 @@ draw_config:
   combo_diagrams_scale: 4
   inner_pad_w: 4.0
   inner_pad_h: 4.0
+  small_pad: 4
+  shrink_wide_legends: 5
   footer_text: ""
   use_local_cache: true
   svg_extra_style: |
@@ -410,29 +412,42 @@ parse_config:
     # Keyboard shortcut combinations
     #---------------------------------------------------------------------------
     # Previous word: ⌥ ←
+    "&kp MAC_PREVIOUS_WORD": "$$mdi:format-letter-starts-with$$"
     "&kp MAC_WRDP": "$$mdi:format-letter-starts-with$$"
     # Next word: ⌥ →
+    "&kp MAC_NEXT_WORD": "$$mdi:format-letter-ends-with$$"
     "&kp MAC_WRDN": "$$mdi:format-letter-ends-with$$"
     # Start of line: ⌘ ←
+    "&kp MAC_START_OF_LINE": "$$mdi:format-pilcrow-arrow-left$$"
     "&kp MAC_STTL": "$$mdi:format-pilcrow-arrow-left$$"
     # End of line: ⌘ →
+    "&kp MAC_END_OF_LINE": "$$mdi:format-pilcrow-arrow-right$$"
     "&kp MAC_ENDL": "$$mdi:format-pilcrow-arrow-right$$"
     # Find previous occurrence: ⇧ ⌘ G
+    "&kp MAC_FIND_PREVIOUS": { t: "$$mdi:magnify$$", h: "←" }
     "&kp MAC_FDPRV": { t: "$$mdi:magnify$$", h: "←" }
     # Find next occurrence: ⌘ G
+    "&kp MAC_FIND_NEXT": { t: "$$mdi:magnify$$", h: "→" }
     "&kp MAC_FDNXT": { t: "$$mdi:magnify$$", h: "→" }
     # Go to Virtual Desktop on the Left: ⌘ ⌃ ←
+    "&kp MAC_PREVIOUS_DESKTOP": { t: "$$mdi:window-maximize$$", h: "←" }
     "&kp MAC_DKTP": { t: "$$mdi:window-maximize$$", h: "←" }
     # Go to Virtual Desktop on the Left: ⌘ ⌃ →
+    "&kp MAC_NEXT_DESKTOP": { t: "$$mdi:window-maximize$$", h: "→" }
     "&kp MAC_DKTN": { t: "$$mdi:window-maximize$$", h: "→" }
     # Go to next window on current application: ⌘ `
+    "&kp MAC_PREVIOUS_WINDOW": { t: "$$mdi:window-restore$$", h: "←" }
     "&kp MAC_WINP": { t: "$$mdi:window-restore$$", h: "←" }
     # Go to previous window on current application: ⌘ ~ (or ⇧ ⌘ `)
+    "&kp MAC_NEXT_WINDOW": { t: "$$mdi:window-restore$$", h: "→" }
     "&kp MAC_WINN": { t: "$$mdi:window-restore$$", h: "→" }
     # Show all windows of current application: ⌘ ⌃ ↓
+    "&kp MAC_APP_WINDOWS": "$$mdi:dock-window$$"
     "&kp MAC_APPWIN": "$$mdi:dock-window$$"
     # Undo: ⌘ Z
     "&kp MAC_UNDO": "$$mdi:undo$$"
+    # Redo: ⇧ ⌘ Z
+    "&kp MAC_REDO": "$$mdi:redo$$"
     # Cut: ⌘ X
     "&kp MAC_CUT": "$$mdi:content-cut$$"
     # Copy: ⌘ C
