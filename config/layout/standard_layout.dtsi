@@ -36,12 +36,12 @@
 #define L_QWT 0
 // Alternative layout I'm planning to explore: COLEMAK
 #define L_CMK 1
-// Numbers layer
-#define L_NUM 2
-// Symbols layer
-#define L_SYM 3
 // Navigation layer
-#define L_NAV 4
+#define L_NAV 2
+// Numbers layer
+#define L_NUM 3
+// Symbols layer
+#define L_SYM 4
 // Media layer
 #define L_MED 5
 // Buttons layer
@@ -110,12 +110,12 @@
     // Tap: Backspace
     // Shift-tap: -
     // Double-tap: -
-    // Hold: Symbol Layer
+    // Hold: Navigation Layer
     // Morph: with Shift => Forward delete ('⌦')
-    bspcsym: backspace_or_del_and_layer_sym {
+    bspcnav: backspace_or_del_and_layer_nav {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&hll L_SYM BSPC>, <&kp DEL>;
+      bindings = <&hll L_NAV BSPC>, <&kp DEL>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
@@ -251,7 +251,7 @@
         &kp TAB,    &kp Q,   &kp W,     &kp E,   &kp R,     &kp T,                   /**/                &kp Y,            &kp U,     &kp I,     &kp O,    &kp P,      &kp MINUS,
         &kp GRAVE,  LHM4(A), LHM3(S),   LHM2(D), LHM1(F),   &kp G,                   /**/                &kp H,            RHM1(J),   RHM2(K),   RHM3(L),  RHM4(SEMI), &kp SQT,
         &globebslh, &kp Z,   &kp X,     &kp C,   AS(V),     &kp B,    &kp LHYP,      /**/ &kp RHYP,      &kp N,            &kp M,     &kp COMMA, &kp DOT,  &kp FSLH,   &hmr GLOBE EQUAL,
-                             &motg_sys, &none,   &motg_but, &bspcsym, &lt L_NAV ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
+                             &motg_sys, &none,   &motg_but, &bspcnav, &lt L_SYM ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -276,7 +276,32 @@
         &kp TAB,    &kp Q,   &kp W,     &kp F,   &kp P,     &kp B,                   /**/                &kp J,            &kp L,     &kp U,     &kp Y,    &kp SEMI, &kp MINUS,
         &kp GRAVE,  LHM4(A), LHM3(R),   LHM2(S), LHM1(T),   &kp G,                   /**/                &kp M,            RHM1(N),   RHM2(E),   RHM3(I),  RHM4(O),  &sqtcaps,
         &globebslh, &kp Z,   &kp X,     &kp C,   &kp D,     &kp V,    &kp LHYP,      /**/ &kp RHYP,      &kp K,            &kp H,     &kp COMMA, &kp DOT,  &kp FSLH, &hmr GLOBE EQUAL,
-                             &motg_sys, &none,   &motg_but, &bspcsym, &lt L_NAV ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
+                             &motg_sys, &none,   &motg_but, &bspcnav, &lt L_SYM ESC, /**/ &lt L_MED RET, &hlr L_NUM SPACE, &motg_but, &none,     &motg_sys
+      )>;
+      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+    };
+
+    // Layer: NAV
+    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
+    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
+    // │       │       │       │       │       │       │                  │       │   󰌥   │  ←   │   →  │   󰌒   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │       │       │       │       │       │                  │       │   ↖   │   ⇟   │   ⇞   │   ↘   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │       │   󰘴   │   󰘵   │   󰘳   │   󰘶   │       ├───────╮  ╭───────┤       │   ←   │   ↓   │   ↑   │   →   │       │
+    // ├───────┼───────┼───────┼───────┼───────┼───────┤  HYP  │  │  HYP  ├───────┼───────┼───────┼───────┼───────┼───────┤
+    // │      │   󰕌   │   󰆐   │   󰆏   │   󰆒   │       ├───────╯  ╰───────┤       │   󰾺   │   󰊆   │   󰊅   │   󰾸   │       │
+    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
+    //                 │       │       │       │ -=〿=- │       │  │       │       │       │       │   󰍁   │
+    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
+    NAV {
+      display-name = "Navigation";
+      bindings = <LAYER_ADAPTER(
+        &none,     &none,        &none,       &none,        &none,         &none,                /**/            &none, &kp BTAB,     &kp MAC_FDPRV, &kp MAC_FDNXT, &kp TAB,      &none,
+        &none,     &none,        &none,       &none,        &none,         &none,                /**/            &none, &kp HOME,     &kp PG_DN,     &kp PG_UP,     &kp END,      &none,
+        &none,     &kp LHRM4,    &kp LHRM3,   &kp LHRM2,    &kp LHRM1,     &none,                /**/            &none, &kp LEFT,     &kp DOWN,      &kp UP,        &kp RIGHT,    &none,
+        &kp GLOBE, &kp MAC_UNDO, &kp MAC_CUT, &kp MAC_COPY, &kp MAC_PASTE, &none,      &kp LHYP, /**/  &kp RHYP, &none, &kp MAC_WRDP, &kp MAC_STTL,  &kp MAC_ENDL,  &kp MAC_WRDN, &none,
+                                 &none,       &none,        &none,         &tog L_NAV, &none,    /**/  &none,    &none, &none,        &none,         LOCK_LAYER
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -311,47 +336,22 @@
     // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
     // │       │       │       │       │       │       │                  │   ?   │   +   │   -   │   .   │   /   │   \   │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │       │       │       │       │       │                  │   [   │   <   │   =   │   >   │   ]   │   #   │
+    // │       │       │       │       │       │       │                  │   &   │   <   │   =   │   >   │   |   │   #   │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │   󰘴   │   󰘵   │   󰘳   │   󰘶   │       ├───────╮  ╭───────┤   {   │   (   │   :   │   )   │   }   │   %   │
+    // │       │   󰘴   │   󰘵   │   󰘳   │   󰘶   │       ├───────╮  ╭───────┤   [   │   (   │   :   │   )   │   ]   │   %   │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤  HYP  │  │  HYP  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │      │   󰕌   │   󰆐   │   󰆏   │   󰆒   │       ├───────╯  ╰───────┤   $   │   &   │   *   │   |   │   ^   │   !   │
+    // │      │       │       │       │       │       ├───────╯  ╰───────┤   ^   │   {   │   *   │   }   │   $   │   !   │
     // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-    //                 │       │       │       │ -=〿=- │       │  │   @   │   󱁐   │       │       │   󰍁   │
+    //                 │       │       │       │       │ -=〿=- │  │   @   │   󱁐   │       │       │   󰍁   │
     //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
     SYMBOL {
       display-name = "Symbols";
       bindings = <LAYER_ADAPTER(
-        &none,     &none,        &none,       &none,        &none,         &none,                /**/            &kp QMARK, &kp PLUS, &kp MINUS, &kp DOT,  &kp FSLH,  &kp BSLH,
-        &none,     &none,        &none,       &none,        &none,         &none,                /**/            &kp LBKT,  &kp LT,   &kp EQUAL, &kp GT,   &kp RBKT,  &kp HASH,
-        &none,     &kp LHRM4,    &kp LHRM3,   &kp LHRM2,    &kp LHRM1,     &none,                /**/            &kp LBRC,  &kp LPAR, &kp COLON, &kp RPAR, &kp RBRC,  &kp PRCNT,
-        &kp GLOBE, &kp MAC_UNDO, &kp MAC_CUT, &kp MAC_COPY, &kp MAC_PASTE, &none,      &kp LHYP, /**/  &kp RHYP, &kp DLLR,  &kp AMPS, &kp STAR,  &kp PIPE, &kp CARET, &kp EXCL,
-                                 &none,       &none,        &none,         &tog L_SYM, &none,    /**/  &kp AT,   &kp SPACE, &none,    &none,     LOCK_LAYER
-      )>;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-    };
-
-    // Layer: NAV    format-pilcrow-arrow-right  format-letter-starts-with
-    // ╭────────────────── Left-side ──────────────────╮                  ╭───────────────── Right-side ──────────────────╮
-    // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
-    // │       │       │       │       │       │       │                  │       │   󰌥   │  ←   │   →  │   󰌒   │       │
-    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │       │       │       │       │       │                  │       │   ↖   │   ⇟   │   ⇞   │   ↘   │       │
-    // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │   󰘴   │   󰘵   │   󰘳   │   󰘶   │       ├───────╮  ╭───────┤       │   ←   │   ↓   │   ↑   │   →   │       │
-    // ├───────┼───────┼───────┼───────┼───────┼───────┤  HYP  │  │  HYP  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │      │       │       │       │       │       ├───────╯  ╰───────┤       │   󰾺   │   󰊆   │   󰊅   │   󰾸   │       │
-    // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-    //                 │       │       │       │       │ -=〿=- │  │       │       │       │       │   󰍁   │
-    //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
-    NAV {
-      display-name = "Navigation";
-      bindings = <LAYER_ADAPTER(
-        &none,     &none,     &none,     &none,     &none,     &none,             /**/            &none, &kp BTAB,     &kp MAC_FDPRV, &kp MAC_FDNXT, &kp TAB,      &none,
-        &none,     &none,     &none,     &none,     &none,     &none,             /**/            &none, &kp HOME,     &kp PG_DN,     &kp PG_UP,     &kp END,      &none,
-        &none,     &kp LHRM4, &kp LHRM3, &kp LHRM2, &kp LHRM1, &none,             /**/            &none, &kp LEFT,     &kp DOWN,      &kp UP,        &kp RIGHT,    &none,
-        &kp GLOBE, &none,     &none,     &none,     &none,     &none, &kp LHYP,   /**/  &kp RHYP, &none, &kp MAC_WRDP, &kp MAC_STTL,  &kp MAC_ENDL,  &kp MAC_WRDN, &none,
-                              &none,     &none,     &none,     &none, &tog L_NAV, /**/  &none,    &none, &none,        &none,         LOCK_LAYER
+        &none,     &none,     &none,     &none,     &none,     &none,             /**/            &kp QMARK, &kp PLUS, &kp MINUS, &kp DOT,  &kp FSLH, &kp BSLH,
+        &none,     &none,     &none,     &none,     &none,     &none,             /**/            &kp AMPS,  &kp LT,   &kp EQUAL, &kp GT,   &kp PIPE, &kp HASH,
+        &none,     &kp LHRM4, &kp LHRM3, &kp LHRM2, &kp LHRM1, &none,             /**/            &kp LBKT,  &kp LPAR, &kp COLON, &kp RPAR, &kp RBKT, &kp PRCNT,
+        &kp GLOBE, &none,     &none,     &none,     &none,     &none, &kp LHYP,   /**/  &kp RHYP, &kp CARET, &kp LBRC, &kp STAR,  &kp RBRC, &kp DLLR, &kp EXCL,
+                              &none,     &none,     &none,     &none, &tog L_SYM, /**/  &kp AT,   &kp SPACE, &none,    &none,     LOCK_LAYER
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -361,23 +361,23 @@
     // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
     // │       │       │       │       │       │       │                  │       │       │       │       │       │       │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │       │       │       │       │  󰸌 󰜉  │  󰸌 H  │                  │       │       │       │       │       │       │
+    // │   󰝝   │   󰖨   │       │       │       │  󰝚 󰝝  │                  │       │       │       │       │       │       │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │  ┊  │   󰖨   │ 󱩐 ┊ 󱩖 │   󰒮   │   󰒭   │  󰸌 S  ├───────╮  ╭───────┤       │   󰘶   │   󰘳   │   󰘵   │   󰘴   │       │
+    // │   󰝞   │      │   󰒮   │   󰐎   │   󰒭   │  󰝚 󰝞  ├───────╮  ╭───────┤       │   󰘶   │   󰘳   │   󰘵   │   󰘴   │       │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤  HYP  │  │  HYP  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │      │      │   󰹐   │       │  󰸌 󰨚  │  󰸌 L  ├───────╯  ╰───────┤       │       │       │       │       │      │
+    // │      │       │  󰝚    │  󰝚    │  󰝚    │  󰝚    ├───────╯  ╰───────┤       │       │       │       │       │      │
     // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-    //                 │   󰍁   │       │       │   󰐎   │   󰓛   │  │ -=〿=- │       │       │       │       │
+    //                 │   󰍁   │       │       │       │   󰓛   │  │ -=〿=- │       │       │       │       │
     //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
     MEDIA {
       // &rgb_ug RGB_TOG
       display-name = "Media";
       bindings = <LAYER_ADAPTER(
-        &none,      &none,        &none,       &none,      &none,             &none,                  /**/              &none, &none,     &none,     &none,     &none,     &none,
-        &none,      &none,        &none,       &none,      &rgb_ug RGB_RESET, &kp_rgbhue,             /**/              &none, &none,     &none,     &none,     &none,     &none,
-        &kp_volume, &kp C_BRI_UP, &kp_bklight, &kp C_PREV, &kp C_NEXT,        &kp_rgbsat,             /**/              &none, &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
-        &kp C_MUTE, &kp C_BRI_DN, &bl BL_TOG,  &none,      &rgb_ug RGB_TOG,   &kp_rgbbri, &kp LHYP,   /**/  &kp RHYP,   &none, &none,     &none,     &none,     &none,     &kp GLOBE,
-                                  LOCK_LAYER,  &none,      &none,             &kp C_PP,   &kp C_STOP, /**/  &tog L_MED, &none, &none,     &none,     &none
+        &none,        &none,        &none,       &none,        &none,         &none,                     /**/              &none, &none,     &none,     &none,     &none,     &none,
+        &kp C_VOL_UP, &kp C_BRI_UP, &none,       &none,        &none,         &kp MAC_MVOLI,             /**/              &none, &none,     &none,     &none,     &none,     &none,
+        &kp C_VOL_DN, &kp C_BRI_DN, &kp C_PREV,  &kp C_PP,     &kp C_NEXT,    &kp MAC_MVOLD,             /**/              &none, &kp RHRM1, &kp RHRM2, &kp RHRM3, &kp RHRM4, &none,
+        &kp C_MUTE,   &none,        &kp MAC_MBK, &kp MAC_MRLD, &kp MAC_MPNXT, &kp MAC_MLYR,  &kp LHYP,   /**/  &kp RHYP,   &none, &none,     &none,     &none,     &none,     &kp GLOBE,
+                                    LOCK_LAYER,  &none,        &none,         &none,         &kp C_STOP, /**/  &tog L_MED, &none, &none,     &none,     &none
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -412,22 +412,22 @@
     // ├───────┬───────┬───────┬───────┬───────┬───────┤                  ├───────┬───────┬───────┬───────┬───────┬───────┤
     // │       │  F13  │  F14  │  F15  │  F16  │       │                  │       │       │       │       │       │       │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │      │  F9   │  F10  │  F11  │  F12  │   󱐥   │                  │   󰌓   │       │       │       │       │      │
+    // │      │  F9   │  F10  │  F11  │  F12  │   󱐥   │                  │ 󰸌 H ↑ │ 󰸌 S ↑ │ 󰸌 L ↑ │  󰸌 󰨚  │       │      │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤                  ├───────┼───────┼───────┼───────┼───────┼───────┤
-    // │   󰜉   │  F5   │  F6   │  F7   │  F8   │      ├───────╮  ╭───────┤       │       │       │       │       │   󰜉   │
+    // │   󰜉   │  F5   │  F6   │  F7   │  F8   │      ├───────╮  ╭───────┤ 󰸌 H ↓ │ 󰸌 S ↓ │ 󰸌 L ↓ │  󰸌 󰜉  │       │   󰜉   │
     // ├───────┼───────┼───────┼───────┼───────┼───────┤  HYP  │  │  HYP  ├───────┼───────┼───────┼───────┼───────┼───────┤
     // │       │  F1   │  F2   │  F3   │  F4   │      ├───────╯  ╰───────┤  󰂱 1  │  󰂱 2  │  󰂱 3  │  󰂱 4  │  󰂱 5  │   󰂲   │
     // ╰───────┴───────┼───────┼───────┼───────┼───────┼───────╮  ╭───────┼───────┼───────┼───────┼───────┼───────┴───────╯
-    //                 │ -=󰍁=- │       │       │       │       │  │       │       │       │       │ -=󰍁=- │
+    //                 │ -=󰍁=- │       │       │       │   󰌓   │  │       │       │       │       │ -=󰍁=- │
     //                 ╰───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────╯
     SYSTEM {
       display-name = "System";
       bindings = <LAYER_ADAPTER(
-        &none,       &kp F13, &kp F14,        &kp F15, &kp F16, &none,                       /**/            &none,        &none,        &none,        &none,         &none,        &none,
-        &bootloader, &kp F9,  &kp F10,        &kp F11, &kp F12, &ext_power EP_TOG,           /**/            &tog L_CMK,   &none,        &none,        &none,         &none,        &bootloader,
-        &sys_reset,  &kp F5,  &kp F6,         &kp F7,  &kp F8,  &out OUT_TOG,                /**/            &none,        &none,        &none,        &none,         &none,        &sys_reset,
-        &none,       &kp F1,  &kp F2,         &kp F3,  &kp F4,  &kp C_PWR,         &kp LHYP, /**/  &kp RHYP, &bt BT_SEL 0, &bt BT_SEL 1, &bt BT_SEL 2, &bt BT_SEL 3,  &bt BT_SEL 4, &bt BT_CLR,
-                              LOCK_SYS_LAYER, &none,   &none,   &none,             &none,    /**/  &none,    &none,        &none,        &none,        LOCK_SYS_LAYER
+        &none,       &kp F13, &kp F14,        &kp F15, &kp F16, &none,                          /**/           &none,           &none,           &none,           &none,           &none,        &none,
+        &bootloader, &kp F9,  &kp F10,        &kp F11, &kp F12, &ext_power EP_TOG,              /**/           &rgb_ug RGB_HUI, &rgb_ug RGB_SAI, &rgb_ug RGB_BRI, &rgb_ug RGB_TOG, &bl_inc,      &bootloader,
+        &sys_reset,  &kp F5,  &kp F6,         &kp F7,  &kp F8,  &out OUT_TOG,                   /**/           &rgb_ug RGB_HUD, &rgb_ug RGB_SAD, &rgb_ug RGB_BRD, &ug_reset,       &bl_dec,      &sys_reset,
+        &none,       &kp F1,  &kp F2,         &kp F3,  &kp F4,  &kp C_PWR,         &kp LHYP,    /**/ &kp RHYP, &bt BT_SEL 0,    &bt BT_SEL 1,    &bt BT_SEL 2,    &bt BT_SEL 3,    &bt BT_SEL 4, &bt BT_CLR,
+                              LOCK_SYS_LAYER, &none,   &none,   &none,             &tog L_CMK,  /**/ &none,    &none,           &none,           &none,           LOCK_SYS_LAYER
       )>;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };

@@ -62,6 +62,18 @@
 #define MAC_STTL               MAC_START_OF_LINE
 #define MAC_END_OF_LINE        LG(RIGHT)
 #define MAC_ENDL               MAC_END_OF_LINE
+#define MAC_MEDIA_BACK         LG(LEFT_BRACKET)
+#define MAC_MBK                MAC_MEDIA_BACK
+#define MAC_MEDIA_VOL_UP       LG(UP)
+#define MAC_MVOLI              MAC_MEDIA_VOL_UP
+#define MAC_MEDIA_VOL_DOWN     LG(DOWN)
+#define MAC_MVOLD              MAC_MEDIA_VOL_DOWN
+#define MAC_MEDIA_RELOAD       LG(R)
+#define MAC_MRLD               MAC_MEDIA_RELOAD
+#define MAC_MUSIC_LYRICS       LC(LG(U))
+#define MAC_MLYR               MAC_MUSIC_LYRICS
+#define MAC_MUSIC_PLAYING_NEXT LA(LG(U))
+#define MAC_MPNXT              MAC_MUSIC_NEXT
 
 // RGB Helpers
 #define RGB_RESET              RGB_COLOR_HSB(0, 0, 60)
@@ -77,9 +89,31 @@
       mods = <(MOD_LSFT|MOD_RSFT)>;                                 \
     }
 
+#define DEFINE_DOUBLE_TAP_KEY(_behavior_name, _normal_key, _double_tap_key) \
+    _behavior_name: _behavior_name {                                        \
+      compatible = "zmk,behavior-tap-dance";                                \
+      #binding-cells = <0>;                                                 \
+      tapping-term-ms = <200>;                                              \
+      bindings = <_normal_key>, <_double_tap_key>;                          \
+    };
+
+
 // Internal helper macro to allow us to define all our reversed number keys.
 // This macro should NOT be used outside this file!
 #define __NUM_REVERSE(_number, _symbol)  DEFINE_SHIFT_KEY(kp_r ## _number, &kp _symbol, &kp _number)
+
+/ {
+  macros {
+    // This is a helper macro increases the keyboard's backlight intensity, but
+    // it also guarantees that the backlight feature is turned ON before doing
+    // so.
+    bl_inc: backlight_on_and_increase {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&bl BL_ON>, <&bl BL_INC>;
+    };
+  };
+};
 
 // Next are keys I want to modify their standard behavior, like sending an `@`
 // character when pressing the number `9` with a shift modifier, instead of a
@@ -107,18 +141,13 @@
     __NUM_REVERSE(N9, LEFT_PARENTHESIS);
     __NUM_REVERSE(N0, RIGHT_PARENTHESIS);
 
-    // Media keys, usually, have action keys as symetric pairs. This means that
-    // if we have a key to raise the volume, we have a key to lower it. On
-    // small-factor keyboards, this is a waste of key real-state, so for each
-    // symetric pair of media keys I have, I'll creat a key that performs the
-    // "down" action when pressed, and the "up" action when tapped with `Shift`
-    // held down:
-    DEFINE_SHIFT_KEY(kp_volume,  &kp C_VOLUME_DOWN,    &kp C_VOLUME_UP);      // Volume
-    DEFINE_SHIFT_KEY(kp_bklight, &bl BL_DEC,           &bl BL_INC);           // Keyboard backlight
-    DEFINE_SHIFT_KEY(kp_scrbri,  &kp C_BRIGHTNESS_DEC, &kp C_BRIGHTNESS_INC); // Screen brightness
-    DEFINE_SHIFT_KEY(kp_rgbhue,  &rgb_ug RGB_HUD,      &rgb_ug RGB_HUI);      // RGB HSL Hue
-    DEFINE_SHIFT_KEY(kp_rgbsat,  &rgb_ug RGB_SAD,      &rgb_ug RGB_SAI);      // RGB HSL Saturation
-    DEFINE_SHIFT_KEY(kp_rgbbri,  &rgb_ug RGB_BRD,      &rgb_ug RGB_BRI);      // RGB HSL Brightness
+    // Underglow RESET, that, when double-tapped, zero-out all the underglow
+    // values.
+    DEFINE_DOUBLE_TAP_KEY(ug_reset, &rgb_ug RGB_RESET, &rgb_ug RGB_COLOR_HSB(0, 0, 0))
+
+    // Backlight DECREASE, that, when double-tapped, turn off the keyboard
+    // backlight.
+    DEFINE_DOUBLE_TAP_KEY(bl_dec, &bl BL_DEC, &bl BL_OFF)
 
     // The GLOBE key does not have all the functionalities Apple's version of
     // the key has, so I'm adding a new one to it:

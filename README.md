@@ -43,6 +43,7 @@ the layout easily, here is a table with all the symbols I use:
 | ⇪                                                             | Caps Word                                     |
 | ![Shift](./docs/glyphs/apple-keyboard-shift.svg)              | Shift                                         |
 | ![Globe](./docs/glyphs/web.svg)                               | Globe                                         |
+| ![Caps-Word](./docs/glyphs/apple-keyboard-caps.svg)           | Turn On Caps-Word                             |
 | ![Space](./docs/glyphs/keyboard-space.svg)                    | Space                                         |
 | ![Return](./docs/glyphs/keyboard-return.svg)                  | Enter (Return / Ret)                          |
 | ![Backspace](./docs/glyphs/backspace.svg)                     | Delete backwards (Backspace / Bksp)           |

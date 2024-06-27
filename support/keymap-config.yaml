@@ -9,7 +9,7 @@
 # Configuration for the "rendering" part of Keymap Drawer
 draw_config:
   dark_mode: true
-  separate_combo_diagrams: true
+  separate_combo_diagrams: false
   combo_diagrams_scale: 4
   inner_pad_w: 4.0
   inner_pad_h: 4.0
@@ -273,23 +273,23 @@ parse_config:
     # Layer activation keys
     # These are all located in my base layers (QWERTY and COLEMAK)
     #---------------------------------------------------------------------------
+    # Navigation layer
+    "&bspcnav":
+      {
+        t: "$$mdi:backspace$$",
+        s: "$$mdi:backspace-reverse$$",
+        h: "$$mdi:numeric-1-box-multiple-outline$$",
+        type: "held",
+      }
     # Number layer
     "&hlr L_NUM SPACE":
       {
         t: "$$mdi:keyboard-space$$",
-        h: "$$mdi:numeric-1-box-multiple-outline$$",
-        type: "held",
-      }
-    # Symbols layer
-    "&bspcsym":
-      {
-        t: "$$mdi:backspace$$",
-        s: "$$mdi:backspace-reverse$$",
         h: "$$mdi:numeric-2-box-multiple-outline$$",
         type: "held",
       }
-    # Navigation layer
-    "&lt L_NAV ESC":
+    # Symbols layer
+    "&lt L_SYM ESC":
       { t: "⎋", h: "$$mdi:numeric-3-box-multiple-outline$$", type: "held" }
     # Media layer
     "&lt L_MED RET":
@@ -311,9 +311,9 @@ parse_config:
     # These are keys on the layers themselves that are used to move back to the
     # base layer.
     #---------------------------------------------------------------------------
-    "&tog L_NUM": { t: "$$mdi:numeric-1-box-multiple-outline$$", type: "ghost" }
-    "&tog L_SYM": { t: "$$mdi:numeric-2-box-multiple-outline$$", type: "ghost" }
-    "&tog L_NAV": { t: "$$mdi:numeric-3-box-multiple-outline$$", type: "ghost" }
+    "&tog L_NAV": { t: "$$mdi:numeric-1-box-multiple-outline$$", type: "ghost" }
+    "&tog L_NUM": { t: "$$mdi:numeric-2-box-multiple-outline$$", type: "ghost" }
+    "&tog L_SYM": { t: "$$mdi:numeric-3-box-multiple-outline$$", type: "ghost" }
     "&tog L_MED": { t: "$$mdi:numeric-4-box-multiple-outline$$", type: "ghost" }
     "&tog L_BUT": { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "ghost" }
     # NOTE:
@@ -369,14 +369,20 @@ parse_config:
     "&out OUT_TOG": "$$mdi:usb$$"
     # RGB Underglow
     "&rgb_ug RGB_COLOR_HSB(0, 0, 60)": { t: "$$mdi:palette-outline$$", h: "reset" }
+    "&ug_reset": { t: "$$mdi:palette-outline$$", h: "reset", s: "2x: 0" }
     "&rgb_ug RGB_TOG": { t: "$$mdi:palette-outline$$", h: "tog" }
-    "&kp_rgbhue": { t: "$$mdi:palette-outline$$", h: "hue" }
-    "&kp_rgbsat": { t: "$$mdi:palette-outline$$", h: "sat" }
-    "&kp_rgbbri": { t: "$$mdi:palette-outline$$", h: "light" }
+    "&rgb_ug RGB_HUI": { t: "$$mdi:palette-outline$$", h: "hue+" }
+    "&rgb_ug RGB_HUD": { t: "$$mdi:palette-outline$$", h: "hue-" }
+    "&rgb_ug RGB_SAI": { t: "$$mdi:palette-outline$$", h: "sat+" }
+    "&rgb_ug RGB_SAD": { t: "$$mdi:palette-outline$$", h: "sat-" }
+    "&rgb_ug RGB_BRI": { t: "$$mdi:palette-outline$$", h: "light+" }
+    "&rgb_ug RGB_BRD": { t: "$$mdi:palette-outline$$", h: "light-" }
     # Backlight
+    "&bl BL_INC": "$$mdi:lightbulb-on-90$$"
+    "&bl_inc": "$$mdi:lightbulb-on-90$$"
+    "&bl BL_DEC": "$$mdi:lightbulb-on-20$$"
     "&bl BL_TOG": "$$mdi:lightbulb-off-outline$$"
-    "&kp_bklight":
-      { t: "$$mdi:lightbulb-on-20$$", s: "$$mdi:lightbulb-on-90$$" }
+    "&bl_dec": { t: "$$mdi:lightbulb-on-20$$", s: "2x: off" }
     # Power Management
     "&ext_power EP_TOG": "$$mdi:power-plug-outline$$"
 
@@ -408,6 +414,11 @@ parse_config:
     #---------------------------------------------------------------------------
     # Open square brackeds; when tapped while holding Command down: Grave
     "&lbktgrave": { t: "[", s: "{", h: "⌘:`" }
+
+    # Combo keys
+    #---------------------------------------------------------------------------
+    # CAPS_WORD
+    "&caps_word": "$$mdi:apple-keyboard-caps$$"
 
     # Keyboard shortcut combinations
     #---------------------------------------------------------------------------
@@ -454,3 +465,21 @@ parse_config:
     "&kp MAC_COPY": "$$mdi:content-copy$$"
     # Paste: ⌘ V
     "&kp MAC_PASTE": "$$mdi:content-paste$$"
+    # Media back: ⌘ [
+    "&kp MAC_MEDIA_BACK": { t: "$$mdi:music$$", h: "←" }
+    "&kp MAC_MBK": { t: "$$mdi:music$$", h: "←" }
+    # Media volume up: ⌘ ↑
+    "&kp MAC_MEDIA_VOL_UP": { t: "$$mdi:music$$", h: "vol+" }
+    "&kp MAC_MVOLI": { t: "$$mdi:music$$", h: "vol+" }
+    # Media volume down: ⌘ ↓
+    "&kp MAC_MEDIA_VOL_DOWN": { t: "$$mdi:music$$", h: "vol-" }
+    "&kp MAC_MVOLD": { t: "$$mdi:music$$", h: "vol-" }
+    # Media reload: ⌘ R
+    "&kp MAC_MEDIA_RELOAD": { t: "$$mdi:music$$", h: "reload" }
+    "&kp MAC_MRLD": { t: "$$mdi:music$$", h: "reload" }
+    # Music app show lyrics: ⌃ ⌘ U
+    "&kp MAC_MUSIC_LYRICS": { t: "$$mdi:music$$", h: "lyrics" }
+    "&kp MAC_MLYR": { t: "$$mdi:music$$", h: "lyrics" }
+    # Music app show playing next: ⌥ ⌘ U
+    "&kp MAC_MUSIC_PLAYING_NEXT": { t: "$$mdi:music$$", h: "? →" }
+    "&kp MAC_MPNXT": { t: "$$mdi:music$$", h: "? →" }
