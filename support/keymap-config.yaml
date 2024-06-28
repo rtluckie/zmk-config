@@ -29,6 +29,15 @@ parse_config:
   zmk_preamble: |
     #define KEYMAP_DRAWER
     #define USE_MOLOCK
+    #define MOVE_LEFT 1
+    #define MOVE_DOWN 2
+    #define MOVE_UP 3
+    #define MOVE_RIGHT 4
+    #define MOVE_X_DECODE 1
+    #define ZMK_MOUSE_DEFAULT_MOVE_VAL 600
+    #define ZMK_MOUSE_DEFAULT_SCRL_VAL 10
+    #define MOVE_Y(vert) vert
+    #define MOVE_X(hor) hor+10
 
   # In most cases I won't need these labels defined here, but I decided to keep
   # them so the default behavior of Keymap Drawer matches my configuration
@@ -42,8 +51,8 @@ parse_config:
     right_alt: "⌥"
     left_gui: "⌘"
     right_gui: "⌘"
-    keycode_combiner: "{mods} {key}"
-    mod_combiner: "{mod_1} {mod_2}"
+    keycode_combiner: "{mods}{key}"
+    mod_combiner: "{mod_1}{mod_2}"
 
   # Any key that is used with `&kp` and has a special representation on the
   # keymap, has my special representation defined here.
@@ -299,9 +308,19 @@ parse_config:
         type: "held",
       }
     # Buttons layer
-    "&motg_but": { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
+    "&motg_mou": { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
+    "&hll L_MOU Z": { t: "Z", h: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
+    "&hll L_MOU X": { t: "X", h: "$$mdi:numeric-5-box-multiple-outline$$", type: "held" }
+    # Buttons layer
+    "&motg_fun": { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
+    "&hlr L_FUN DOT": { t: ".", s: ">", h: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
+    "&hlr L_FUN FSLH": { t: "/", s: "?", h: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
+    # Buttons layer
+    "&motg_but": { t: "$$mdi:numeric-7-box-multiple-outline$$", type: "held" }
+    "&hll L_BUT Z": { t: "Z", h: "$$mdi:numeric-7-box-multiple-outline$$", type: "held" }
+    "&hlr L_BUT FSLH": { t: "/", s: "?", h: "$$mdi:numeric-7-box-multiple-outline$$", type: "held" }
     # System layer
-    "&motg_sys": { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "held" }
+    "&motg_sys": { t: "$$mdi:numeric-8-box-multiple-outline$$", type: "held" }
     # Alternative layout
     "&tog L_CMK": "$$mdi:keyboard-variant$$"
     # Lock in-place key
@@ -315,42 +334,43 @@ parse_config:
     "&tog L_NUM": { t: "$$mdi:numeric-2-box-multiple-outline$$", type: "ghost" }
     "&tog L_SYM": { t: "$$mdi:numeric-3-box-multiple-outline$$", type: "ghost" }
     "&tog L_MED": { t: "$$mdi:numeric-4-box-multiple-outline$$", type: "ghost" }
-    "&tog L_BUT": { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "ghost" }
+    "&tog L_MOU": { t: "$$mdi:numeric-5-box-multiple-outline$$", type: "ghost" }
+    "&tog L_FUN": { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "ghost" }
+    "&tog L_BUT": { t: "$$mdi:numeric-7-box-multiple-outline$$", type: "ghost" }
+    "&butundotog": { t: "$$mdi:undo$$", h: "$$mdi:numeric-7-box-multiple-outline$$", type: "ghost" }
     # NOTE:
     # The System layer have activation keys on both halfs of the keyboard and
     # this breaks the pattern of locking the layer with the System layer key,
     # and toggle them back using the key that activate it. The solution was to
     # remove the System layer toggle from the keyboard, but I left its
     # definition hefe just in case I change my mind in the future.
-    "&tog L_SYS": { t: "$$mdi:numeric-6-box-multiple-outline$$", type: "ghost" }
+    "&tog L_SYS": { t: "$$mdi:numeric-8-box-multiple-outline$$", type: "ghost" }
     "&syslocktog": { t: "$$mdi:lock-outline$$", type: "ghost" }
 
     # Homerow modifiers
     #---------------------------------------------------------------------------
     # QWERTY layer
-    "&hml LHRM4 A":
-      { t: "A", h: "$$mdi:apple-keyboard-control$$", type: "held" }
-    "&hml LHRM3 S": { t: "S", h: "$$mdi:apple-keyboard-option$$", type: "held" }
-    "&hml LHRM2 D":
-      { t: "D", h: "$$mdi:apple-keyboard-command$$", type: "held" }
-    "&hsl LHRM1 F": { t: "F", h: "$$mdi:apple-keyboard-shift$$", type: "held" }
-    "&hsr RHRM1 J": { t: "J", h: "$$mdi:apple-keyboard-shift$$", type: "held" }
-    "&hmr RHRM2 K":
-      { t: "K", h: "$$mdi:apple-keyboard-command$$", type: "held" }
-    "&hmr RHRM3 L": { t: "L", h: "$$mdi:apple-keyboard-option$$", type: "held" }
-    "&hmr RHRM4 SEMI":
-      { t: ";", s: ":", h: "$$mdi:apple-keyboard-control$$", type: "held" }
+    "&hml LHRM4 A":    { t: "A",  h: "$$mdi:apple-keyboard-control$$", type: "held" }
+    "&hml LHRM3 S":    { t: "S",  h: "$$mdi:apple-keyboard-option$$",  type: "held" }
+    "&hml LHRM2 D":    { t: "D",  h: "$$mdi:apple-keyboard-command$$", type: "held" }
+    "&hsl LHRM1 F":    { t: "F",  h: "$$mdi:apple-keyboard-shift$$",   type: "held" }
+    "&hsr RHRM1 J":    { t: "J",  h: "$$mdi:apple-keyboard-shift$$",   type: "held" }
+    "&hmr RHRM2 K":    { t: "K",  h: "$$mdi:apple-keyboard-command$$", type: "held" }
+    "&hmr RHRM3 L":    { t: "L",  h: "$$mdi:apple-keyboard-option$$",  type: "held" }
+    "&hmr RHRM4 SEMI": { t: ";",  h: "$$mdi:apple-keyboard-control$$", type: "held", s: ":" }
     # COLEMAK layer
-    "&hml LHRM3 R": { t: "R", h: "$$mdi:apple-keyboard-option$$", type: "held" }
-    "&hml LHRM2 S":
-      { t: "S", h: "$$mdi:apple-keyboard-command$$", type: "held" }
-    "&hsl LHRM1 T": { t: "T", h: "$$mdi:apple-keyboard-shift$$", type: "held" }
-    "&hsr RHRM1 N": { t: "N", h: "$$mdi:apple-keyboard-shift$$", type: "held" }
-    "&hmr RHRM2 E":
-      { t: "E", h: "$$mdi:apple-keyboard-command$$", type: "held" }
-    "&hmr RHRM3 I": { t: "I", h: "$$mdi:apple-keyboard-option$$", type: "held" }
-    "&hmr RHRM4 O":
-      { t: "O", h: "$$mdi:apple-keyboard-control$$", type: "held" }
+    "&hml LHRM3 R":    { t: "R",  h: "$$mdi:apple-keyboard-option$$",  type: "held" }
+    "&hml LHRM2 S":    { t: "S",  h: "$$mdi:apple-keyboard-command$$", type: "held" }
+    "&hsl LHRM1 T":    { t: "T",  h: "$$mdi:apple-keyboard-shift$$",   type: "held" }
+    "&hsr RHRM1 N":    { t: "N",  h: "$$mdi:apple-keyboard-shift$$",   type: "held" }
+    "&hmr RHRM2 E":    { t: "E",  h: "$$mdi:apple-keyboard-command$$", type: "held" }
+    "&hmr RHRM3 I":    { t: "I",  h: "$$mdi:apple-keyboard-option$$",  type: "held" }
+    "&hmr RHRM4 O":    { t: "O",  h: "$$mdi:apple-keyboard-control$$", type: "held" }
+    # Navigation layer
+    "&mt LHRM1 LG(F)": { s: "⌘F", t: "$$mdi:apple-keyboard-shift$$",   type: "held" }
+    "&mt LHRM2 LG(D)": { s: "⌘D", t: "$$mdi:apple-keyboard-command$$", type: "held" }
+    "&mt LHRM3 LG(S)": { s: "⌘S", t: "$$mdi:apple-keyboard-option$$",  type: "held" }
+    "&mt LHRM4 LG(A)": { s: "⌘A", t: "$$mdi:apple-keyboard-control$$", type: "held" }
 
     # Behavior Keys
     #---------------------------------------------------------------------------
@@ -406,9 +426,12 @@ parse_config:
     # Backslash on tap, Globe on hold
     "&globebslh": { t: '\', s: "|", h: "$$mdi:web$$", type: "held" }
     # Equal sign on tap, Globe on hold
-    "&globeequal": { t: "=", s: "+", h: "$$mdi:web$$", type: "held" }
+    "&hmr GLOBE EQUAL": { t: "=", s: "+", h: "$$mdi:web$$", type: "held" }
     # macOS Redo on tap, Globe on hold
     "&mt GLOBE MAC_REDO": { t: "$$mdi:redo$$", h: "$$mdi:web$$", type: "held" }
+    "&appPwinN": { t: "⌘`", s: "⇧⌘⇥" }
+    "&appswtnxt": { t: "⌘⇥" }
+    "&winPglobe": { t: "$$mdi:web$$", s: "⌘~", type: "held" }
 
     # Morph keys
     #---------------------------------------------------------------------------
@@ -419,6 +442,26 @@ parse_config:
     #---------------------------------------------------------------------------
     # CAPS_WORD
     "&caps_word": "$$mdi:apple-keyboard-caps$$"
+
+    # Mouse keys
+    #---------------------------------------------------------------------------
+    # Mouse movement
+    "&mmv MOVE_LEFT": { t: "$$mdi:mouse$$", h: "←" }
+    "&mmv MOVE_DOWN": { t: "$$mdi:mouse$$", h: "↓" }
+    "&mmv MOVE_UP": { t: "$$mdi:mouse$$", h: "↑" }
+    "&mmv MOVE_RIGHT": { t: "$$mdi:mouse$$", h: "→" }
+    # Mouse scrollwheel
+    "&msc MOVE_X(ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-vertical$$", h: "left" }
+    "&msc MOVE_Y(ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-horizontal$$", h: "down" }
+    "&msc MOVE_Y(-ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-horizontal$$", h: "up" }
+    "&msc MOVE_X(-ZMK_MOUSE_DEFAULT_SCRL_VAL)": { t: "$$mdi:unfold-more-vertical$$", h: "right" }
+    # Mouse buttons
+    "&mkp LCLK": { t: "$$mdi:mouse-left-click-outline$$", h: "primary" }
+    "&mkp MB1": { t: "$$mdi:mouse-left-click-outline$$", h: "primary" }
+    "&mkp RCLK": { t: "$$mdi:mouse-right-click-outline$$", h: "right" }
+    "&mkp MB2": { t: "$$mdi:mouse-right-click-outline$$", h: "right" }
+    "&mkp MCLK": { t: "$$mdi:mouse-right-click-outline$$", h: "middle" }
+    "&mkp MB3": { t: "$$mdi:mouse-right-click-outline$$", h: "middle" }
 
     # Keyboard shortcut combinations
     #---------------------------------------------------------------------------
@@ -465,21 +508,8 @@ parse_config:
     "&kp MAC_COPY": "$$mdi:content-copy$$"
     # Paste: ⌘ V
     "&kp MAC_PASTE": "$$mdi:content-paste$$"
-    # Media back: ⌘ [
-    "&kp MAC_MEDIA_BACK": { t: "$$mdi:music$$", h: "←" }
-    "&kp MAC_MBK": { t: "$$mdi:music$$", h: "←" }
-    # Media volume up: ⌘ ↑
-    "&kp MAC_MEDIA_VOL_UP": { t: "$$mdi:music$$", h: "vol+" }
-    "&kp MAC_MVOLI": { t: "$$mdi:music$$", h: "vol+" }
-    # Media volume down: ⌘ ↓
-    "&kp MAC_MEDIA_VOL_DOWN": { t: "$$mdi:music$$", h: "vol-" }
-    "&kp MAC_MVOLD": { t: "$$mdi:music$$", h: "vol-" }
-    # Media reload: ⌘ R
-    "&kp MAC_MEDIA_RELOAD": { t: "$$mdi:music$$", h: "reload" }
-    "&kp MAC_MRLD": { t: "$$mdi:music$$", h: "reload" }
-    # Music app show lyrics: ⌃ ⌘ U
-    "&kp MAC_MUSIC_LYRICS": { t: "$$mdi:music$$", h: "lyrics" }
-    "&kp MAC_MLYR": { t: "$$mdi:music$$", h: "lyrics" }
-    # Music app show playing next: ⌥ ⌘ U
-    "&kp MAC_MUSIC_PLAYING_NEXT": { t: "$$mdi:music$$", h: "? →" }
-    "&kp MAC_MPNXT": { t: "$$mdi:music$$", h: "? →" }
+    "&navcmdz": "⌘Z"
+    "&navcmdx": "⌘X"
+    "&navcmdc": "⌘C"
+    "&navcmdv": "⌘V"
+    "&navcmdg": "⌘G"

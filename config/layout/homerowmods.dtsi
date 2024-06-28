@@ -49,6 +49,21 @@
 #define RHM3(_key)  &hmr RHRM3 _key
 #define RHM4(_key)  &hmr RHRM4 _key
 
+// On the same style as the homerow mods, I want to define a normal momentary
+// hold behavior for the cases where I want to have a hold-preferred behavior:
+
+// Left side
+#define LMT1(_key)  &mt LHRM1 _key
+#define LMT2(_key)  &mt LHRM2 _key
+#define LMT3(_key)  &mt LHRM3 _key
+#define LMT4(_key)  &mt LHRM4 _key
+
+// Right side
+#define RMT1(_key)  &mt RHRM1 _key
+#define RMT2(_key)  &mt RHRM2 _key
+#define RMT3(_key)  &mt RHRM3 _key
+#define RMT4(_key)  &mt RHRM4 _key
+
 // This is a helper macro to allow me to define all home-row modifier without
 // having to type all the boilerplate configuration.
 #define DEFINE_HRM(_label, _name, _hold, _tap, _triggers, ...)  \

@@ -122,9 +122,22 @@ action, starts the window switch instead of the application one, I did the same
 thing with the key below it in my layout. Now I can comfortably cycle between
 apps and windows with my layout.
 
+## Navigation Layer
+
+![Navigation layer layout](./images/corne42-layer1-navigation.svg)
+
+The navigation layer is meant to control the text cursor on the screen.
+
+You have the arrow keys aligned with your homerow primary keys, _“Home”_,
+_“End”_, _“Page Up”_, _“Page Down”_, and macOS shortcuts for next and previous
+words, and beginning and end of line (which is mostly the same as Home and End,
+but some Mac applications don't accept the proper keys, and you're forced to use
+`⌘ ←` (`Command+Left-Arrow`) and `⌘ →` (`Command+Right-Arrow`) for _“Home”_ and
+_“End”_ respectively).
+
 ## Numbers Layer
 
-![Numbers layer layout](./images/corne42-layer1-numbers.svg)
+![Numbers layer layout](./images/corne42-layer2-numbers.svg)
 
 While looking into other layouts out there, I noticed that most people tend to
 position their numbers like an inverted phone keypad, mimicking the numeric
@@ -166,7 +179,7 @@ layout became more “intuitive” for me.
 
 ## Symbols Layer
 
-![Symbols layer layout](./images/corne42-layer2-symbols.svg)
+![Symbols layer layout](./images/corne42-layer3-symbols.svg)
 
 One of the things I always avoided in the past was dealing with my symbols
 layers. I always defined them, but barely use them. Because of comfort or strong
@@ -213,19 +226,6 @@ Despite the modifications I made to adapt it to my “single-sided” symbols la
 you can consider it a direct descendant of this “Spaceship Layout”, even though
 I do not know where it came from.
 
-## Navigation Layer
-
-![Navigation layer layout](./images/corne42-layer3-navigation.svg)
-
-The navigation layer is meant to control the text cursor on the screen.
-
-You have the arrow keys aligned with your homerow primary keys, _“Home”_,
-_“End”_, _“Page Up”_, _“Page Down”_, and macOS shortcuts for next and previous
-words, and beginning and end of line (which is mostly the same as Home and End,
-but some Mac applications don't accept the proper keys, and you're forced to use
-`⌘ ←` (`Command+Left-Arrow`) and `⌘ →` (`Command+Right-Arrow`) for _“Home”_ and
-_“End”_ respectively).
-
 ## Media Layer
 
 ![Media layer layout](./images/corne42-layer4-media.svg)
@@ -241,9 +241,21 @@ _back_ and _next_ are positioned on each side of the _play_ key.
 
 I made the usual _Escape_ key to be the _stop_, so it's easy to remember.
 
+## Mouse Layer
+
+![Mouse layer layout](./images/corne42-layer5-mouse.svg)
+
+## Functions Layer
+
+![Functions layer layout](./images/corne42-layer6-functions.svg)
+
+## Buttons Layer
+
+![Buttons layer layout](./images/corne42-layer7-buttons.svg)
+
 ## System Layer
 
-![System layer layout](./images/corne42-layer6-system.svg)
+![System layer layout](./images/corne42-layer8-system.svg)
 
 The System layer is the only full-keyboard layer in this layout. I code it this
 way because it hosts several keys that act on the half of the keyboard where
@@ -257,7 +269,7 @@ a COLEMAK layout.
 
 ## Alternative Layout
 
-![COLEMAK base layout layer](./images/corne42-layer7-colemak.svg)
+![COLEMAK base layout layer](./images/corne42-layer9-colemak.svg)
 
 This alternate layout is something I'm flirting for a long time. I read more
 texts than I should about the mater, and while opinions about alternate layouts

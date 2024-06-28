@@ -17,13 +17,13 @@ expect plenty of repeating texts between them.
 
 My suggestion is to read the layout documentation for the keyboard you're
 looking for, then, when you understand it, go check out the other docs. This
-way, you won't have to read explanations for things you aren't concerned with in
-the first place, and then you can just look at the layout images and read
-anything that is different.
+way, you won't have to read the same text twice, or explanations for things you
+aren't concerned with in the first place.
 
 Currently, in this repository, I have layout for:
 
 - [Corne (6 columns)](docs/corne.md)
+- [Rolio46.2](docs/rolio.md)
 - [Lily58](docs/lily58.md)
 
 If you did not click on any of the layout links yet, there is some general

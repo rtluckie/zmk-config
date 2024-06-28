@@ -1,8 +1,8 @@
-# Lily58 Layout
+# Rolio46.2 Layout
 
-<div align="center"><img src="images/lily58-keyboard.webp"></div>
+<div align="center"><img src="images/rolio-keyboard.webp"></div>
 
-This Lily58 keyboard layout is a mashup of several excellent layouts I found
+My small split keyboard layout is a mashup of several excellent layouts I found
 online, with a heavy seasoning of my imagination. So yes, you probably already
 saw some (if not most) of the things I put in this layout somewhere else.
 Nevertheless, there are some modifications I made that are worth reading about.
@@ -34,8 +34,6 @@ Some notable features are:
 - **Separate layers for Symbols and Numbers**: I tried to put each one of these
   layers on different sides of the keyboard, to help my brain to identify what
   hand to use in which situation;
-- **Dedicated layer of shortcuts**: The only layer that is mirrored on both
-  sides of the keyboard;
 - **Momentary layers**: All layers require you to keep a key pressed to use
   them, but you can lock them in place (this requires [PR
   #1984](https://github.com/zmkfirmware/zmk/pull/1984) to work, and it's not
@@ -47,7 +45,7 @@ Some notable features are:
 
 ## Base Layer
 
-![Default base layer layout](./images/lily58-layer0-main.svg)
+![Default base layer layout](./images/rolio46-layer0-main.svg)
 
 My base layer, currently, uses a QWERTY layout, and it is where I have cramped
 most features unique to this layout, like “morphed keys”, homerow mods, etc.
@@ -55,21 +53,6 @@ most features unique to this layout, like “morphed keys”, homerow mods, etc.
 It is also the only layer one would modify to use a different layout with all
 the features I created in this configuration. In fact, I added an _“alternative
 layout”_ layer that does just that, and replaces the QWERTY layout with COLEMAK.
-
-### Numbers row
-
-The Lily58 keyboard has 4 rows on the main cluster of keys, and this means that
-we have the luxury of a dedicated row for the number keys.
-
-That is good, but I thought to do better, since I already have a layer for
-numbers. I inverted the numbers and their symbols, and now, I can tap symbols
-without pressing a secondary key.
-
-But wait, what about the dedicated symbols layer?
-
-The reason to keep it there, is because the layer contains convenient chords for
-a pair of symbols, so, depending on what I'm typing, I can choose the best tool
-for the job.
 
 ### Homerow mods
 
@@ -141,7 +124,7 @@ apps and windows with my layout.
 
 ## Navigation Layer
 
-![Navigation layer layout](./images/lily58-layer1-navigation.svg)
+![Navigation layer layout](./images/rolio46-layer1-navigation.svg)
 
 The navigation layer is meant to control the text cursor on the screen.
 
@@ -154,7 +137,7 @@ _“End”_ respectively).
 
 ## Numbers Layer
 
-![Numbers layer layout](./images/lily58-layer2-numbers.svg)
+![Numbers layer layout](./images/rolio46-layer2-numbers.svg)
 
 While looking into other layouts out there, I noticed that most people tend to
 position their numbers like an inverted phone keypad, mimicking the numeric
@@ -196,7 +179,7 @@ layout became more “intuitive” for me.
 
 ## Symbols Layer
 
-![Symbols layer layout](./images/lily58-layer3-symbols.svg)
+![Symbols layer layout](./images/rolio46-layer3-symbols.svg)
 
 One of the things I always avoided in the past was dealing with my symbols
 layers. I always defined them, but barely use them. Because of comfort or strong
@@ -245,10 +228,9 @@ I do not know where it came from.
 
 ## Media Layer
 
-![Media layer layout](./images/lily58-layer4-media.svg)
+![Media layer layout](./images/rolio46-layer4-media.svg)
 
-This layer is where I put all my media controlling buttons, on the e bottom rows
-so they align good with smaller keyboards.
+This layer is where I put all my media controlling buttons.
 
 Except for media player keys, they're all aligned vertically, and go from
 increasing value on top, to toggling it off on the bottom.
@@ -261,34 +243,33 @@ I made the usual _Escape_ key to be the _stop_, so it's easy to remember.
 
 ## Mouse Layer
 
-![Mouse layer layout](./images/lily58-layer5-mouse.svg)
+![Mouse layer layout](./images/rolio46-layer5-mouse.svg)
 
 ## Functions Layer
 
-![Functions layer layout](./images/lily58-layer6-functions.svg)
+![Functions layer layout](./images/rolio46-layer6-functions.svg)
 
 ## Buttons Layer
 
-![Buttons layer layout](./images/lily58-layer7-buttons.svg)
+![Buttons layer layout](./images/rolio46-layer7-buttons.svg)
 
 ## System Layer
 
-![System layer layout](./images/lily58-layer8-system.svg)
+![System layer layout](./images/rolio46-layer8-system.svg)
 
-The System layer is the second full-keyboard layer in this layout, but is the
-only one that is not symmetric. I code it this way because it hosts several keys
-that act on the half of the keyboard where they're located.
+The System layer is the only full-keyboard layer in this layout. I code it this
+way because it hosts several keys that act on the half of the keyboard where
+they're located.
 
 I added all the _Function_ keys on this layer too, but I aligned them from
-bottom to top so removing “higher” keys would be a lesser impact on small
-keyboards.
+bottom to top so they could scale nicely on bigger keyboards.
 
 This layer, also has the key that will change the base layout of the keyboard to
 a COLEMAK layout.
 
 ## Alternative Layout
 
-![COLEMAK base layout layer](./images/lily58-layer9-colemak.svg)
+![COLEMAK base layout layer](./images/rolio46-layer9-colemak.svg)
 
 This alternate layout is something I'm flirting for a long time. I read more
 texts than I should about the mater, and while opinions about alternate layouts
@@ -315,5 +296,5 @@ point, and that is the reason this layer is here, but this day is not today :).
 
 ## Disclaimers
 
-The Lily58 image, I used in the header of this document, is from
-[typeractive](https://typeractive.xyz/), the vendor where I purchase my Lily58.
+The Corne image, I used in the header of this document, is from
+[KeebMaker](https://keebmaker.com/), the vendor where I purchase my Corne-42.
