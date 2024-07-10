@@ -188,35 +188,6 @@
 #define P_LB4_MOU  &none
 #endif
 
-// The next set of defines can only be used if you're building against the
-// branch `feat/pointers-move-scroll` from Peter Johanson's ZMK fork.
-// Usually, I would have a "feature-flag" like `USE_MOUSE_POINTERS`, but in
-// this particular case, we can rely on a macro define that would be defined
-// once the branch is merged to mainline.
-#if defined(MOVE_X_DECODE)
-// Mouse movements
-#define MKP_MOVE_LEFT   &mmv MOVE_LEFT
-#define MKP_MOVE_DOWN   &mmv MOVE_DOWN
-#define MKP_MOVE_UP     &mmv MOVE_UP
-#define MKP_MOVE_RIGHT  &mmv MOVE_RIGHT
-// Scroll wheel
-#define MKP_SCRL_LEFT   &msc MOVE_X(ZMK_MOUSE_DEFAULT_SCRL_VAL)
-#define MKP_SCRL_DOWN   &msc MOVE_Y(ZMK_MOUSE_DEFAULT_SCRL_VAL)
-#define MKP_SCRL_UP     &msc MOVE_Y(-ZMK_MOUSE_DEFAULT_SCRL_VAL)
-#define MKP_SCRL_RIGHT  &msc MOVE_X(-ZMK_MOUSE_DEFAULT_SCRL_VAL)
-#else
-// Mouse movements
-#define MKP_MOVE_LEFT   &kp KP_N4
-#define MKP_MOVE_DOWN   &kp KP_N2
-#define MKP_MOVE_UP     &kp KP_N8
-#define MKP_MOVE_RIGHT  &kp KP_N6
-// Scroll wheel
-#define MKP_SCRL_LEFT   &none
-#define MKP_SCRL_DOWN   &none
-#define MKP_SCRL_UP     &none
-#define MKP_SCRL_RIGHT  &none
-#endif
-
 // Special keys behaviors
 // -----------------------------------------------------------------------------
 // Generic ZMK behaviors are defined on their own `dtsi` file, but some

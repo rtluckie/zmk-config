@@ -2,3 +2,5 @@
 .west/
 build/
 modules/
+zephyr/
+zmk/

@@ -16,11 +16,11 @@ include:
   # Corne-42 OLED Firmeare
   - board: nice_nano_v2
     shield: corne_left
-    cmake-args: -DEXTRA_CONF_FILE=../../../../config/corne_oled.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
     artifact-name: zmk-corne-42-oled-left
   - board: nice_nano_v2
     shield: corne_right
-    cmake-args: -DEXTRA_CONF_FILE=../../../../config/corne_oled.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/corne_oled.conf
     artifact-name: zmk-corne-42-oled-right
   - board: nice_nano_v2
     shield: settings_reset
@@ -29,11 +29,11 @@ include:
   # Corne-42 nice!view Firmeare
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view
-    cmake-args: -DEXTRA_CONF_FILE=../../../../config/corne_niceview.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/corne_niceview.conf
     artifact-name: zmk-corne-42-niceview-left
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
-    cmake-args: -DEXTRA_CONF_FILE=../../../../config/corne_niceview.conf
+    cmake-args: -DEXTRA_CONF_FILE=../../config/corne_niceview.conf
     artifact-name: zmk-corne-42-niceview-right
   - board: nice_nano_v2
     shield: settings_reset
