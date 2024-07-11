@@ -33,6 +33,6 @@
 #define COMBO_KEY_CAPS_WORD  <LM1 RM1>
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 25
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 35
 
 #include "layout/standard_layout.dtsi"

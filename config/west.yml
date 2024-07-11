@@ -1,6 +1,6 @@
 manifest:
   remotes:
-    - name: personal
+    - name: zmkfirmware-personal
       url-base: https://github.com/Townk
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -13,7 +13,6 @@ manifest:
       remote: zmkfirmware
       revision: v3.5.0+zmk-fixes
       clone-depth: 1
-      # path: .west/repos/zephyr
       import:
         name-blocklist:
           - ci-tools
@@ -35,10 +34,9 @@ manifest:
           - edtt
           - trusted-firmware-m
     - name: zmk
-      remote: personal
-      revision: molock
+      remote: zmkfirmware-personal
+      revision: mousemove-molock
       clone-depth: 1
-      # path: .west/repos/zmk
       import: app/west.yml
     - name: zmk-tri-state
       remote: dhruvinsh
