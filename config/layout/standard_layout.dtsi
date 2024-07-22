@@ -136,7 +136,14 @@
 #define P_RF3_FUN  &none
 #define P_RB3_FUN  &tog L_FUN
 #define P_RB4_FUN  &none
-#elif !defined(USE_HOLD_TAP_LAYER_BUTTONS) && defined(USE_HOLD_TAP_LAYER_FUNCTIONS)
+#elif !defined(USE_HOLD_TAP_LAYER_BUTTONS) && !defined(USE_HOLD_TAP_LAYER_FUNCTIONS)
+#define P_RB4_QWT  &kp FSLH
+#define P_RB3_QWT  &kp DOT
+#define P_RF3_QWT  &motg_fun
+#define P_RF3_FUN  &tog L_FUN
+#define P_RB3_FUN  &none
+#define P_RB4_FUN  &none
+#elif !defined(USE_HOLD_TAP_LAYER_BUTTONS)
 #define P_RB4_QWT  &hlr L_FUN FSLH
 #define P_RB3_QWT  &kp DOT
 #define P_RF3_QWT  &none
@@ -144,7 +151,6 @@
 #define P_RB3_FUN  &none
 #define P_RB4_FUN  &tog L_FUN
 #else
-#define P_RB4_QWT  &kp FSLH
 #define P_RB3_QWT  &kp DOT
 #define P_RF3_QWT  &motg_fun
 #define P_RF3_FUN  &tog L_FUN
@@ -172,7 +178,14 @@
 #define P_LF3_MOU  &none
 #define P_LB3_MOU  &tog L_MOU
 #define P_LB4_MOU  &none
-#elif !defined(USE_HOLD_TAP_LAYER_BUTTONS) && defined(USE_HOLD_TAP_LAYER_MOUSE)
+#elif !defined(USE_HOLD_TAP_LAYER_BUTTONS) && !defined(USE_HOLD_TAP_LAYER_MOUSE)
+#define P_LB4_QWT  &kp Z
+#define P_LB3_QWT  &kp X
+#define P_LF3_QWT  &motg_mou
+#define P_LF3_MOU  &tog L_MOU
+#define P_LB3_MOU  &none
+#define P_LB4_MOU  &none
+#elif !defined(USE_HOLD_TAP_LAYER_BUTTONS)
 #define P_LB4_QWT  &hll L_MOU Z
 #define P_LB3_QWT  &kp X
 #define P_LF3_QWT  &none
@@ -180,7 +193,6 @@
 #define P_LB3_MOU  &none
 #define P_LB4_MOU  &tog L_MOU
 #else
-#define P_LB4_QWT  &kp Z
 #define P_LB3_QWT  &kp X
 #define P_LF3_QWT  &motg_mou
 #define P_LF3_MOU  &tog L_MOU
@@ -559,14 +571,14 @@
     //         ┌───────┬───────┬───────┬───────┬───────┐ │   ↘   │  │   ⇟   │ ┌───────┬───────┬───────┬───────┬───────┐
     //         │       │       │ -=〿=- │       │       │ └───────╯  ╰───────┘ │  R 󰍽  │  L 󰍽  │  M 󰍽  │       │   󰍁   │
     //         ╰───────┴───────┴───────┴───────┴───────┘                      └───────┴───────┴───────┴───────┴───────╯
-    MOU {
+    MOUSE {
       display-name = "Mouse";
       bindings = <LAYER_ADAPTER(
-        &none,     &none,     &none,     &none,     &none,     &none,                         &none,     &none,         &none,         &none,         &none,          &none,
-        &none,     &none,     &none,     &none,     &none,     &none, &kp LHYP,    &kp RHYP,  &none,     &kp MAC_CUT,   &kp MAC_COPY,  &kp MAC_PASTE, &kp MAC_UNDO,   &none,
-        &none,     &kp LHRM4, &kp LHRM3, &kp LHRM2, &kp LHRM1, &none, &kp LMEH,    &kp RMEH,  &none,     MKP_MOVE_LEFT, MKP_MOVE_DOWN, MKP_MOVE_UP,   MKP_MOVE_RIGHT, &none,
-        &kp GLOBE, P_LB4_MOU, P_LB3_MOU, &none,     &none,     &none, &kp HOME,    &kp PG_UP, &none,     MKP_SCRL_LEFT, MKP_SCRL_DOWN, MKP_SCRL_UP,   MKP_SCRL_RIGHT, &none,
-                   &none,     &none,     P_LF3_MOU, &none,     &none, &kp END,     &kp PG_DN, &mkp RCLK, &mkp LCLK,     &mkp MCLK,     &mkp MCLK,     &molock
+        &none,     &none,     &none,     &none,     &none,     &none,                            &none,     &none,         &none,         &none,         &none,          &none,
+        &none,     &mkp MB4,  &mkp MB3,  &mkp MB2,  &mkp MB1,  &mkp MB5, &kp LHYP,    &kp RHYP,  &none,     &kp MAC_CUT,   &kp MAC_COPY,  &kp MAC_PASTE, &kp MAC_UNDO,   &none,
+        &none,     &kp LHRM4, &kp LHRM3, &kp LHRM2, &kp LHRM1, &none,    &kp LMEH,    &kp RMEH,  &none,     MKP_MOVE_LEFT, MKP_MOVE_DOWN, MKP_MOVE_UP,   MKP_MOVE_RIGHT, &none,
+        &kp GLOBE, P_LB4_MOU, P_LB3_MOU, &none,     &none,     &none,    &kp HOME,    &kp PG_UP, &none,     MKP_SCRL_LEFT, MKP_SCRL_DOWN, MKP_SCRL_UP,   MKP_SCRL_RIGHT, &none,
+                   &none,     &none,     P_LF3_MOU, &none,     &none,    &kp END,     &kp PG_DN, &mkp MB2,  &mkp MB1,      &mkp MB3,      &mkp MB4,     &molock
       )>;
       sensor-bindings = <&mouscrl SCRLDN SCRLUP &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -585,7 +597,7 @@
     //         ┌───────┬───────┬───────┬───────┬───────┐ │   ↘   │  │   ⇟   │ ┌───────┬───────┬───────┬───────┬───────┐
     //         │   󰍁   │       │       │       │       │ └───────╯  ╰───────┘ │       │       │ -=〿=- │       │       │
     //         ╰───────┴───────┴───────┴───────┴───────┘                      └───────┴───────┴───────┴───────┴───────╯
-    FUN {
+    FUNCTIONS {
       display-name = "Functions";
       bindings = <LAYER_ADAPTER(
         &none, &kp F16, &kp F17, &kp F18, &kp F19, &kp F20,                         &none, &none,     &none,     &none,     &none,     &none,
