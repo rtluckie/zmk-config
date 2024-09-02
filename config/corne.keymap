@@ -28,6 +28,38 @@
         };
     };
 
+    behaviors {
+        A_hold_Z: A_hold_Z {
+            compatible = "zmk,behavior-hold-tap";
+            label = "A_HOLD_Z";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+
+        C_hold_V: C_hold_V {
+            compatible = "zmk,behavior-hold-tap";
+            label = "C_HOLD_V";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+
+        S_hold_X: S_hold_X {
+            compatible = "zmk,behavior-hold-tap";
+            label = "S_HOLD_X";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -39,10 +71,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &none  &none  &none  &none  &none        &none      &none  &none  &none  &none  &none
-&kp Q  &none  &kp W  &kp E  &kp R  &kp T        &kp Y      &kp U  &kp I  &kp O  &none  &kp P
-&none  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H      &kp J  &kp K  &kp L  &none  &none
-                     &kp V  &kp B  &kp SPACE    &kp SPACE  &kp N  &kp M
+&none  &none          &none          &none          &none  &none        &none      &none  &none  &none  &none  &none
+&kp Q  &none          &kp W          &kp E          &kp R  &kp T        &kp Y      &kp U  &kp I  &kp O  &none  &kp P
+&none  &A_hold_Z Z A  &S_hold_X X S  &kp D          &kp F  &kp G        &kp H      &kp J  &kp K  &kp L  &none  &none
+                                     &C_hold_V C V  &kp B  &kp SPACE    &kp SPACE  &kp N  &kp M
             >;
         };
 
