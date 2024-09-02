@@ -14,17 +14,17 @@
 
         backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
+            key-positions = <20 21>;
         };
 
         return {
             bindings = <&kp RETURN>;
-            key-positions = <20 21>;
+            key-positions = <32 33>;
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <2 3>;
+            key-positions = <14 15>;
         };
     };
 
