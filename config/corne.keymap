@@ -58,6 +58,36 @@
             tapping-term-ms = <400>;
             flavor = "tap-preferred";
         };
+
+        L_SPACE_HOLD_CMD: L_SPACE_HOLD_CMD {
+            compatible = "zmk,behavior-hold-tap";
+            label = "L_SPACE_HOLD_CMD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <800>;
+            flavor = "tap-preferred";
+        };
+
+        R_SPACE_HOLD_ALT: R_SPACE_HOLD_ALT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "R_SPACE_HOLD_ALT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <800>;
+            flavor = "tap-preferred";
+        };
+
+        B_hold_L1: B_hold_L1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "B_HOLD_L1";
+            bindings = <&tog>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <800>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -71,10 +101,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &none          &none          &none          &none  &none        &none      &none  &none  &none  &none  &none
-&kp Q  &none          &kp W          &kp E          &kp R  &kp T        &kp Y      &kp U  &kp I  &kp O  &none  &kp P
-&none  &A_hold_Z Z A  &S_hold_X X S  &kp D          &kp F  &kp G        &kp H      &kp J  &kp K  &kp L  &none  &none
-                                     &C_hold_V C V  &kp B  &kp SPACE    &kp SPACE  &kp N  &kp M
+&none  &none          &none          &none          &none           &none                                   &none                              &none  &none  &none  &none  &none
+&kp Q  &none          &kp W          &kp E          &kp R           &kp T                                   &kp Y                              &kp U  &kp I  &kp O  &none  &kp P
+&none  &A_hold_Z Z A  &S_hold_X X S  &kp D          &kp F           &kp G                                   &kp H                              &kp J  &kp K  &kp L  &none  &none
+                                     &C_hold_V C V  &B_hold_L1 1 B  &L_SPACE_HOLD_CMD LEFT_COMMAND SPACE    &R_SPACE_HOLD_ALT RIGHT_ALT SPACE  &kp N  &kp M
             >;
         };
 
