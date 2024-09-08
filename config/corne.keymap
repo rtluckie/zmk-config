@@ -26,6 +26,11 @@
             bindings = <&kp TAB>;
             key-positions = <14 15>;
         };
+
+        NM_Layer {
+            bindings = <&to 1>;
+            key-positions = <40 41>;
+        };
     };
 
     behaviors {
@@ -39,9 +44,9 @@
             flavor = "tap-preferred";
         };
 
-        C_hold_V: C_hold_V {
+        B_hold_V: B_hold_V {
             compatible = "zmk,behavior-hold-tap";
-            label = "C_HOLD_V";
+            label = "B_HOLD_V";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -79,13 +84,53 @@
             flavor = "tap-preferred";
         };
 
-        B_hold_L1: B_hold_L1 {
+        hold_L1: hold_L1 {
             compatible = "zmk,behavior-hold-tap";
-            label = "B_HOLD_L1";
-            bindings = <&tog>, <&kp>;
+            label = "HOLD_L1";
+            bindings = <&lt>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <800>;
+            flavor = "tap-preferred";
+        };
+
+        K_hold_Comma: K_hold_Comma {
+            compatible = "zmk,behavior-hold-tap";
+            label = "K_HOLD_COMMA";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+
+        L_hold_Question: L_hold_Question {
+            compatible = "zmk,behavior-hold-tap";
+            label = "L_HOLD_QUESTION";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+
+        P_hold_shift: P_hold_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "P_HOLD_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+
+        Q_hold_shift: Q_hold_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Q_HOLD_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
             flavor = "tap-preferred";
         };
     };
@@ -101,10 +146,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &none          &none          &none          &none           &none                                   &none                              &none  &none  &none  &none  &none
-&kp Q  &none          &kp W          &kp E          &kp R           &kp T                                   &kp Y                              &kp U  &kp I  &kp O  &none  &kp P
-&none  &A_hold_Z Z A  &S_hold_X X S  &kp D          &kp F           &kp G                                   &kp H                              &kp J  &kp K  &kp L  &none  &none
-                                     &C_hold_V C V  &B_hold_L1 1 B  &L_SPACE_HOLD_CMD LEFT_COMMAND SPACE    &R_SPACE_HOLD_ALT RIGHT_ALT SPACE  &kp N  &kp M
+&none  &none          &none          &none  &none          &none                                   &none                              &none  &none  &none  &none     &none
+&kp Q  &none          &kp W          &kp E  &kp R          &kp T                                   &kp Y                              &kp U  &kp I  &kp O  &none     &kp P
+&none  &A_hold_Z Z A  &S_hold_X X S  &kp D  &kp F          &kp G                                   &kp H                              &kp J  &kp K  &kp L  &kp APOS  &none
+                                     &kp C  &B_hold_V V B  &L_SPACE_HOLD_CMD LEFT_COMMAND SPACE    &R_SPACE_HOLD_ALT RIGHT_ALT SPACE  &kp N  &kp M
             >;
         };
 
@@ -116,10 +161,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6     &kp N7          &kp N8          &kp N9       &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none      &kp LEFT_ARROW  &kp UP          &kp RIGHT    &none   &none
-&kp LSHFT   &none         &none         &trans        &trans        &trans          &trans     &trans          &kp DOWN_ARROW  &bootloader  &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp SPACE  &trans          &kp RALT
+&none       &kp N1        &kp N2        &kp N3        &kp N4        &kp N5       &kp N6     &kp N7          &kp N8          &kp N9       &kp N0  &kp BSPC
+&bt BT_CLR  &none         &none         &none         &none         &none        &none      &kp LEFT_ARROW  &kp UP          &kp RIGHT    &none   &none
+&none       &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans       &trans     &trans          &kp DOWN_ARROW  &bootloader  &trans  &trans
+                                        &none         &trans        &kp SPACE    &kp SPACE  &trans          &none
             >;
         };
 
