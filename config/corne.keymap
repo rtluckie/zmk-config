@@ -144,6 +144,36 @@
             tapping-term-ms = <400>;
             flavor = "tap-preferred";
         };
+
+        b_ALT: b_ALT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "B_ALT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <800>;
+            flavor = "tap-preferred";
+        };
+
+        c_CONTROL: c_CONTROL {
+            compatible = "zmk,behavior-hold-tap";
+            label = "C_CONTROL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <800>;
+            flavor = "tap-preferred";
+        };
+
+        i_dash: i_dash {
+            compatible = "zmk,behavior-hold-tap";
+            label = "I_DASH";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <800>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -157,10 +187,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none                       &none          &none                         &none  &none  &none                     &none                                  &none  &none                  &none                        &none     &none
-&Q_hold_shift LEFT_SHIFT Q  &none          &w_hold_exclam EXCLAMATION W  &kp E  &kp R  &kp T                     &kp Y                                  &kp U  &kp I                  &kp O                        &none     &P_hold_shift RIGHT_SHIFT P
-&none                       &A_hold_Z Z A  &S_hold_X X S                 &kp D  &kp F  &kp G                     &kp H                                  &kp J  &K_hold_Comma COMMA K  &L_hold_Question QUESTION L  &kp APOS  &none
-                                                                         &kp C  &kp B  &V_HOLD_LSpace SPACE V    &R_SPACE_HOLD_CMD RIGHT_COMMAND SPACE  &kp N  &kp M
+&none                       &none          &none                         &none               &none              &none                     &none                                  &none  &none                  &none                        &none     &none
+&Q_hold_shift LEFT_SHIFT Q  &none          &w_hold_exclam EXCLAMATION W  &kp E               &kp R              &kp T                     &kp Y                                  &kp U  &i_dash MINUS I        &kp O                        &none     &P_hold_shift RIGHT_SHIFT P
+&none                       &A_hold_Z Z A  &S_hold_X X S                 &kp D               &kp F              &kp G                     &kp H                                  &kp J  &K_hold_Comma COMMA K  &L_hold_Question QUESTION L  &kp APOS  &none
+                                                                         &c_CONTROL LCTRL C  &b_ALT LEFT_ALT B  &V_HOLD_LSpace SPACE V    &R_SPACE_HOLD_CMD RIGHT_COMMAND SPACE  &kp N  &kp M
             >;
         };
 
