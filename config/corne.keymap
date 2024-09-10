@@ -31,16 +31,6 @@
             bindings = <&to 1>;
             key-positions = <40 41>;
         };
-
-        leftshift {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <25 26>;
-        };
-
-        rightshift {
-            bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <34 33>;
-        };
     };
 
     behaviors {
@@ -74,9 +64,9 @@
             flavor = "tap-preferred";
         };
 
-        L_SPACE_HOLD_CMD: L_SPACE_HOLD_CMD {
+        V_HOLD_LSpace: V_HOLD_LSpace {
             compatible = "zmk,behavior-hold-tap";
-            label = "L_SPACE_HOLD_CMD";
+            label = "V_HOLD_LSPACE";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -84,9 +74,9 @@
             flavor = "tap-preferred";
         };
 
-        R_SPACE_HOLD_ALT: R_SPACE_HOLD_ALT {
+        R_SPACE_HOLD_CMD: R_SPACE_HOLD_CMD {
             compatible = "zmk,behavior-hold-tap";
-            label = "R_SPACE_HOLD_ALT";
+            label = "R_SPACE_HOLD_CMD";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -156,10 +146,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none                       &none          &none          &none  &none          &none                                   &none                              &none  &none                  &none                        &none     &none
-&Q_hold_shift LEFT_SHIFT Q  &none          &kp W          &kp E  &kp R          &kp T                                   &kp Y                              &kp U  &kp I                  &kp O                        &none     &P_hold_shift RIGHT_SHIFT P
-&none                       &A_hold_Z Z A  &S_hold_X X S  &kp D  &kp F          &kp G                                   &kp H                              &kp J  &K_hold_Comma COMMA K  &L_hold_Question QUESTION L  &kp APOS  &none
-                                                          &kp C  &B_hold_V V B  &L_SPACE_HOLD_CMD LEFT_COMMAND SPACE    &R_SPACE_HOLD_ALT RIGHT_ALT SPACE  &kp N  &kp M
+&none                       &none          &none          &none  &none  &none                     &none                                  &none  &none                  &none                        &none     &none
+&Q_hold_shift LEFT_SHIFT Q  &none          &kp W          &kp E  &kp R  &kp T                     &kp Y                                  &kp U  &kp I                  &kp O                        &none     &P_hold_shift RIGHT_SHIFT P
+&none                       &A_hold_Z Z A  &S_hold_X X S  &kp D  &kp F  &kp G                     &kp H                                  &kp J  &K_hold_Comma COMMA K  &L_hold_Question QUESTION L  &kp APOS  &none
+                                                          &kp C  &kp B  &V_HOLD_LSpace SPACE V    &R_SPACE_HOLD_CMD RIGHT_COMMAND SPACE  &kp N  &kp M
             >;
         };
 
