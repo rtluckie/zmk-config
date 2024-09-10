@@ -156,10 +156,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &none          &none          &none  &none          &none                                   &none                              &none  &none  &none  &none     &none
-&kp Q  &none          &kp W          &kp E  &kp R          &kp T                                   &kp Y                              &kp U  &kp I  &kp O  &none     &kp P
-&none  &A_hold_Z Z A  &S_hold_X X S  &kp D  &kp F          &kp G                                   &kp H                              &kp J  &kp K  &kp L  &kp APOS  &none
-                                     &kp C  &B_hold_V V B  &L_SPACE_HOLD_CMD LEFT_COMMAND SPACE    &R_SPACE_HOLD_ALT RIGHT_ALT SPACE  &kp N  &kp M
+&none                       &none          &none          &none  &none          &none                                   &none                              &none  &none                  &none                        &none     &none
+&Q_hold_shift LEFT_SHIFT Q  &none          &kp W          &kp E  &kp R          &kp T                                   &kp Y                              &kp U  &kp I                  &kp O                        &none     &P_hold_shift RIGHT_SHIFT P
+&none                       &A_hold_Z Z A  &S_hold_X X S  &kp D  &kp F          &kp G                                   &kp H                              &kp J  &K_hold_Comma COMMA K  &L_hold_Question QUESTION L  &kp APOS  &none
+                                                          &kp C  &B_hold_V V B  &L_SPACE_HOLD_CMD LEFT_COMMAND SPACE    &R_SPACE_HOLD_ALT RIGHT_ALT SPACE  &kp N  &kp M
             >;
         };
 
