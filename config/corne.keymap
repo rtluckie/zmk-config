@@ -30,6 +30,7 @@
         NM_Layer {
             bindings = <&to 1>;
             key-positions = <40 41>;
+            require-prior-idle-ms = <800>;
         };
     };
 
