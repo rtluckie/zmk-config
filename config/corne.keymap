@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -187,10 +186,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none                       &none          &none                         &none               &none              &none                     &none                                  &none  &none                  &none                        &none     &none
-&Q_hold_shift LEFT_SHIFT Q  &none          &w_hold_exclam EXCLAMATION W  &kp E               &kp R              &kp T                     &kp Y                                  &kp U  &i_dash MINUS I        &kp O                        &none     &P_hold_shift RIGHT_SHIFT P
-&none                       &A_hold_Z Z A  &S_hold_X X S                 &kp D               &kp F              &kp G                     &kp H                                  &kp J  &K_hold_Comma COMMA K  &L_hold_Question QUESTION L  &kp APOS  &none
-                                                                         &c_CONTROL LCTRL C  &b_ALT LEFT_ALT B  &V_HOLD_LSpace SPACE V    &R_SPACE_HOLD_CMD RIGHT_COMMAND SPACE  &kp N  &kp M
+&none  &none          &none                         &none               &none              &none                     &none                                  &none  &none                  &none                        &none     &none
+&none  &kp Q          &w_hold_exclam EXCLAMATION W  &kp E               &kp R              &kp T                     &kp Y                                  &kp U  &i_dash MINUS I        &kp O                        &kp P     &none
+&none  &A_hold_Z Z A  &S_hold_X X S                 &kp D               &kp F              &kp G                     &kp H                                  &kp J  &K_hold_Comma COMMA K  &L_hold_Question QUESTION L  &kp APOS  &none
+                                                    &c_CONTROL LCTRL C  &b_ALT LEFT_ALT B  &V_HOLD_LSpace SPACE V    &R_SPACE_HOLD_CMD RIGHT_COMMAND SPACE  &kp N  &kp M
             >;
         };
 
@@ -202,10 +201,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none       &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6     &kp N7          &kp N8          &kp N9       &kp N0  &none
-&bt BT_CLR  &none         &none         &none         &none         &none           &none      &kp LEFT_ARROW  &kp UP          &kp RIGHT    &none   &none
-&none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans     &trans          &kp DOWN_ARROW  &bootloader  &trans  &trans
-                                        &none         &trans        &kp SPACE       &kp SPACE  &trans          &none
+&none  &none         &none         &none         &none         &none     &none      &none           &none           &none        &none   &none
+&none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &none      &kp LEFT_ARROW  &kp UP          &kp RIGHT    &none   &none
+&none  &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0    &trans     &trans          &kp DOWN_ARROW  &bootloader  &trans  &trans
+                                   &none         &trans        &none     &kp SPACE  &trans          &none
             >;
         };
 
