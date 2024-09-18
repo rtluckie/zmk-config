@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - {t: P, h: 'move [R]'}
-  - $$mdi:mirror-rectangle$$
+  - {t: gaming, h: '$$mdi:toggle-switch$$'}
   - $$tablerf:pointer$$
   - {t: A, h: '$$mdi:apple-keyboard-control$$'}
   - {t: S, h: '$$mdi:apple-keyboard-command$$'}
@@ -43,6 +43,49 @@ layers:
   - {t: Esc, h: media}
   - {t: '$$mdi:keyboard-space$$', h: numpad}
   - {t: ':', h: mirror}
+  gaming:
+  - ''
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: araxia, h: '$$mdi:toggle-switch$$'}
+  - ''
+  - A
+  - S
+  - D
+  - F
+  - G
+  - {t: H, s: '$$mdi:backspace-outline$$'}
+  - J
+  - K
+  - L
+  - ;
+  - ''
+  - ''
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - {t: M, s: ⮐}
+  - ','
+  - .
+  - /
+  - ''
+  - $$mdi:keyboard-space$$
+  - ⮐
+  - {t: '$$mdi:keyboard-tab$$', h: symbols}
+  - {t: Esc, h: media}
+  - {t: '$$mdi:keyboard-space$$', h: numpad}
+  - $$mdi:apple-keyboard-shift$$
   symbols:
   - ''
   - ','
@@ -307,7 +350,7 @@ layers:
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:led-on$$', s: '$$mdi:led-outline$$', type: toggle}
   - {t: '$$mdi:led-on$$', s: '$$mdi:white-balance-sunny$$', type: sym_by_sym}
   - {t: '$$mdi:led-outline$$', s: '$$mdi:white-balance-sunny$$', type: sym_by_sym}
-  - RGB COLOR HSB(251000)
+  - {t: '$$mdi:led-on$$', h: '(25,100,0)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
   - '&glo C'
   - '&glo N'
   - ''
@@ -319,7 +362,7 @@ layers:
   - ''
   - {t: '$$mdi:led-on$$', s: '$$mdi:eyedropper$$', type: sym_by_sym}
   - {t: '$$mdi:led-outline$$', s: '$$mdi:eyedropper$$', type: sym_by_sym}
-  - RGB COLOR HSB(2510080)
+  - {t: '$$mdi:led-on$$', h: '(25,100,80)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
   - '&glo H'
   - '&glo Q'
   - ''
@@ -331,7 +374,7 @@ layers:
   - ''
   - {t: '$$mdi:led-on$$', s: '$$mdi:palette$$', type: sym_by_sym}
   - {t: '$$mdi:led-outline$$', s: '$$mdi:palette$$', type: sym_by_sym}
-  - RGB COLOR HSB(250100)
+  - {t: '$$mdi:led-on$$', h: '(25,0,100)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
   - '&glo N'
   - ''
   - ''
@@ -648,63 +691,63 @@ layers:
 combos:
 - p: [5, 17]
   k: ⮐
-  l: [araxia]
+  l: [araxia, gaming]
   a: right
   o: 0.1
   arc_scale: 1.03
 - p: [37, 38]
   k: {t: ⮐, h: adjust}
-  l: [araxia]
+  l: [araxia, gaming]
 - p: [38, 39]
   k: {t: '$$mdi:keyboard-tab$$', h: adjust}
-  l: [araxia]
+  l: [araxia, gaming]
   a: top
   o: 0.05
   arc_scale: 1.055
 - p: [6, 18]
   k: ⮐
-  l: [araxia]
+  l: [araxia, gaming]
   a: left
   o: 0.1
   arc_scale: 1.03
 - p: [39, 40]
   k: {t: ⮐, h: output}
-  l: [araxia]
+  l: [araxia, gaming]
 - p: [17, 29]
   k: $$mdi:keyboard-tab$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: right
   o: 0.1
   arc_scale: 1.03
 - p: [18, 30]
   k: $$mdi:keyboard-tab$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: left
   o: 0.1
   arc_scale: 1.03
 - p: [1, 16]
-  k: '&osl LG(LA(LC(LS(A)))) 13'
+  k: '&osl LG(LA(LC(LS(A)))) 14'
   l: [araxia]
   a: top
   o: 1.85
   arc_scale: 1.075
 - p: [10, 19]
-  k: '&osl LG(LA(LC(LS(A)))) 13'
+  k: '&osl LG(LA(LC(LS(A)))) 14'
   l: [araxia]
   a: top
   o: 1.85
   arc_scale: 1.075
 - p: [37, 40]
-  k: '&osl LG(LA(LC(LS(A)))) 13'
+  k: '&osl LG(LA(LC(LS(A)))) 14'
   l: [araxia, pointer, discord]
   a: bottom
   o: 0.35
   arc_scale: 1.03
 - p: [5, 6]
-  k: '&osl LG(LA(LC(LS(F)))) 14'
+  k: '&osl LG(LA(LC(LS(F)))) 15'
   l: [araxia]
 - p: [7, 8, 9]
-  k: Ctl+ A
+  k: tmux prefix
   l: [araxia]
   a: top
   o: 0.15
@@ -717,13 +760,13 @@ combos:
   arc_scale: 1.03
 - p: [16, 19]
   k: capsy
-  l: [araxia]
+  l: [araxia, gaming]
   a: top
   o: 1.85
   arc_scale: 1.075
 - p: [13, 22]
   k: shifty
-  l: [araxia]
+  l: [araxia, gaming]
   a: bottom
   o: 3.0
   arc_scale: 1.075
@@ -735,43 +778,43 @@ combos:
   arc_scale: 1.03
 - p: [9, 10]
   k: $$mdi:backspace-reverse-outline$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: top
   o: 0.05
   arc_scale: 1.03
 - p: [1, 13]
   k: $$mdi:backspace-outline$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: left
   o: 0.2
   arc_scale: 1.03
 - p: [10, 22]
   k: $$mdi:backspace-outline$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: right
   o: 0.2
   arc_scale: 1.03
 - p: [25, 26]
   k: $$mdi:apple-keyboard-command$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: bottom
   o: 0.05
   arc_scale: 1.03
 - p: [13, 25]
   k: $$mdi:apple-keyboard-option$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: right
   o: 0.15
   arc_scale: 1.03
 - p: [33, 34]
   k: $$mdi:apple-keyboard-command$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: bottom
   o: 0.05
   arc_scale: 1.03
 - p: [22, 34]
   k: $$mdi:apple-keyboard-option$$
-  l: [araxia]
+  l: [araxia, gaming]
   a: left
   o: 0.15
   arc_scale: 1.03

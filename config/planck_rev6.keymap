@@ -23,13 +23,25 @@
             bindings = <
 &lttp WIN_LEFT Q    &kp W         &kp E              &kp R             &kp T                &kp F1  &kp F2      &kp Y            &kp U               &iI                 &kp O         &lttp WIN_RIGHT P
 &hrml LCTRL A       &hrml LGUI S  &hrml LALT D       &hrsl LSHIFT F    &hrml GLOBE G        &kp F3  &point_tog  &h_bs            &hrsr RSHIFT J      &hrmr RALT K        &hrmr RGUI L  &hrmr RCTRL SEMI
-&kp Z               &kp X         &kp C              &kp V             &kp B                &kp F4  &kp F5      &kp N            &m_cr               &kp COMMA           &kp DOT       &kp SLASH
+&kp Z               &kp X         &kp C              &kp V             &kp B                &kp F4  &to GAMING  &kp N            &m_cr               &kp COMMA           &kp DOT       &kp SLASH
 &lttp SYMBOLS C_PP  &kp F6        &mthp LGUI RETURN  &lthp LNUM LC(W)  &lthp SYMBOLS ESC    &kp F7  &kp F8      &lthp MEDIA ESC  &lttp NUMPAD SPACE  &mttp MIRROR COLON  &point_tog    &dis_tog
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         /* 1 Layer */
+        gaming {
+            display-name = "gaming";
+            bindings = <
+&kp Q               &kp W   &kp E      &kp R       &kp T                &kp F1  &kp F2         &kp Y            &kp U               &kp I      &kp O    &kp P
+&kp A               &kp S   &kp D      &kp F       &kp G                &kp F3  &none          &h_bs            &kp J               &kp K      &kp L    &kp SEMI
+&kp Z               &kp X   &kp C      &kp V       &kp B                &kp F4  &to DEFAULT    &kp N            &m_cr               &kp COMMA  &kp DOT  &kp SLASH
+&lttp SYMBOLS C_PP  &kp F5  &kp SPACE  &kp RETURN  &lthp SYMBOLS TAB    &kp F7  &kp F8         &lthp MEDIA ESC  &lttp NUMPAD SPACE  &kp RSHIFT  &none  &none
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        /* 2 Layer */
         symbols {
             display-name = "symbols";
             bindings = <
@@ -41,7 +53,7 @@
             sensor-bindings = <&inc_dec_kp LC(F) LC(B)>;
         };
 
-        /* 2 Layer */
+        /* 3 Layer */
         lnum {
             display-name = "lnum";
             bindings = <
@@ -53,7 +65,7 @@
             sensor-bindings = <&inc_dec_kp LC(F) LC(B)>;
         };
 
-        /* 3 Layer */
+        /* 4 Layer */
         numpad {
             display-name = "numpad";
             bindings = <
@@ -65,7 +77,7 @@
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
-        /* 4 Layer */
+        /* 5 Layer */
         media {
             display-name = "media";
             bindings = <
@@ -77,7 +89,7 @@
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
-        /* 5 Layer */
+        /* 6 Layer */
         /* No Bluetooth on Planck; repeating media as placeholder */
         output {
             display-name = "output";
@@ -89,7 +101,7 @@
             >;
         };
 
-        /* 6 Layer */
+        /* 7 Layer */
         adjust {
             display-name = "adjust";
             bindings = <
@@ -100,7 +112,7 @@
             >;
         };
 
-        /* 7 Layer */
+        /* 8 Layer */
         /* Do not use this then-layer for regular layer switching */
         lighting {
             display-name = "lighting";
@@ -112,7 +124,7 @@
             >;
         };
 
-        /* 8 Layer */
+        /* 9 Layer */
         discord {
             display-name = "discord";
             bindings = <
@@ -124,7 +136,7 @@
             sensor-bindings = <&rot_discord>;
         };
 
-        /* 9 Layer */
+        /* 10 Layer */
         pointer {
             display-name = "pointer";
             bindings = <
@@ -136,7 +148,7 @@
             sensor-bindings = <&rot_msc MOVE_X(40) MOVE_X(-40)>;
         };
 
-        /* 10 Layer */
+        /* 11 Layer */
         mirror {
             display-name = "mirror";
             bindings = <
@@ -147,7 +159,7 @@
             >;
         };
 
-        /* 11 Layer */
+        /* 12 Layer */
         window_left {
             display-name = "move [L]";
             bindings = <
@@ -158,7 +170,7 @@
             >;
         };
 
-        /*  12 Layer */
+        /*  13 Layer */
         window_right {
             display-name = "move [R]";
             bindings = <
@@ -170,7 +182,7 @@
         };
 
 
-        /*  13 Layer */
+        /*  14 Layer */
         act {
             display-name = "act";
             bindings = <
@@ -181,7 +193,7 @@
             >;
         };
 
-        /* 14 Layer */
+        /* 15 Layer */
         func {
             display-name = "func";
             bindings = <
