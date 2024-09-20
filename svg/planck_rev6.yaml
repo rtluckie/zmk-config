@@ -68,7 +68,7 @@ layers:
   - F
   - G
   - F3
-  - ''
+  - F5
   - {t: H, s: '$$mdi:backspace-outline$$'}
   - J
   - K
@@ -87,17 +87,17 @@ layers:
   - .
   - /
   - {t: '$$mdi:play-pause$$', h: symbols}
-  - F5
-  - $$mdi:keyboard-space$$
+  - F6
   - ⮐
+  - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-tab$$', h: symbols}
   - F7
   - F8
   - {t: Esc, h: media}
   - {t: '$$mdi:keyboard-space$$', h: numpad}
+  - ':'
   - $$mdi:apple-keyboard-shift$$
-  - ''
-  - ''
+  - $$mdi:apple-keyboard-control$$
   symbols:
   - ','
   - '&'

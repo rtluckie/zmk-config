@@ -44,7 +44,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: numpad}
   - {t: ':', h: mirror}
   gaming:
-  - ''
+  - $$mdi:apple-keyboard-option$$
   - Q
   - W
   - E
@@ -56,7 +56,7 @@ layers:
   - O
   - P
   - {t: araxia, h: '$$mdi:toggle-switch$$'}
-  - ''
+  - $$mdi:apple-keyboard-control$$
   - A
   - S
   - D
@@ -67,8 +67,8 @@ layers:
   - K
   - L
   - ;
-  - ''
-  - ''
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
   - Z
   - X
   - C
@@ -79,13 +79,13 @@ layers:
   - ','
   - .
   - /
-  - ''
-  - $$mdi:keyboard-space$$
+  - $$mdi:apple-keyboard-shift$$
   - ⮐
+  - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-tab$$', h: symbols}
   - {t: Esc, h: media}
   - {t: '$$mdi:keyboard-space$$', h: numpad}
-  - $$mdi:apple-keyboard-shift$$
+  - ':'
   symbols:
   - ''
   - ','
