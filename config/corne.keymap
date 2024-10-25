@@ -79,8 +79,30 @@
 &kp TAB    &kp Q              &kp W                &kp E            &kp R         &kp T         &kp Y         &kp U             &kp I             &kp O                 &kp P                  &kp BSPC
 &kp LCTRL  &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &kp F         &kp G         &kp H         &hmr RCMD J       &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
 &kp LSHFT  &kp Z              &kp X                &kp C            &kp V         &kp B         &kp N         &kp M             &kp COMMA         &kp DOT               &kp FSLH               &kp ESC
-                                                   &ltr 5 ESC       &ltr 4 SPACE  &ltr 9 TAB    &rtr 7 ENTER  &rtr 8 BACKSPACE  &rtr 6 DEL
+                                                   &ltr 7 ESC       &ltr 6 SPACE  &ltr 9 TAB    &rtr 1 ENTER  &rtr 2 BACKSPACE  &rtr 8 DEL
             >;
+        };
+
+        symbol {
+            bindings = <
+&trans  &kp SQT          &kp LT     &kp GT     &kp DOUBLE_QUOTES  &kp PERIOD    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp EXCLAMATION  &kp MINUS  &kp PLUS   &kp EQUAL          &kp HASH      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp CARET        &kp SLASH  &kp ASTRK  &kp BACKSLASH      &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans     &trans             &trans        &trans  &trans  &trans
+            >;
+
+            label = "Symbol";
+        };
+
+        number {
+            bindings = <
+&trans  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N7        &kp RIGHT_BRACKET    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp SEMI          &kp NUMBER_4  &kp N5        &kp N6        &kp EQUAL            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH        &trans  &trans  &trans  &trans  &trans  &trans
+                                        &kp DOT       &kp N0        &kp MINUS            &trans  &trans  &trans
+            >;
+
+            label = "Number";
         };
 
         lower_layer {
@@ -159,28 +181,6 @@
             label = "Function";
         };
 
-        symbol {
-            bindings = <
-&trans  &kp SQT          &kp LT  &kp GT  &kp DOUBLE_QUOTES  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp EXCLAMATION  &trans  &trans  &trans             &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp CARET        &trans  &trans  &trans             &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                 &trans  &trans             &trans    &trans  &trans  &trans
-            >;
-
-            label = "Symbol";
-        };
-
-        number {
-            bindings = <
-&trans  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N7        &kp RIGHT_BRACKET    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SEMI          &kp NUMBER_4  &kp N5        &kp N6        &kp EQUAL            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH        &trans  &trans  &trans  &trans  &trans  &trans
-                                        &kp DOT       &kp N0        &kp MINUS            &trans  &trans  &trans
-            >;
-
-            label = "Number";
-        };
-
         mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
@@ -190,60 +190,6 @@
             >;
 
             label = "Mouse";
-        };
-
-        layer_10 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_11 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_12 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_13 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_14 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_15 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
         };
     };
 };
