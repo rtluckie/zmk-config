@@ -64,6 +64,22 @@
         };
     };
 
+    macros {
+        dbl_col: DOUBLE_COLON {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp COLON>;
+            label = "::";
+        };
+
+        up_dir: UP_DIRECTORY {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp FSLH>;
+            label = "up directory";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -85,9 +101,9 @@
 
         symbol {
             bindings = <
-&trans  &kp SQT          &kp LT     &kp GT     &kp DOUBLE_QUOTES  &kp PERIOD    &kp AMPS   &trans      &kp LBKT  &kp RBKT  &kp PRCNT    &trans
+&trans  &kp SQT          &kp LT     &kp GT     &kp DOUBLE_QUOTES  &kp PERIOD    &kp AMPS   &dbl_col    &kp LBKT  &kp RBKT  &kp PRCNT    &trans
 &trans  &kp EXCLAMATION  &kp MINUS  &kp PLUS   &kp EQUAL          &kp HASH      &kp PIPE   &kp COLON   &kp LPAR  &kp LPAR  &kp QMARK    &trans
-&trans  &kp CARET        &kp SLASH  &kp ASTRK  &kp BACKSLASH      &trans        &kp TILDE  &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT_SIGN  &trans
+&trans  &kp CARET        &kp SLASH  &kp ASTRK  &kp BACKSLASH      &up_dir       &kp TILDE  &kp DOLLAR  &kp LBRC  &kp RBRC  &kp AT_SIGN  &trans
                                     &trans     &trans             &trans        &trans     &trans      &trans
             >;
 
@@ -150,10 +166,10 @@
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp K_REDO  &kp K_PASTE  &kp K_COPY      &kp K_CUT     &kp K_UNDO  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &caps_word  &kp LEFT     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp INSERT  &kp HOME     &kp PAGE_DOWN   &kp PAGE_UP   &kp END     &trans
+                        &trans  &trans  &trans    &trans      &trans       &trans
             >;
 
             label = "Nav";
