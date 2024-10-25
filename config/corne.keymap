@@ -37,6 +37,31 @@
             flavor = "balanced";
             require-prior-idle-ms = <150>;
         };
+
+        rtr: right_thumb_row {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_THUMB_ROW";
+            bindings = <&lt>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+        };
+
+        ltr: left_thumb_row {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_THUMB_ROW";
+            bindings = <&lt>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <36 37 38>;
+        };
     };
 
     keymap {
@@ -51,10 +76,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB    &kp Q              &kp W                &kp E            &kp R  &kp T        &kp Y    &kp U        &kp I             &kp O                 &kp P                  &kp BSPC
-&kp LCTRL  &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &kp F  &kp G        &kp H    &hmr RCMD J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
-&kp LSHFT  &kp Z              &kp X                &kp C            &kp V  &kp B        &kp N    &kp M        &kp COMMA         &kp DOT               &kp FSLH               &kp ESC
-                                                   &kp LGUI         &mo 1  &kp SPACE    &kp RET  &mo 2        &kp RALT
+&kp TAB    &kp Q              &kp W                &kp E            &kp R         &kp T         &kp Y         &kp U             &kp I             &kp O                 &kp P                  &kp BSPC
+&kp LCTRL  &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &kp F         &kp G         &kp H         &hmr RCMD J       &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
+&kp LSHFT  &kp Z              &kp X                &kp C            &kp V         &kp B         &kp N         &kp M             &kp COMMA         &kp DOT               &kp FSLH               &kp ESC
+                                                   &ltr 5 ESC       &ltr 4 SPACE  &ltr 9 TAB    &rtr 7 ENTER  &rtr 8 BACKSPACE  &rtr 6 DEL
             >;
         };
 
@@ -90,67 +115,81 @@
             >;
         };
 
-        layer_3 {
+        extend {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+
+            label = "Extend";
         };
 
-        layer_4 {
+        nav {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+
+            label = "Nav";
         };
 
-        layer_5 {
+        media {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+
+            label = "Media";
         };
 
-        layer_6 {
+        fun {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+
+            label = "Function";
         };
 
-        layer_7 {
+        symbol {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+
+            label = "Symbol";
         };
 
-        layer_8 {
+        number {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans        &trans        &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans  &trans  &trans    &trans  &trans  &trans
             >;
+
+            label = "Number";
         };
 
-        layer_9 {
+        mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+
+            label = "Mouse";
         };
 
         layer_10 {
