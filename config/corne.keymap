@@ -161,10 +161,10 @@
 
         symbol {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &kp SQT          &kp LT  &kp GT  &kp DOUBLE_QUOTES  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp EXCLAMATION  &trans  &trans  &trans             &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp CARET        &trans  &trans  &trans             &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                 &trans  &trans             &trans    &trans  &trans  &trans
             >;
 
             label = "Symbol";
