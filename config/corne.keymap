@@ -231,6 +231,13 @@
             require-prior-idle-ms = <20>;
             layers = <0>;
         };
+
+        alpha_caret {
+            bindings = <&kp CARET>;
+            key-positions = <6 18>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
     };
 
     keymap {
