@@ -106,7 +106,7 @@
 &none  &kp Q  &kp W          &kp E                &kp R                &kp T         &kp Y         &kp U                 &kp I                 &kp O          &kp P     &none
 &none  &kp A  &hml RSHIFT S  &hml LEFT_COMMAND D  &hml LEFT_CONTROL F  &kp G         &kp H         &hmr RIGHT_CONTROL J  &hmr RIGHT_COMMAND K  &hmr RSHIFT L  &kp SEMI  &none
 &none  &kp Z  &kp X          &kp C                &hml LEFT_ALT V      &kp B         &kp N         &hmr RIGHT_ALT M      &kp COMMA             &kp DOT        &kp FSLH  &none
-                             &ltr 5 ESC           &ltr 2 SPACE         &ltr 1 TAB    &rtr 1 ENTER  &rtr 3 BACKSPACE      &rtr 4 DEL
+                             &ltr 5 ESC           &ltr 2 SPACE         &ltr 1 TAB    &rtr 1 ENTER  &rtr 1 BACKSPACE      &rtr 4 DEL
             >;
 
             label = "Base";
@@ -125,10 +125,10 @@
 
         number {
             bindings = <
-&trans  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N7        &kp RIGHT_BRACKET    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SEMI          &kp NUMBER_4  &kp N5        &kp N6        &kp EQUAL            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH        &trans  &trans  &trans  &trans  &trans  &trans
-                                        &kp DOT       &kp N0        &kp MINUS            &trans  &trans  &trans
+&none  &none  &none  &none  &none  &none     &kp EQUAL     &kp N7  &kp N8   &kp N9  &none      &none
+&none  &none  &none  &none  &none  &none     &kp FSLH      &kp N3  &kp N4   &kp N5  &kp MINUS  &none
+&none  &none  &none  &none  &none  &none     &kp ASTERISK  &kp N1  &kp N2   &kp N3  &kp PLUS   &none
+                     &none  &none  &tog 2    &to 2         &kp N0  &kp DOT
             >;
 
             label = "Number";
@@ -136,10 +136,10 @@
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp K_REDO  &kp K_PASTE  &kp K_COPY      &kp K_CUT     &kp K_UNDO  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &caps_word  &kp LEFT     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp INSERT  &kp HOME     &kp PAGE_DOWN   &kp PAGE_UP   &kp END     &trans
-                        &trans  &trans  &trans    &trans      &trans       &trans
+&none  &none  &none       &none     &none      &none    &kp K_REDO  &kp K_PASTE  &kp K_COPY      &kp K_CUT     &kp K_UNDO  &none
+&none  &none  &kp LSHIFT  &kp LGUI  &kp LCTRL  &none    &caps_word  &kp LEFT     &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &none
+&none  &none  &none       &none     &kp LALT   &none    &kp INSERT  &kp HOME     &kp PAGE_DOWN   &kp PAGE_UP   &kp END     &none
+                          &none     &none      &none    &none       &none        &none
             >;
 
             label = "Nav";
@@ -158,10 +158,10 @@
 
         fun {
             bindings = <
-&trans  &kp F10  &kp N7  &kp N8  &kp F9  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F12  &kp F1  &kp F2  &kp F3  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &kp F10  &kp N7  &kp N8  &kp F9  &kp F13    &trans  &trans     &trans    &trans     &trans  &trans
+&trans  &kp F11  &kp F4  &kp F5  &kp F6  &kp F14    &trans  &kp LCTRL  &kp LGUI  &kp LSHFT  &trans  &trans
+&trans  &kp F12  &kp F1  &kp F2  &kp F3  &kp F15    &trans  &kp LALT   &trans    &trans     &trans  &trans
+                         &trans  &trans  &trans     &trans  &trans     &trans
             >;
 
             label = "Function";
@@ -169,10 +169,10 @@
 
         system {
             bindings = <
-&trans  &sys_reset  &trans  &trans  &trans  &bootloader    &bootloader  &trans  &trans  &trans  &sys_reset  &trans
-&trans  &trans      &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans      &trans
-&trans  &trans      &trans  &trans  &trans  &trans         &trans       &trans  &trans  &trans  &trans      &trans
-                            &trans  &trans  &trans         &trans       &trans  &trans
+&none  &sys_reset  &none  &none  &none  &bootloader    &bootloader  &none  &none  &none  &sys_reset  &none
+&none  &none       &none  &none  &none  &none          &none        &none  &none  &none  &none       &none
+&none  &none       &none  &none  &none  &none          &none        &none  &none  &none  &none       &none
+                          &none  &none  &none          &none        &none  &none
             >;
 
             label = "System";
