@@ -77,6 +77,48 @@
             bindings = <&kp DOT &kp DOT &kp FSLH>;
             label = "up directory";
         };
+
+        select_word: select_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LEFT_ARROW) &kp LG(LS(RIGHT))>;
+            label = "SELECT_WORD";
+        };
+
+        select_line: select_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END)>;
+            label = "SELECT_LINE";
+        };
+
+        next_window: next_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEXT_WINDOW";
+        };
+
+        previous_window: previous_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "PREVIOUS_WINDOW";
+        };
+
+        next_tab: next_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RIGHT_BRACE)>;
+            label = "NEXT_TAB";
+        };
+
+        previous_tab: previous_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LEFT_BRACE)>;
+            label = "PREVIOUS_TAB";
+        };
     };
 
     combos {
@@ -176,6 +218,17 @@
             >;
 
             label = "System";
+        };
+
+        shortcuts {
+            bindings = <
+&trans  &previous_window  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "Shortcuts";
         };
     };
 };
