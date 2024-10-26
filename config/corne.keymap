@@ -142,6 +142,81 @@
             key-positions = <2 3>;
             layers = <0>;
         };
+
+        alpha_esc {
+            bindings = <&kp ESC>;
+            key-positions = <2 3>;
+        };
+
+        alpha_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <3 4>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_hash {
+            bindings = <&kp HASH>;
+            key-positions = <3 15>;
+            layers = <0>;
+            require-prior-idle-ms = <20>;
+        };
+
+        alpha_at {
+            bindings = <&kp AT>;
+            key-positions = <2 14>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_tab {
+            bindings = <&kp TAB>;
+            key-positions = <14 14 15>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <4 16>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <5 17>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_bslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <15 27>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_backtick {
+            bindings = <&kp GRAVE>;
+            key-positions = <14 26>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <26 27>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
+
+        alpha_paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <27 28>;
+            require-prior-idle-ms = <20>;
+            layers = <0>;
+        };
     };
 
     keymap {
