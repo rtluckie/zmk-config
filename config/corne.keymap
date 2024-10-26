@@ -131,6 +131,18 @@
             require-prior-idle-ms = <200>;
             layers = <0>;
         };
+
+        shortcuts {
+            bindings = <&mo 7>;
+            key-positions = <23 40>;
+            layers = <0>;
+        };
+
+        repeat {
+            bindings = <&kp C_REPEAT>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -222,10 +234,10 @@
 
         shortcuts {
             bindings = <
-&trans  &previous_window  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans            &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans            &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &previous_window  &trans  &next_window  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &previous_tab     &trans  &next_tab     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans  &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans        &trans  &trans    &trans  &trans  &trans
             >;
 
             label = "Shortcuts";
