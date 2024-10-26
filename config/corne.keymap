@@ -146,6 +146,8 @@
         alpha_esc {
             bindings = <&kp ESC>;
             key-positions = <2 3>;
+            layers = <0>;
+            require-prior-idle-ms = <20>;
         };
 
         alpha_enter {
