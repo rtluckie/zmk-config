@@ -320,10 +320,10 @@
 
         shortcuts {
             bindings = <
-&trans  &previous_window  &kp LA(TAB)  &next_window  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &previous_tab     &trans       &next_tab     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans            &trans       &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                       &trans        &trans  &trans    &trans  &trans  &trans
+&trans  &previous_window  &kp LS(LG(TAB))  &kp LA(TAB)    &kp LG(TAB)  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &previous_tab    &kp LS(LG(M))  &next_tab    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans           &trans         &trans       &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                           &trans         &trans       &trans    &trans  &trans  &trans
             >;
 
             label = "Shortcuts";
