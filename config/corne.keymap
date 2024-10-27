@@ -124,7 +124,7 @@
         compatible = "zmk,combos";
 
         system {
-            bindings = <&tog 6>;
+            bindings = <&tog 7>;
             key-positions = <1 10>;
             timeout-ms = <200>;
             require-prior-idle-ms = <200>;
@@ -132,7 +132,7 @@
         };
 
         shortcuts {
-            bindings = <&mo 7>;
+            bindings = <&mo 6>;
             key-positions = <23 40>;
             layers = <0>;
         };
@@ -318,6 +318,17 @@
             label = "Function";
         };
 
+        shortcuts {
+            bindings = <
+&trans  &previous_window  &kp LA(TAB)  &next_window  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &previous_tab     &trans       &next_tab     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans       &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                       &trans        &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "Shortcuts";
+        };
+
         system {
             bindings = <
 &none  &sys_reset  &none  &none  &none  &bootloader    &bootloader  &none  &none  &none  &sys_reset  &none
@@ -327,17 +338,6 @@
             >;
 
             label = "System";
-        };
-
-        shortcuts {
-            bindings = <
-&trans  &previous_window  &trans  &next_window  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &previous_tab     &trans  &next_tab     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans            &trans  &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans        &trans  &trans    &trans  &trans  &trans
-            >;
-
-            label = "Shortcuts";
         };
     };
 };
