@@ -133,7 +133,7 @@
 
         shortcuts {
             bindings = <&mo 6>;
-            key-positions = <23 40>;
+            key-positions = <40 22>;
             layers = <0>;
         };
 
