@@ -264,7 +264,7 @@
 &none  &kp Q              &kp W          &hml LS(LA(LCTRL)) E  &hml LC(LA(LS(LEFT_GUI))) R  &kp T         &kp Y         &hmr RA(RS(RCTRL)) U  &hmr LC(LA(LS(RIGHT_GUI))) I  &kp O          &kp P     &none
 &none  &layer_switch 6 A  &hml RSHIFT S  &hml LEFT_COMMAND D   &hml LEFT_CONTROL F          &kp G         &kp H         &hmr RIGHT_CONTROL J  &hmr RIGHT_COMMAND K          &hmr RSHIFT L  &kp SEMI  &none
 &none  &kp Z              &kp X          &kp C                 &hml LEFT_ALT V              &kp B         &kp N         &kp M                 &kp COMMA                     &kp DOT        &kp FSLH  &none
-                                         &ltr 5 ESC            &ltr 2 SPACE                 &ltr 1 TAB    &rtr 1 ENTER  &rtr 1 BACKSPACE      &rtr 4 DEL
+                                         &ltr 5 ESC            &ltr 2 SPACE                 &ltr 1 TAB    &rtr 1 ENTER  &rtr 3 BACKSPACE      &rtr 4 DEL
             >;
 
             label = "Base";
