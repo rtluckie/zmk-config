@@ -63,7 +63,7 @@
 &none  &kp COMMA  &kp AMPERSAND    &kp ASTERISK  &kp TILDE   &kp BACKSLASH     &kp LESS_THAN   &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &none
 &none  &kp DOT    &kp DOLLAR       &kp PERCENT   &kp CARET   &kp TAB           &kp MINUS       &kp EQUAL         &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp SINGLE_QUOTE   &none
 &none  &kp EQUAL  &kp EXCLAMATION  &kp AT        &kp POUND   &kp PIPE          &kp UNDERSCORE  &kp PLUS          &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE          &none
-                                   &trans        &trans      &trans            &trans          &trans            &trans
+                                   &kp RETURN    &kp SPACE   &trans            &trans          &trans            &trans
             >;
         };
 
