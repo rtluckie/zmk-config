@@ -1,4 +1,4 @@
-#define VER_PATCH N3
+#define VER_PATCH N4
 #define VER_MINOR N6
 #define VER_MAJOR N3
 
@@ -848,7 +848,8 @@
             // must include activating combo keys too (16 25, 19 34) or else tri-state will complete immediately for Mac
             // include hjkl (18 19 20 21) and nav layer activation (40) for navigation
             // include mode keys: h to hide (18), q to quit (1)
-            ignored-key-positions = <1 16 18 19 20 21 25 34 40>;
+            // include lhs arrow key shortcuts: 36, 37, 38
+            ignored-key-positions = <1 16 18 19 20 21 25 34 36 37 38 40>;
             ignored-layers = <DEFAULT NUMPAD>;
         };
         /omit-if-no-ref/ fmmv: fast_mouse_move {

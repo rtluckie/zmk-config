@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: planck/rev6, qmk_layout: LAYOUT_ortho_4x12}
+layout: {qmk_keyboard: planck/rev6, layout_name: LAYOUT_ortho_4x12}
 layers:
   araxia:
   - {t: Q, h: 'move [L]'}
