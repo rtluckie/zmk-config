@@ -1,0 +1,164 @@
+
+// Special keys behaviors
+// -----------------------------------------------------------------------------
+// Generic ZMK behaviors are defined on their own `dtsi` file, but some
+// behaviors that I create simply to make the layout work, like a hold-tap for
+// the backspace and the activation of layer 2, are all defined inline in this
+// file.
+// This organiztion, is to make it easy to modify behaviors when a key position
+// changes.
+/ {
+  behaviors {
+    // Tap: Backspace
+    // Shift-tap: -
+    // Double-tap: -
+    // Hold: Navigation Layer
+    // Morph: with Shift => Forward delete ('⌦')
+    bspcnav: backspace_or_del_and_layer_nav {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&hll L_NAV BSPC>, <&kp DEL>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    // Tap: -
+    // Shift-tap: -
+    // Double-tap: Toggle Navigation Layer
+    // Hold: Activate System Layer
+    // Morph: -
+    motg_nav: momentary_or_toggle_layer_nav {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo L_NAV>, <&tog L_NAV>;
+    };
+
+    // Tap: -
+    // Shift-tap: -
+    // Double-tap: Toggle System Layer
+    // Hold: Activate System Layer
+    // Morph: -
+    motg_sys: momentary_or_toggle_layer_sys {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo L_SYS>, <&tog L_SYS>;
+    };
+
+    // Tap: -
+    // Shift-tap: -
+    // Double-tap: Toggle Buttons Layer
+    // Hold: Activate Buttons Layer
+    // Morph: -
+    motg_but: momentary_or_toggle_layer_but {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo L_BUT>, <&tog L_BUT>;
+    };
+
+    // Tap: -
+    // Shift-tap: -
+    // Double-tap: Toggle Functions Layer
+    // Hold: Activate Functions Layer
+    // Morph: -
+    motg_fun: momentary_or_toggle_layer_fun {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo L_FUN>, <&tog L_FUN>;
+    };
+
+    //// Tap: -
+    //// Shift-tap: -
+    //// Double-tap: Toggle Mouse Layer
+    //// Hold: Activate Mouse Layer
+    //// Morph: -
+    motg_mou: momentary_or_toggle_layer_mou {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo L_MOU>, <&tog L_MOU>;
+    };
+
+    // Tap: Backslash ('\')
+    // Shift-tap: Pipe ('|')
+    // Double-tap: -
+    // Hold: Apple Globe key
+    // Morph: with Cmd => Command + tilde ('⌘~')
+    globebslh: globe_or_backslash {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&hml GLOBE BSLH>, <&kp TILDE>;
+      mods = <(MOD_LGUI|MOD_RGUI)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+    };
+
+    // Tap: Left square bracket ('[')
+    // Shift-tap: Left curly brace ('{')
+    // Double-tap: -
+    // Hold: -
+    // Morph: with Cmd => Command + grave ('⌘`')
+    lbktgrave: left_bracket_or_cmd_grave {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp LBKT>, <&kp GRAVE>;
+      mods = <(MOD_LGUI|MOD_RGUI)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+    };
+
+    // Tap: Grave ('`')
+    // Shift-tap: Tilde ('~')
+    // Double-tap: Turn on CAPS_WORD
+    // Hold: -
+    // Morph: -
+    gravecaps: grave_or_capsword {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp GRAVE>, <&caps_word>;
+    };
+
+    // Tap: Single quote  ("'")
+    // Shift-tap: Double quote ('"')
+    // Double-tap: Turn on CAPS_WORD
+    // Hold: -
+    // Morph: -
+    sqtcaps: singlequote_or_capsword {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp SQT>, <&caps_word>;
+    };
+
+    appswtnxt: application_switch_next {
+      compatible = "zmk,behavior-tri-state";
+      #binding-cells = <0>;
+      bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+      ignored-key-positions = <LT5 LM5>;
+    };
+
+    winswtnxt: window_switch_next {
+      compatible = "zmk,behavior-tri-state";
+      #binding-cells = <0>;
+      bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
+      ignored-key-positions = <LB5 LM5>;
+    };
+
+    appPwinN: application_switch_previous_window_next {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&winswtnxt>, <&kp GRAVE>;
+      mods = <(MOD_LGUI|MOD_RGUI)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+    };
+
+    winPglobe: window_previous_globe {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp GLOBE>, <&kp TILDE>;
+      mods = <(MOD_LGUI|MOD_RGUI)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+    };
+  };
+};

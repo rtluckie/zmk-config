@@ -1,0 +1,84 @@
+
+// Combo keys
+// -----------------------------------------------------------------------------
+// Unfortunately, there is just that much keys one can use on a small keyboard,
+// and not all the functionalities I want for my base layer fit on a 42-keys
+// keyboard. The solution for that is to use Combo keys, so I can make two keys
+// that make sense to be pressed together, to behave in a different way.
+//
+// Notice that Combo keys require the keys to be defined as numbers
+// representing their physical position in the keyboard. Because of that, each
+// keyboard mapping will have to define a macro for each combo on this layout.
+// The names of these macros should follow the following syntax:
+//
+// COMBO_KEY_<combo-name>
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        // Turn on CAPS_WORD when pressing both shift keys together.
+        combo_caps_word {
+            timeout-ms = <75>;
+            key-positions = COMBO_KEY_CAPS_WORD;
+            layers = <L_QWT L_CMK L_GLM>;
+            bindings = <&caps_word>;
+        };
+    };
+};
+
+
+
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+
+#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_SLOW 50
+
+/* Horizontal combos - left hand */
+ZMK_COMBO(esc,   &kp ESC,      LT3 LT2,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// ZMK_COMBO(mouse, &smart_mouse, LT2 LT1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+// Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
+// chording of mods. Custom hold-tap instances can be bootstrapped on the go using the
+// 8-argument version of ZMK_COMBO defined in base.keymap.
+ZMK_COMBO(tab,   &hml LS(LALT)TAB, LM3 LM2, L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// ZMK_COMBO(ldr,   &leader,      LM2 LM1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(LCTRL),    KEYS_R)
+// ZMK_COMBO(ldrsh, &leader_sft,  LM3 LM2 LM1, L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(LC(LALT)), KEYS_R)
+
+ZMK_COMBO(cut,   &kp LG(X),    LB3 LB1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(copy,  &kp LG(C),  LB3 LB2,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(paste, &kp LG(V),  LB2 LB1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+/* Horizontal combos - right hand */
+ZMK_COMBO(bspc,  &kp BSPC,     RT1 RT2,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(del,   &kp DEL,      RT2 RT3,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+ZMK_COMBO(lt,    &kp LT,       RM1 RM2,         L_NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(gt,    &kp GT,       RM2 RM3,         L_NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+ZMK_COMBO(lbkt,  &kp LBKT,     RB1 RB2,     L_QWT L_CMK L_GLM L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbkt,  &kp RBKT,     RB2 RB3,     L_QWT L_CMK L_GLM L_NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lbrc,  &kp LBRC,     RB1 RB2,         L_NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbrc,  &kp RBRC,     RB2 RB3,         L_NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+/* Vertical combos - left hand */
+ZMK_COMBO(at,    &kp AT,       LT3 LM3,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(hash,  &kp HASH,     LT2 LM2,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(dllr,  &kp DLLR,     LT1 LM1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(prcnt, &kp PRCNT,    LT0 LM0,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+ZMK_COMBO(grave, &kp GRAVE,    LM3 LB3,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(bslh,  &kp BSLH,     LM2 LB2,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(equal, &kp EQUAL,    LM1 LB1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(tilde, &kp TILDE,    LM0 LB0,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+/* Vertical combos - right hand */
+ZMK_COMBO(caret, &kp CARET,    RT0 RM0,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(plus,  &kp PLUS,     RT1 RM1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(star,  &kp STAR,     RT2 RM2,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(amps,  &kp AMPS,     RT3 RM3,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+ZMK_COMBO(under, &kp UNDER,    RM0 RB0,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(minus, &kp MINUS,    RM1 RB1,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(fslh,  &kp FSLH,     RM2 RB2,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(pipe,  &kp PIPE,     RM3 RB3,     L_QWT L_CMK L_GLM L_NAV L_NUM, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)

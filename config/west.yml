@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/dhruvinsh
     - name: rolio
       url-base: https://github.com/Townk
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zephyr
       remote: zmkfirmware
@@ -33,6 +35,9 @@ manifest:
           - openthread
           - edtt
           - trusted-firmware-m
+    - name: zmk-helpers
+      remote: urob
+      revision: main
     - name: zmk
       remote: zmkfirmware-personal
       revision: mousemove-molock
@@ -43,10 +48,10 @@ manifest:
       revision: main
       clone-depth: 1
       path: .west/repos/zmk-tri-state
-    - name: zmk-rolio-shield
-      remote: rolio
-      revision: develop
-      clone-depth: 1
-      path: .west/repos/zmk-rolio-shield
+    # - name: zmk-rolio-shield
+    #   remote: rolio
+    #   revision: develop
+    #   clone-depth: 1
+    #   path: .west/repos/zmk-rolio-shield
   self:
     path: config
