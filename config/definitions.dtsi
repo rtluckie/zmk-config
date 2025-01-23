@@ -1,0 +1,69 @@
+// Hyper Key: ⇧ ⌥ ^ ⌘ (Shift + Alt + Control + Command)
+#define LEFT_HYPER             LS(LA(LC(LGUI)))
+#define LHYP                   LEFT_HYPER
+#define RIGHT_HYPER            RS(RA(RC(RGUI)))
+#define RHYP                   RIGHT_HYPER
+
+// Hyper Key function like LG and RG
+#define LH(keycode)            LS(LA(LC(LG(keycode))))
+#define RH(keycode)            RS(RA(RC(RG(keycode))))
+
+// Meh Key: ⇧ ⌥ ^ (Shift + Alt + Control)
+#define LEFT_MEH               LS(LA(LCTRL))
+#define LMEH                   LEFT_MEH
+#define RIGHT_MEH              RS(RA(RCTRL))
+#define RMEH                   RIGHT_MEH
+
+// Meh Key function like LG and RG
+#define LM(keycode)            LS(LA(LC(keycode)))
+#define RM(keycode)            RS(RA(RC(keycode)))
+
+// Keys I feel should be part of ZMK
+#define BACK_TAB               LS(TAB)
+#define BTAB                   BACK_TAB
+
+
+// macOS Keys and common shortcuts
+#define MAC_LAUNCHPAD          C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
+#define MAC_LP                 MAC_LAUNCHPAD
+#define MAC_MISSION_CONTROL    C_AC_DESKTOP_SHOW_ALL_WINDOWS
+#define MAC_MC                 MAC_MISSION_CONTROL
+#define MAC_SPOTLIGHT          C_AC_SEARCH
+#define MAC_SP                 MAC_SPOTLIGHT
+#define MAC_CUT                LG(X)
+#define MAC_COPY               LG(C)
+#define MAC_PASTE              LG(V)
+#define MAC_UNDO               LG(Z)
+#define MAC_REDO               LG(LS(Z))
+#define MAC_APP_WINDOWS        LG(LC(DOWN))   // Show windows from current application
+#define MAC_APPWIN             MAC_APP_WINDOWS
+#define MAC_NEXT_WINDOW        LG(GRAVE)      // Go to the next window on the same application
+#define MAC_WINN               MAC_NEXT_WINDOW
+#define MAC_PREVIOUS_WINDOW    LG(TILDE)      // Go to the previous window on the same application
+#define MAC_WINP               MAC_PREVIOUS_WINDOW
+#define MAC_NEXT_DESKTOP       LG(LC(RIGHT))  // Go to the next virtual desktop
+#define MAC_DKTN               MAC_NEXT_DESKTOP
+#define MAC_PREVIOUS_DESKTOP   LG(LC(LEFT))   // Go to the previous virtual desktop
+#define MAC_DKTP               MAC_PREVIOUS_DESKTOP
+#define MAC_FIND_NEXT          LG(G)
+#define MAC_FDNXT              MAC_FIND_NEXT
+#define MAC_FIND_PREVIOUS      LG(LS(G))
+#define MAC_FDPRV              MAC_FIND_PREVIOUS
+#define MAC_NEXT_WORD          LA(RIGHT)
+#define MAC_WRDN               MAC_NEXT_WORD
+#define MAC_PREVIOUS_WORD      LA(LEFT)
+#define MAC_WRDP               MAC_PREVIOUS_WORD
+#define MAC_START_OF_LINE      LG(LEFT)
+#define MAC_STTL               MAC_START_OF_LINE
+#define MAC_END_OF_LINE        LG(RIGHT)
+#define MAC_ENDL               MAC_END_OF_LINE
+
+
+// Misc aliases. [TODO: clean up
+#define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
+#define DSK_PREV  &hmr LCTRL LG(LC(LEFT)) // Previous desktop.
+#define DSK_NEXT  &hmr LALT LG(LC(RIGHT)) // Next     desktop.
+#define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
+#define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
+#define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
+#define VOL_DOWN  &hmr RSHFT C_VOL_DN
