@@ -1,0 +1,48 @@
+/ {
+    #define SMART_LAYERTAP(NAME, BINDINGS) \
+         NAME: NAME { \
+            compatible = "zmk,behavior-hold-tap"; \
+            #binding-cells = <2>; \
+            tapping-term-ms = <QUICK_TAP_TERM>; \
+            flavor = "tap-preferred"; \
+            quick-tap-ms = <0>; \
+            bindings = <&mo>, <BINDINGS>; \
+        };
+
+    #define SMART_MACRO(NAME, BINDINGS) \
+        NAME: NAME { \
+			compatible = "zmk,behavior-macro"; \
+            #binding-cells = <0>; \
+            wait-ms = <10>; \
+            tap-ms = <10>; \
+            bindings = <&macro_tap BINDINGS>; \
+        };
+
+    #define SMART_MORPH(NAME, MODS, MODDED, UNMODDED) \
+        NAME: NAME { \
+            compatible = "zmk,behavior-mod-morph"; \
+            #binding-cells = <0>; \
+            bindings = <UNMODDED>, <MODDED>; \
+            mods = <(MODS)>; \
+        };
+
+    #define SMART_MORPH_KM(NAME, MODS, MODDED, UNMODDED) \
+        NAME: NAME { \
+            compatible = "zmk,behavior-mod-morph"; \
+            #binding-cells = <0>; \
+            bindings = <UNMODDED>, <MODDED>; \
+            mods = <(MODS)>; \
+            keep-mods = <(MODS)>; \
+        };
+
+        smart {
+            // Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
+            SMART_MORPH(mm_comma, MOD_LSFT|MOD_RSFT, &comma_inner_morph, &kp COMMA)
+            SMART_MORPH(comma_inner_morph, MOD_LCTL|MOD_RCTL, &kp LESS_THAN, &kp SEMICOLON)
+
+
+            // Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
+            SMART_MORPH(mm_dot, MOD_LSFT|MOD_RSFT, &dot_inner_morph, &kp DOT)
+            SMART_MORPH(dot_inner_morph, MOD_LCTL|MOD_RCTL, &kp GREATER_THAN, &kp COLON)
+            };
+};

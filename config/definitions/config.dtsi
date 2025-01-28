@@ -1,0 +1,155 @@
+/*
+ *
+ * Copyright (c) 2025 Ryan Luckie
+ * SPDX-License-Identifier: MIT
+ *
+ */
+
+ /*                KEY POSITIONS
+
+ ╭────────────────────────┬────────────────────────╮
+ │  0   1   2   3   4   5 │  6   7   8   9  10  11 │
+ │ 12  13  14  15  16  17 │ 18  19  20  21  22  23 │
+ │ 24  25  26  27  28  29 │ 30  31  32  33  34  35 │
+ ╰───────────╮ 36  37  38 │ 39  40  41 ╭───────────╯
+             ╰────────────┴────────────╯
+ ╭─────────────────────────┬─────────────────────────╮
+ │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
+ │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
+ │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+             ╰─────────────┴─────────────╯
+ ╭─────────────────────────┬─────────────────────────╮
+ │ LTX LMP LTR LTM LTI LTY │ RTY RMI RTM RMR RTP RTX │
+ │ LHX LHP LHR LHM LHI LHY │ RHY RHI RHM RHR RHP RHX │
+ │ LBX LMP LBR LBM LBI LBY │ RBY RMI RBM RBR RBP RBX │
+ ╰───────────╮ L2  L1  L0  │ R0  R1  R2  ╭───────────╯
+             ╰─────────────┴─────────────╯                 */
+
+/* Layers */
+#define ALPHA1 0
+#define LOWER 1
+#define RAISE 2
+#define SHORTCUTS 3
+#define MEHS 4
+#define NAV 5
+#define LOW_CP 6
+#define RAI_CP 7
+#define MEDIA 8
+#define FUN 9
+
+
+#define ALL_LAYERS                  ALPHA1 LOWER RAISE SHORTCUTS MEHS NAV MEDIA FUN
+#define ALPHA_LAYERS                ALPHA1
+
+// #define SENTENCE_CASE_LAYERS        SEN_CASE SEN_EXT
+// #define SMARTCASE_LAYERS            CAMEL_CASE SNAKE_CASE CONST_CASE KEBAB_CASE SLASH_CASE SPACING
+// #define ALPHA1_LAYERS               ALPHA1 CASE_A1 PLAIN1 CPLK_A1 SENTENCE_CASE_LAYERS SMARTCASE_LAYERS
+// #define CCEDIL_LAYERS               CCEDIL CASE_CCEDIL
+// #define ALPHA2_LAYERS               ALPHA2 CASE_A2 PLAIN2 SFT_A2
+// #define LOWER_LAYERS                LOWER LOW_CP
+// #define RAISE_LAYERS                RAISE RAI_CP
+// #define SHORTCUT_LAYERS             SHORTCUTS MEHS
+// #define MEDIA_LAYERS                MEDIA
+// #define NAV_LAYERS                  NAV NAV_F
+// T
+// #define ALL_LAYERS_WITH_BACKSPACE   ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS LOWER_LAYERS                              NAV_LAYERS RAISE_LAYERS
+// #define ALL_LAYERS_WITH_ESC         ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS              SHORTCUT_LAYERS MEDIA_LAYERS NAV_LAYERS
+// #define FIXABLE_LAYERS              CPLK_A1 CASE_A1 SMARTCASE_LAYERS PLAIN1 LOWER_LAYERS MEDIA_LAYERS NAV_LAYERS MEHS FUN
+
+
+
+
+#define TAPPING_TERM_MS 250
+#define QUICK_TAP_MS 175
+#define ADAPTIVE_KEY_TIMEOUT 2000
+#define COMBO_TERM 30
+#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_SLOW 50
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+
+// Settings tuned for 3840 x 2160 display resolution
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600 // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20  // 10
+
+#define XXX &none
+#define ___ &trans
+
+/* Global defaults */
+&sk {
+  release-after-ms = <1000>;
+  quick-release;
+};
+
+&sl { // Allow sticky mods to chord across sticky layers.
+  ignore-modifiers;
+  release-after-ms = <1000>;
+  quick-release;
+};
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+&mt {
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <QUICK_TAP_MS>;
+    hold-trigger-key-positions = <0>;
+};
+
+
+
+/ {
+    custom_hold_taps {
+
+        hlt: layer-tap-with-hold-preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        ltn: layer-tap-no-quick-tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_MS>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        msl: layer-tap-with-stick-layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&mo>, <&sl>;
+        };
+
+        msk: layer-tap-with-stick-key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&mo>, <&sk>;
+        };
+
+        hsk: mod-tap-with-stick-key {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&sk>;
+        };
+
+    };
+};
