@@ -1182,13 +1182,6 @@ rect.held, rect.combo.held {
 <a href="#lighting">
 <text x="420" y="-61" class="combo tap layer-activator"><tspan style="font-size: 75%">lighting</tspan></text>
 </a></g>
-<g class="combo combopos-28">
-<path d="M420,-60 h-398 a6.0,6.0 0 0 0 -6.0,6.0 v122" class="combo"/>
-<path d="M420,-60 h398 a6.0,6.0 0 0 1 6.0,6.0 v122" class="combo"/>
-<rect rx="6" ry="6" x="406" y="-73" width="28" height="26" class="combo"/>
-<a href="#lighting">
-<text x="420" y="-60" class="combo tap layer-activator"><tspan style="font-size: 75%">lighting</tspan></text>
-</a></g>
 </g>
 </g>
 <g transform="translate(40, 483)" class="layer-gaming">
