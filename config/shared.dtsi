@@ -1,6 +1,6 @@
 #define VER_PATCH N4
 #define VER_MINOR N6
-#define VER_MAJOR N3
+#define VER_MAJOR N4
 
 // DEFINES {{{
 #define HYPER(X) LG(LA(LC(LS(X))))
@@ -811,6 +811,16 @@
             bindings =
                 <&winswap>,
                 <&kple>;
+        };
+        mo_to: momentary_to {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            flavor = "hold-preferred";
+            bindings =
+                <&mo>,
+                <&to>;
         };
         m_cr: true_cr_for_control_m {
             compatible = "zmk,behavior-mod-morph";

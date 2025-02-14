@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: planck/rev6, layout_name: LAYOUT_ortho_4x12}
+layout: {zmk_shared_layout: common/ortho_4x12/all1u}
 layers:
   araxia:
   - {t: Q, h: 'move [L]'}
@@ -206,8 +206,8 @@ layers:
   - {t: ▽, type: trans}
   - $$mdi:backspace-outline$$
   - $$mdi:keyboard-tab$$
-  - Ctl+ N
-  - Ctl+ P
+  - Ctl+N
+  - Ctl+P
   - $$mdi:keyboard-space$$
   - .
   - '4'

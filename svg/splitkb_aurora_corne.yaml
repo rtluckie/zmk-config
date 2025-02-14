@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - {t: P, h: 'move [R]'}
-  - {t: gaming, h: '$$mdi:toggle-switch$$'}
+  - {t: gaming, h: func}
   - $$tablerf:pointer$$
   - {t: A, h: '$$mdi:apple-keyboard-control$$'}
   - {t: S, h: '$$mdi:apple-keyboard-command$$'}
@@ -181,8 +181,8 @@ layers:
   - '0'
   - $$mdi:backspace-outline$$
   - $$mdi:keyboard-tab$$
-  - Ctl+ N
-  - Ctl+ P
+  - Ctl+N
+  - Ctl+P
   - $$mdi:keyboard-space$$
   - ''
   - /
@@ -657,7 +657,7 @@ layers:
   - F14
   - F15
   - F16
-  - ''
+  - {type: held}
   - ''
   - F5
   - F6
