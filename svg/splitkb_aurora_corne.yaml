@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: corne_rotated, layout_name: LAYOUT_split_3x6_3}
 layers:
   araxia:
-  - $$mdi:mirror-rectangle$$
+  - {t: mirror, h: func}
   - {t: Q, h: 'move [L]'}
   - W
   - E
@@ -474,7 +474,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   mirror:
-  - {t: araxia, h: '$$mdi:toggle-switch$$'}
+  - {t: araxia, h: '$$mdi:toggle-switch$$', type: held}
   - {t: P, h: 'move [R]'}
   - O
   - I
@@ -515,7 +515,7 @@ layers:
   - {t: Esc, h: media}
   - {t: Esc, h: symbols}
   - {t: '$$mdi:apple-keyboard-control$$', h: lnum, s: W}
-  - {t: ⮐, h: '$$mdi:apple-keyboard-command$$', type: held}
+  - {t: ⮐, h: '$$mdi:apple-keyboard-command$$'}
   move [L]:
   - ''
   - {type: held}
@@ -646,7 +646,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   func:
-  - ''
+  - {type: held}
   - F1
   - F2
   - F3
@@ -657,7 +657,7 @@ layers:
   - F14
   - F15
   - F16
-  - {type: held}
+  - ''
   - ''
   - F5
   - F6

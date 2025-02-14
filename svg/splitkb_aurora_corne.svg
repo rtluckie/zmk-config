@@ -144,9 +144,6 @@
 <svg id="mdi:microsoft-windows">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-microsoft-windows" viewBox="0 0 24 24"><path d="M3,12V6.75L9,5.43V11.91L3,12M20,3V11.75L10,11.9V5.21L20,3M3,13L9,13.09V19.9L3,18.75V13M20,13.25V22L10,20.09V13.1L20,13.25Z" /></svg>
 </svg>
-<svg id="mdi:mirror-rectangle">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-mirror-rectangle" viewBox="0 0 24 24"><path d="M8.29 10.28L11.53 7.03L12.59 8.09L9.35 11.34L8.29 10.28M8.7 14.61L14.36 8.95L15.42 10L9.76 15.67L8.7 14.61M18 3V21H6V3H18M20 1H4V23H20V1Z" /></svg>
-</svg>
 <svg id="mdi:monitor-screenshot">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-monitor-screenshot" viewBox="0 0 24 24"><path d="M9,6H5V10H7V8H9M19,10H17V12H15V14H19M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2" /></svg>
 </svg>
@@ -754,8 +751,11 @@ rect.held, rect.combo.held {
 <g transform="translate(28, 49)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<use href="#mdi:mirror-rectangle" xlink:href="#mdi:mirror-rectangle" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:mirror-rectangle"/>
-</g>
+<a href="#mirror">
+<text x="0" y="-4" class="key tap layer-activator">mirror</text>
+</a><a href="#func">
+<text x="0" y="24" class="key hold layer-activator">func</text>
+</a></g>
 <g transform="translate(84, 49)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
@@ -3527,12 +3527,12 @@ rect.held, rect.combo.held {
 <g transform="translate(40, 3985)" class="layer-mirror">
 <text x="0" y="28" class="label" id="mirror">mirror:</text>
 <g transform="translate(0, 105)">
-<g transform="translate(28, 49)" class="key keypos-0">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<g transform="translate(28, 49)" class="key held keypos-0">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held"/>
 <a href="#araxia">
-<text x="0" y="-4" class="key tap layer-activator">araxia</text>
-</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="9" height="15" width="15.0" class="key hold glyph mdi:toggle-switch"/>
+<text x="0" y="-4" class="key held tap layer-activator">araxia</text>
+</a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="9" height="15" width="15.0" class="key held hold glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(84, 49)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -3758,11 +3758,11 @@ rect.held, rect.combo.held {
 <text x="0" y="24" class="key hold layer-activator">lnum</text>
 </a><text x="0" y="-24" class="key shifted">W</text>
 </g>
-<g transform="translate(617, 204)" class="key held keypos-41">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held"/>
-<text x="0" y="-4" class="key held tap">⮐</text>
-<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="9" height="15" width="15.0" class="key held hold glyph mdi:apple-keyboard-command"/>
+<g transform="translate(617, 204)" class="key keypos-41">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">⮐</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-8" y="9" height="15" width="15.0" class="key hold glyph mdi:apple-keyboard-command"/>
 </g>
 <g class="combo combopos-0">
 <path d="M168,-36 h83 a6.0,6.0 0 0 1 6.0,6.0 v102" class="combo"/>
@@ -4540,9 +4540,9 @@ rect.held, rect.combo.held {
 <g transform="translate(40, 5360)" class="layer-func">
 <text x="0" y="28" class="label" id="func">func:</text>
 <g transform="translate(0, 56)">
-<g transform="translate(28, 49)" class="key keypos-0">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<g transform="translate(28, 49)" class="key held keypos-0">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held"/>
 </g>
 <g transform="translate(84, 49)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -4596,9 +4596,9 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">F16</text>
 </g>
-<g transform="translate(812, 49)" class="key held keypos-11">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held"/>
+<g transform="translate(812, 49)" class="key keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
 <g transform="translate(28, 105)" class="key keypos-12">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
