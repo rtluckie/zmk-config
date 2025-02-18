@@ -34,23 +34,29 @@ manifest:
     - name: zmk
       revision: v0.1+mouse
       import: app/west.yml
-
+      clone-depth: 1
     # ZMK modules
     - name: zmk-adaptive-key
       path: modules/zmk/adaptive-key
+      clone-depth: 1
     - name: zmk-auto-layer
       path: modules/zmk/auto-layer
+      clone-depth: 1
     - name: zmk-helpers
       path: modules/zmk/helpers
+      clone-depth: 1
     - name: zmk-leader-key
       revision: v0.1+locality
       path: modules/zmk/leader-key
+      clone-depth: 1
     - name: zmk-tri-state
       path: modules/zmk/tri-state
+      clone-depth: 1
     - name: zmk-antecedent-morph
       remote: ssbb
       path: modules/antecedent-morph
       revision: main
+      clone-depth: 1
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
@@ -67,6 +73,25 @@ manifest:
           - hal_stm32
           - lvgl
           - tinycrypt
+        name-blocklist:
+          - ci-tools
+          - hal_altera
+          - hal_cypress
+          - hal_infineon
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_silabs
+          - hal_xtensa
+          - hal_st
+          - hal_ti
+          - loramac-node
+          - mcuboot
+          - mcumgr
+          - net-tools
+          - openthread
+          - edtt
+          - trusted-firmware-m
 
   self:
     path: config

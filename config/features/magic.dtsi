@@ -1,0 +1,62 @@
+
+
+#define WSPC SPACE COMMA ENTER RETURN LPAR DQT
+
+/ {
+    behaviors {
+        ak_mgk: ak_mgk {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&none>;
+
+            mgk_a { trigger-keys = <A>; max-prior-idle-ms = <300>; bindings = <&kp O>; };
+            mgk_b { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp E &kp F &kp O &kp R &kp E>; };
+            mgk_c { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp Y>; };
+            mgk_d { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp Y>; };
+            mgk_e { trigger-keys = <E>; max-prior-idle-ms = <300>; bindings = <&kp U>; };
+            // mgk_f { trigger-keys = <F>; max-prior-idle-ms = <300>; bindings = <&kp >; };
+            mgk_g { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp Y>; };
+            // mgk_h { trigger-keys = <H>; max-prior-idle-ms = <300>; bindings = <&kp >; };
+            mgk_i { trigger-keys = <I>; max-prior-idle-ms = <300>; bindings = <&kp O &kp N>; };
+            mgk_j { trigger-keys = <J>; max-prior-idle-ms = <300>; bindings = <&kp U &kp S &kp T>; };
+            mgk_k { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+            mgk_l { trigger-keys = <L>; max-prior-idle-ms = <300>; bindings = <&kp K>; };
+            mgk_m { trigger-keys = <M>; max-prior-idle-ms = <300>; bindings = <&kp E &kp N &kp T>; };
+            mgk_n { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp I &kp O &kp N>; };
+            mgk_o { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp A>; };
+            mgk_p { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp Y>; };
+            // mgk_q { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp >; };
+            mgk_r { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
+            mgk_s { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp K>; };
+            mgk_t { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp M &kp E &kp N &kp T>; };
+            mgk_u { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
+            mgk_v { trigger-keys = <V>; max-prior-idle-ms = <300>; bindings = <&kp E &kp R>; };
+            mgk_w { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H &kp I &kp C &kp H>; };
+            mgk_x { trigger-keys = <X>; max-prior-idle-ms = <300>; bindings = <&kp E &kp S>; };
+            mgk_y { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp P>; };
+            // mgk_z { trigger-keys = <Z>; max-prior-idle-ms = <300>; bindings = <&kp >; };
+            mgk_com { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp SPACE &kp B &kp U &kp T>; };
+            mgk_dot { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp P>; };
+            mgk_fslh { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp P>; };
+            mgk_dsh { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp GT>; };
+            mgk_eql { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp GT>; };
+            mgk_wspc { trigger-keys = <WSPC>; max-prior-idle-ms = <300>; bindings = <&kp T &kp H &kp E>; };
+        };
+
+        ak_rpt: ak_rpt {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&key_repeat>;
+
+            rpt_a { trigger-keys = <A>; max-prior-idle-ms = <300>; bindings = <&kp N &kp D>; };
+            rpt_i { trigger-keys = <I>; max-prior-idle-ms = <300>; bindings = <&kp N &kp G>; };
+            rpt_y { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp O &kp U>; };
+            rpt_n { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp F>; };
+            rpt_b { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp E &kp C &kp A &kp U &kp S &kp E>; };
+            rpt_w { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp O &kp U &kp L &kp D>; };
+            rpt_com { trigger-keys = <COMMA>; max-prior-idle-ms = <300>; bindings = <&kp SPACE &kp A &kp N &kp D>; };
+            rpt_dot { trigger-keys = <DOT>; max-prior-idle-ms = <300>; bindings = <&kp C &kp O &kp M>; };
+            rpt_spc { trigger-keys = <WSPC>; max-prior-idle-ms = <300>; bindings = <&kp F &kp O &kp R>; };
+        };
+    };
+};
