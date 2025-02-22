@@ -25,7 +25,7 @@
             mgk_n { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp I &kp O &kp N>; };
             mgk_o { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp A>; };
             mgk_p { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp Y>; };
-            // mgk_q { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp >; };
+            mgk_q { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp U>; };
             mgk_r { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
             mgk_s { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp K>; };
             mgk_t { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp M &kp E &kp N &kp T>; };
@@ -57,6 +57,25 @@
             rpt_com { trigger-keys = <COMMA>; max-prior-idle-ms = <300>; bindings = <&kp SPACE &kp A &kp N &kp D>; };
             rpt_dot { trigger-keys = <DOT>; max-prior-idle-ms = <300>; bindings = <&kp C &kp O &kp M>; };
             rpt_spc { trigger-keys = <WSPC>; max-prior-idle-ms = <300>; bindings = <&kp F &kp O &kp R>; };
+        };
+
+
+        ht_rpt: ht_rpt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_MS>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&ak_rpt>;
+        };
+
+        ht_mgk: ht_mgk {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_MS>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&ak_mgk>;
         };
     };
 };

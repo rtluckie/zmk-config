@@ -1,9 +1,7 @@
 { lib
 , buildPythonApplication
-, buildPythonPackage
 , callPackage
 , fetchFromGitHub
-, setuptools
 , poetry-core
 , pydantic
 , pcpp
