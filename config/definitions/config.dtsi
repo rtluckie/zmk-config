@@ -28,19 +28,20 @@
 
 /* Layers */
 #define ALPHA1 0
-#define LOWER 1
-#define RAISE 2
-#define SHORTCUTS 3
-#define MEHS 4
-#define NAV 5
-#define LOW_CP 6
-#define RAI_CP 7
-#define MEDIA 8
-#define FUN 9
+#define ALPHA2 1
+#define LOWER 2
+#define RAISE 3
+#define SHORTCUTS 4
+#define MEHS 5
+#define NAV 6
+#define LOW_CP 7
+#define RAI_CP 8
+#define MEDIA 9
+#define FUN 10
 
 
-#define ALL_LAYERS                  ALPHA1 LOWER RAISE SHORTCUTS MEHS NAV LOW_CP RAI_CP MEDIA FUN
-#define ALPHA_LAYERS                ALPHA1
+#define ALL_LAYERS                  ALPHA1 ALPHA2 LOWER RAISE SHORTCUTS MEHS NAV LOW_CP RAI_CP MEDIA FUN
+#define ALPHA_LAYERS                ALPHA1 ALPHA2
 
 // #define SENTENCE_CASE_LAYERS        SEN_CASE SEN_EXT
 // #define SMARTCASE_LAYERS            CAMEL_CASE SNAKE_CASE CONST_CASE KEBAB_CASE SLASH_CASE SPACING
