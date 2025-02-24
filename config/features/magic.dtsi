@@ -58,7 +58,23 @@
             rpt_dot { trigger-keys = <DOT>; max-prior-idle-ms = <300>; bindings = <&kp C &kp O &kp M>; };
             rpt_spc { trigger-keys = <WSPC>; max-prior-idle-ms = <300>; bindings = <&kp F &kp O &kp R>; };
         };
+        ht_mgk: ht_mgk {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_MS>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&ak_mgk>;
+        };
 
+        ht_rpt: ht_rpt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_MS>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&ak_rpt>;
+        };
 
     };
 };
