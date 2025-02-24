@@ -64,7 +64,7 @@
             tapping-term-ms = <QUICK_TAP_MS>;
             flavor = "tap-preferred";
             quick-tap-ms = <0>;
-            bindings = <&kp>, <&ak_mgk>;
+            bindings = <&mo>, <&ak_mgk>;
         };
 
         ht_rpt: ht_rpt {
@@ -73,7 +73,7 @@
             tapping-term-ms = <QUICK_TAP_MS>;
             flavor = "tap-preferred";
             quick-tap-ms = <0>;
-            bindings = <&kp>, <&ak_rpt>;
+            bindings = <&mo>, <&ak_rpt>;
         };
 
     };
