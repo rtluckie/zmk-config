@@ -18,6 +18,7 @@
 #include "features/select.dtsi"
 #include "features/symbols.dtsi"
 #include "features/shortcuts.dtsi"
+#include "features/magic.dtsi"
 
 
  /*                KEY POSITIONS

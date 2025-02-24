@@ -60,22 +60,5 @@
         };
 
 
-        ht_rpt: ht_rpt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <QUICK_TAP_MS>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <0>;
-            bindings = <&kp>, <&ak_rpt>;
-        };
-
-        ht_mgk: ht_mgk {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <QUICK_TAP_MS>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <0>;
-            bindings = <&kp>, <&ak_mgk>;
-        };
     };
 };
