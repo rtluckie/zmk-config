@@ -160,10 +160,10 @@
         window_left {
             display-name = "move [L]";
             bindings = <
-&none  &trans       &forward   &backward   &tab_next  &tab_prev     &act Y  &act U  &act I          &act O             &act P         &none
-&none  &kp C_SLEEP  &win_quad  &win_third  &win_half  &win_full     &act H  &act J  &act K          &act L             &act COLON     &none
-&none  &kp C_POWER  &none      &none       &win_next  &sk LSHIFT    &act N  &act M  &act LESS_THAN  &act GREATER_THAN  &act QUESTION  &none
-                               &none       &none      &none         &none   &none   &none
+&none  &trans       &forward   &backward   &tab_next   &tab_prev    &act Y  &act U  &act I          &act O             &act P         &none
+&none  &kp C_SLEEP  &win_quad  &win_third  &win_half   &win_full    &act H  &act J  &act K          &act L             &act COLON     &none
+&none  &kp C_POWER  &none      &none       &sk LSHIFT  &win_next    &act N  &act M  &act LESS_THAN  &act GREATER_THAN  &act QUESTION  &none
+                               &none       &none       &none        &none   &none   &none
             >;
         };
 
@@ -171,10 +171,10 @@
         window_right {
             display-name = "move [R]";
             bindings = <
-&none  &act Q  &act W  &act E  &act R  &act T    &tab_prev   &tab_next  &backward   &forward   &trans       &none
-&none  &act A  &act S  &act D  &act F  &act G    &win_full   &win_half  &win_third  &win_quad  &kp C_SLEEP  &none
-&none  &act Z  &act X  &act C  &act V  &act B    &sk RSHIFT  &win_next  &none       &none      &kp C_POWER  &none
-                       &none   &none   &none     &none       &none      &none
+&none  &act Q  &act W  &act E  &act R  &act T    &tab_prev   &tab_next   &backward   &forward   &trans       &none
+&none  &act A  &act S  &act D  &act F  &act G    &win_full   &win_half   &win_third  &win_quad  &kp C_SLEEP  &none
+&none  &act Z  &act X  &act C  &act V  &act B    &win_next   &sk RSHIFT  &none       &none      &kp C_POWER  &none
+                       &none   &none   &none     &none       &none       &none
             >;
         };
 

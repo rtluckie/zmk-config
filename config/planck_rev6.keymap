@@ -163,10 +163,10 @@
         window_left {
             display-name = "move [L]";
             bindings = <
-&trans       &forward   &backward   &tab_next  &tab_prev     &trans  &trans    &act Y  &act U  &act I          &act O             &act P
-&kp C_SLEEP  &win_quad  &win_third  &win_half  &win_full     &trans  &trans    &act H  &act J  &act K          &act L             &act COLON
-&kp C_POWER  &none      &none       &win_next  &sk LSHIFT    &trans  &trans    &act N  &act M  &act LESS_THAN  &act GREATER_THAN  &act QUESTION
-&trans       &trans     &trans      &trans     &trans        &trans  &trans    &trans  &trans  &trans          &trans             &trans
+&trans       &forward   &backward   &tab_next   &tab_prev    &trans  &trans    &act Y  &act U  &act I          &act O             &act P
+&kp C_SLEEP  &win_quad  &win_third  &win_half   &win_full    &trans  &trans    &act H  &act J  &act K          &act L             &act COLON
+&kp C_POWER  &none      &none       &sk LSHIFT  &win_next    &trans  &trans    &act N  &act M  &act LESS_THAN  &act GREATER_THAN  &act QUESTION
+&trans       &trans     &trans      &trans      &trans       &trans  &trans    &trans  &trans  &trans          &trans             &trans
             >;
         };
 
@@ -174,10 +174,10 @@
         window_right {
             display-name = "move [R]";
             bindings = <
-&act Q  &act W  &act E  &act R  &act T    &trans  &trans    &tab_prev   &tab_next  &backward   &forward   &trans
-&act A  &act S  &act D  &act F  &act G    &trans  &trans    &win_full   &win_half  &win_third  &win_quad  &kp C_SLEEP
-&act Z  &act X  &act C  &act V  &act B    &trans  &trans    &sk RSHIFT  &win_next  &none       &none      &kp C_POWER
-&trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans      &trans     &trans      &trans     &trans
+&act Q  &act W  &act E  &act R  &act T    &trans  &trans    &tab_prev  &tab_next   &backward   &forward   &trans
+&act A  &act S  &act D  &act F  &act G    &trans  &trans    &win_full  &win_half   &win_third  &win_quad  &kp C_SLEEP
+&act Z  &act X  &act C  &act V  &act B    &trans  &trans    &win_next  &sk RSHIFT  &none       &none      &kp C_POWER
+&trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans      &trans      &trans     &trans
             >;
         };
 
