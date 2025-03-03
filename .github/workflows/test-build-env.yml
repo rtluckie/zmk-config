@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: nixbuild/nix-quick-install-action@v29
+      - uses: nixbuild/nix-quick-install-action@v30
         if: ${{ matrix.system != 'aarch64-linux' }}
 
       # https://github.com/nixbuild/nix-quick-install-action/issues/55
