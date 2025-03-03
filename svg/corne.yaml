@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: corne_rotated, layout_name: LAYOUT_split_3x6_3}
+layout: {zmk_keyboard: corne}
 layers:
   araxia:
   - {t: mirror, h: func}
@@ -545,8 +545,8 @@ layers:
   - $$mdi:power$$
   - ''
   - ''
-  - {t: '$$mdi:curtains$$', s: '$$mdi:arrow-right-box$$', type: sym_sub_text}
   - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+  - {t: '$$mdi:curtains$$', s: '$$mdi:arrow-right-box$$', type: sym_sub_text}
   - '&act N'
   - '&act M'
   - '&act <'
@@ -590,8 +590,8 @@ layers:
   - '&act C'
   - '&act V'
   - '&act B'
-  - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
   - {t: '$$mdi:curtains$$', s: '$$mdi:arrow-right-box$$', type: sym_sub_text}
+  - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
   - ''
   - ''
   - $$mdi:power$$

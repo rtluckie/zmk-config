@@ -3962,17 +3962,17 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(252, 157)" class="key sym_sub_text keypos-28">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:curtains" xlink:href="#mdi:curtains" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:curtains"/>
-<use href="#mdi:arrow-right-box" xlink:href="#mdi:arrow-right-box" x="-8" y="-24" height="15" width="15.0" class="key sym_sub_text shifted glyph mdi:arrow-right-box"/>
-</g>
-<g transform="translate(308, 165)" class="key keypos-29">
+<g transform="translate(252, 157)" class="key keypos-28">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 <text x="0" y="24" class="key hold">sticky</text>
+</g>
+<g transform="translate(308, 165)" class="key sym_sub_text keypos-29">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
+<use href="#mdi:curtains" xlink:href="#mdi:curtains" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:curtains"/>
+<use href="#mdi:arrow-right-box" xlink:href="#mdi:arrow-right-box" x="-8" y="-24" height="15" width="15.0" class="key sym_sub_text shifted glyph mdi:arrow-right-box"/>
 </g>
 <g transform="translate(532, 165)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -4221,17 +4221,17 @@ rect.held, rect.combo.held {
 <tspan x="0" dy="-0.6em">&amp;act</tspan><tspan x="0" dy="1.2em">B</tspan>
 </text>
 </g>
-<g transform="translate(532, 165)" class="key keypos-30">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-shift"/>
-<text x="0" y="24" class="key hold">sticky</text>
-</g>
-<g transform="translate(588, 157)" class="key sym_sub_text keypos-31">
+<g transform="translate(532, 165)" class="key sym_sub_text keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
 <use href="#mdi:curtains" xlink:href="#mdi:curtains" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:curtains"/>
 <use href="#mdi:arrow-right-box" xlink:href="#mdi:arrow-right-box" x="-8" y="-24" height="15" width="15.0" class="key sym_sub_text shifted glyph mdi:arrow-right-box"/>
+</g>
+<g transform="translate(588, 157)" class="key keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="-13" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<text x="0" y="24" class="key hold">sticky</text>
 </g>
 <g transform="translate(644, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>

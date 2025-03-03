@@ -1,4 +1,4 @@
-layout: {zmk_shared_layout: common/ortho_4x12/all1u}
+layout: {zmk_keyboard: planck_rev6}
 layers:
   araxia:
   - {t: Q, h: 'move [L]'}
@@ -616,8 +616,8 @@ layers:
   - $$mdi:power$$
   - ''
   - ''
-  - {t: '$$mdi:curtains$$', s: '$$mdi:arrow-right-box$$', type: sym_sub_text}
   - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+  - {t: '$$mdi:curtains$$', s: '$$mdi:arrow-right-box$$', type: sym_sub_text}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&act N'
@@ -669,8 +669,8 @@ layers:
   - '&act B'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
   - {t: '$$mdi:curtains$$', s: '$$mdi:arrow-right-box$$', type: sym_sub_text}
+  - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
   - ''
   - ''
   - $$mdi:power$$
