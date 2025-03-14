@@ -97,9 +97,9 @@
         adjust {
             display-name = "adjust";
             bindings = <
-&bootloader  &vim_qall   &vim_cqall  &none   &ss_win  &to DEFAULT      &tmux_mode_select  &tmux_pp  &tmux_np  &tmux_oz  &tmux_paste  &none
-&none        &vim_wqall  &vim_save   &ss2c   &ss      &warpd_l         &tmux_pw           &tmux_pw  &tmux_nw  &tmux_sw  &none        &none
-&sys_reset   &none       &vim_exit   &sss2c  &sss     &out OUT_USB     &tmux_nw           &tmux_ps  &tmux_ns  &none     &none        &none
+&bootloader  &vim_qall   &vim_cqall  &none   &ss_win  &to DEFAULT      &tmux_mode_select  &tmux_ps  &tmux_ns  &tmux_oz  &tmux_paste  &none
+&none        &vim_wqall  &vim_save   &ss2c   &ss      &warpd_l         &tmux_sw           &tmux_pw  &tmux_pp  &tmux_np  &tmux_nw     &none
+&sys_reset   &none       &vim_exit   &sss2c  &sss     &out OUT_USB     &tmux_idx          &none     &none     &none     &tmux_copy   &none
                                      &none   &none    &trans           &trans             &none     &none
             >;
         };

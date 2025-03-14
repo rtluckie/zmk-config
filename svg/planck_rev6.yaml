@@ -352,8 +352,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - tmux app
-  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: ps, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: ns, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: oz, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: P, type: sym_sub_text}
   - {t: '$$mdi:vimeo$$', s: ':wqal', type: sym_sub_text}
@@ -363,11 +363,11 @@ layers:
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-left-thick$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: sw, type: sym_sub_text}
-  - ''
+  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
   - ''
   - {t: '$$mdi:vimeo$$', s: ZZ, type: sym_sub_text}
   - {t: '$$mdi:camera-image$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
@@ -375,11 +375,11 @@ layers:
   - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: ps, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: ns, type: sym_sub_text}
+  - '&tmux_idx'
   - ''
   - ''
+  - ''
+  - '&tmux_copy'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

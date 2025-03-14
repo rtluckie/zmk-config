@@ -309,8 +309,8 @@ layers:
   - {t: '$$mdi:camera$$', s: '$$mdi:microsoft-windows$$', type: sym_by_sym}
   - {t: araxia, h: '$$mdi:toggle-switch$$'}
   - tmux app
-  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: ps, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: ns, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: oz, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: P, type: sym_sub_text}
   - ''
@@ -320,11 +320,11 @@ layers:
   - {t: '$$mdi:camera$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
   - {t: '$$mdi:camera$$', s: '$$mdi:monitor-screenshot$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-left-thick$$', type: sym_by_sym}
-  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: sw, type: sym_sub_text}
-  - ''
+  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
   - ''
   - '&sys_reset'
   - ''
@@ -332,11 +332,11 @@ layers:
   - {t: '$$mdi:camera-image$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
   - {t: '$$mdi:camera-image$$', s: '$$mdi:monitor-screenshot$$', type: sym_by_sym}
   - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
-  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: ps, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: ns, type: sym_sub_text}
+  - '&tmux_idx'
   - ''
   - ''
+  - ''
+  - '&tmux_copy'
   - ''
   - ''
   - {type: held}
