@@ -28,7 +28,7 @@
 &combo_return_right_thumbs {
     key-positions = <43 44>;
 };
-&combo_tab_left {
+&combo_space_left {
     key-positions = <16 28>;
 };
 &combo_tab_right {

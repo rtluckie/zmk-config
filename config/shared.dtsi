@@ -38,6 +38,9 @@
 #define ACT       14
 #define FUNCTION  15
 // }}}
+
+#include <input/processors.dtsi>
+
 /* Key Positions
 ╭────────────────────────╮ ╭────────────────────────╮
 │  0   1   2   3   4   5 │ │  6   7   8   9  10  11 │
@@ -69,10 +72,11 @@
 };
 
 &mmv_input_listener {
-    scale-multiplier = <2>;
+    input-processors = <&zip_xy_scaler 2 1>;
 };
+
 &msc_input_listener {
-    scale-multiplier = <5>;
+    input-processors = <&zip_scroll_scaler 2 1>;
 };
 
 // }}}
@@ -157,26 +161,40 @@
             #binding-cells = <0>;
             bindings = <&kp LALT &kp LALT &kp LALT &kp LALT &kp LALT>;
         };
-        vim_save: vim_save {
+        vim_save: vim_save_single {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
                 <&kp ESC &kp COLON &kp W &kp RETURN>;
         };
-        vim_exit: vim_exit {
+        vim_exit: vim_exit_single {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp ESC &kp COLON &kp W &kp Q &kp RETURN>;
+                <&kp ESC &kp Z &kp Z>;
         };
-        vim_exit_all: vim_exit_all {
+        vim_qall: vim_exit_all {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
                 <&kp ESC &kp COLON &kp Q &kp A &kp L &kp RETURN>;
+        };
+        vim_cqall: vim_exit_all_with_confirm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp ESC &kp COLON &kp C &kp O &kp N &kp F &kp SPACE &kp Q &kp A &kp L &kp RETURN>;
+        };
+        vim_wqall: vim_exit_all_with_write {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp ESC &kp COLON &kp W &kp Q &kp A &kp L &kp RETURN>;
         };
         tmux_mode_select: tmux_mode_select {
             compatible = "zmk,behavior-macro";
@@ -518,11 +536,11 @@
             bindings = <&lthp OUTPUT RETURN>;
             layers = <DEFAULT GAMING>;
         };
-        combo_tab_left: combo_tab_left {
+        combo_space_left: combo_space_left {
             timeout-ms = <VERT_COMBO_MS>;
             slow-release;
             key-positions = <17 29>;
-            bindings = <&kp TAB>;
+            bindings = <&kp SPACE>;
             layers = <DEFAULT GAMING>;
         };
         combo_tab_right: combo_tab_right {
@@ -875,7 +893,7 @@
         };
         fmmv_input_listener {
             compatible = "zmk,input-listener";
-            scale-multiplier = <6>;
+            input-processors = <&zip_xy_scaler 6 1>;
             device = <&fmmv>;
         };
         capsy: caps_word_and_lock {

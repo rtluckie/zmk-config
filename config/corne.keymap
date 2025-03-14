@@ -75,10 +75,10 @@
         media {
             display-name = "media";
             bindings = <
-&none  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5      &kp C_MUTE    &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_BRI_UP  &none
-&none  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10     &kp C_VOL_DN  &kp C_VOL_UP  &none         &none         &kp C_BRI_DN  &none
-&none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-                         &trans   &trans   &trans      &trans        &trans        &trans
+&none  &none  &none  &none   &none   &none     &kp C_MUTE    &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_BRI_UP  &none
+&none  &none  &none  &none   &none   &none     &kp C_VOL_DN  &kp C_VOL_UP  &none         &none         &kp C_BRI_DN  &none
+&none  &none  &none  &none   &none   &none     &none         &none         &none         &none         &none         &none
+                     &trans  &trans  &trans    &trans        &trans        &trans
             >;
         };
 
@@ -86,10 +86,10 @@
         output {
             display-name = "output";
             bindings = <
-&none  &none         &none         &none         &none         &none           &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3   &bt BT_DISC 4  &bootloader
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4   &none
-&none  &none         &none         &none         &none         &none           &out OUT_USB  &out OUT_BLE  &bt BT_PRV    &bt BT_NXT      &bt BT_CLR     &sys_reset
-                                   &trans        &trans        &trans          &trans        &trans        &bt BT_CLR_ALL
+&none  &tab_tog  &zoom_tog  &zoom_in  &zoom_out  &glo C     &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3   &bt BT_DISC 4  &bootloader
+&none  &none     &none      &none     &glo Q     &glo H     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4   &none
+&none  &none     &none      &none     &none      &glo N     &out OUT_USB  &out OUT_BLE  &bt BT_PRV    &bt BT_NXT      &bt BT_CLR     &sys_reset
+                            &trans    &trans     &trans     &trans        &trans        &bt BT_CLR_ALL
             >;
         };
 
@@ -97,10 +97,10 @@
         adjust {
             display-name = "adjust";
             bindings = <
-&bootloader  &trans     &vim_exit_all  &none   &ss_win  &to DEFAULT      &ext_power EP_TOG  &none     &none     &tmux_oz  &tmux_paste  &none
-&tab_tog     &zoom_in   &vim_save      &ss2c   &ss      &warpd_l         &tmux_pw           &tmux_pp  &tmux_np  &tmux_sw  &none        &none
-&zoom_tog    &zoom_out  &vim_exit      &sss2c  &sss     &out OUT_USB     &tmux_nw           &tmux_ps  &tmux_ns  &none     &none        &none
-                                       &none   &none    &trans           &trans             &none     &none
+&bootloader  &vim_qall   &vim_cqall  &none   &ss_win  &to DEFAULT      &tmux_mode_select  &tmux_pp  &tmux_np  &tmux_oz  &tmux_paste  &none
+&none        &vim_wqall  &vim_save   &ss2c   &ss      &warpd_l         &tmux_pw           &tmux_pw  &tmux_nw  &tmux_sw  &none        &none
+&sys_reset   &none       &vim_exit   &sss2c  &sss     &out OUT_USB     &tmux_nw           &tmux_ps  &tmux_ns  &none     &none        &none
+                                     &none   &none    &trans           &trans             &none     &none
             >;
         };
 
@@ -109,10 +109,10 @@
         lighting {
             display-name = "lighting";
             bindings = <
-&none   &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_COLOR_HSB(25,100,0)      &glo C  &glo N  &none  &none  &none  &trans
-&none   &none   &none            &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_COLOR_HSB(25,100,80)     &glo H  &glo Q  &none  &none  &none  &none
-&none   &none   &none            &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_COLOR_HSB(25,0,100)      &glo N  &none   &none  &none  &none  &none
-                                 &none            &none            &none                                &none   &none   &none
+&none   &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_COLOR_HSB(25,100,0)      &ext_power EP_TOG  &none  &none  &none  &trans &none
+&none   &none   &none            &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_COLOR_HSB(25,100,80)     &none              &none  &none  &none  &none  &none
+&none   &none   &none            &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_COLOR_HSB(25,0,100)      &none              &none  &none  &none  &none  &none
+                                 &none            &none            &none                                &none              &none  &none
             >;
         };
 

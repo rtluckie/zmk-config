@@ -621,15 +621,23 @@ parse_config:
       type:    sym_sub_text
     '&vim_save':
       tap:     $$mdi:vimeo$$
-      shifted: "w"
+      shifted: ":w"
       type:    sym_sub_text
     '&vim_exit':
       tap:     $$mdi:vimeo$$
-      shifted: "zz"
+      shifted: "ZZ"
       type:    sym_sub_text
-    '&vim_exit_all':
+    '&vim_qall':
       tap:     $$mdi:vimeo$$
-      shifted: "qal"
+      shifted: ":qal"
+      type:    sym_sub_text
+    '&vim_cqall':
+      tap:     $$mdi:vimeo$$
+      shifted: ":conf qal"
+      type:    sym_sub_text
+    '&vim_wqall':
+      tap:     $$mdi:vimeo$$
+      shifted: ":wqal"
       type:    sym_sub_text
     '&ss':
       tap:     $$mdi:camera$$
@@ -715,7 +723,7 @@ parse_config:
     combo_gui_right:              { align: bottom , o: 0.05  , arc_scale: 1.03  }
     combo_return_left:            { align: right  , o: 0.10  , arc_scale: 1.03  }
     combo_return_right:           { align: left   , o: 0.10  , arc_scale: 1.03  }
-    combo_tab_left:               { align: right  , o: 0.10  , arc_scale: 1.03  }
+    combo_space_left:             { align: right  , o: 0.10  , arc_scale: 1.03  }
     combo_tab_right:              { align: left   , o: 0.10  , arc_scale: 1.03  }
     combo_backspace_left:         { align: left   , o: 0.20  , arc_scale: 1.03  }
     combo_backspace_right:        { align: right  , o: 0.20  , arc_scale: 1.03  }

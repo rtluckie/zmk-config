@@ -246,11 +246,11 @@ layers:
   - ''
   - ''
   - ''
-  - {t: '$$mdi:bluetooth-connect$$', s: '0', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '1', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '2', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '3', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '4', type: sym_sub_text}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -260,11 +260,11 @@ layers:
   - {t: ▽, type: trans}
   output:
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&tab_tog'
+  - '&zoom_tog'
+  - '&zoom_in'
+  - '&zoom_out'
+  - '&glo C'
   - {t: '$$mdi:bluetooth-off$$', s: '0', type: sym_sub_text}
   - {t: '$$mdi:bluetooth-off$$', s: '1', type: sym_sub_text}
   - {t: '$$mdi:bluetooth-off$$', s: '2', type: sym_sub_text}
@@ -272,29 +272,29 @@ layers:
   - {t: '$$mdi:bluetooth-off$$', s: '4', type: sym_sub_text}
   - {t: '$$mdi:flash$$', h: '$$mdi:new-box$$', s: '$$mdi:micro-sd$$', type: sym_by_sym}
   - ''
+  - ''
+  - ''
+  - ''
+  - '&glo Q'
+  - '&glo H'
   - {t: '$$mdi:bluetooth-connect$$', s: '0', type: sym_sub_text}
   - {t: '$$mdi:bluetooth-connect$$', s: '1', type: sym_sub_text}
   - {t: '$$mdi:bluetooth-connect$$', s: '2', type: sym_sub_text}
   - {t: '$$mdi:bluetooth-connect$$', s: '3', type: sym_sub_text}
   - {t: '$$mdi:bluetooth-connect$$', s: '4', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '0', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '1', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '2', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '3', type: sym_sub_text}
-  - {t: '$$mdi:bluetooth-connect$$', s: '4', type: sym_sub_text}
   - ''
   - ''
   - ''
   - ''
   - ''
   - ''
-  - ''
+  - '&glo N'
   - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
   - {t: '$$mdi:keyboard$$', s: '$$mdi:bluetooth$$', type: sym_by_sym}
   - {t: '$$mdi:bluetooth$$', s: '$$mdi:skip-previous$$', type: sym_sub_text}
   - {t: '$$mdi:bluetooth$$', s: '$$mdi:skip-next$$', type: sym_sub_text}
   - {t: '$$mdi:bluetooth-settings$$', s: '$$mdi:close-thick$$', type: sym_sub_text}
-  - ''
+  - '&sys_reset'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -303,32 +303,32 @@ layers:
   - {t: '$$mdi:bluetooth-settings$$', h: '$$mdi:asterisk$$', s: '$$mdi:close-thick$$', type: sym_sub_text}
   adjust:
   - {t: '$$mdi:flash$$', h: '$$mdi:new-box$$', s: '$$mdi:micro-sd$$', type: sym_by_sym}
-  - {t: ▽, type: trans}
-  - {t: '$$mdi:vimeo$$', s: qal, type: sym_sub_text}
+  - {t: '$$mdi:vimeo$$', s: ':qal', type: sym_sub_text}
+  - {t: '$$mdi:vimeo$$', s: ':conf qal', type: sym_sub_text}
   - ''
   - {t: '$$mdi:camera$$', s: '$$mdi:microsoft-windows$$', type: sym_by_sym}
   - {t: araxia, h: '$$mdi:toggle-switch$$'}
-  - {t: '$$tabler:bolt$$', s: '$$mdi:toggle-switch$$', type: sym_by_sym}
-  - ''
-  - ''
+  - tmux app
+  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: oz, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: P, type: sym_sub_text}
   - ''
-  - '&tab_tog'
-  - '&zoom_in'
-  - {t: '$$mdi:vimeo$$', s: w, type: sym_sub_text}
+  - ''
+  - {t: '$$mdi:vimeo$$', s: ':wqal', type: sym_sub_text}
+  - {t: '$$mdi:vimeo$$', s: ':w', type: sym_sub_text}
   - {t: '$$mdi:camera$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
   - {t: '$$mdi:camera$$', s: '$$mdi:monitor-screenshot$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-left-thick$$', type: sym_by_sym}
   - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: sw, type: sym_sub_text}
   - ''
   - ''
-  - '&zoom_tog'
-  - '&zoom_out'
-  - {t: '$$mdi:vimeo$$', s: zz, type: sym_sub_text}
+  - '&sys_reset'
+  - ''
+  - {t: '$$mdi:vimeo$$', s: ZZ, type: sym_sub_text}
   - {t: '$$mdi:camera-image$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
   - {t: '$$mdi:camera-image$$', s: '$$mdi:monitor-screenshot$$', type: sym_by_sym}
   - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
@@ -351,20 +351,20 @@ layers:
   - {t: '$$mdi:led-on$$', s: '$$mdi:white-balance-sunny$$', type: sym_by_sym}
   - {t: '$$mdi:led-outline$$', s: '$$mdi:white-balance-sunny$$', type: sym_by_sym}
   - {t: '$$mdi:led-on$$', h: '(25,100,0)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
-  - '&glo C'
-  - '&glo N'
+  - {t: '$$tabler:bolt$$', s: '$$mdi:toggle-switch$$', type: sym_by_sym}
+  - ''
   - ''
   - ''
   - {type: held}
-  - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   - ''
   - {t: '$$mdi:led-on$$', s: '$$mdi:eyedropper$$', type: sym_by_sym}
   - {t: '$$mdi:led-outline$$', s: '$$mdi:eyedropper$$', type: sym_by_sym}
   - {t: '$$mdi:led-on$$', h: '(25,100,80)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
-  - '&glo H'
-  - '&glo Q'
+  - ''
+  - ''
   - ''
   - ''
   - ''
@@ -375,7 +375,7 @@ layers:
   - {t: '$$mdi:led-on$$', s: '$$mdi:palette$$', type: sym_by_sym}
   - {t: '$$mdi:led-outline$$', s: '$$mdi:palette$$', type: sym_by_sym}
   - {t: '$$mdi:led-on$$', h: '(25,0,100)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
-  - '&glo N'
+  - ''
   - ''
   - ''
   - ''
@@ -714,7 +714,7 @@ combos:
   k: {t: ⮐, h: output}
   l: [araxia, gaming]
 - p: [17, 29]
-  k: $$mdi:keyboard-tab$$
+  k: $$mdi:keyboard-space$$
   l: [araxia, gaming]
   a: right
   o: 0.1

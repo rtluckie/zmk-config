@@ -1027,7 +1027,7 @@ rect.held, rect.combo.held {
 <path d="M343,126 v-23 a6.0,6.0 0 0 0 -6.0,-6.0 h-10" class="combo"/>
 <path d="M343,126 v23 a6.0,6.0 0 0 1 -6.0,6.0 h-10" class="combo"/>
 <rect rx="6" ry="6" x="329" y="113" width="28" height="26" class="combo"/>
-<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="334" y="117" height="18" width="18.0" class="combo tap glyph mdi:keyboard-tab"/>
+<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="334" y="117" height="18" width="18.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
 <g class="combo combopos-6">
 <path d="M497,126 v-23 a6.0,6.0 0 0 1 6.0,-6.0 h10" class="combo"/>
@@ -1443,7 +1443,7 @@ rect.held, rect.combo.held {
 <path d="M343,126 v-23 a6.0,6.0 0 0 0 -6.0,-6.0 h-10" class="combo"/>
 <path d="M343,126 v23 a6.0,6.0 0 0 1 -6.0,6.0 h-10" class="combo"/>
 <rect rx="6" ry="6" x="329" y="113" width="28" height="26" class="combo"/>
-<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="334" y="117" height="18" width="18.0" class="combo tap glyph mdi:keyboard-tab"/>
+<use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="334" y="117" height="18" width="18.0" class="combo tap glyph mdi:keyboard-space"/>
 </g>
 <g class="combo combopos-6">
 <path d="M497,126 v-23 a6.0,6.0 0 0 1 6.0,-6.0 h10" class="combo"/>
@@ -2266,35 +2266,25 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(532, 154)" class="key sym_sub_text keypos-30">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">0</text>
+<g transform="translate(532, 154)" class="key keypos-30">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(588, 147)" class="key sym_sub_text keypos-31">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">1</text>
+<g transform="translate(588, 147)" class="key keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(644, 140)" class="key sym_sub_text keypos-32">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">2</text>
+<g transform="translate(644, 140)" class="key keypos-32">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(700, 147)" class="key sym_sub_text keypos-33">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">3</text>
+<g transform="translate(700, 147)" class="key keypos-33">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(756, 161)" class="key sym_sub_text keypos-34">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">4</text>
+<g transform="translate(756, 161)" class="key keypos-34">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
 <g transform="translate(812, 161)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -2341,22 +2331,29 @@ rect.held, rect.combo.held {
 <g transform="translate(84, 49)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 75%">&amp;tab_tog</tspan></text>
 </g>
 <g transform="translate(140, 35)" class="key keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 67%">&amp;zoom_tog</tspan></text>
 </g>
 <g transform="translate(196, 28)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 75%">&amp;zoom_in</tspan></text>
 </g>
 <g transform="translate(252, 35)" class="key keypos-4">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 67%">&amp;zoom_out</tspan></text>
 </g>
 <g transform="translate(308, 42)" class="key keypos-5">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">
+<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">C</tspan>
+</text>
 </g>
 <g transform="translate(532, 42)" class="key sym_sub_text keypos-6">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
@@ -2399,35 +2396,31 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(84, 105)" class="key sym_sub_text keypos-13">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">0</text>
+<g transform="translate(84, 105)" class="key keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(140, 91)" class="key sym_sub_text keypos-14">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">1</text>
+<g transform="translate(140, 91)" class="key keypos-14">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(196, 84)" class="key sym_sub_text keypos-15">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">2</text>
+<g transform="translate(196, 84)" class="key keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
-<g transform="translate(252, 91)" class="key sym_sub_text keypos-16">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">3</text>
+<g transform="translate(252, 91)" class="key keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">
+<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">Q</tspan>
+</text>
 </g>
-<g transform="translate(308, 98)" class="key sym_sub_text keypos-17">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">4</text>
+<g transform="translate(308, 98)" class="key keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">
+<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">H</tspan>
+</text>
 </g>
 <g transform="translate(532, 98)" class="key sym_sub_text keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
@@ -2486,6 +2479,9 @@ rect.held, rect.combo.held {
 <g transform="translate(308, 154)" class="key keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">
+<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">N</tspan>
+</text>
 </g>
 <g transform="translate(532, 154)" class="key sym_by_sym keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym side"/>
@@ -2520,6 +2516,7 @@ rect.held, rect.combo.held {
 <g transform="translate(812, 161)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 60%">&amp;sys_reset</tspan></text>
 </g>
 <g transform="translate(223, 204)" class="key trans keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
@@ -2563,16 +2560,17 @@ rect.held, rect.combo.held {
 <use href="#mdi:new-box" xlink:href="#mdi:new-box" x="-8" y="9" height="15" width="15.0" class="key sym_by_sym hold glyph mdi:new-box"/>
 <use href="#mdi:micro-sd" xlink:href="#mdi:micro-sd" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:micro-sd"/>
 </g>
-<g transform="translate(84, 49)" class="key trans keypos-1">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
-<text x="0" y="-4" class="key trans tap">▽</text>
+<g transform="translate(84, 49)" class="key sym_sub_text keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
+<use href="#mdi:vimeo" xlink:href="#mdi:vimeo" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:vimeo"/>
+<text x="0" y="-24" class="key sym_sub_text shifted">:qal</text>
 </g>
 <g transform="translate(140, 35)" class="key sym_sub_text keypos-2">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
 <use href="#mdi:vimeo" xlink:href="#mdi:vimeo" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:vimeo"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">qal</text>
+<text x="0" y="-24" class="key sym_sub_text shifted"><tspan style="font-size: 67%">:conf qal</tspan></text>
 </g>
 <g transform="translate(196, 28)" class="key keypos-3">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -2591,19 +2589,24 @@ rect.held, rect.combo.held {
 <text x="0" y="-4" class="key tap layer-activator">araxia</text>
 </a><use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="9" height="15" width="15.0" class="key hold glyph mdi:toggle-switch"/>
 </g>
-<g transform="translate(532, 42)" class="key sym_by_sym keypos-6">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_by_sym"/>
-<use href="#tabler:bolt" xlink:href="#tabler:bolt" x="-9" y="-13" height="18" width="18.0" class="key sym_by_sym tap glyph tabler:bolt"/>
-<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:toggle-switch"/>
-</g>
-<g transform="translate(588, 35)" class="key keypos-7">
+<g transform="translate(532, 42)" class="key keypos-6">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">
+<tspan x="0" dy="-0.6em">tmux</tspan><tspan x="0" dy="1.2em">app</tspan>
+</text>
 </g>
-<g transform="translate(644, 28)" class="key keypos-8">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<g transform="translate(588, 35)" class="key sym_sub_text keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
+<use href="#mdi:collage" xlink:href="#mdi:collage" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:collage"/>
+<text x="0" y="-24" class="key sym_sub_text shifted">pp</text>
+</g>
+<g transform="translate(644, 28)" class="key sym_sub_text keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
+<use href="#mdi:collage" xlink:href="#mdi:collage" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:collage"/>
+<text x="0" y="-24" class="key sym_sub_text shifted">np</text>
 </g>
 <g transform="translate(700, 35)" class="key sym_sub_text keypos-9">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
@@ -2624,18 +2627,18 @@ rect.held, rect.combo.held {
 <g transform="translate(28, 105)" class="key keypos-12">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap"><tspan style="font-size: 75%">&amp;tab_tog</tspan></text>
 </g>
-<g transform="translate(84, 105)" class="key keypos-13">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap"><tspan style="font-size: 75%">&amp;zoom_in</tspan></text>
+<g transform="translate(84, 105)" class="key sym_sub_text keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
+<use href="#mdi:vimeo" xlink:href="#mdi:vimeo" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:vimeo"/>
+<text x="0" y="-24" class="key sym_sub_text shifted">:wqal</text>
 </g>
 <g transform="translate(140, 91)" class="key sym_sub_text keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
 <use href="#mdi:vimeo" xlink:href="#mdi:vimeo" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:vimeo"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">w</text>
+<text x="0" y="-24" class="key sym_sub_text shifted">:w</text>
 </g>
 <g transform="translate(196, 84)" class="key sym_by_sym keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym side"/>
@@ -2665,13 +2668,13 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
 <use href="#mdi:collage" xlink:href="#mdi:collage" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:collage"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">pp</text>
+<text x="0" y="-24" class="key sym_sub_text shifted">pw</text>
 </g>
 <g transform="translate(644, 84)" class="key sym_sub_text keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
 <use href="#mdi:collage" xlink:href="#mdi:collage" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:collage"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">np</text>
+<text x="0" y="-24" class="key sym_sub_text shifted">nw</text>
 </g>
 <g transform="translate(700, 91)" class="key sym_sub_text keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
@@ -2690,18 +2693,17 @@ rect.held, rect.combo.held {
 <g transform="translate(28, 161)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap"><tspan style="font-size: 67%">&amp;zoom_tog</tspan></text>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 60%">&amp;sys_reset</tspan></text>
 </g>
 <g transform="translate(84, 161)" class="key keypos-25">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap"><tspan style="font-size: 67%">&amp;zoom_out</tspan></text>
 </g>
 <g transform="translate(140, 147)" class="key sym_sub_text keypos-26">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_sub_text side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_sub_text"/>
 <use href="#mdi:vimeo" xlink:href="#mdi:vimeo" x="-9" y="-13" height="18" width="18.0" class="key sym_sub_text tap glyph mdi:vimeo"/>
-<text x="0" y="-24" class="key sym_sub_text shifted">zz</text>
+<text x="0" y="-24" class="key sym_sub_text shifted">ZZ</text>
 </g>
 <g transform="translate(196, 140)" class="key sym_by_sym keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym side"/>
@@ -2815,19 +2817,15 @@ rect.held, rect.combo.held {
 <text x="0" y="24" class="key sym_by_sym hold"><tspan style="font-size: 60%">(25,100,0)</tspan></text>
 <use href="#mdi:gradient-horizontal" xlink:href="#mdi:gradient-horizontal" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:gradient-horizontal"/>
 </g>
-<g transform="translate(532, 42)" class="key keypos-6">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">C</tspan>
-</text>
+<g transform="translate(532, 42)" class="key sym_by_sym keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key sym_by_sym side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key sym_by_sym"/>
+<use href="#tabler:bolt" xlink:href="#tabler:bolt" x="-9" y="-13" height="18" width="18.0" class="key sym_by_sym tap glyph tabler:bolt"/>
+<use href="#mdi:toggle-switch" xlink:href="#mdi:toggle-switch" x="-8" y="-24" height="15" width="15.0" class="key sym_by_sym shifted glyph mdi:toggle-switch"/>
 </g>
 <g transform="translate(588, 35)" class="key keypos-7">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">N</tspan>
-</text>
 </g>
 <g transform="translate(644, 28)" class="key keypos-8">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -2841,10 +2839,9 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held"/>
 </g>
-<g transform="translate(812, 49)" class="key trans keypos-11">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
-<text x="0" y="-4" class="key trans tap">▽</text>
+<g transform="translate(812, 49)" class="key keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 </g>
 <g transform="translate(28, 105)" class="key keypos-12">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -2880,16 +2877,10 @@ rect.held, rect.combo.held {
 <g transform="translate(532, 98)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">H</tspan>
-</text>
 </g>
 <g transform="translate(588, 91)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">Q</tspan>
-</text>
 </g>
 <g transform="translate(644, 84)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -2941,9 +2932,6 @@ rect.held, rect.combo.held {
 <g transform="translate(532, 154)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">&amp;glo</tspan><tspan x="0" dy="1.2em">N</tspan>
-</text>
 </g>
 <g transform="translate(588, 147)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>

@@ -155,11 +155,11 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - '0'
+  - '9'
+  - '8'
+  - '7'
+  - ','
   - .
   - '4'
   - '5'
@@ -167,11 +167,11 @@ layers:
   - ':'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - '`'
+  - ':'
+  - '6'
+  - '5'
+  - '4'
+  - .
   - '='
   - '1'
   - '2'
@@ -179,11 +179,11 @@ layers:
   - '-'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - '```'
+  - '-'
+  - '3'
+  - '2'
+  - '1'
+  - '='
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -246,11 +246,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   media:
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - $$mdi:volume-mute$$
@@ -258,11 +258,11 @@ layers:
   - $$mdi:play-pause$$
   - $$mdi:skip-forward$$
   - $$tabler:brightness-up$$
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - $$mdi:volume-minus$$
@@ -270,11 +270,11 @@ layers:
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
   - {t: ▽, type: trans}
   - $$tabler:brightness-down$$
-  - F11
-  - F12
-  - F13
-  - F14
-  - F15
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -295,42 +295,42 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   output:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&tab_tog'
+  - '&zoom_tog'
+  - '&zoom_in'
+  - '&zoom_out'
+  - '&glo C'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - $$mdi:volume-mute$$
-  - $$mdi:skip-backward$$
-  - $$mdi:play-pause$$
-  - $$mdi:skip-forward$$
-  - $$tabler:brightness-up$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:flash$$', h: '$$mdi:new-box$$', s: '$$mdi:micro-sd$$', type: sym_by_sym}
+  - ''
+  - ''
+  - ''
+  - '&glo Q'
+  - '&glo H'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
   - ''
   - ''
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - $$mdi:volume-minus$$
-  - $$mdi:volume-plus$$
-  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
-  - {t: ▽, type: trans}
-  - $$tabler:brightness-down$$
   - ''
   - ''
   - ''
   - ''
+  - '&glo N'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - '&sys_reset'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -344,32 +344,32 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   adjust:
-  - '&zoom_tog'
-  - {t: '$$mdi:vimeo$$', s: qal, type: sym_sub_text}
+  - {t: '$$mdi:vimeo$$', s: ':qal', type: sym_sub_text}
+  - {t: '$$mdi:vimeo$$', s: ':conf qal', type: sym_sub_text}
   - ''
   - {t: '$$mdi:camera$$', s: '$$mdi:microsoft-windows$$', type: sym_by_sym}
   - {t: araxia, h: '$$mdi:toggle-switch$$'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$tabler:bolt$$', s: '$$mdi:toggle-switch$$', type: sym_by_sym}
-  - ''
-  - ''
+  - tmux app
+  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: oz, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: P, type: sym_sub_text}
-  - '&zoom_in'
-  - {t: '$$mdi:vimeo$$', s: w, type: sym_sub_text}
+  - {t: '$$mdi:vimeo$$', s: ':wqal', type: sym_sub_text}
+  - {t: '$$mdi:vimeo$$', s: ':w', type: sym_sub_text}
   - {t: '$$mdi:camera$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
   - {t: '$$mdi:camera$$', s: '$$mdi:monitor-screenshot$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-left-thick$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: sw, type: sym_sub_text}
   - ''
-  - '&zoom_out'
-  - {t: '$$mdi:vimeo$$', s: zz, type: sym_sub_text}
+  - ''
+  - {t: '$$mdi:vimeo$$', s: ZZ, type: sym_sub_text}
   - {t: '$$mdi:camera-image$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
   - {t: '$$mdi:camera-image$$', s: '$$mdi:monitor-screenshot$$', type: sym_by_sym}
   - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
@@ -400,7 +400,7 @@ layers:
   - {t: '$$mdi:led-on$$', h: '(25,100,0)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&glo C'
+  - {t: '$$tabler:bolt$$', s: '$$mdi:toggle-switch$$', type: sym_by_sym}
   - '&glo N'
   - ''
   - ''
@@ -412,7 +412,7 @@ layers:
   - {t: '$$mdi:led-on$$', h: '(25,100,80)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&glo H'
+  - ''
   - '&glo Q'
   - ''
   - ''
@@ -424,7 +424,7 @@ layers:
   - {t: '$$mdi:led-on$$', h: '(25,0,100)', s: '$$mdi:gradient-horizontal$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&glo N'
+  - ''
   - ''
   - ''
   - ''
@@ -446,7 +446,7 @@ layers:
   - $$mdi:keyboard-tab$$
   - $$mdi:arrow-up$$
   - +
-  - $$tablerf:brand-discord$$
+  - {t: '$$tablerf:brand-discord$$', s: '$$tabler:section-sign$$', type: sym_by_sym}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - $$tablerf:brand-discord$$
@@ -467,9 +467,9 @@ layers:
   - PgUp
   - PgDn
   - ''
-  - ''
-  - ''
-  - ''
+  - Home
+  - Esc
+  - End
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -810,7 +810,7 @@ combos:
   k: {t: ⮐, h: output}
   l: [araxia, gaming]
 - p: [16, 28]
-  k: $$mdi:keyboard-tab$$
+  k: $$mdi:keyboard-space$$
   l: [araxia, gaming]
   a: right
   o: 0.1
