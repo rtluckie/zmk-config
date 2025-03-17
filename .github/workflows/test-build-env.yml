@@ -29,7 +29,7 @@ jobs:
         if: ${{ matrix.system != 'aarch64-linux' }}
 
       # https://github.com/nixbuild/nix-quick-install-action/issues/55
-      - uses: cachix/install-nix-action@v30
+      - uses: cachix/install-nix-action@v31
         if: ${{ matrix.system == 'aarch64-linux' }}
 
       - name: Set up build environment
