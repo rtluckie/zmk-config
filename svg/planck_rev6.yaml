@@ -364,10 +364,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '$$mdi:collage$$', s: sw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
   - ''
   - {t: '$$mdi:vimeo$$', s: ZZ, type: sym_sub_text}
   - {t: '$$mdi:camera-image$$', s: '$$mdi:clipboard$$', type: sym_by_sym}
@@ -378,7 +378,7 @@ layers:
   - '&tmux_idx'
   - ''
   - ''
-  - ''
+  - '&tmux_vp'
   - '&tmux_copy'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

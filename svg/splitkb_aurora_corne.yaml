@@ -321,10 +321,10 @@ layers:
   - {t: '$$mdi:camera$$', s: '$$mdi:monitor-screenshot$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-left-thick$$', type: sym_by_sym}
   - {t: '$$mdi:collage$$', s: sw, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: pp, type: sym_sub_text}
-  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: pw, type: sym_sub_text}
   - {t: '$$mdi:collage$$', s: nw, type: sym_sub_text}
+  - {t: '$$mdi:collage$$', s: np, type: sym_sub_text}
   - ''
   - '&sys_reset'
   - ''
@@ -335,7 +335,7 @@ layers:
   - '&tmux_idx'
   - ''
   - ''
-  - ''
+  - '&tmux_vp'
   - '&tmux_copy'
   - ''
   - ''
