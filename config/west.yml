@@ -1,32 +1,64 @@
+# This file specifies the build dependencies for Github Action workflows and
+# for local build environments. The workspace has four toplevel directories
+# containing the user config, modules, zephy and ZMK.
+#
+# ZMK-Workspace
+# ├── config
+# ├── modules
+# ├── zephyr
+# └── zmk
+#
+# To create a local build environment, clone this repository and then run the
+# following commands from its toplevel directory:
+#
+# $ west init -l config
+# $ west update
+# $ west zephyr-export
+#
+---
 manifest:
+  defaults:
+    remote: urob
+    revision: v0.2 # Pin everything to v0.2
+
   remotes:
+    - name: urob
+      url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: SethMilliken
-      url-base: https://github.com/SethMilliken
-    - name: caksoylar
-      url-base: https://github.com/caksoylar
-    - name: dhruvinsh
-      url-base: https://github.com/dhruvinsh
-    - name: davidphilipbarr
-      url-base: https://github.com/davidphilipbarr
+
   projects:
     - name: zmk
-      #remote: zmkfirmware
-      #revision: main
-      remote: SethMilliken
-      revision: experimental-blend  # custom branch name
-      #remote: caksoylar
-      #revision: caksoylar/zen-v1+v2+experimental  # custom branch name
-      clone-depth: 1
+      remote: zmkfirmware
       import: app/west.yml
+
+    # ZMK modules
+    - name: zmk-adaptive-key
+      path: modules/zmk/adaptive-key
+    - name: zmk-auto-layer
+      path: modules/zmk/auto-layer
+    - name: zmk-helpers
+      path: modules/zmk/helpers
+    - name: zmk-leader-key
+      path: modules/zmk/leader-key
     - name: zmk-tri-state
-      remote: dhruvinsh
+      path: modules/zmk/tri-state
+
+    # Temporarily overload Zephyr until
+    # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
+    - name: zephyr
+      revision: v3.5.0+zmk-fixes
       clone-depth: 1
-      revision: main
-    - name: nicehatharry
-      remote: SethMilliken
-      clone-depth: 1
-      revision: main
+      import:
+        # Only enable most commonly used boards. For less common hardware one
+        # may need to enable additional modules.
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+          - hal_rpi_pico
+          - hal_stm32
+          - lvgl
+          - tinycrypt
+
   self:
     path: config
