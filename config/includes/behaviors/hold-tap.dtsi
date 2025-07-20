@@ -1,0 +1,111 @@
+    behaviors {
+        hrml: home_row_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_R >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        hrmr: home_row_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_L >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        hrsl: home_row_mods_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_R >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        hrsr: home_row_mods_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_L >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        /omit-if-no-ref/ hrsq: home_row_semi_quote {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            require-prior-idle-ms = <125>;
+            //hold-trigger-key-positions = <list of all lhs keys>;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&semiquote>;
+        };
+        lttp: layer_tap_tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings =
+                <&mo>,
+                <&kp>;
+        };
+        lthp: layer_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "hold-preferred";
+            bindings =
+                <&mo>,
+                <&kp>;
+        };
+        mttp: mod_tap_tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        mthp: mod_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "hold-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+    };

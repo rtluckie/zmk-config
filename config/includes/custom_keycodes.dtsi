@@ -1,11 +1,42 @@
 // DEFINES {{{
-#define HYPER(X) LG(LA(LC(LS(X))))
-#define DISCORD_ACT LC(LS(N))
-#define CARD_ACT     HYPER(A)
-#define CARD_FUNC    HYPER(F)
-#define CARD_DISCORD HYPER(D)
-#define CARD_POINTER HYPER(P)
-#define CARD_DEACTIVATE HYPER(DELETE)
+// #define HYPER(X) LG(LA(LC(LS(X))))
+// #define DISCORD_ACT LC(LS(N))
+// #define CARD_ACT     HYPER(A)
+// #define CARD_FUNC    HYPER(F)
+// #define CARD_DISCORD HYPER(D)
+// #define CARD_POINTER HYPER(P)
+// #define CARD_DEACTIVATE HYPER(DELETE)
 
 #define XXX &none
 #define ___ &trans
+
+
+
+
+// Navigation
+#define X_LEFT_W LA(LEFT)
+#define X_LEFT_L LG(LEFT)
+#define X_RIGHT_W LA(RIGHT)
+#define X_RIGHT_L LG(RIGHT)
+
+// HYPER and MEH
+#define X_HYPER LS(LC(LG(LALT)))
+#define X_MEH LC(LG(LALT))
+
+// Shortcuts
+#define X_UNDO LG(Z)
+#define X_REDO LS(LG(Z))
+#define X_CUT LG(X)
+#define X_COPY LG(C)
+#define X_PASTE LG(V)
+#define X_BACK LG(LBKT)
+#define X_FWD LG(RBKT)
+#define X_TAB_PREV LS(LC(TAB))
+#define X_TAB_NEXT LC(TAB)
+#define X_SPACE_PREV LC(LEFT)
+#define X_SPACE_NEXT LC(RIGHT)
+
+// macOS Mission Control
+#define X_MC_ALL LC(UP)
+#define X_MC_APP LC(DOWN)
+#define X_MC_DESK F11
