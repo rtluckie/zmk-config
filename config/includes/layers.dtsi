@@ -1,21 +1,4 @@
-// Layers
-#define ALPHA 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
-#define EXTEND 4
-#define ACTIONS 9
-#define MEDIA 10
-#define SHORTCUTS 11
-#define SYSTEM 12
-#define NAV 13
-#define NUM 14
-#define POINTER 15
-#define SYMBOLS 16
-#define TEXT 17
-#define LAYERS 18
-#define WINDOWS 19
-#define FUNC 20
+
 
 #include "layers/00_alpha.dtsi"
 #include "layers/01_lower.dtsi"

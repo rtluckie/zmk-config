@@ -29,3 +29,21 @@
 #define VER_MAJOR N0
 
 
+// Layers
+#define ALPHA 0
+#define LOWER 1
+#define RAISE 2
+#define ADJUST 3
+#define EXTEND 4
+#define ACTIONS 5
+#define MEDIA 6
+#define SHORTCUTS 7
+#define SYSTEM 8
+#define NAV 9
+#define NUM 10
+#define POINTER 11
+#define SYMBOLS 12
+#define TEXT 13
+#define LAYERS 14
+#define WIN 15
+#define FUNC 16
