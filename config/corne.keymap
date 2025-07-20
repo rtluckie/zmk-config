@@ -10,14 +10,11 @@
 
 
 
-/
-{
-    // KEYMAP {{{
-    // n.b. display-name strings are truncated after 8 characters
+/ {
+
     keymap
     {
         compatible = "zmk,keymap";
-
         /* 0 Layer */
         default
         {
