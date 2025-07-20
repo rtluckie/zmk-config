@@ -347,8 +347,8 @@ parse_config:
       hold: $$mdi:bluetooth$$
       shifted: $$mdi:usb$$
       type: toggle
-    '&mkp LCLK': $$mdi:cursor-ALPHA-click$$
-    '&mkp RCLK': $$mdi:cursor-ALPHA-click-outline$$
+    '&mkp LCLK': $$mdi:cursor-default-click$$
+    '&mkp RCLK': $$mdi:cursor-default-click-outline$$
     '&point_tog': '$$tablerf:pointer$$'
     #'&mirror_sl': '$$tabler:arrows-left-right$$'
     '&mirror_sl': '$$mdi:mirror-rectangle$$'

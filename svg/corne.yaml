@@ -433,14 +433,14 @@ layers:
   pointer:
   - ''
   - move [L]
-  - $$mdi:cursor-ALPHA-click-outline$$
+  - $$mdi:cursor-default-click-outline$$
   - {t: '$$mdi:mouse$$', s: '$$mdi:arrow-up$$', type: sym_by_sym}
-  - $$mdi:cursor-ALPHA-click$$
+  - $$mdi:cursor-default-click$$
   - $$mdi:mouse-move-up$$
   - $$mdi:mouse-move-up$$
-  - $$mdi:cursor-ALPHA-click$$
+  - $$mdi:cursor-default-click$$
   - {t: '$$mdi:tortoise$$', s: '$$mdi:arrow-up$$', type: sym_by_sym}
-  - $$mdi:cursor-ALPHA-click-outline$$
+  - $$mdi:cursor-default-click-outline$$
   - move [R]
   - ''
   - ''
@@ -459,10 +459,10 @@ layers:
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-right-thick$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-up-thick$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-left-thick$$', type: sym_by_sym}
-  - $$mdi:cursor-ALPHA-click$$
-  - $$mdi:cursor-ALPHA-click-outline$$
-  - $$mdi:cursor-ALPHA-click-outline$$
-  - $$mdi:cursor-ALPHA-click$$
+  - $$mdi:cursor-default-click$$
+  - $$mdi:cursor-default-click-outline$$
+  - $$mdi:cursor-default-click-outline$$
+  - $$mdi:cursor-default-click$$
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-left-thick$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-up-thick$$', type: sym_by_sym}
   - {t: '$$mdi:monitor-shimmer$$', s: '$$mdi:arrow-top-right-thick$$', type: sym_by_sym}
