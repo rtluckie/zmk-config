@@ -142,7 +142,7 @@ XXX    &warpd_r      &warpd_t         &warpd_l         &mkp LCLK         &mkp RC
         };
 
         /* 11 Layer */
-``        mirror {
+        mirror {
             display-name = "mirror";
             bindings = <
  &to DEFAULT  &lttp WIN_RIGHT P  &kp O         &kp I                &kp U               &kp Y              &kp T              &kp R             &kp E              &kp W         &lttp WIN_LEFT Q  &to DEFAULT
