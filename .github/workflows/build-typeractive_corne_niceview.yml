@@ -6,7 +6,7 @@ on:
       - 'build/typeractive_corne_niceview.yaml'
       - 'config/west.yml'
       - 'config/corne.*'
-      - 'config/shared.dtsi'
+      - 'config/includes/**/*'
 
 jobs:
   build:
