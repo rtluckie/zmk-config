@@ -21,184 +21,175 @@
 			slow-release;
 			key-positions = <LT0 LM0>;
 			bindings = <&kp RETURN>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_return_left_thumbs: combo_return_left_thumbs {
 			timeout-ms = <VERT_COMBO_MS>;
 			key-positions = <LH1 LH0>;
 			bindings = <&lthp ADJUST RETURN>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_adjust_tab: combo_adjust_tab {
 			timeout-ms = <VERT_COMBO_MS>;
 			key-positions = <LH0 RH0>;
 			bindings = <&lttp ADJUST TAB>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_return_right: combo_return_right {
 			timeout-ms = <VERT_COMBO_MS>;
 			slow-release;
 			key-positions = <RT0 RM0>;
 			bindings = <&kp RETURN>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_return_right_thumbs: combo_return_right_thumbs {
 			timeout-ms = <VERT_COMBO_MS>;
 			key-positions = <RH0 RH1>;
 			bindings = <&lthp OUTPUT RETURN>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_space_left: combo_space_left {
 			timeout-ms = <VERT_COMBO_MS>;
 			slow-release;
 			key-positions = <LM0 LB0>;
 			bindings = <&kp SPACE>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_tab_right: combo_tab_right {
 			timeout-ms = <VERT_COMBO_MS>;
 			slow-release;
 			key-positions = <RM0 RB0>;
 			bindings = <&kp TAB>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_left_act: combo_left_act {
 			timeout-ms = <VERT_COMBO_MS>;
 			slow-release;
 			key-positions = <LT4 LM1>;
 			bindings = <&osl CARD_ACT ACT>;
-			layers = <DEFAULT>;
+			layers = <ALPHA>;
 		};
 		combo_right_act: combo_right_act {
 			timeout-ms = <VERT_COMBO_MS>;
 			slow-release;
 			key-positions = <RT4 RM1>;
 			bindings = <&osl CARD_ACT ACT>;
-			layers = <DEFAULT>;
+			layers = <ALPHA>;
 		};
 		combo_act: combo_act {
 			timeout-ms = <ROLL_COMBO_MS>;
 			slow-release;
 			key-positions = <LH1 RH1>;
 			bindings = <&osl CARD_ACT ACT>;
-			layers = <DEFAULT POINTER DISCORD>;
+			layers = <ALPHA POINTER DISCORD>;
 		};
 		combo_function: combo_function {
 			timeout-ms = <ROLL_COMBO_MS>;
 			slow-release;
 			key-positions = <LT0 RT0>;
 			bindings = <&osl CARD_FUNC FUNCTION>;
-			layers = <DEFAULT>;
+			layers = <ALPHA>;
 		};
 		combo_tmux: combo_tmux {
 			timeout-ms = <TRI_COMBO_MS>;
 			slow-release;
 			key-positions = <RT1 RT2 RT3>;
 			bindings = <&kp LC(A)>;
-			layers = <DEFAULT>;
+			layers = <ALPHA>;
 		};
 		combo_tmux_mode_select: combo_tmux_mode_select {
 			timeout-ms = <TRI_COMBO_MS>;
 			slow-release;
 			key-positions = <LT2 LT3 LT4>;
 			bindings = <&tmux_mode_select>;
-			layers = <DEFAULT>;
+			layers = <ALPHA>;
 		};
 		combo_capsy: combo_capsy {
 			timeout-ms = <CAPS_COMBO_MS>;
 			slow-release;
 			key-positions = <LM1 RM1>;
 			bindings = <&capsy>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_shifty: combo_shifty {
 			timeout-ms = <CAPS_COMBO_MS>;
 			slow-release;
 			key-positions = <LM4 RM4>;
 			bindings = <&shifty>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_version: combo_version {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <LT4 LT2>;
 			bindings = <&version>;
-			layers = <DEFAULT>;
+			layers = <ALPHA>;
 		};
 		combo_delete: combo_delete {
 			timeout-ms = <ROLL_COMBO_MS>;
 			slow-release;
 			key-positions = <RT3 RT4>;
 			bindings = <&kp DELETE>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_backspace_left: combo_backspace_left {
 			timeout-ms = <VERT_COMBO_MS>;
 			slow-release;
 			key-positions = <LT4 LM4>;
 			bindings = <&kp BACKSPACE>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_backspace_right: combo_backspace_right {
 			timeout-ms = <VERT_COMBO_MS>;
 			slow-release;
 			key-positions = <RT4 RM4>;
 			bindings = <&kp BACKSPACE>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_gui_left: combo_gui_left {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <LB3 LB2>;
 			bindings = <&kp LGUI>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_alt_left: combo_alt_left {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <LM4 LB3>;
 			bindings = <&kp LALT>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_gui_right: combo_gui_right {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <RB3 RB4>;
 			bindings = <&kp LGUI>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_alt_right: combo_alt_right {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <RM4 RB4>;
 			bindings = <&kp LALT>;
-			layers = <DEFAULT GAMING>;
+			layers = <ALPHA>;
 		};
 		combo_swap_left: combo_swap_left {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <LM1 LB3>;
 			bindings = <&swap_ht 0 LG(TAB)>;
-			layers = <DEFAULT DISCORD POINTER MIRROR>;
-		};
+			layers = <ALPHA>;		};
 		combo_swap_right: combo_swap_right {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <RM1 RB4>;
 			bindings = <&swap_ht 0 LG(TAB)>;
-			layers = <DEFAULT DISCORD POINTER MIRROR>;
-		};
+			layers = <ALPHA>;		};
 		combo_winswap_left: combo_winswap_left {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <LB3 LB0>;
 			bindings = <&winswap_ht 0 LA(TAB)>;
-			layers = <DEFAULT DISCORD POINTER MIRROR>;
+			layers = <ALPHA>;
 		};
 		combo_winswap_right: combo_winswap_right {
 			timeout-ms = <ROLL_COMBO_MS>;
 			key-positions = <RB1 RB4>;
 			bindings = <&winswap_ht 0 LA(TAB)>;
-			layers = <DEFAULT DISCORD POINTER MIRROR>;
-		};
-		combo_lighting: combo_lighting {
-			timeout-ms = <VERT_COMBO_MS>;
-			slow-release;
-			key-positions = <LT4 RT4>;
-			bindings = <&mo LIGHTING>;
-			layers = <DEFAULT>;
-		};
+			layers = <ALPHA>;		};
+	
 	};
 };

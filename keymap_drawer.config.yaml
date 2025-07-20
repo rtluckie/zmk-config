@@ -17,7 +17,7 @@ draw_config:
   append_colon_to_layer_header: true
   small_pad: 2.0
   svg_extra_style: |
-    /* For default sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
+    /* For ALPHA sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
 
     svg.keymap {
       font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
@@ -106,7 +106,7 @@ draw_config:
     tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
     mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
     mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
-    material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
+    material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/ALPHA/48px.svg
   use_local_cache: true
 parse_config:
   preprocess: true
@@ -347,8 +347,8 @@ parse_config:
       hold: $$mdi:bluetooth$$
       shifted: $$mdi:usb$$
       type: toggle
-    '&mkp LCLK': $$mdi:cursor-default-click$$
-    '&mkp RCLK': $$mdi:cursor-default-click-outline$$
+    '&mkp LCLK': $$mdi:cursor-ALPHA-click$$
+    '&mkp RCLK': $$mdi:cursor-ALPHA-click-outline$$
     '&point_tog': '$$tablerf:pointer$$'
     #'&mirror_sl': '$$tabler:arrows-left-right$$'
     '&mirror_sl': '$$mdi:mirror-rectangle$$'

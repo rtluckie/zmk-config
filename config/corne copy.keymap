@@ -18,7 +18,7 @@
     keymap {
         compatible = "zmk,keymap";
         /* 0 Layer */
-        default   {
+        ALPHA   {
             display-name = "araxia";
             bindings = <
 // clang-format off
@@ -33,7 +33,7 @@
         gaming {
             display-name = "gaming";
             bindings = <
- &kp LALT    &kp Q  &kp W  &kp E       &kp R      &kp T                &kp Y            &kp U               &kp I      &kp O    &kp P      &to DEFAULT
+ &kp LALT    &kp Q  &kp W  &kp E       &kp R      &kp T                &kp Y            &kp U               &kp I      &kp O    &kp P      &to ALPHA
  &kp LCTRL   &kp A  &kp S  &kp D       &kp F      &kp G                &h_bs            &kp J               &kp K      &kp L    &kp SEMI   &kp RCTRL
  &kp LSHIFT  &kp Z  &kp X  &kp C       &kp V      &kp B                &kp N            &m_cr               &kp COMMA  &kp DOT  &kp SLASH  &kp RSHIFT
                            &kp RETURN  &kp SPACE  &lthp SYMBOLS TAB    &lthp MEDIA ESC  &lttp NUMPAD SPACE  &kp COLON
@@ -99,7 +99,7 @@ XXX    XXX       XXX        XXX       XXX        &glo N     &out OUT_USB  &out O
         adjust {
             display-name = "adjust";
             bindings = <
-&bootloader  &vim_qall   &vim_cqall  XXX     &ss_win  &to DEFAULT      &tmux_mode_select  &tmux_ps  &tmux_ns  &tmux_oz  &tmux_paste  XXX  
+&bootloader  &vim_qall   &vim_cqall  XXX     &ss_win  &to ALPHA      &tmux_mode_select  &tmux_ps  &tmux_ns  &tmux_oz  &tmux_paste  XXX  
 XXX          &vim_wqall  &vim_save   &ss2c   &ss      &warpd_l         &tmux_sw           &tmux_pp  &tmux_pw  &tmux_nw  &tmux_np     XXX  
 &sys_reset   XXX         &vim_exit   &sss2c  &sss     &out OUT_USB     &tmux_idx          XXX       XXX       &tmux_vp  &tmux_copy   XXX  
                                      XXX     XXX      ___             ___               XXX       XXX  
@@ -144,10 +144,10 @@ XXX    &warpd_r      &warpd_t         &warpd_l         &mkp LCLK         &mkp RC
         mirror {
             display-name = "mirror";
             bindings = <
- &to DEFAULT  &lttp WIN_RIGHT P  &kp O         &kp I                &kp U               &kp Y              &kp T              &kp R             &kp E              &kp W         &lttp WIN_LEFT Q  &to DEFAULT
+ &to ALPHA  &lttp WIN_RIGHT P  &kp O         &kp I                &kp U               &kp Y              &kp T              &kp R             &kp E              &kp W         &lttp WIN_LEFT Q  &to ALPHA
  XXX          &hrmr RCTRL SEMI   &hrmr RGUI L  &hrmr RALT K         &hrsr RSHIFT J      &h_bs              &hrml GLOBE G      &hrsl LSHIFT F    &hrml LALT D       &hrml LGUI S  &hrml RCTRL A     XXX  
  XXX          &kp SLASH          &kp DOT       &kp COMMA            &m_cr               &kp N              &kp B              &kp V             &kp C              &kp X         &kp Z             XXX  
-                                               &lthp DEFAULT COLON  &lthp NUMPAD SPACE  &lthp MEDIA ESC    &lthp SYMBOLS ESC  &lthp LNUM LC(W)  &mthp LGUI RETURN
+                                               &lthp ALPHA COLON  &lthp NUMPAD SPACE  &lthp MEDIA ESC    &lthp SYMBOLS ESC  &lthp LNUM LC(W)  &mthp LGUI RETURN
             >;
         };
 
