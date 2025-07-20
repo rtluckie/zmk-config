@@ -29,20 +29,3 @@
 #define VER_MAJOR N0
 
 
-// Layers
-#define DEFAULT 0
-#define GAMING 1
-#define SYMBOLS 2
-#define LNUM 3
-#define NUMPAD 4
-#define MEDIA 5
-#define OUTPUT 6
-#define ADJUST 7
-#define LIGHTING 8
-#define DISCORD 9
-#define POINTER 10
-#define MIRROR 11
-#define WIN_LEFT 12
-#define WIN_RIGHT 13
-#define ACT 14
-#define FUNCTION 15

@@ -1,15 +1,12 @@
 /**
- * Adjust
+ * Layers
  */
-
-
 / {
     keymap {
         compatible = "zmk,keymap";
-
-    Adjust {
-        display-name = "ADJUST";
-        bindings = <
+            layers {
+                display-name = "LAYERS";
+                bindings = <
 // clang-format off
 // ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮   ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
 // │0/LT5          │1/LT4          │2/LT3          │3/LT2          │4/LT1          │5/LT0          │   │6/RT0          │7/RT1          │8/RT2          │9/RT3          │10/RT4         │11/RT5         │
