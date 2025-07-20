@@ -19,7 +19,7 @@
         compatible = "zmk,keymap";
         /* 0 Layer */
         default   {
-            display - name = "araxia";
+            display-name = "araxia";
             bindings = <
 
                 // clang-format off
