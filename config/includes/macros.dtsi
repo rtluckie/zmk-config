@@ -329,15 +329,15 @@
             #binding-cells = <0>;
             bindings = <&kp LA(F4)>;
         };
-        dis_tog: discord_layer_toggle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp CARD_DISCORD>
-                , <&macro_tap &tog DISCORD>
-                , <&macro_tap &kp DISCORD_ACT>
-                ;
-        };
+        // dis_tog: discord_layer_toggle {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_tap &kp CARD_DISCORD>
+        //         , <&macro_tap &tog DISCORD>
+        //         , <&macro_tap &kp DISCORD_ACT>
+        //         ;
+        // };
         dis_up: discord_previous_unread {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
