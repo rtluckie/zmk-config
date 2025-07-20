@@ -173,7 +173,7 @@
                 <&kp TAB>,
                 <&kt LALT>;
             ignored-key-positions = <1 25 28 10 31 34 18 19 20 21 40>;
-            ignored-layers = <ALPHA NUMPAD>;
+            ignored-layers = <ALPHA>;
         };
         swap: swapper_mac {
             compatible = "zmk,behavior-tri-state";
