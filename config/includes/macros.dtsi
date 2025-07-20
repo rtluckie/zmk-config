@@ -393,14 +393,14 @@
             #binding-cells = <0>;
             bindings = <&kp LG(P)>;
         };
-        point_tog: pointer_layer_toggle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp CARD_POINTER>
-                , <&macro_tap &tog POINTER>
-                ;
-        };
+        // point_tog: pointer_layer_toggle {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings
+        //         = <&macro_tap &kp CARD_POINTER>
+        //         , <&macro_tap &tog POINTER>
+        //         ;
+        // };
         // mirror_sl: mirror_sticky_layer {
         //     compatible = "zmk,behavior-macro";
         //     #binding-cells = <0>;
