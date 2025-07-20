@@ -112,10 +112,10 @@ XXX          &vim_wqall  &vim_save   &ss2c   &ss      &warpd_l         &tmux_sw 
         lighting {
             display-name = "lighting";
             bindings = <
-XXX     ___    &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_COLOR_HSB(25,100,0)      &ext_power EP_TOG  XXX    XXX    XXX    ___   XXX  
-XXX     XXX     XXX              &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_COLOR_HSB(25,100,80)     XXX                XXX    XXX    XXX    XXX    XXX  
-XXX     XXX     XXX              &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_COLOR_HSB(25,0,100)      XXX                XXX    XXX    XXX    XXX    XXX  
-                                 XXX              XXX              XXX                                  XXX                XXX    XXX  
+___    ___    ___    ___    ___    ___    ___    ___    ___    ___    ___    ___
+___    ___    ___    ___    ___    ___    ___    ___    ___    ___    ___    ___
+___    ___    ___    ___    ___    ___    ___    ___    ___    ___    ___    ___    
+                     ___    ___    ___    ___    ___    ___     
             >;
         };
 
@@ -142,7 +142,7 @@ XXX    &warpd_r      &warpd_t         &warpd_l         &mkp LCLK         &mkp RC
         };
 
         /* 11 Layer */
-        mirror {
+``        mirror {
             display-name = "mirror";
             bindings = <
  &to DEFAULT  &lttp WIN_RIGHT P  &kp O         &kp I                &kp U               &kp Y              &kp T              &kp R             &kp E              &kp W         &lttp WIN_LEFT Q  &to DEFAULT
