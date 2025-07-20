@@ -1,0 +1,40 @@
+&sk {
+    quick-release;
+};
+
+&sl {
+    release-after-ms = <10000>;
+};
+
+&mt {
+    tapping-term-ms = <400>;
+};
+
+&lt {
+    tapping-term-ms = <400>;
+    quick-tap-ms = <250>;
+};
+
+&mmv {
+    time-to-max-speed-ms = <700>;
+};
+
+&mmv_input_listener {
+    input-processors = <&zip_xy_scaler 2 1>;
+};
+
+&msc_input_listener {
+    input-processors = <&zip_scroll_scaler 2 1>;
+};
+
+
+
+#define CAPS_COMBO_MS 125
+#define VERT_COMBO_MS 75
+#define TRI_COMBO_MS  50
+#define ROLL_COMBO_MS 25
+
+
+#define VER_PATCH N1
+#define VER_MINOR N0
+#define VER_MAJOR N0

@@ -1,0 +1,24 @@
+/ {
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+		
+		// replaced with combo layer-tap
+		//to_adjust {
+		//    if-layers = <SYMBOLS MEDIA>;
+		//    then-layer = <ADJUST>;
+		//};
+		
+		// provided by combo_lighting due to transparent layer issues
+		//to_lighting {
+		//    if-layers = <WIN_LEFT WIN_RIGHT>;
+		//    then-layer = <LIGHTING>;
+		//};
+		
+		// replaced with combo layer-tap
+		//to_discord {f
+		//    if-layers = <NUMPAD MEDIA>;
+		//    then-layer = <DISCORD>;
+		//};
+		
+	};
+};

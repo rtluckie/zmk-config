@@ -1,15 +1,32 @@
 // HEADERS {{{
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/ext_power.h>
 
-#include "shared.dtsi"
+#include "includes/common.dtsi"
+#include "includes/settings.dtsi"
+#include "includes/custom_keycodes.dtsi"
+#include "includes/macros.dtsi"
+#include "includes/combos.dtsi"
+#include "includes/behaviors.dtsi"
+#include "includes/conditional_layers.dtsi"
 
-// }}}
+// Layers
+#define DEFAULT   0
+#define GAMING    1
+#define SYMBOLS   2
+#define LNUM      3
+#define NUMPAD    4
+#define MEDIA     5
+#define OUTPUT    6
+#define ADJUST    7
+#define LIGHTING  8
+#define DISCORD   9
+#define POINTER   10
+#define MIRROR    11
+#define WIN_LEFT  12
+#define WIN_RIGHT 13
+#define ACT       14
+#define FUNCTION  15
+
+
 / {
 // KEYMAP {{{
 // n.b. display-name strings are truncated after 8 characters

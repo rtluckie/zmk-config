@@ -1,0 +1,435 @@
+/ {
+	macros {
+		
+		version: keymap_version {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp VER_MAJOR &kp DOT &kp VER_MINOR &kp VER_PATCH>;
+		};
+		kple: key_press_layer_escape {
+			compatible = "zmk,behavior-macro-one-param";
+			#binding-cells = <1>;
+			bindings
+			= <&macro_tap &kp CARD_DEACTIVATE>
+			, <&macro_tap &to DEFAULT>
+			, <&macro_param_1to1>
+			, <&macro_tap &kp MACRO_PLACEHOLDER>
+			;
+		};
+		act: activate {
+			compatible = "zmk,behavior-macro-one-param";
+			#binding-cells = <1>;
+			bindings
+			= <&macro_tap &kp CARD_DEACTIVATE>
+			, <&macro_tap &to DEFAULT>
+			, <&macro_press &kp LSHFT &kp LCTRL>
+			, <&macro_param_1to1>
+			, <&macro_tap &kp MACRO_PLACEHOLDER>
+			, <&macro_release &kp LSHFT &kp LCTRL>
+			;
+		};
+		osl: one_shot_layer {
+			compatible = "zmk,behavior-macro-two-param";
+			#binding-cells = <2>;
+			bindings
+			= <&macro_tap &kp CARD_DEACTIVATE>
+			, <&macro_param_1to1>
+			, <&macro_tap &kp MACRO_PLACEHOLDER>
+			, <&macro_param_2to1>
+			, <&macro_tap &sl MACRO_PLACEHOLDER>
+			;
+		};
+		macro_sl_test: macro_sl_test {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&macro_tap &kp SINGLE_QUOTE>
+			, <&macro_tap &sl NUMPAD>
+			, <&macro_pause_for_release>
+			, <&macro_tap &kp SINGLE_QUOTE>
+			;
+		};
+		glo: globe_pseudo_mod {
+			compatible = "zmk,behavior-macro-one-param";
+			#binding-cells = <1>;
+			bindings
+			= <&macro_press &kp GLOBE>
+			, <&macro_param_1to1>
+			, <&macro_tap &kp MACRO_PLACEHOLDER>
+			, <&macro_release &kp GLOBE>
+			;
+		};
+		hyper: hyper {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LCMD &kp LSHFT &kp LALT &kp LCTRL>;
+		};
+		trigrave: trigrave {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+		};
+		uripunc: uri_punctuation {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp COLON &kp SLASH &kp SLASH>;
+		};
+		mouse_keys: mouse_keys {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LALT &kp LALT &kp LALT &kp LALT &kp LALT>;
+		};
+		vim_save: vim_save_single {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+			<&macro_tap>,
+			<&kp ESC &kp COLON &kp W &kp RETURN>;
+		};
+		vim_exit: vim_exit_single {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+			<&macro_tap>,
+			<&kp ESC &kp Z &kp Z>;
+		};
+		vim_qall: vim_exit_all {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+			<&macro_tap>,
+			<&kp ESC &kp COLON &kp Q &kp A &kp L &kp RETURN>;
+		};
+		vim_cqall: vim_exit_all_with_confirm {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+			<&macro_tap>,
+			<&kp ESC &kp COLON &kp C &kp O &kp N &kp F &kp SPACE &kp Q &kp A &kp L &kp RETURN>;
+		};
+		vim_wqall: vim_exit_all_with_write {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+			<&macro_tap>,
+			<&kp ESC &kp COLON &kp W &kp Q &kp A &kp L &kp RETURN>;
+		};
+		tmux_mode_select: tmux_mode_select {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(A) &kp F>;
+		};
+		tmux_ns: tmux_next_session {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(A) &kp RPAR>;
+		};
+		tmux_ps: tmux_prev_session {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(A) &kp LPAR>;
+		};
+		tmux_nw: tmux_next_window {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(A) &kp N>;
+		};
+		tmux_pw: tmux_prev_window {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(A) &kp P>;
+		};
+		tmux_pp: tmux_prev_pane {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(A) &kp O>;
+		};
+		tmux_np: tmux_next_pane {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(A) &kp SEMICOLON>;
+		};
+		tmux_oz: tmux_zoom_next_pane {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&macro_wait_time 35>
+			, <&macro_tap_time 25>
+			, <&kp LC(A) &kp O>
+			, <&kp LC(A) &kp Z>
+			;
+		};
+		tmux_sw: tmux_swap_window {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&kp LC(A) &kp LC(A)>
+			;
+		};
+		tmux_idx: tmux_idx {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&kp LC(A) &kp SINGLE_QUOTE>
+			;
+		};
+		tmux_copy: tmux_copy {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&kp LC(A) &kp LEFT_BRACKET>
+			;
+		};
+		tmux_paste: tmux_paste {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&kp LC(A) &kp RIGHT_BRACKET>
+			;
+		};
+		tmux_vp: tmux_vim_paste {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&kp LC(A) &kp LC(P)>
+			;
+		};
+		warpd_l: warpd_left {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kple LG(LC(S)) &kp J &kp ESC &kp LG(LC(Y))>;
+		};
+		warpd_r: warpd_right {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kple LG(LC(S)) &kp K &kp ESC &kp LG(LC(Y))>;
+		};
+		warpd_t: warpd_third {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kple LG(LC(S)) &kp L &kp ESC &kp LG(LC(Y))>;
+		};
+		warpd_j: warpd_j {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LC(J))>;
+		};
+		warpd_k: warpd_k {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LC(K))>;
+		};
+		ka_tog: keyboard_access_toggle {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F1)>;
+		};
+		f2_menu: focus_to_menu {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F2)>;
+		};
+		f2_dock: focus_to_dock {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F3)>;
+		};
+		f2_win: focus_to_active_window {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F4)>;
+		};
+		f2_tool: focus_to_toolbar {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F5)>;
+		};
+		f2_float: focus_to_floating_window {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F6)>;
+		};
+		tab_tog: toggle_tab_navigation {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F7)>;
+		};
+		f2_status: focus_to_status_menus {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LC(F8)>;
+		};
+		help_menu: help_menu {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LS(SLASH))>;
+		};
+		zoom_tog: zoom_toggle {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(N8))>;
+		};
+		zoom_in: zoom_in {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(EQUAL))>;
+		};
+		zoom_out: zoom_out {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(MINUS))>;
+		};
+		forward: forward {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(RBKT)>;
+		};
+		backward: backward {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LBKT)>;
+		};
+		tab_next: tab_next {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LS(RIGHT_BRACE))>;
+		};
+		tab_prev: tab_prev {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LS(LEFT_BRACE))>;
+		};
+		win_next: win_next {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(GRAVE)>;
+		};
+		win_full: win_full_screen {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LC(N1))>;
+		};
+		win_half: win_halves_resize {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LC(N2))>;
+		};
+		win_third: win_thirds_resize {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LC(N3))>;
+		};
+		win_quad: win_quads_resize {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LC(N4))>;
+		};
+		win_close: win_close {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LA(F4)>;
+		};
+		dis_tog: discord_layer_toggle {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&macro_tap &kp CARD_DISCORD>
+			, <&macro_tap &tog DISCORD>
+			, <&macro_tap &kp DISCORD_ACT>
+			;
+		};
+		dis_up: discord_previous_unread {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LA(LS(UP))>;
+		};
+		dis_down: discord_next_unread {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LA(LS(DOWN))>;
+		};
+		dis_next_server: discord_next_server {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(DOWN))>;
+		};
+		dis_prev_server: discord_previous_server {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(UP))>;
+		};
+		dis_next_chan: discord_next_channel {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LA(DOWN)>;
+		};
+		dis_prev_chan: discord_previous_channel {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LA(UP)>;
+		};
+		dis_next_history: discord_next_history {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(RIGHT_BRACKET)>;
+		};
+		dis_prev_history: discord_previous_history {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LEFT_BRACKET)>;
+		};
+		dis_next_mention: discord_next_mention {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(LS(DOWN)))>;
+		};
+		dis_section_nav: discord_section_navigation {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp F6>;
+		};
+		dis_pins: discord_pins {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(P)>;
+		};
+		point_tog: pointer_layer_toggle {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+			= <&macro_tap &kp CARD_POINTER>
+			, <&macro_tap &tog POINTER>
+			;
+		};
+		mirror_sl: mirror_sticky_layer {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&sl MIRROR>;
+		};
+		ss_win: screenshot_win {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(PRINTSCREEN)>;
+		};
+		ss: screenshot_mac {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LS(N3))>;
+		};
+		ss2c: screenshot_to_clipboard {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(LS(N3)))>;
+		};
+		sss: screenshot_select_mac {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LS(N4))>;
+		};
+		sss2c: screenshot_select_to_clipboard_mac {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&kp LG(LA(LS(N4)))>;
+		};
+	};
+};

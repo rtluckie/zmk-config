@@ -1,0 +1,11 @@
+// DEFINES {{{
+#define HYPER(X) LG(LA(LC(LS(X))))
+#define DISCORD_ACT LC(LS(N))
+#define CARD_ACT     HYPER(A)
+#define CARD_FUNC    HYPER(F)
+#define CARD_DISCORD HYPER(D)
+#define CARD_POINTER HYPER(P)
+#define CARD_DEACTIVATE HYPER(DELETE)
+
+#define XXX &none
+#define ___ &trans
