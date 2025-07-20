@@ -11,7 +11,7 @@
             #binding-cells = <1>;
             bindings
                 = <&macro_tap &kp CARD_DEACTIVATE>
-                , <&macro_tap &to DEFAULT>
+                , <&macro_tap &to ALPHA>
                 , <&macro_param_1to1>
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
                 ;
@@ -21,7 +21,7 @@
             #binding-cells = <1>;
             bindings
                 = <&macro_tap &kp CARD_DEACTIVATE>
-                , <&macro_tap &to DEFAULT>
+                , <&macro_tap &to ALPHA>
                 , <&macro_press &kp LSHFT &kp LCTRL>
                 , <&macro_param_1to1>
                 , <&macro_tap &kp MACRO_PLACEHOLDER>
@@ -44,7 +44,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp SINGLE_QUOTE>
-                , <&macro_tap &sl NUMPAD>
+                , <&macro_tap &sl NUM>
                 , <&macro_pause_for_release>
                 , <&macro_tap &kp SINGLE_QUOTE>
                 ;
@@ -401,11 +401,11 @@
                 , <&macro_tap &tog POINTER>
                 ;
         };
-        mirror_sl: mirror_sticky_layer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&sl MIRROR>;
-        };
+        // mirror_sl: mirror_sticky_layer {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings = <&sl MIRROR>;
+        // };
         ss_win: screenshot_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
