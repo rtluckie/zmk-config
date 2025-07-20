@@ -5,7 +5,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-    alpha_0 {
+    alpha {
         display-name = "ALPHA";
         bindings = <
 // clang-format off
