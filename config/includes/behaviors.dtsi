@@ -187,7 +187,7 @@
             // include mode keys: h to hide (18), q to quit (1)
             // include lhs arrow key shortcuts: 36, 37, 38
             ignored-key-positions = <1 16 18 19 20 21 25 34 36 37 38 40>;
-            ignored-layers = <ALPHA NUMPAD>;
+            ignored-layers = <ALPHA>;
         };
         /omit-if-no-ref/ fmmv: fast_mouse_move {
             compatible = "zmk,behavior-input-two-axis";
