@@ -1,5 +1,3 @@
-// HEADERS {{{
-
 #include "includes/common.dtsi"
 #include "includes/settings.dtsi"
 #include "includes/custom_keycodes.dtsi"
