@@ -1,0 +1,234 @@
+
+/*                KEY POSITIONS
+
+  ╭────────────────────────┬────────────────────────╮ 
+  │  0   1   2   3   4   5 │  6   7   8   9  10  11 │ 
+  │ 12  13  14  15  16  17 │ 18  19  20  21  22  23 │ 
+  │ 24  25  26  27  28  29 │ 30  31  32  33  34  35 │ 
+  ╰───────────╮ 36  37  38 │ 39  40  41 ╭───────────╯ 
+              ╰────────────┴────────────╯           
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
+  │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
+  │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯             
+  ╭─────────────────────╮ ╭─────────────────────╮
+  │ LTP LT3 LT2 LT1 LTC │ │ RTC RT1 RT2 RT3 RTP │
+  │ LMP LM3 LM2 LM1 LHC │ │ RHC RM1 RM2 RM3 RMP │
+  │     LB3 LB2 LB1 LBC │ │ RBC RB1 RB2 RB3     │
+  ╰───────╮ LH2  LH1  LH0  │ │ RH0  RH1  RH2  ╭───────╯
+          ╰─────────────╯ ╰─────────────╯ */
+/ {
+    #define SMARTCASE_LAYERS            CAMEL_CASE SNAKE_CASE CONST_CASE KEBAB_CASE SLASH_CASE SPACING 
+    #define ALPHA1_LAYERS               ALPHA1 CASE_A1 PLAIN1 CPLK_A1 SMARTCASE_LAYERS ALTREP2
+    #define CCEDIL_LAYERS               CCEDIL CASE_CCEDIL 
+    #define ALPHA2_LAYERS               ALPHA2 CASE_A2 PLAIN2 SFT_A2
+    #define NUM_LAYERS                  NUM NUM_CP  
+    #define SYM_LAYERS                  SYM SYM_CP   
+    #define NAV_LAYERS                  NAV NAV_CP
+    #define ALL_LAYERS                  ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS NUM_LAYERS SHORTS MEHS NAV_LAYERS SYM_LAYERS MEDIA TEXT
+    #define ALL_LAYERS_WITH_BACKSPACE   ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS NUM_LAYERS        MEHS NAV_LAYERS SYM_LAYERS
+    #define ALL_LAYERS_WITH_ESC         ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS                     MEHS NAV_LAYERS              MEDIA        
+    #define FIXABLE_LAYERS              CPLK_A1 CASE_A1 SMARTCASE_LAYERS PLAIN1 NUM_LAYERS MEDIA NAV_LAYERS MEHS FUN
+
+    combos {
+        compatible = "zmk,combos";
+
+        COMBO(cb_backspace,     RT2 RT3,         &kp BACKSPACE,          ALL_LAYERS_WITH_BACKSPACE)
+        COMBO(cb_esc,           LT3 LT2,         &kp ESC,                ALL_LAYERS_WITH_ESC)
+
+        COMBO(cb_boot_l,        LT3 LB1,         &bootloader,            ALL_LAYERS)
+        COMBO(cb_boot_r,        RT3 RB1,         &bootloader,            ALL_LAYERS)
+        COMBO(cb_alpha1,        RT2 RT3 RT1,     &to ALPHA1,             FIXABLE_LAYERS)
+        COMBO(cb_cancel,        RT2 RT3 RT1,     &kp K_CANCEL,           FIXABLE_LAYERS)
+
+        COMBO(cb_save,          LM3 LM2 LH0,      &mc_save,               ALL_LAYERS)
+        COMBO(cb_fullscr,       LM2 LM1 LH0,      &mc_fullscr,            ALL_LAYERS)
+        COMBO(cb_find,          LB2 LB1 LH0,      &mc_find,               ALL_LAYERS)
+        COMBO(cb_undo,          LB3 LB2 LH0,      &mc_undo,               ALL_LAYERS)
+        COMBO(cb_enter,         RM2 RM3 RH0,      &kp ENTER,              ALL_LAYERS)
+        COMBO(cb_tab,           RT2 RT3 RH0,      &kp TAB,                ALL_LAYERS)
+        COMBO(cb_paste,         RB1 RB2 RH0,      &mc_paste,              ALL_LAYERS)
+        COMBO(cb_copy,          RM1 RM2 RH0,      &mc_copy,               ALL_LAYERS)
+        COMBO(cb_selall,        RB2 RB3 RH0,      &mc_selall,             ALL_LAYERS)
+        COMBO(cb_selcopy,       RM1 RM2 RM3 RH0,  &mc_selcopy,            ALL_LAYERS)
+        COMBO(cb_selpaste,      RB1 RB2 RB3 RH0,  &mc_selpaste,           ALL_LAYERS)
+        COMBO(cb_left,          RM1 RH0,          &kp LEFT,               ALL_LAYERS)
+        COMBO(cb_down,          RM2 RH0,          &kp DOWN,               ALL_LAYERS)
+        COMBO(cb_up,            RM3 RH0,          &kp UP,                 ALL_LAYERS)
+        COMBO(cb_right,         RM4 RH0,          &lt_right SMART 0,      ALL_LAYERS)
+        COMBO(cb_del,           RB1 RH0,          &kp DELETE,             ALL_LAYERS)
+        COMBO(cb_home,          RB2 RH0,          &kp HOME,               ALL_LAYERS)
+        COMBO(cb_end,           RB3 RH0,          &kp END,                ALL_LAYERS)
+        COMBO(cb_end_enter,     RM1 RM2 RM3 RM4, &mc_end_ent,            ALL_LAYERS)
+
+        COMBO(cb_mleft,         LM3 LH0,          &mmv MOVE_LEFT,         ALL_LAYERS)
+        COMBO(cb_mup,           LM2 LH0,          &mmv MOVE_UP,           ALL_LAYERS)
+        COMBO(cb_mright,        LM1 LH0,          &mmv MOVE_RIGHT,        ALL_LAYERS)
+        COMBO(cb_mdown,         LB2 LH0,          &mmv MOVE_DOWN,         ALL_LAYERS)
+        COMBO(cb_sdown,         LB3 LH0,          &msc SCRL_DOWN,         ALL_LAYERS)
+        COMBO(cb_sup,           LB1 LH0,          &msc SCRL_UP,           ALL_LAYERS)
+        COMBO(cb_mlclk,         LT2 LH0,          &mkp LCLK,              ALL_LAYERS)
+        COMBO(cb_mlclk2,        LT0 LH2,          &mkp LCLK,              ALL_LAYERS)
+        COMBO(cb_mrclk,         LT1 LH0,          &mkp RCLK,              ALL_LAYERS)
+        COMBO(cb_mrclk2,        RT0 RH2,          &mkp RCLK,              ALL_LAYERS)
+
+        COMBO(cb_leader,        RM1 RM4,         &mc_leader,             ALPHA1_LAYERS)
+
+        COMBO(cb_numword,       LB3 LB2,         &lt_num_word NAV 0,     ALPHA1_LAYERS)
+        COMBO(cd_ca_nav,        LM3 LM2 LH1,      &mc_ca_nav,             ALPHA1_LAYERS)
+        COMBO(cd_gcs_nav,       LB3 LM2 LM1 LH1,  &mc_gcs_nav,            ALPHA1_LAYERS)
+        COMBO(cd_cag_nav,       LM3 LM2 LB1 LH1,  &mc_cag_nav,            ALPHA1_LAYERS)
+        COMBO(cd_cas_spc,       LM3 LM2 LM1 LH0,  &mc_cas_spc,            ALPHA1_LAYERS)
+
+        COMBO(cd_ht_meh_spc,    LM3 LM2 LM1,     &ht_meh_spc 0 0,        ALPHA1_LAYERS FUN NAV_LAYERS)
+        COMBO(cd_hyper_l,       LB3 LB2 LB1,     &th_hyper_space 0 0,    ALPHA1_LAYERS FUN NAV_LAYERS)
+        COMBO(cb_hyper_r,       RB1 RB2 RB3,     &th_hyper_h 0 0,        ALPHA1_LAYERS)
+
+        COMBO(cb_esc_save,      LT3 LT2 LH0,      &mc_save_esc,           ALPHA1_LAYERS)
+
+        COMBO(cb_semi,          RB2 RB3,         &th_semi 0 0,           ALPHA1_LAYERS NUM_LAYERS)
+        COMBO(cb_sent,          RB1 RB2 RB3,     &mc_end_semi_ent,       NUM_LAYERS)
+
+        COMBO(cb_k,             LT2 LT1,         &kp K,                  ALPHA1 PLAIN1)
+        COMBO(cb_w,             LM2 LM1,         &ht_w 0 0,              ALPHA1 PLAIN1)
+        COMBO(cb_v,             LB1 LB2,         &kp V,                  ALPHA1 PLAIN1)
+        COMBO(cb_q,             LM3 LM2,         &ht_q 0 0,              ALPHA1 PLAIN1)
+
+        COMBO(cb_kc,            LT2 LT1,         &kp LS(K),              CASE_A1 CPLK_A1)
+        COMBO(cb_wc,            LM2 LM1,         &kp LS(W),              CASE_A1 CPLK_A1)
+        COMBO(cb_vc,            LB1 LB2,         &kp LS(V),              CASE_A1 CPLK_A1)
+        COMBO(cb_qc,            LM3 LM2,         &kp LS(Q),              CASE_A1 CPLK_A1)
+
+        COMBO(cb_x,             RT1 RT2,         &kp X,                  ALPHA1 PLAIN1)
+        COMBO(cb_z,             RM1 RM2,         &ht_z 0 0,              ALPHA1 PLAIN1)
+        COMBO(cb_j,             RB1 RB2,         &kp J,                  ALPHA1 PLAIN1)
+        COMBO(cb_y,             RM2 RM3,         &ht_y 0 0,              ALPHA1 PLAIN1)
+        COMBO(cb_d,             RT1 RT2 RT3,     &kp D,                  ALPHA1 PLAIN1)
+        COMBO(cb_p,             RM1 RM2 RM3,     &ht_p 0 0,              ALPHA1 PLAIN1)
+
+        COMBO(cb_xc,            RT1 RT2,         &kp LS(X),              CASE_A1 CPLK_A1)
+        COMBO(cb_zc,            RM1 RM2,         &kp LS(Z),              CASE_A1 CPLK_A1)
+        COMBO(cb_jc,            RB1 RB2,         &kp LS(J),              CASE_A1 CPLK_A1)
+        COMBO(cb_yc,            RM2 RM3,         &kp LS(Y),              CASE_A1 CPLK_A1)
+        COMBO(cb_dc,            RT1 RT2 RT3,     &kp LS(D),              CASE_A1 CPLK_A1)
+        COMBO(cb_pc,            RM1 RM2 RM3,     &kp LS(P),              CASE_A1 CPLK_A1)
+
+        COMBO(cb_meh_k,         LT1 LT2,         &mc_meh_k,              MEHS)
+        COMBO(cb_meh_w,         LM1 LM2,         &mc_meh_w,              MEHS)
+        COMBO(cb_meh_v,         LB1 LB2,         &mc_meh_v,              MEHS)
+        COMBO(cb_meh_x,         RT1 RT2,         &mc_meh_x,              MEHS)
+        COMBO(cb_meh_z,         RM1 RM2,         &mc_meh_z,              MEHS)
+        COMBO(cb_meh_j,         RB1 RB2,         &mc_meh_j,              MEHS)
+        COMBO(cb_meh_q,         LM3 LM2,         &mc_meh_q,              MEHS)
+        COMBO(cb_meh_y,         RM3 RM2,         &mc_meh_y,              MEHS)
+        COMBO(cb_numbers_cl,    LB2 LB3,         &tc_num_word_cp,        MEHS)
+        COMBO(cb_numbers_cr,    RB2 RB3,         &tc_num_word_cp,        MEHS)
+        COMBO(cd_meh_spc,       LM3 LM2 LM1,     &mc_meh_space,          MEHS)
+        COMBO(cd_hyp_spc,       LB3 LB2 LB1,     &mc_hyper_space,        MEHS)
+
+        COMBO(cb_comm,          RM4 RH0,          &kp COMMA,              NUM_LAYERS)
+        COMBO(cb_sfl,            RT1 RT2,         &kp LS(L),              NUM_LAYERS)
+        COMBO(cb_jv,            RM1 RM2,         &kp A,                  NUM_LAYERS)
+        COMBO(cb_pipev,         RB1 RB2,         &kp PIPE,               NUM_LAYERS)
+        COMBO(cb_kv,            RM2 RM3,         &kp E,                  NUM_LAYERS)
+
+        COMBO(cb_braces_new,    LT3 LT2,         &mc_braces_new,         NUM_LAYERS)
+        COMBO(cb_pars,          LM3 LM2,         &th_pars 0 0,           NUM_LAYERS)
+        COMBO(cb_brackets,      LB3 LB2,         &lt_brackets NAV 0,     NUM_LAYERS)
+        COMBO(cb_colon_colon,   LT2 LT1,         &th_dcolon 0 0,         NUM_LAYERS)
+        COMBO(cb_and,           LM1 LM2,         &th_and 0 0,            NUM_LAYERS)
+        COMBO(cb_or,            LB1 LB2,         &th_or 0 0,             NUM_LAYERS)
+        COMBO(cb_par_semi,      RM3 RM2 RM1,     &mc_pars_semi_ent,      NUM_LAYERS)
+
+        COMBO(cd_meh_l,         LM3 LM2 LM1,     &th_ord_o 0 0,          NUM_LAYERS)
+        COMBO(cd_hyper_n,       LB3 LB2 LB1,     &th_ord_a 0 0,          NUM_LAYERS)
+
+        COMBO(cb_dhash,         LT3 LT2,         &mc_dhash,              SYM_LAYERS)
+        COMBO(cb_sarrow,        LM3 LM2,         &mc_sarrow,             SYM_LAYERS)
+        COMBO(cb_darrow,        LB3 LB2,         &mc_darrow,             SYM_LAYERS)
+        COMBO(cb_thash,         LT3 LT2 LT1,     &mc_thash,              SYM_LAYERS)
+        COMBO(cb_tdqo,          LM3 LM2 LM1,     &th_tdqo 0 0,           SYM_LAYERS)
+        COMBO(cb_tbti,          LB3 LB2 LB1,     &th_tbti 0 0,           SYM_LAYERS)
+        COMBO(cb_dsqo,          LT2 LT1,         &mc_dsqo,               SYM_LAYERS)
+        COMBO(cb_ddqo,          LM2 LM1,         &mc_ddqo,               SYM_LAYERS)
+        COMBO(cb_dbti,          LB2 LB1,         &mc_dbti,               SYM_LAYERS)
+        COMBO(cb_us,            RT3 RT2 RT1,     &th_us 0 0,             SYM_LAYERS)
+        COMBO(cb_br,            RM3 RM2 RM1,     &th_br 0 0,             SYM_LAYERS)
+        COMBO(cb_eu,            RB3 RB2 RB1,     &th_eur 0 0,            SYM_LAYERS)
+
+        COMBO(cb_ds,            RT1 RT2,         &mc_ds,                 SYM_LAYERS)
+        COMBO(cb_eqeq,          RM2 RM3,         &mc_eqeq,               SYM_LAYERS)
+        COMBO(cb_noteq,         RB2 RB3,         &mc_noteq,              SYM_LAYERS)
+        COMBO(cb_tisl,          RM1 RM2,         &mc_tisl,               SYM_LAYERS)
+        COMBO(cb_dds,           RB1 RB2,         &mc_dds,                SYM_LAYERS)
+
+        COMBO(cb_btclr,         LT1 LT2 LT3,     &bt BT_CLR,             FUN)
+        COMBO(cb_f10,           RB2 RB1,         &kp F10,                FUN)
+        COMBO(cb_f11,           RM2 RM1,         &kp F11,                FUN)
+        COMBO(cb_f12,           RT2 RT1,         &kp F12,                FUN)
+        COMBO(cb_f13,           RB2 RB3,         &kp F13,                FUN)
+        COMBO(cb_f14,           RM2 RM3,         &kp F14,                FUN)
+        COMBO(cb_f15,           RT2 RT3,         &kp F15,                FUN)
+
+        COMBO(cb_minus,         RT1 RT2,         &kp MINUS,              ALPHA2_LAYERS)
+        COMBO(cb_dqo_s,         LT2 LT1,         &kp DQT,                ALPHA2_LAYERS)
+        COMBO(cb_sqo_s,         LM2 LM1,         &kp SQT,                ALPHA2_LAYERS)
+        COMBO(cb_bti_s,         LB2 LB3,         &kp GRAVE,              ALPHA2_LAYERS)
+        COMBO(cb_caret_s,       LM3 LM2,         &kp CARET,              ALPHA2_LAYERS)
+        COMBO(cb_tilde_s,       LB1 LB2,         &kp TILDE,              ALPHA2_LAYERS)
+        COMBO(cb_ques,          RM1 RM2,         &mc_qmark,              ALPHA2_LAYERS)
+        COMBO(cb_excl,          RB1 RB2,         &mc_excl,               ALPHA2_LAYERS)
+        COMBO(cb_unds,          RB2 RB3,         &kp UNDERSCORE,         ALPHA2_LAYERS)
+
+        COMBO(cb_grva,          RM2 RM3,         &ac_agrv,               ALPHA2)
+        COMBO(cb_grvas,         RM2 RM3,         &ac_agrv_s,             SFT_A2)
+        COMBO(cb_grvac,         RM2 RM3,         &ac_agrv_c,             CASE_A2)
+
+        COMBO(cb_bsp_word,      RT2 RT3,         &mc_bsp_word,           TEXT)
+        COMBO(cb_o_esc,         RM1 RM2,         &mc_o_esc,              TEXT)
+        COMBO(cb_sft_o_esc,     RM2 RM3,         &mc_sft_o_esc,          TEXT)
+        COMBO(cb_dqt0p,         RM1 RM2 RM3,     &mc_dqt0p,              TEXT)
+        COMBO(cb_v_r,           RB1 RB2 RB3,     &kp V,                  TEXT)
+        COMBO(cb_shiftv,        RB2 RB3,         &kp LS(V),              TEXT)
+        COMBO(cb_ctrlv,         RB1 RB2,         &kp LC(V),              TEXT)
+
+        COMBO(cb_vim_q,         RT1 RT2,         &kp Q,                  SMART)
+        COMBO(cb_vim_atat,      RT2 RT3,         &mc_atat,               SMART)
+        COMBO(cb_vim_qr,        RM1 RM2,         &mc_qr,                 SMART)
+        COMBO(cb_vim_atr,       RM2 RM3,         &mc_atr,                SMART)
+
+        COMBO(cb_numbers_nav,   LB3 LB2,         &mo NUM_CP,             NAV_LAYERS)
+        COMBO(cd_ca,            LM3 LM2,         &kp LC(LALT),           NAV_LAYERS)
+
+        COMBO(cb_down_end,      RB1 RB2,         &mc_down_end,           NAV_LAYERS)
+        COMBO(cb_numbers,       RB2 RB3,         &mo NUM_CP,             NAV_LAYERS)
+        COMBO(cb_up_end_del,    RT2 RT1,         &mc_up_end_del,         NAV_LAYERS)
+        COMBO(cb_page_down,     RM2 RM1,         &kp PAGE_DOWN,          NAV_LAYERS)
+        COMBO(cb_page_up,       RM2 RM3,         &kp PAGE_UP,            NAV_LAYERS)
+
+        COMBO(cb_lclick,        RM2 RM1,         &mkp LCLK,              MEDIA)
+        COMBO(cb_rclick,        RM2 RM3,         &mkp RCLK,              MEDIA)
+    };
+
+    combo_must_tap {
+        MACRO(mc_lshift_lshift    , &macro_tap &kp LSFT &kp LSFT)
+        MACRO(mc_lctrl_lctrl      , &macro_tap &kp LCTL &kp LCTL)
+        MACRO(mc_lalt_lalt        , &macro_tap &kp LALT &kp LALT)
+        MACRO(mc_ralt_ralt        , &macro_tap &kp LALT &kp LALT)
+        MACRO(mc_lgui_lgui        , &macro_tap &kp LGUI &kp LGUI)
+
+        MACRO(mc_ca_nav           , &macro_press &kp LCTL &kp LALT &mo NAV &macro_pause_for_release &macro_release &mo NAV &kp LCTL &kp LALT)
+        MACRO(mc_gcs_nav          , &macro_press &kp LGUI &kp LCTL &kp LSFT &mo NAV &macro_pause_for_release &macro_release &mo NAV &kp LGUI &kp LCTL &kp LSFT)
+        MACRO(mc_cag_nav          , &macro_press &kp LCTL &kp LALT &kp LGUI &mo NAV &macro_pause_for_release &macro_release &mo NAV &kp LCTL &kp LALT &kp LGUI)
+        MACRO(mc_cas_spc          , &macro_press &kp LCTL &kp LALT &kp LSFT &mo NUM &macro_pause_for_release &macro_release &mo NUM &kp LCTL &kp LALT &kp LSFT)
+
+        COMBO_MUST_TAP(ht_w       , &kp LSFT  &kp LALT          , &kp W)
+        COMBO_MUST_TAP(ht_q       , &kp LCTL  &kp LALT          , &kp Q)
+        COMBO_MUST_TAP(ht_z       , &kp LSFT  &kp LALT          , &kp Z)
+        COMBO_MUST_TAP(ht_y       , &kp LALT  &kp LCTL          , &kp Y)
+        COMBO_MUST_TAP(ht_meh_spc , &kp LCTL &kp LALT &kp LSFT  , &mc_meh_space)
+        COMBO_MUST_TAP(ht_p       , &kp LCTL &kp LALT &kp LSFT  , &kp P)
+    };
+};

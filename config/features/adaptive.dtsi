@@ -1,0 +1,121 @@
+/*
+*
+* Copyright (c) 2022 Rafael Romão
+* SPDX-License-Identifier: MIT
+*
+*/
+
+/ {
+    adaptive_keys {
+        
+        // ******************** REPEAT KEY ******************** //
+
+        alternate_repeat_key: alternate_repeat_key {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&key_repeat>;
+
+            ADAPTIVE(a_h      , &kp H        , A                 )
+            ADAPTIVE(a_h_s    , &kp H        , LS(A)             )
+            ADAPTIVE(a_h_c    , &kp RS(H)    , RS(A)             )
+            ADAPTIVE(i_sqo_s  , &mc_sqo      , LS(I)             )
+            ADAPTIVE(i_sqo_c  , &mc_sqo      , RS(I)             )
+            ADAPTIVE(space_v  , &kp V        , SPACE             )
+            ADAPTIVE(y_d      , &kp D        , Y                 )
+            ADAPTIVE(y_d_s    , &kp D        , LS(Y)             )
+            ADAPTIVE(y_d_c    , &kp RS(D)    , RS(Y)             )
+            ADAPTIVE(h_os2    , &mc_otiles   , H                 )
+            ADAPTIVE(h_os2_s  , &mc_otiles   , LS(H)             )
+            ADAPTIVE(h_os2_c  , &mc_otiles_c , RS(H)             )
+            ADAPTIVE(v_os2    , &sl ALPHA2   , V X J             )
+            ADAPTIVE(v_os2_s  , &sl ALPHA2   , LS(V) LS(X) LS(J) )
+            ADAPTIVE(v_os2_c  , &sl CASE_A2  , RS(V) RS(X) RS(J) )
+        };
+
+        // Alt repeat key for accented vowels and macros from the secondary alpha layer.
+        // Only the last char in the macro is considered
+        a2_alt_repeat: alpha2_alternate_repeat_key {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&alternate_repeat_key>;
+
+            ADAPTIVE(aeo_x    , &kp X      , A E O             )
+            ADAPTIVE(aeo_x_s  , &kp LS(X)  , LS(A) RS(A) LS(E) )
+            ADAPTIVE(aeo_x_c  , &kp RS(X)  , RS(E) LS(O) RS(O) )
+            ADAPTIVE(i_e      , &kp E      , I                 )
+            ADAPTIVE(i_e_s    , &kp LS(E)  , LS(I)             )
+            ADAPTIVE(i_e_c    , &kp RS(E)  , RS(I)             )
+            ADAPTIVE(u_ecir   , &ac_ecir   , U                 )
+            ADAPTIVE(u_ecir_s , &ac_ecir_s , LS(U)             )
+            ADAPTIVE(u_ecir_c , &ac_ecir_c , RS(U)             )
+        };
+
+        ht_repeat: ht_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&mm_repeat>;
+        };
+
+        // ******************** MAGIC KEY ******************** //
+
+        magic_key: magic_key {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp H>;
+
+            ADAPTIVE(v      , &kp V      , A     E     I     O     U     )
+            ADAPTIVE(v_s    , &kp V      , LS(A) LS(E) LS(I) LS(O) LS(U) )
+        };
+
+        magic_key_c: magic_key_c {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp RS(H)>;
+
+            ADAPTIVE(v_c    , &kp RS(V)  , RS(A) RS(E) RS(I) RS(O) RS(U) )
+            ADAPTIVE(h_spc  , &kp LS(H)  , SPACE )
+        };
+
+        ht_magic: ht_magic {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&magic_key>;
+        };
+
+        ht_magic_c: ht_magic_c {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <QUICK_TAP_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&magic_key_c>;
+        };
+
+        // ******************** REVERSED MAGIC KEY ******************** //
+
+        reversed_magic: reversed_magic {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp V>;
+
+            ADAPTIVE(h      , &kp H      , A     E     I     O     U     )
+            ADAPTIVE(h_s    , &kp H      , LS(A) LS(E) LS(I) LS(O) LS(U) )
+        };
+
+        reversed_magic_c: reversed_magic_c {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp RS(V)>;
+
+            ADAPTIVE(h_c    , &kp RS(H)  , RS(A) RS(E) RS(I) RS(O) RS(U) )
+            ADAPTIVE(v_spc  , &kp LS(V)  , SPACE )
+        };
+
+    };
+};

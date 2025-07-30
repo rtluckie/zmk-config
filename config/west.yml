@@ -1,0 +1,114 @@
+# This file specifies the build dependencies for Github Action workflows and
+# for local build environments. The workspace has four toplevel directories
+# containing the user config, modules, zephy and ZMK.
+#
+# ZMK-Workspace
+# ├── config
+# ├── modules
+# ├── zephyr
+# └── zmk
+#
+# To create a local build environment, clone this repository and then run the
+# following commands from its toplevel directory:
+#
+# $ west init -l config
+# $ west update
+# $ west zephyr-export
+#
+---
+manifest:
+  remotes:
+    - name: urob
+      url-base: https://github.com/urob
+    - name: zmk
+      url-base: https://github.com/zmkfirmware
+    - name: rafaelromao
+      url-base: https://github.com/rafaelromao
+    - name: sethmilliken
+      url-base: https://github.com/sethmilliken
+    - name: minusfive
+      url-base: https://github.com/minusfive
+    - name: infused-kim
+      url-base: https://github.com/infused-kim
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
+    - name: casuanoob
+      url-base: https://github.com/casuanoob
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
+  projects:
+  
+    - name: zmk
+      remote: urob
+      path: zmk
+      # repo-path: zmk
+      revision: 241ff39
+      clone-depth: 1
+      groups: []
+      import: 
+        file: app/west.yml
+        name-allowlist: []
+        path-allowlist: []
+        name-blocklist: []
+        path-blocklist: []
+        path-prefix: ""
+
+
+
+    - name: zephyr
+      remote: urob
+      revision: "0562599"
+      path: modules/zephyr
+      clone-depth: 1
+      import:
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+          - hal_rpi_pico
+          - hal_stm32
+          - lvgl
+          - tinycrypt
+
+    - name: zmk-helpers
+      remote: urob
+      revision: d5753b4
+      path: modules/zmk/helpers
+      # repo-path: zmk-helpers
+      clone-depth: 1
+      groups: []
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: 180d401
+      path: modules/zmk/adaptive-key
+      # repo-path: zmk-adaptive-key
+      clone-depth: 1
+      groups: []
+    - name: zmk-auto-layer
+      remote: urob
+      revision: f44eebc
+      path: modules/zmk/auto-layer
+      clone-depth: 1
+      groups: []
+
+    - name: zmk-leader-key
+      remote: urob
+      revision: 9f7adc8
+      path: modules/zmk/leader-key
+      clone-depth: 1
+      groups: []
+
+    - name: zmk-tri-state
+      remote: urob
+      revision: "7142236"
+      path: modules/zmk/tri-state
+      clone-depth: 1
+
+    - name: nicehatharry
+      remote: sethmilliken
+      revision: 30e425f
+      path: modules/zmk/nicehatharry
+      clone-depth: 1
+
+  self:
+    path: config
+
