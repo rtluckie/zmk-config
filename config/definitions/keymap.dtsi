@@ -12,19 +12,17 @@
 / {
         keymap {
                 compatible = "zmk,keymap";
-                default_layer {
+                default {
                      display-name = "ALPHA";
                      bindings = <
    &kp X0A_LT5          &kp X0A_LT4           &kp X0A_LT3           &kp X0A_LT2            &kp X0A_LT1            &kp X0A_LT0          &kp X0A_RT0          &kp X0A_RT1           &kp X0A_RT2            &kp X0A_RT3           &kp X0A_RT4          &kp X0A_RT5
    &kp X0A_LM5          &lt SHORTS X0A_LM4    &mt X0M_L3 X0A_LM3    &mt X0M_L2 X0A_LM2     &mt X0M_L1 X0A_LM1     &kp X0A_LM0          &kp X0A_RM0          &mt X0M_R1 X0A_RM1    &mt X0M_R2 X0A_RM2     &mt X0M_R3 X0A_RM3    &th_lead 0 0         &kp X0A_RM5 
-   &kp X0A_LB5          &kp X0A_LB4           &mt X0M_L0 X0A_LB3      &kp X0A_LB2            &mt X0M_L0 X0A_LB1     &kp X0A_LB0          &kp X0A_RB0          &ht_magic X0M_R0 0    &th_comma 0 0          &th_dot 0 0           &kp X0A_RB4          &kp X0A_RB5
+   &kp X0A_LB5          &kp X0A_LB4           &mt X0M_L0 X0A_LB3    &kp X0A_LB2            &mt X0M_L0 X0A_LB1     &kp X0A_LB0          &kp X0A_RB0          &ht_magic X0M_R0 0    &th_comma 0 0          &th_dot 0 0           &kp X0A_RB4          &kp X0A_RB5
                                                                     &mkp RCLK              &ht_repeat NAV 0       &ltn_num_spc 0 0     &msl_sym_a2 0 0      &ht_shift MEDIA 0     &mkp LCLK
-   
-   
                         >;
                 };
 
-                camel_case_layer {
+                camel_case {
                      display-name = "CAMEL";
                      bindings = <
    &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans                  &trans
@@ -33,7 +31,7 @@
                                                                &trans              &trans              &msk_sft NUM 0      &trans              &trans              &trans
                            >;
                 };
-                snake_case_layer {
+                snake_case {
                      display-name = "SNAKE";
                      bindings = <
    &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans                  &trans
@@ -42,7 +40,7 @@
                                                                &trans              &trans              &msk_unds NUM 0     &trans              &trans              &trans
                            >;
                 };
-                constant_layer {
+                constant {
                      display-name = "CONST";
                      bindings = <
    &trans              &kp RS(X0A_LT4)           &kp RS(X0A_LT3)           &kp RS(X0A_LT2)           &kp RS(X0A_LT1)           &kp RS(X0A_LT0)           &kp RS(X0A_RT0)           &kp RS(X0A_RT1)           &kp RS(X0A_RT2)           &kp RS(X0A_RT3)           &trans              &trans
@@ -51,7 +49,7 @@
                                                                &trans              &trans              &msk_unds NUM 0     &lt_case_a2 SYM 0 &trans              &trans
                            >;
                 };
-                kebab_case_layer {
+                kebab_case {
                      display-name = "KEBAB";
                      bindings = <
    &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans                  &trans
@@ -60,7 +58,7 @@
                                                                &trans              &trans              &msk_dash NUM 0     &trans              &trans              &trans
                            >;
                 };
-                slash_case_layer {
+                slash_case {
                      display-name = "SLASH";
                      bindings = <
    &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans                  &trans
@@ -69,7 +67,7 @@
                                                                &trans              &trans              &msk_slash NUM 0    &trans              &trans              &trans
                            >;
                 };
-                spacing_layer {
+                spacing {
                      display-name = "SPACE";
                      bindings = <
    &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans                  &trans
@@ -78,7 +76,7 @@
                                                                &trans              &trans              &msk_spcb NUM 0     &trans              &trans              &trans
                            >;
                 };
-                capsword_layer {
+                capsword {
                      display-name = "CASE";
                      bindings = <
    &trans              &kp RS(X0A_LT4)           &kp RS(X0A_LT3)           &kp RS(X0A_LT2)           &kp RS(X0A_LT1)           &kp RS(X0A_LT0)           &kp RS(X0A_RT0)           &kp RS(X0A_RT1)           &kp RS(X0A_RT2)           &kp RS(X0A_RT3)           &trans              &trans
@@ -87,7 +85,7 @@
                                                                &trans              &trans              &msk_spc NUM 0      &lt_case_a2 SYM 0   &lt_cancel MEDIA 0  &trans
                         >;
                 };
-                capsline_layer {
+                capsline {
                      display-name = "CASE";
                      bindings = <
    &trans              &kp RS(X0A_LT4)           &kp RS(X0A_LT3)           &kp RS(X0A_LT2)           &kp RS(X0A_LT1)           &kp RS(X0A_LT0)           &kp RS(X0A_RT0)           &kp RS(X0A_RT1)           &kp RS(X0A_RT2)           &kp RS(X0A_RT3)           &trans              &trans
@@ -100,7 +98,7 @@
 
 
 
-                alpha2_layer {
+                alpha2 {
                      display-name = "ALPHA";
                      bindings = <
    &trans              &none               &kp Q               &mc_qu              &kp K               &none               &none               &ac_ocir            &ac_oacu            &ac_uacu            &none              &trans
@@ -112,7 +110,7 @@
 
 
 
-                numbers_layer {
+                numbers {
                      display-name = "NUM";
                      bindings = <
    &trans              &none               &th_lbrc 0 0        &th_rbrc 0 0        &kp BSLH            &none               &none               &mc_n7              &mc_n8              &mc_n9              &none              &trans
@@ -121,7 +119,7 @@
                                                                &none               &trans              &trans              &hlt SYM SPACE    &lt_n0 MEDIA 0      &none 
                            >;
                 };
-                symbols_layer {
+                symbols {
                      display-name = "SYM";
                      bindings = <
    &trans              &none               &mc_tilde           &kp HASH            &th_sqo 0 0         &none               &none               &th_perc 0 0        &th_eql 0 0         &th_colon 0 0       &none              &trans
@@ -133,7 +131,7 @@
 
 
 
-               sentence_case_layer {
+               sentence_case {
                      display-name = "CASE";
                      bindings = <
    &trans              &kp LS(X0A_LT4)           &kp LS(X0A_LT3)           &kp LS(X0A_LT2)           &kp LS(X0A_LT1)           &kp LS(X0A_LT0)           &kp LS(X0A_RT0)           &kp LS(X0A_RT1)           &kp LS(X0A_RT2)           &kp LS(X0A_RT3)           &trans              &trans
@@ -142,7 +140,7 @@
                                                                &trans              &trans              &trans              &lt_sft_a2 SYM_CP 0 &trans              &trans
                            >;
                 };
-                ccedil_layer {
+                ccedil {
                      display-name = "Ç EXT";
                      bindings = <
    &trans              &none               &none               &none               &none               &none               &none               &none               &trans              &trans              &none                   &trans
@@ -151,7 +149,7 @@
                                                                &none               &sl ALPHA2          &trans              &trans              &trans              &none
                            >;
                 };
-                shifted_alpha2_layer {
+                shifted_alpha2 {
                      display-name = "ALPHA";
                      bindings = <
    &trans              &none               &kp LS(X0A_LT4)           &mc_qu_s            &kp LS(X0A_LT0)           &none               &none               &ac_ocir_s          &ac_oacu_s          &ac_uacu_s          &none              &trans
@@ -160,7 +158,7 @@
                                                                &none               &mc_sqo             &trans              &kp SPACE           &mc_sqo             &none 
                            >;
                 };
-                case_alpha2_layer {
+                case_alpha2 {
                      display-name = "CASE";
                      bindings = <
    &trans              &none               &kp RS(X0A_LT4)           &mc_qu_c            &kp RS(X0A_LT0)           &none               &none               &ac_ocir_c          &ac_oacu_c          &ac_uacu_c          &none              &trans
@@ -169,7 +167,7 @@
                                                                &none               &mc_sqo             &trans              &kp SPACE           &mc_sqo             &none 
                            >;
                 };
-                case_ccedil_layer {
+                case_ccedil {
                      display-name = "CASE";
                      bindings = <
    &trans              &none               &none               &none               &none               &none               &none               &none               &trans              &trans              &none                   &trans
@@ -181,7 +179,7 @@
 
 
 
-                shortcuts_layer {
+                shortcuts {
                      display-name = "SHORTS";
                      bindings = <
    &trans              &none              &mc_emoji           &mc_files            &mc_screenshot      &none               &none               &mc_lock            &to NUM               &to PLAIN1         &none                  &trans
@@ -191,7 +189,7 @@
                            >;
                 };
 
-                mehs_layer {
+                mehs {
                      display-name = "MEHS";
                      bindings = <
    &trans              &none               &mc_meh_b           &mc_meh_m           &mc_meh_g           &none               &none               &mc_meh_l           &mc_meh_o           &mc_meh_u           &none                  &trans
@@ -203,7 +201,7 @@
 
 
 
-                plain1_layer {
+                plain1 {
                      display-name = "PLAIN";
                      bindings = <
    &trans              &kp Q               &kp B               &kp M               &kp G               &kp K               &kp X               &kp L               &kp O               &kp U               &trans              &trans
@@ -212,7 +210,7 @@
                                                                &none               &ht_repeat NAV 0    &lt NUM_CP SPACE    &msl_p2 SYM_CP 0    &ht_sft_p2 MEDIA    &none
                            >;
                 };
-                plain2_layer {
+                plain2 {
                      display-name = "PLAIN";
                      bindings = <
    &trans              &none               &kp Q               &mc_qu              &kp K               &none               &none               &ac_ocir            &ac_oacu            &ac_uacu            &none              &trans
@@ -221,7 +219,7 @@
                                                                &none               &mc_sqo             &lt NUM_CP SPACE    &lt SYM_CP SPACE    &mc_sqo             &none
                            >;
                 };
-                shifted_plain2_layer {
+                shifted_plain2 {
                      display-name = "PLAIN";
                      bindings = <
    &trans              &none               &kp LS(X0A_LT4)           &mc_qu_s            &kp LS(X0A_LT0)           &none               &none               &ac_ocir_s          &ac_oacu_s          &ac_uacu_s            &none              &trans
@@ -230,7 +228,7 @@
                                                                &none               &mc_sqo             &lt NUM_CP SPACE    &lt SYM_CP SPACE    &mc_sqo             &none
                            >;
                 };
-                secondary_alternate_repeat_layer {
+                secondary_alternate_repeat {
                      display-name = "ALPHA";
                      bindings = <
    &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans              &trans               &trans                  &trans
@@ -241,7 +239,7 @@
                 };
 
 
-                navigation_layer {
+                navigation {
                      display-name = "NAV";
                      bindings = <
    &trans              &none               &mc_swapper         &mc_tabs            &mc_launcher        &none               &none               &kp TAB             &kp ENTER           &kp ESC              &none              &trans
@@ -251,7 +249,7 @@
                         >;
                 };
 
-                numbers_copy_layer {
+                numbers_copy {
                      display-name = "NUM";
                      bindings = <
    &trans              &none               &th_lbrc 0 0        &th_rbrc 0 0        &kp BSLH            &none               &none               &mc_n7              &mc_n8              &mc_n9               &none              &trans
@@ -260,7 +258,7 @@
                                                                &none               &trans              &trans              &hlt SYM_CP SPACE   &lt_n0 MEDIA 0      &none 
                            >;
                 };
-                symbols_copy_layer {
+                symbols_copy {
                      display-name = "SYM";
                      bindings = <
    &trans              &none               &mc_tilde           &kp HASH            &th_sqo 0 0         &none               &none               &th_perc 0 0        &th_eql 0 0         &th_colon 0 0        &none              &trans
@@ -270,7 +268,7 @@
                            >;
                 };
 
-                media_layer {
+                media {
                     display-name = "MOUSE";
                     bindings = <
    &trans              &none               &none               &mkp LCLK           &mkp RCLK           &none               &none               &mc_hand            &kp ENTER           &kp ESC             &none              &trans
@@ -279,7 +277,7 @@
                                                                &none               &mo NAV_CP          &kp SPACE           &none               &trans              &none 
                            >;
                 };
-                navigation_copy_layer {
+                navigation_copy {
                      display-name = "NAV";
                      bindings = <
    &trans              &none               &mc_swapper         &mc_tabs            &mc_launcher        &none               &none               &kp TAB             &kp ENTER           &kp ESC             &none              &trans
@@ -289,7 +287,7 @@
                            >;
                 };
 
-                text_layer {
+                text {
                      display-name = "TEXT";
                      bindings = <
    &trans              &none               &select_home        &select_word        &select_line        &trans              &trans              &kp TAB             &kp ENTER           &kp ESC             &none              &trans
@@ -298,18 +296,18 @@
                                                                &none               &key_repeat         &none               &none               &key_repeat         &none 
                            >;
                 };
-                functions_layer {
+                functions {
                      display-name = "FUN";
                      bindings = <
-   &trans              &none               &bt BT_PRV          &bt BT_NXT          &bt BT_SEL 0        &none               &none               &kp F7              &kp F8              &kp F9              &none               &trans
-   &trans              &none               &hsk X0M_R3 X0M_L3      &hsk X0M_R2 X0M_L2      &hsk X0M_R1 X0M_L1      &none               &none               &kp F4              &kp F5              &kp F6              &none                    &trans
+   &trans              &none               &bt BT_PRV            &bt BT_NXT            &bt BT_SEL 0        &none               &none               &kp F7              &kp F8              &kp F9              &none               &trans
+   &trans              &none               &hsk X0M_R3 X0M_L3    &hsk X0M_R2 X0M_L2    &hsk X0M_R1 X0M_L1      &none               &none               &kp F4              &kp F5              &kp F6              &none                    &trans
    &trans              &none               &hsk RGUI X0M_L0      &hsk RGUI X0M_L0      &hsk RGUI X0M_L0      &none               &none               &kp F1              &kp F2              &kp F3              &none              &trans
-                                                               &none               &bootloader         &none               &none               &key_repeat         &none
+                                                                 &none                 &bootloader         &none               &none               &key_repeat         &none
                         >;
                 };
 
 
-                smart_layer {
+                smart {
                      display-name = "SMART";
                      bindings = <
    &trans              &none               &none               &tc_smart_word      &tc_smart_line      &none               &none               &mc_vim_replace     &mc_o_esc           &mc_sft_o_esc       &none               &trans

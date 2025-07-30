@@ -1,10 +1,9 @@
 /*
 *
-* Copyright (c) 2022 Rafael Romão
+* Copyright (c) 2025 Ryan Luckie
 * SPDX-License-Identifier: MIT
 *
 */
-
 / {
         MACRO(md_exit,  &kp E &kp X &kp I &kp T &kp ENTER)
         MACRO(md_haha,  &kp H &kp A &kp H &kp A &kp ENTER)
