@@ -4,6 +4,7 @@
 #define X0A_LT2 E
 #define X0A_LT1 R
 #define X0A_LT0 T
+
 #define X0A_RT0 Y
 #define X0A_RT1 U
 #define X0A_RT2 I
@@ -11,7 +12,7 @@
 #define X0A_RT4 P
 #define X0A_RT5 BSPC
 
-#define X0A_LM5 LCTRL
+#define X0A_LM5 LCTL
 #define X0A_LM4 A
 #define X0A_LM3 S
 #define X0A_LM2 D
@@ -44,7 +45,7 @@
 #define X0A_LH0 LCTL
 
 #define X0A_RH0 RET
-#define X0A_RH1 
+#define X0A_RH1 RET
 #define X0A_RH2 RALT
 
 #define X0M_L3 LCTL

@@ -17,6 +17,7 @@
 
 #include "zmk-helpers/key-labels/42.h"
 
+#define MACOS
 
 
 
@@ -33,7 +34,6 @@
 #include "features/accents.dtsi"
 #include "features/shortcuts.dtsi"
 #include "features/select.dtsi"
-#define MACOS
 
 #include "features/sentence.dtsi"
 #include "features/smart.dtsi"

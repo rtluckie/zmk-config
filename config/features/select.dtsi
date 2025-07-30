@@ -67,6 +67,7 @@
 		};
 		
 		
+#endif
 #ifdef LINUX
 		// Select Word
 		
