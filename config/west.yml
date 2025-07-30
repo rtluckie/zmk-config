@@ -57,8 +57,8 @@ manifest:
 
     - name: zephyr
       remote: urob
-      revision: "0562599"
-      path: modules/zephyr
+      revision: v3.5.0+zmk-fixes
+      # path: modules/zephyr
       clone-depth: 1
       import:
         name-allowlist:
