@@ -1,3 +1,9 @@
+/*
+*
+* Copyright (c) 2025 Ryan Luckie
+* SPDX-License-Identifier: MIT
+*
+*/
     /* LAYER TAPS */    
 
     #define LAYERTAP_TP(NAME, BINDINGS) \

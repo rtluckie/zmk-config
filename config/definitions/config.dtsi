@@ -1,10 +1,9 @@
 /*
- *
- * Copyright (c) 2022 Rafael Romão
- * SPDX-License-Identifier: MIT
- *
- */
-
+*
+* Copyright (c) 2025 Ryan Luckie
+* SPDX-License-Identifier: MIT
+*
+*/
  // Layers
 
 #define ALPHA1 0
