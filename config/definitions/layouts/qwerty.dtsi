@@ -1,58 +1,61 @@
-#define X0A_LT5 TAB
-#define X0A_LT4 Q
-#define X0A_LT3 W
-#define X0A_LT2 E
-#define X0A_LT1 R
-#define X0A_LT0 T
 
-#define X0A_RT0 Y
-#define X0A_RT1 U
-#define X0A_RT2 I
-#define X0A_RT3 O
-#define X0A_RT4 P
-#define X0A_RT5 BSPC
+#pragma once
 
-#define X0A_LM5 LCTL
-#define X0A_LM4 A
-#define X0A_LM3 S
-#define X0A_LM2 D
-#define X0A_LM1 F
-#define X0A_LM0 G
+#define XA_LT5 TAB
+#define XA_LT4 Q
+#define XA_LT3 W
+#define XA_LT2 E
+#define XA_LT1 R
+#define XA_LT0 T
 
-#define X0A_RM0 H
-#define X0A_RM1 J
-#define X0A_RM2 K
-#define X0A_RM3 L
-#define X0A_RM4 SEMI
-#define X0A_RM5 SQT
+#define XA_RT0 Y
+#define XA_RT1 U
+#define XA_RT2 I
+#define XA_RT3 O
+#define XA_RT4 P
+#define XA_RT5 BSPC
 
-#define X0A_LB5 LSHFT
-#define X0A_LB4 Z
-#define X0A_LB3 X
-#define X0A_LB2 C
-#define X0A_LB1 V
-#define X0A_LB0 B
+#define XA_LM5 LCTL
+#define XA_LM4 A
+#define XA_LM3 S
+#define XA_LM2 D
+#define XA_LM1 F
+#define XA_LM0 G
 
-#define X0A_RB0 N
-#define X0A_RB1 M
-#define X0A_RB2 COMMA
-#define X0A_RB3 DOT
-#define X0A_RB4 FSLH
-#define X0A_RB5 ESC
+#define XA_RM0 H
+#define XA_RM1 J
+#define XA_RM2 K
+#define XA_RM3 L
+#define XA_RM4 SEMI
+#define XA_RM5 SQT
 
-#define X0A_LH2 LGUI
-#define X0A_LH1 LALT
-#define X0A_LH0 LCTL
+#define XA_LB5 LSHFT
+#define XA_LB4 Z
+#define XA_LB3 X
+#define XA_LB2 C
+#define XA_LB1 V
+#define XA_LB0 B
 
-#define X0A_RH0 RET
-#define X0A_RH1 RET
-#define X0A_RH2 RALT
+#define XA_RB0 N
+#define XA_RB1 M
+#define XA_RB2 COMMA
+#define XA_RB3 DOT
+#define XA_RB4 FSLH
+#define XA_RB5 ESC
 
-#define X0M_L3 LCTL
-#define X0M_L2 LALT
-#define X0M_L1 LSFT
-#define X0M_L0 LGUI
-#define X0M_R0 RGUI
-#define X0M_R1 RSFT
-#define X0M_R2 RALT
-#define X0M_R3 RCTL
+#define XA_LH2 LGUI
+#define XA_LH1 LALT
+#define XA_LH0 LCTL
+
+#define XA_RH0 RET
+#define XA_RH1 RET
+#define XA_RH2 RALT
+
+#define XM_L3 LCTL
+#define XM_L2 LALT
+#define XM_L1 LSFT
+#define XM_L0 LGUI
+#define XM_R0 RGUI
+#define XM_R1 RSFT
+#define XM_R2 RALT
+#define XM_R3 RCTL

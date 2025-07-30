@@ -41,7 +41,7 @@
 			
 			ADAPTIVE(cont_sel_line, &mc_selnln, LS(END))
 		};
-#ifdef MACOS
+#ifdef CONF_MACOS
 		// Select Word
 		
 		mc_sel1w: mc_sel1w {
@@ -68,7 +68,7 @@
 		
 		
 #endif
-#ifdef LINUX
+#ifdef CONF_LINUX
 		// Select Word
 		
 		mc_sel1w: mc_sel1w {

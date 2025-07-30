@@ -37,7 +37,7 @@ manifest:
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
   projects:
-  
+
     - name: zmk
       remote: urob
       path: zmk
@@ -45,7 +45,7 @@ manifest:
       revision: 241ff39
       clone-depth: 1
       groups: []
-      import: 
+      import:
         file: app/west.yml
         name-allowlist: []
         path-allowlist: []

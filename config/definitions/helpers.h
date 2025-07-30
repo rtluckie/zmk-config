@@ -3,8 +3,12 @@
 * Copyright (c) 2025 Ryan Luckie
 * SPDX-License-Identifier: MIT
 *
+
+
 */
-    /* LAYER TAPS */    
+#include "zmk-helpers/helper.h"
+
+    /* LAYER TAPS */
 
     #define LAYERTAP_TP(NAME, BINDINGS) \
          NAME: NAME { \
@@ -13,9 +17,9 @@
             #binding-cells = <2>; \
             tapping-term-ms = <TAPPING_TERM>; \
             quick-tap-ms = <QUICK_TAP_TERM>; \
-            bindings = <&mo>, <BINDINGS>; \
+            bindings = <&mo>,                <BINDINGS>; \
         };
-    
+
     #define LAYERTAP_HP(NAME, BINDINGS) \
          NAME: NAME { \
             compatible = "zmk,behavior-hold-tap"; \
@@ -23,7 +27,7 @@
             #binding-cells = <2>; \
             tapping-term-ms = <TAPPING_TERM>; \
             quick-tap-ms = <QUICK_TAP_TERM>; \
-            bindings = <&mo>, <BINDINGS>; \
+            bindings = <&mo>,                <BINDINGS>; \
         };
 
 
@@ -37,7 +41,7 @@
             tapping-term-ms = <TAPPING_TERM>; \
             quick-tap-ms = <QUICK_TAP_TERM>; \
             require-prior-idle-ms = <QUICK_TAP_TERM>; \
-            bindings = <&kp>, <BINDINGS>; \
+            bindings = <&kp>,                <BINDINGS>; \
         };
 
     /*  TAP HOLDS  */
@@ -54,7 +58,7 @@
         };
 
     /*  MACROS  */
-    
+
     #define MACRO(NAME, BINDINGS) \
         NAME: NAME { \
 			compatible = "zmk,behavior-macro"; \
@@ -94,7 +98,7 @@
         };
 
     /*  ACCENTS  */
-    
+
     #define ACCENT(NAME, KEY, DEAD_KEY) \
         NAME: NAME { \
             wait-ms = <0>; \
@@ -102,9 +106,9 @@
             compatible = "zmk,behavior-macro"; \
             #binding-cells = <0>; \
             bindings \
-                = <&macro_tap &kp DEAD_KEY> \
-                , <&macro_tap &kp KEY> \
-                , <&macro_tap &sl ALTREP2> \
+                = <&macro_tap           &kp DEAD_KEY> \
+                , <&macro_tap           &kp KEY> \
+                , <&macro_tap           &sl ALTREP2> \
                 ; \
         }; \
         NAME##_c: NAME##_c { \
@@ -113,12 +117,12 @@
             compatible = "zmk,behavior-macro"; \
             #binding-cells = <0>; \
             bindings \
-                = <&macro_release &kp LSHIFT &kp RSHFT> \
-                , <&macro_tap &kp DEAD_KEY> \
-                , <&macro_press &kp RSHFT> \
-                , <&macro_tap &kp KEY> \
-                , <&macro_release &kp RSHFT> \
-                , <&macro_tap &sl ALTREP2> \
+                = <&macro_release       &kp LSHIFT           &kp RSHFT> \
+                , <&macro_tap           &kp DEAD_KEY> \
+                , <&macro_press         &kp RSHFT> \
+                , <&macro_tap           &kp KEY> \
+                , <&macro_release       &kp RSHFT> \
+                , <&macro_tap           &sl ALTREP2> \
                 ; \
         }; \
         NAME##_s: NAME##_s { \
@@ -127,17 +131,17 @@
             compatible = "zmk,behavior-macro"; \
             #binding-cells = <0>; \
             bindings \
-                = <&macro_release &kp LSHFT &kp RSHFT> \
-                , <&macro_tap &kp DEAD_KEY> \
-                , <&macro_press &kp LSHFT> \
-                , <&macro_tap &kp KEY> \
-                , <&macro_release &kp LSHFT> \
-                , <&macro_tap &sl ALTREP2> \
+                = <&macro_release       &kp LSHFT            &kp RSHFT> \
+                , <&macro_tap           &kp DEAD_KEY> \
+                , <&macro_press         &kp LSHFT> \
+                , <&macro_tap           &kp KEY> \
+                , <&macro_release       &kp LSHFT> \
+                , <&macro_tap           &sl ALTREP2> \
                 ; \
         };
 
     /*  COMBOS  */
-    
+
     #define COMBO(NAME, KEYS, BINDINGS, LAYERS) \
         NAME { \
             timeout-ms = <COMBO_TERM>; \

@@ -7,7 +7,7 @@
 
 / {
     adaptive_keys {
-        
+
         // ******************** REPEAT KEY ******************** //
 
         alternate_repeat_key: alternate_repeat_key {
@@ -56,7 +56,7 @@
             tapping-term-ms = <QUICK_TAP_TERM>;
             flavor = "tap-preferred";
             quick-tap-ms = <0>;
-            bindings = <&mo>, <&mm_repeat>;
+            bindings = <&mo>,                <&mm_repeat>;
         };
 
         // ******************** MAGIC KEY ******************** //
@@ -85,7 +85,7 @@
             tapping-term-ms = <QUICK_TAP_TERM>;
             flavor = "tap-preferred";
             quick-tap-ms = <0>;
-            bindings = <&kp>, <&magic_key>;
+            bindings = <&kp>,                <&magic_key>;
         };
 
         ht_magic_c: ht_magic_c {
@@ -94,7 +94,7 @@
             tapping-term-ms = <QUICK_TAP_TERM>;
             flavor = "tap-preferred";
             quick-tap-ms = <0>;
-            bindings = <&kp>, <&magic_key_c>;
+            bindings = <&kp>,                <&magic_key_c>;
         };
 
         // ******************** REVERSED MAGIC KEY ******************** //
