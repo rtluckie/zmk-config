@@ -16,16 +16,16 @@
 */
 / {
     #define SMARTCASE_LAYERS            CAMEL_CASE SNAKE_CASE CONST_CASE KEBAB_CASE SLASH_CASE SPACING
-    #define ALPHA1_LAYERS               ALPHA1 CASE_A1 PLAIN1 CPLK_A1 SMARTCASE_LAYERS ALTREP2
+    #define ALPHA1_LAYERS               ALPHA1 CASE_A1 PLAIN1 CPLK_A1 SMARTCASE_LAYERS 
     #define CCEDIL_LAYERS               CCEDIL CASE_CCEDIL
-    #define ALPHA2_LAYERS               ALPHA2 CASE_A2 PLAIN2 SFT_A2
+    // #define ALPHA2_LAYERS               ALPHA2 CASE_A2 PLAIN2 SFT_A2
     #define NUM_LAYERS                  NUM NUM_CP
     #define SYM_LAYERS                  SYM SYM_CP
     #define NAV_LAYERS                  NAV NAV_CP
-    #define ALL_LAYERS                  ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS NUM_LAYERS SHRT MEHS NAV_LAYERS SYM_LAYERS MED TEXT
-    #define ALL_LAYERS_WITH_BACKSPACE   ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS NUM_LAYERS        MEHS NAV_LAYERS SYM_LAYERS
-    #define ALL_LAYERS_WITH_ESC         ALPHA1_LAYERS ALPHA2_LAYERS CCEDIL_LAYERS                     MEHS NAV_LAYERS              MED
-    #define FIXABLE_LAYERS              CPLK_A1 CASE_A1 SMARTCASE_LAYERS PLAIN1 NUM_LAYERS MED NAV_LAYERS MEHS FUN
+    #define ALL_LAYERS                  ALPHA1_LAYERS  CCEDIL_LAYERS NUM_LAYERS SHRT MEHS HYPERS NAV_LAYERS SYM_LAYERS MED TEXT
+    #define ALL_LAYERS_WITH_BACKSPACE   ALPHA1_LAYERS  CCEDIL_LAYERS NUM_LAYERS        MEHS HYPERS NAV_LAYERS SYM_LAYERS
+    #define ALL_LAYERS_WITH_ESC         ALPHA1_LAYERS  CCEDIL_LAYERS                     MEHS HYPERS NAV_LAYERS              MED
+    #define FIXABLE_LAYERS              CPLK_A1 CASE_A1 SMARTCASE_LAYERS PLAIN1 NUM_LAYERS MED NAV_LAYERS MEHS HYPERS FUN
 
     combos {
         compatible = "zmk,combos";
@@ -167,19 +167,19 @@
         COMBO(cb_f14,           RM2 RM3,         &kp F14,                FUN)
         COMBO(cb_f15,           RT2 RT3,         &kp F15,                FUN)
 
-        COMBO(cb_minus,         RT1 RT2,         &kp MINUS,              ALPHA2_LAYERS)
-        COMBO(cb_dqo_s,         LT2 LT1,         &kp DQT,                ALPHA2_LAYERS)
-        COMBO(cb_sqo_s,         LM2 LM1,         &kp SQT,                ALPHA2_LAYERS)
-        COMBO(cb_bti_s,         LB2 LB3,         &kp GRAVE,              ALPHA2_LAYERS)
-        COMBO(cb_caret_s,       LM3 LM2,         &kp CARET,              ALPHA2_LAYERS)
-        COMBO(cb_tilde_s,       LB1 LB2,         &kp TILDE,              ALPHA2_LAYERS)
-        COMBO(cb_ques,          RM1 RM2,         &mc_qmark,              ALPHA2_LAYERS)
-        COMBO(cb_excl,          RB1 RB2,         &mc_excl,               ALPHA2_LAYERS)
-        COMBO(cb_unds,          RB2 RB3,         &kp UNDERSCORE,         ALPHA2_LAYERS)
+        // COMBO(cb_minus,         RT1 RT2,         &kp MINUS,              ALPHA2_LAYERS)
+        // COMBO(cb_dqo_s,         LT2 LT1,         &kp DQT,                ALPHA2_LAYERS)
+        // COMBO(cb_sqo_s,         LM2 LM1,         &kp SQT,                ALPHA2_LAYERS)
+        // COMBO(cb_bti_s,         LB2 LB3,         &kp GRAVE,              ALPHA2_LAYERS)
+        // COMBO(cb_caret_s,       LM3 LM2,         &kp CARET,              ALPHA2_LAYERS)
+        // COMBO(cb_tilde_s,       LB1 LB2,         &kp TILDE,              ALPHA2_LAYERS)
+        // COMBO(cb_ques,          RM1 RM2,         &mc_qmark,              ALPHA2_LAYERS)
+        // COMBO(cb_excl,          RB1 RB2,         &mc_excl,               ALPHA2_LAYERS)
+        // COMBO(cb_unds,          RB2 RB3,         &kp UNDERSCORE,         ALPHA2_LAYERS)
 
-        COMBO(cb_grva,          RM2 RM3,         &ac_agrv,               ALPHA2)
-        COMBO(cb_grvas,         RM2 RM3,         &ac_agrv_s,             SFT_A2)
-        COMBO(cb_grvac,         RM2 RM3,         &ac_agrv_c,             CASE_A2)
+        // COMBO(cb_grva,          RM2 RM3,         &ac_agrv,               ALPHA2)
+        // COMBO(cb_grvas,         RM2 RM3,         &ac_agrv_s,             SFT_A2)
+        // COMBO(cb_grvac,         RM2 RM3,         &ac_agrv_c,             CASE_A2)
 
         COMBO(cb_bsp_word,      RT2 RT3,         &mc_bsp_word,           TEXT)
         COMBO(cb_o_esc,         RM1 RM2,         &mc_o_esc,              TEXT)

@@ -9,7 +9,6 @@
 
 // LAYERS
 #define ALPHA1 0
-
 #define CAMEL_CASE 1
 #define SNAKE_CASE 2
 #define CONST_CASE 3
@@ -18,37 +17,26 @@
 #define SPACING 6
 #define CASE_A1 7
 #define CPLK_A1 8
+#define NUM 9
+#define SYM 10
+#define SEN_CASE 11
 
-#define ALPHA2 9
-
-#define NUM 10
-#define SYM 11
-
-#define SEN_CASE 12
-#define CCEDIL 13
-#define SFT_A2 14
-#define CASE_A2 15
-#define CASE_CCEDIL 16
-
-#define SHRT 17
-#define MEHS 18
-
-#define PLAIN1 19
-#define PLAIN2 20
-#define SFT_PLAIN2 21
-#define ALTREP2 22
-
-#define NAV 23
-
-#define NUM_CP 24
-#define SYM_CP 25
-
-#define MED 26
-#define NAV_CP 27
-
-#define TEXT 28
-#define FUN 29
-#define SMART 30
+#define CCEDIL 12
+#define CASE_CCEDIL 13
+#define SHRT 14
+#define MEHS 15
+#define HYPERS 16
+#define PLAIN1 17
+#define NAV 18
+#define NUM_CP 19
+#define SYM_CP 20
+#define MED 21
+#define MOUSE 22
+#define NAV_CP 23
+#define TEXT 24
+#define FUN 25
+#define SYS 26
+#define SMART 27
 
 // TIMING
 #define COMBO_TERM 30
