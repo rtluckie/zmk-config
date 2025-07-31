@@ -20,7 +20,6 @@
 #define NUM 9
 #define SYM 10
 #define SEN_CASE 11
-
 #define CCEDIL 12
 #define CASE_CCEDIL 13
 #define SHRT 14
@@ -37,7 +36,6 @@
 #define FUN 25
 #define SYS 26
 #define SMART 27
-
 // TIMING
 #define COMBO_TERM 30
 #define TAPPING_TERM 250
