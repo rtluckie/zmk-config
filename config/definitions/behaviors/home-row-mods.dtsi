@@ -1,0 +1,28 @@
+
+#include <behaviors.dtsi>
+
+#define HM(NAME, DISPLAY_NAME, TAP, HT_KEYPOS, RPI, ...)    \
+    NAME: NAME {                                            \
+        compatible = "zmk,behavior-hold-tap";               \
+        #binding-cells = <2>;                               \
+        flavor = "balanced";                                \
+        tapping-term-ms = <TAPPING_TERM>;                   \
+        quick-tap-ms = <QUICK_TAP_TERM>;                    \
+        require-prior-idle-ms = <RPI>;                      \
+        bindings = <&kp>, <TAP>;                            \
+        hold-trigger-key-positions = <HT_KEYPOS THUMBS>;    \
+        hold-trigger-on-release;                            \
+        display-name = #DISPLAY_NAME;                       \
+        __VA_ARGS__                                         \
+    };
+
+/ {
+	home-row-mod {
+		HM(hrls,   home-row-left-shift,     &kp,  KEYS_R,   0, hold-while-undecided;)
+		HM(hrlm,   home-row-left-mods,      &kp,  KEYS_R,   200)
+		HM(hrlc,   home-row-left-ctrl,      &kp,  KEYS_R,   200, hold-while-undecided;	)
+		HM(hrrs,   home-row-right-shift,    &kp,  KEYS_L,   0, hold-while-undecided;)
+		HM(hrrm,   home-row-right-mods,     &kp,  KEYS_L,   200)
+		HM(hrrc,   home-row-right-ctrl,     &kp,  KEYS_L,   200, hold-while-undecided;)
+	};
+};

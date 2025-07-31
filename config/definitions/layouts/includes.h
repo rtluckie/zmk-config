@@ -1,5 +1,4 @@
 #pragma once
 #if defined (CONF_LAYOUT_QWERTY)
-
-#include "layouts/qwerty.dtsi"
+#include "qwerty.dtsi"
 #endif

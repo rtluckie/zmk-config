@@ -1,0 +1,28 @@
+/*
+*
+* Copyright (c) 2025 Ryan Luckie
+* SPDX-License-Identifier: MIT
+*
+*/
+
+&mt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <QUICK_TAP_TERM>;
+};
+
+&lt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <QUICK_TAP_TERM>;
+};
+
+&sl {
+    release-after-ms = <1000>;
+    quick-release;
+};
+
+&sk {
+    release-after-ms = <1500>;
+    quick-release;
+};
