@@ -4,7 +4,6 @@
 * SPDX-License-Identifier: MIT
 *
 */
-#include "includes.h"
 / {
       keymap {
           compatible = "zmk,keymap";
@@ -12,11 +11,11 @@
                display-name = "ALPHA";
                bindings = <
 //╭────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────┬────────────────────╮
-   &trans               &kp XA_LT4           &kp XA_LT3           &kp XA_LT2           &kp XA_LT1           &kp XA_LT0           &kp XA_RT0           &kp XA_RT1           &kp XA_RT2           &kp XA_RT3           &trans               &none
+   &trans               &kp XK_Q             &kp XK_W             &hrlm HYP XK_E       &kp XK_R             &kp XK_T             &kp XK_Y             &kp XK_U             &hrrm MEH XK_I     &kp XK_O               &kp XK_P             &trans
 //├────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┤
-   &kp XA_LT5           &kp XA_LT4           &kp XA_LT3           &kp XA_LT2           &kp XA_LT1           &kp XA_LT0           &kp XA_RT0           &kp XA_RT1           &kp XA_RT2           &kp XA_RT3           &kp XA_RT4           &kp XA_RT5
+   &trans               &lt SHRT XK_A        &hrlm LCTRL XK_S     &hrlm LALT XK_D      &hrls LSHFT XK_F     &kp XK_G             &kp XK_H             &hrrs RSHFT XK_J     &hrrm RALT XK_K      &hrrm RCTL XK_L      &lt SHRT XK_SEMI     &trans
 //├────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┤
-   &kp XA_LM5           &lt SHRT XA_LM4      &mt XM_L3 XA_LM3     &mt XM_L2 XA_LM2     &mt XM_L1 XA_LM1     &kp XA_LM0           &kp XA_RM0           &mt XM_R1 XA_RM1     &mt XM_R2 XA_RM2     &mt XM_R3 XA_RM3     &th_lead 0 0         &kp XA_RM5
+   &trans               &kp XK_Z             &hrlm LGUI XK_X      &hrlm MEH XK_C       &hrlm LGUI XK_C      &kp XK_V             &kp XK_B             &hrrm RGUI XK_N      &hrrm MEH XK_M        &hrrm RGUI DOT      &trans               &trans
 //╰────────────────────┴────────────────────┴────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┼────────────────────┴────────────────────┴────────────────────╯
                                                                   &mkp RCLK            &ht_repeat NAV 0     &ltn_num_spc 0 0     &msl_sym_a2 0 0      &ht_shift MED 0      &mkp LCLK
 //                                                               ╰────────────────────┴────────────────────┴────────────────────┴────────────────────┴────────────────────┴────────────────────╯
