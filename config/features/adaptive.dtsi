@@ -27,28 +27,28 @@
             ADAPTIVE(h_os2    , &mc_otiles   , H                 )
             ADAPTIVE(h_os2_s  , &mc_otiles   , LS(H)             )
             ADAPTIVE(h_os2_c  , &mc_otiles_c , RS(H)             )
-            ADAPTIVE(v_os2    , &sl ALPHA2   , V X J             )
-            ADAPTIVE(v_os2_s  , &sl ALPHA2   , LS(V) LS(X) LS(J) )
-            ADAPTIVE(v_os2_c  , &sl CASE_A2  , RS(V) RS(X) RS(J) )
+            // ADAPTIVE(v_os2    , &sl ALPHA2   , V X J             )
+            // ADAPTIVE(v_os2_s  , &sl ALPHA2   , LS(V) LS(X) LS(J) )
+            // ADAPTIVE(v_os2_c  , &sl CASE_A2  , RS(V) RS(X) RS(J) )
         };
 
-        // Alt repeat key for accented vowels and macros from the secondary alpha layer.
-        // Only the last char in the macro is considered
-        a2_alt_repeat: alpha2_alternate_repeat_key {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&alternate_repeat_key>;
+        // // Alt repeat key for accented vowels and macros from the secondary alpha layer.
+        // // Only the last char in the macro is considered
+        // a2_alt_repeat: alpha2_alternate_repeat_key {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&alternate_repeat_key>;
 
-            ADAPTIVE(aeo_x    , &kp X      , A E O             )
-            ADAPTIVE(aeo_x_s  , &kp LS(X)  , LS(A) RS(A) LS(E) )
-            ADAPTIVE(aeo_x_c  , &kp RS(X)  , RS(E) LS(O) RS(O) )
-            ADAPTIVE(i_e      , &kp E      , I                 )
-            ADAPTIVE(i_e_s    , &kp LS(E)  , LS(I)             )
-            ADAPTIVE(i_e_c    , &kp RS(E)  , RS(I)             )
-            ADAPTIVE(u_ecir   , &ac_ecir   , U                 )
-            ADAPTIVE(u_ecir_s , &ac_ecir_s , LS(U)             )
-            ADAPTIVE(u_ecir_c , &ac_ecir_c , RS(U)             )
-        };
+        //     ADAPTIVE(aeo_x    , &kp X      , A E O             )
+        //     ADAPTIVE(aeo_x_s  , &kp LS(X)  , LS(A) RS(A) LS(E) )
+        //     ADAPTIVE(aeo_x_c  , &kp RS(X)  , RS(E) LS(O) RS(O) )
+        //     ADAPTIVE(i_e      , &kp E      , I                 )
+        //     ADAPTIVE(i_e_s    , &kp LS(E)  , LS(I)             )
+        //     ADAPTIVE(i_e_c    , &kp RS(E)  , RS(I)             )
+        //     ADAPTIVE(u_ecir   , &ac_ecir   , U                 )
+        //     ADAPTIVE(u_ecir_s , &ac_ecir_s , LS(U)             )
+        //     ADAPTIVE(u_ecir_c , &ac_ecir_c , RS(U)             )
+        // };
 
         ht_repeat: ht_repeat {
             compatible = "zmk,behavior-hold-tap";

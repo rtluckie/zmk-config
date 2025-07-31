@@ -1,0 +1,197 @@
+
+#include <behaviors.dtsi>
+
+#define HM(NAME, DISPLAY_NAME, TAP, HT_KEYPOS, RPI, ...)    \
+    NAME: NAME {                                            \
+        compatible = "zmk,behavior-hold-tap";               \
+        #binding-cells = <2>;                               \
+        flavor = "balanced";                                \
+        tapping-term-ms = <TAPPING_TERM>;                   \
+        quick-tap-ms = <QUICK_TAP_TERM>;                    \
+        require-prior-idle-ms = <RPI>;                      \
+        bindings = <&kp>, <TAP>;                            \
+        hold-trigger-key-positions = <HT_KEYPOS THUMBS>;    \
+        hold-trigger-on-release;                            \
+        display-name = #DISPLAY_NAME;                       \
+        __VA_ARGS__                                         \
+    };
+
+/ {
+	home-row-mod {
+		HM(hrls,   home-row-left-shift,     &kp,  KEYS_R,   0, hold-while-undecided;)
+		HM(hrlm,   home-row-left-mods,      &kp,  KEYS_R,   200)
+		HM(hrlc,   home-row-left-ctrl,      &kp,  KEYS_R,   200, hold-while-undecided;	)
+		HM(hrrs,   home-row-right-shift,    &kp,  KEYS_L,   0, hold-while-undecided;)
+		HM(hrrm,   home-row-right-mods,     &kp,  KEYS_L,   200)
+		HM(hrrc,   home-row-right-ctrl,     &kp,  KEYS_L,   200, hold-while-undecided;)
+	};
+};
+
+// mokpb: mod-tap-balanced
+ZMK_HOLD_TAP(mokpb, flavor = "balanced"; \
+    tapping-term-ms = <TAPPING_TERM>; \
+    quick-tap-ms = <QUICK_TAP_TERM>; \
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&kp>;)
+
+// mokph: momentary-to-keypress-hold-preferred
+ZMK_HOLD_TAP(mokph,
+    flavor = "hold-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&kp>;)
+
+// mokpt: momentary-to-keypress-tap-preferred
+ZMK_HOLD_TAP(mokpt,
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&kp>;)
+
+// motob: momentary-to-balanced
+ZMK_HOLD_TAP(motob,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&to>;)
+
+// motot: momentary-to-tap-preferred
+ZMK_HOLD_TAP(motot,
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&to>;)
+
+// motoh: momentary-to-hold-preferred
+ZMK_HOLD_TAP(motoh,
+    flavor = "hold-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&to>;)
+
+// moskb: momentary-to-sticky-key-balanced
+ZMK_HOLD_TAP(moskb,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&sk>;)
+
+// moskt: momentary-sticky-tap-preferred
+ZMK_HOLD_TAP(moskt,
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&sk>;)
+
+// moskh: momentary-sticky-layer-hold-preferred
+ZMK_HOLD_TAP(moskh,
+    flavor = "hold-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&sk>;)
+
+// moslb: momentary-to-sticky-layer-balanced
+ZMK_HOLD_TAP(moslb,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&sl>;)
+
+// moslt: momentary-sticky-layer-tap-preferred
+ZMK_HOLD_TAP(moslt,
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&sl>;)
+
+// moslh: momentary-sticky-layer-hold-preferred
+ZMK_HOLD_TAP(moslh,
+    flavor = "hold-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&sl>;)
+
+// kptogb: keypress-toggle-balanced
+ZMK_HOLD_TAP(kptogb,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&kp>, <&tog>;)
+
+// kptogt: keypress-toggle-tap-preferred
+ZMK_HOLD_TAP(kptogt,
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&kp>, <&tog>;)
+
+// : keypress-toggle-hold-preferred
+ZMK_HOLD_TAP(kptogh,
+    flavor = "hold-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&kp>, <&tog>;)
+
+// motogb: momentary-toggle-balanced
+ZMK_HOLD_TAP(motogb,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&tog>;)
+
+// motogt: momentary-toggle-tap-preferred
+ZMK_HOLD_TAP(motogt,
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&tog>;)
+
+// motogh: momentary-toggle-hold-preferred
+ZMK_HOLD_TAP(motogh,
+    flavor = "hold-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    //rezzzquire-prior-idle-ms = <125>;
+    bindings = <&mo>, <&tog>;)
+
+// kp-sk {
+// kpsk: keypress-sticky-key-balanced
+ZMK_HOLD_TAP(kpsk,
+	flavor = "balanced";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	//require-prior-idle-ms = <125>;
+	bindings = <&kp>, <&sk>;
+)
+// kpskt: keypress-sticky-key-tap-preferred
+ZMK_HOLD_TAP(kpskt,
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	//require-prior-idle-ms = <125>;
+	bindings = <&kp>, <&sk>;
+)
+// kpskh: keypress-sticky-key-hold-preferred
+ZMK_HOLD_TAP(kpskh,
+	flavor = "hold-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	//require-prior-idle-ms = <125>;
+	bindings = <&kp>, <&sk>;
+)
