@@ -135,8 +135,8 @@ layers:
   - {t: DEF, h: '$$mdi:toggle-switch$$'}
   - ''
   - ''
-  - ''
-  - ''
+  - {type: held}
+  - {type: held}
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
   - {t: '$$mdi:cursor-default-click-outline$$', s: '4', type: text_with_symbol}
@@ -221,7 +221,10 @@ combos:
 - p: [5, 17]
   k: '%'
   l: [DEF]
-- p: [17, 29]
+- p: [14, 26]
+  k: '`'
+  l: [DEF]
+- p: [29, 17]
   k: '~'
   l: [DEF]
 - p: [6, 18]
@@ -245,6 +248,12 @@ combos:
 - p: [15, 27]
   k: \
   l: [DEF]
+- p: [7, 8]
+  k: $$mdi:backspace-outline$$
+  l: [DEF]
+- p: [8, 9]
+  k: $$mdi:backspace-reverse-outline$$
+  l: [DEF]
 - p: [7, 19]
   k: +
   l: [DEF, NUM]
@@ -260,44 +269,35 @@ combos:
 - p: [21, 33]
   k: '|'
   l: [DEF]
+- p: [27, 28]
+  k: Gui+V
+  l: [DEF]
+- p: [26, 27]
+  k: '&td_copy_cut'
+  l: [DEF]
 - p: [3, 4]
-  k: Q
+  k: MSE
   l: [DEF]
 - p: [2, 3]
   k: {t: ESC, s: '`'}
   l: [DEF]
 - p: [14, 15]
-  k: ESC
-  l: [DEF]
-- p: [15, 16]
-  k: $$mdi:keyboard-return$$
-  l: [DEF]
-- p: [27, 28]
-  k: $$mdi:backspace-outline$$
-  l: [DEF]
-- p: [14, 15, 16]
   k: $$mdi:keyboard-tab$$
   l: [DEF]
 - p: [19, 31]
   k: '-'
   l: [DEF, NUM]
 - p: [31, 32]
-  k: {t: '{', s: <}
+  k: '['
   l: [DEF]
 - p: [32, 33]
-  k: {t: '}', s: '>'}
+  k: ']'
   l: [DEF]
 - p: [19, 20]
-  k: {t: (, s: '['}
+  k: {t: (, s: <}
   l: [DEF]
 - p: [20, 21]
-  k: {t: ), s: ']'}
-  l: [DEF]
-- p: [19, 20, 21]
-  k: {t: (), s: '{}'}
-  l: [DEF]
-- p: [31, 32, 33]
-  k: {t: '[]', s: <>}
+  k: {t: ), s: '>'}
   l: [DEF]
 - p: [16, 19]
   k: $$mdi:caps-lock$$

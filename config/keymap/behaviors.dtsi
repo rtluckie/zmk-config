@@ -291,13 +291,13 @@
         // SM(mm_sqt_dqt, SM Macro Sqt-Dqt, &sqt_macro,   &dqt_macro)
         // SM(mm_grv_dgrv,      SM Grv-DGrqu,     &kp GRAVE, &dgrv_macro)
 
-        SM(mm_lpar_lbkt, SM LPar-LBkt,     &kp LPAR, &kp LBKT)
-        SM(mm_rpar_rbkt, SM RPar-RBkt,     &kp RPAR, &kp RBKT)
-        SM(mm_par_bkt,   SM Macro Par-Bkt, &par_macro,  &bkt_macro)
+        SM(mm_lpar_lt, SM LPar-LT,     &kp LPAR, &kp LT)
+        SM(mm_rpar_gt, SM RPar-GT,     &kp RPAR, &kp GT)
+        // SM(mm_par_bkt,   SM Macro Par-Bkt, &par_macro,  &bkt_macro)
 
         SM(mm_lbrc_lt, SM LBrc-LT,       &kp LBRC, &kp LT)
         SM(mm_rbrc_gt, SM RBrc-GT,       &kp RBRC, &kp GT)
-        SM(mm_brc_lgt, SM Macro Brc-LGT, &brc_macro,  &lgt_macro)
+        // SM(mm_brc_lgt, SM Macro Brc-LGT, &brc_macro,  &lgt_macro)
 
         SM(mm_p_tab_desk, SM Prev Tab-Desk, &kp LC(LS(TAB)), &kp LC(LG(LEFT)))
         SM(mm_n_tab_desk, SM Next Tab-Desk, &kp LC(TAB), &kp LC(LG(RIGHT)))
