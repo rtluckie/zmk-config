@@ -55,6 +55,8 @@
 
         COMBO(cb_caret,     &kp CARET,   RT0 RM0,     DEF,     COMBO_TERM_FAST, 200)
         // COMBO(cb_qt_grv,    &qt_grv,     LM3 LB3,     DEF,     COMBO_TERM_FAST, 200)
+        COMBO(cb_under,     &kp UNDER,   RM0 RB0,     DEF,     COMBO_TERM_MID,  50)
+
 #else
         COMBO(cb_prcnt,     &kp PRCNT,   LT1 LT0,     DEF,     COMBO_TERM_MID,  200)
         COMBO(cb_tilde,     &kp TILDE,   LB1 LM0,     DEF,     COMBO_TERM_MID,  200)
@@ -87,7 +89,6 @@
 
         // COMBO(cb_qe,        &qexcl,         RB2 RB3,     DEF,     COMBO_TERM_MID,  50)
         // COMBO(cb_qe,        &qexcl,         RB2 RB3,     DEF,     COMBO_TERM_MID,  50)
-        COMBO(cb_under,     &kp UNDER,   RM0 RB0,     DEF,     COMBO_TERM_MID,  50)
         COMBO(cb_minus,     &kp MINUS,   RM1 RB1,     DEF NUM, COMBO_TERM_FAST, 200)
 
 

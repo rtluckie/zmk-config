@@ -25,7 +25,7 @@ layers:
   - {t: L, h: '$$mdi:apple-keyboard-control$$'}
   - ;
   - $$mdi:repeat$$
-  - ''
+  - {t: MSE, h: '$$mdi:toggle-switch$$'}
   - Z
   - {t: X, h: '$$mdi:microsoft-windows$$'}
   - {t: C, h: Ctl+Gui+ALT}
@@ -34,7 +34,7 @@ layers:
   - N
   - {t: M, h: '$$mdi:microsoft-windows$$'}
   - {t: ',', h: Ctl+Gui+RALT, s: ;}
-  - {t: ., h: '$$mdi:microsoft-windows$$'}
+  - {t: ., h: '$$mdi:microsoft-windows$$', s: ':'}
   - {t: '?', s: '!'}
   - ''
   - ''
@@ -131,63 +131,104 @@ layers:
   - {type: held}
   - ''
   - ''
-  INT:
+  MSE:
+  - {t: DEF, h: '$$mdi:toggle-switch$$'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
+  - {t: '$$mdi:cursor-default-click-outline$$', s: '4', type: text_with_symbol}
+  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-up$$', type: text_with_symbol}
+  - {t: '$$mdi:cursor-default-click-outline$$', s: '5', type: text_with_symbol}
+  - ''
+  - ''
+  - ''
+  - $$mdi:microsoft-windows$$
+  - ALT
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
+  - ''
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-down-thin$$', type: text_with_symbol}
+  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-left$$', type: text_with_symbol}
+  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-down$$', type: text_with_symbol}
+  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-right$$', type: text_with_symbol}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$mdi:cursor-default-click$$
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-left-thin$$', type: text_with_symbol}
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-right-thin$$', type: text_with_symbol}
+  - ''
+  - ''
+  - ''
+  - ''
+  - MSE_F
+  - $$mdi:cursor-default-click-outline$$
+  - $$mdi:cursor-default-click$$
+  - ''
+  MSE_F:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
+  - {t: '$$mdi:cursor-default-click-outline$$', s: '4', type: text_with_symbol}
+  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-up$$', type: text_with_symbol}
+  - {t: '$$mdi:cursor-default-click-outline$$', s: '5', type: text_with_symbol}
+  - ''
+  - ''
+  - ''
+  - $$mdi:microsoft-windows$$
+  - ALT
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
+  - ''
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-down-thin$$', type: text_with_symbol}
+  - '&fmmv MOVE_LEFT'
+  - '&fmmv MOVE_DOWN'
+  - '&fmmv MOVE_RIGHT'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$mdi:cursor-default-click$$
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-left-thin$$', type: text_with_symbol}
+  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-right-thin$$', type: text_with_symbol}
+  - ''
+  - ''
   - ''
   - ''
   - {type: held}
-  - {type: held}
-  - {type: held}
+  - $$mdi:cursor-default-click-outline$$
+  - $$mdi:cursor-default-click$$
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  MSE: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
-    '', '', '']
 combos:
-- p: [4, 5]
+- p: [5, 17]
   k: '%'
   l: [DEF]
-- p: [28, 17]
+- p: [17, 29]
   k: '~'
   l: [DEF]
-- p: [6, 7]
+- p: [6, 18]
   k: ^
   l: [DEF]
-- p: [31, 18]
-  k: {t: '''', s: '`'}
+- p: [18, 30]
+  k: _
   l: [DEF]
 - p: [4, 16]
   k: $
@@ -213,23 +254,17 @@ combos:
 - p: [9, 21]
   k: '&'
   l: [DEF]
-- p: [19, 31]
-  k: '-'
-  l: [DEF, NUM]
 - p: [20, 32]
   k: /
   l: [DEF, NUM]
 - p: [21, 33]
   k: '|'
   l: [DEF]
-- p: [26, 27]
-  k: Z
-  l: [DEF]
 - p: [3, 4]
   k: Q
   l: [DEF]
 - p: [2, 3]
-  k: V
+  k: {t: ESC, s: '`'}
   l: [DEF]
 - p: [14, 15]
   k: ESC
@@ -240,24 +275,16 @@ combos:
 - p: [27, 28]
   k: $$mdi:backspace-outline$$
   l: [DEF]
-- p: [2, 3, 4]
-  k: {t: INT, h: '$$mdi:circle-small$$'}
-  l: [DEF]
-  draw_separate: true
 - p: [14, 15, 16]
   k: $$mdi:keyboard-tab$$
   l: [DEF]
-  draw_separate: true
-- p: [32, 33]
-  k: {t: '?', s: '!'}
-  l: [DEF]
+- p: [19, 31]
+  k: '-'
+  l: [DEF, NUM]
 - p: [31, 32]
-  k: _
-  l: [DEF]
-- p: [7, 8]
   k: {t: '{', s: <}
   l: [DEF]
-- p: [8, 9]
+- p: [32, 33]
   k: {t: '}', s: '>'}
   l: [DEF]
 - p: [19, 20]
@@ -269,32 +296,15 @@ combos:
 - p: [19, 20, 21]
   k: {t: (), s: '{}'}
   l: [DEF]
-  draw_separate: true
-- p: [7, 8, 9]
+- p: [31, 32, 33]
   k: {t: '[]', s: <>}
   l: [DEF]
-  draw_separate: true
 - p: [16, 19]
   k: $$mdi:caps-lock$$
   l: [DEF]
-  draw_separate: true
 - p: [13, 22]
   k: $$mdi:progress-download$$
   l: [FUN]
-  a: top
-  o: 2.4
 - p: [5, 6]
   k: $$mdi:lock-open-outline$$
   l: [FUN]
-- p: [5, 17]
-  k: F11
-  l: [FUN]
-- p: [26, 27]
-  k: Gui+Z
-  l: [NAV]
-- p: [27, 28]
-  k: Sft+Gui+Z
-  l: [NAV]
-- p: [2, 3]
-  k: $$mdi:volume-mute$$
-  l: [NUM]
