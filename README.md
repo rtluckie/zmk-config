@@ -18,6 +18,13 @@ Additional features are provided by the following [modules](https://zmk.dev/docs
 ## Boards and Keymaps
 
 <details open>
+  <summary><a href="https://github.com/foostan/crkbd">Corne</a> (36-42 keys)</summary>
+  <img src="keymap-drawer/corne.svg" >
+
+  _(keymap image created with [caksoylar/keymap-drawer](https://github.com/caksoylar/keymap-drawer))_
+</details>
+
+<details>
   <summary><a href="https://github.com/AlaaSaadAbdo/Rommana">Rommana</a> (26-30 keys)</summary>
   <img src="keymap-drawer/rommana.svg" >
 
