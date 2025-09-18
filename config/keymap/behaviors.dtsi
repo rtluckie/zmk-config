@@ -29,19 +29,19 @@
             flavor = "balanced";
             tapping-term-ms = <220>;
             quick-tap-ms = <220>;
-            bindings = <&mo>, <&bspc_del>;
+            bindings = <&mo>, <&mm_bspc_del>;
             display-name = "Layer-BSp";
         };
 
-        lt_qt: layer_tap_qt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <220>;
-            bindings = <&mo>, <&qt_grv>;
-            display-name = "Layer-Qt";
-        };
+        // lt_qt: layer_tap_qt {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     flavor = "balanced";
+        //     tapping-term-ms = <220>;
+        //     quick-tap-ms = <220>;
+        //     bindings = <&mo>, <&mm_qt_grv>;
+        //     display-name = "Layer-Qt";
+        // };
 
         lt_e: layer_tap_ad_e {
             compatible = "zmk,behavior-hold-tap";
@@ -63,14 +63,14 @@
             display-name = "Layer-Layer";
         };
 
-        ht_qu: hold_tap_qu {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            bindings = <&kp>, <&qu>;
-            display-name = "Hold-Qu";
-        };
+        // ht_qu: hold_tap_qu {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     flavor = "tap-preferred";
+        //     tapping-term-ms = <220>;
+        //     bindings = <&kp>, <&qu>;
+        //     display-name = "Hold-Qu";
+        // };
 
         hrml: home_row_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -280,30 +280,30 @@
 
 / {
     mod-morph {
-        SM(qexcl,    SM Qmark-Excl, &kp QMARK,  &kp EXCL)
-        SM(comma_semi_meh, SM Comma-Semi-Meh, &hrmr RMEH COMMA, &kp SEMI)
-        SM(dot_colon_gui, SM -Colon-Gui, &hrmr RGUI DOT, &kp COLON)
+        SM(mm_qexcl,    SM Qmark-Excl, &kp QMARK,  &kp EXCL)
+        SM(mm_comma_semi_meh, SM Comma-Semi-Meh, &hrmr RMEH COMMA, &kp SEMI)
+        SM(mm_dot_colon_gui, SM -Colon-Gui, &hrmr RGUI DOT, &kp COLON)
 
-        SM(bspc_del, SM BSp-Del,    &kp BSPC,      &kp DEL)
+        SM(mm_bspc_del, SM BSp-Del,    &kp BSPC,      &kp DEL)
 
-        SM(sqt_dqt,       SM Sqt-Dqt,       &kp SQT,   &kp DQT)
-        CM(qt_grv,        CM Qt-Grv,        &sqt_dqt,     &kp GRAVE)
-        SM(sqt_dqt_macro, SM Macro Sqt-Dqt, &sqt_macro,   &dqt_macro)
-        SM(grv_dgrv,      SM Grv-DGrqu,     &kp GRAVE, &dgrv_macro)
+        // SM(mm_sqt_dqt,       SM Sqt-Dqt,       &kp SQT,   &kp DQT)
+        // CM(mm_qt_grv,        CM Qt-Grv,        &td_sqt_dqt,     &kp GRAVE)
+        // SM(mm_sqt_dqt, SM Macro Sqt-Dqt, &sqt_macro,   &dqt_macro)
+        // SM(mm_grv_dgrv,      SM Grv-DGrqu,     &kp GRAVE, &dgrv_macro)
 
-        SM(lpar_lbkt, SM LPar-LBkt,     &kp LPAR, &kp LBKT)
-        SM(rpar_rbkt, SM RPar-RBkt,     &kp RPAR, &kp RBKT)
-        SM(par_bkt,   SM Macro Par-Bkt, &par_macro,  &bkt_macro)
+        SM(mm_lpar_lbkt, SM LPar-LBkt,     &kp LPAR, &kp LBKT)
+        SM(mm_rpar_rbkt, SM RPar-RBkt,     &kp RPAR, &kp RBKT)
+        SM(mm_par_bkt,   SM Macro Par-Bkt, &par_macro,  &bkt_macro)
 
-        SM(lbrc_lt, SM LBrc-LT,       &kp LBRC, &kp LT)
-        SM(rbrc_gt, SM RBrc-GT,       &kp RBRC, &kp GT)
-        SM(brc_lgt, SM Macro Brc-LGT, &brc_macro,  &lgt_macro)
+        SM(mm_lbrc_lt, SM LBrc-LT,       &kp LBRC, &kp LT)
+        SM(mm_rbrc_gt, SM RBrc-GT,       &kp RBRC, &kp GT)
+        SM(mm_brc_lgt, SM Macro Brc-LGT, &brc_macro,  &lgt_macro)
 
-        SM(p_tab_desk, SM Prev Tab-Desk, &kp LC(LS(TAB)), &kp LC(LG(LEFT)))
-        SM(n_tab_desk, SM Next Tab-Desk, &kp LC(TAB), &kp LC(LG(RIGHT)))
+        SM(mm_p_tab_desk, SM Prev Tab-Desk, &kp LC(LS(TAB)), &kp LC(LG(LEFT)))
+        SM(mm_n_tab_desk, SM Next Tab-Desk, &kp LC(TAB), &kp LC(LG(RIGHT)))
 
-        MASKED(left_masked, Masked Left, (MOD_RSFT|MOD_LSFT), &kp LEFT)
-        MASKED(u_masked,    Masked U,    (MOD_RSFT|MOD_LSFT), &kp U)
+        MASKED(mm_left_masked, Masked Left, (MOD_RSFT|MOD_LSFT), &kp LEFT)
+        // MASKED(u_masked,    Masked U,    (MOD_RSFT|MOD_LSFT), &kp U)
     };
 };
 
@@ -319,17 +319,18 @@
 
 / {
     tap-dance {
-        TD(td_sqt_dqt, Sqt-Dqt, &sqt_dqt, &sqt_dqt_macro)
+        // TD(td_sqt_dqt, Sqt-Dqt, &sqt_dqt, &mm_sqt_dqt)
 
-        TD(bts_0, TD BT0 Sel-Disc, &bts 0, &bt BT_DISC 0)
-        TD(bts_1, TD BT1 Sel-Disc, &bts 1, &bt BT_DISC 1)
-        TD(bts_2, TD BT2 Sel-Disc, &bts 2, &bt BT_DISC 2)
+        TD(td_bts_0, TD BT0 Sel-Disc, &bts 0, &bt BT_DISC 0)
+        TD(td_bts_1, TD BT1 Sel-Disc, &bts 1, &bt BT_DISC 1)
+        TD(td_bts_2, TD BT2 Sel-Disc, &bts 2, &bt BT_DISC 2)
 
-        TD(kns_lock, TD CLCK-NLCK-SLCK, &kp CLCK, &kp KP_NLCK, &kp SLCK)
+        TD(td_kns_lock, TD CLCK-NLCK-SLCK, &kp CLCK, &kp KP_NLCK, &kp SLCK)
 
-        TD(pp_n, TD PlayPause-Next, &kp C_PP, &kp C_NEXT)
-
-        TD(close_reopen, TD Tab Close-Reopen, &mt LA(F4) LC(W), &kp LC(LS(T)))
+        TD(td_pp_n, TD PlayPause-Next, &kp C_PP, &kp C_NEXT)
+        TD(td_copy_cut, TD Copy-Cut, &kp LG(C), &kp LG(X))
+        TD(td_undo_redo, TD Undo-Redo, &kp LG(Z), &kp LG(LS(Z)))
+        TD(td_close_reopen, TD Tab Close-Reopen, &mt LA(F4) LC(W), &kp LC(LS(T)))
     };
 };
 
@@ -374,15 +375,15 @@
             display-name = "Adaptive U";
         };
 
-        ad_comma: adaptive_comma {
-            compatible = "zmk,behavior-antecedent-morph";
-            #binding-cells = <0>;
-            defaults = <&kp COMMA>;
-            bindings =   <&kp EQUAL>, <&include_macro>, <&kp FSLH>;
-            antecedents = <EXCL         HASH           DOT>;
-            max-delay-ms = <1000>;
-            display-name = "Adaptive Comma";
-        };
+        // ad_comma: adaptive_comma {
+        //     compatible = "zmk,behavior-antecedent-morph";
+        //     #binding-cells = <0>;
+        //     defaults = <&kp COMMA>;
+        //     bindings =   <&kp EQUAL>, <&include_macro>, <&kp FSLH>;
+        //     antecedents = <EXCL         HASH           DOT>;
+        //     max-delay-ms = <1000>;
+        //     display-name = "Adaptive Comma";
+        // };
 
         ad_e: adaptive_e {
             compatible = "zmk,behavior-antecedent-morph";

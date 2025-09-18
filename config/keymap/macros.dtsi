@@ -6,7 +6,7 @@
         bindings                                                                    \
             = <& ## NAME ## _sym1_masked>                                           \
             , <& ## NAME ## _sym2_masked>                                           \
-            , <&left_masked>;                                                       \
+            , <&mm_left_masked>;                                                       \
         display-name = #DISPLAY_NAME;                                               \
     )
 
@@ -20,12 +20,7 @@
         AP(brc_macro,  Macro Brc , &kp LBRC,  &kp RBRC)
         AP(lgt_macro,  Macro GLT,  &kp LT,    &kp GT)
 
-        ZMK_MACRO(qu,
-            bindings
-                = <&kp Q>
-                , <&u_masked>;
-            display-name = "Macro Qu";
-        )
+
 
         ZMK_MACRO(r_mods,
             bindings
@@ -64,12 +59,6 @@
             display-name = "Select Line (Next)";
         )
 
-        ZMK_MACRO(include_macro,
-            wait-ms = <2>;
-            bindings
-                = <&kp I &kp N &kp C &kp L &kp U &kp D &kp E &kp SPACE>;
-            display-name = "Macro 'include '";
-        )
 
         ZMK_MACRO1(bts,
             bindings
