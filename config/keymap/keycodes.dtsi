@@ -1,0 +1,36 @@
+
+// Hyper Key: ⇧ ⌥ ^ ⌘ (Shift + Alt + Control + Command)
+#define LEFT_HYPER             LS(LC(LG(LALT)))
+#define RIGHT_HYPER            RS(RC(RG(RALT)))
+#define LHYP                   LEFT_HYPER
+#define RHYP                   RIGHT_HYPER
+// Hyper Key function like LG and RG
+#define LH(keycode)            LS(LA(LC(LG(keycode))))
+#define RH(keycode)            RS(RA(RC(RG(keycode))))
+
+// Meh Key: ⇧ ⌥ ^ (Shift + Alt + Control)
+#define LEFT_MEH             LC(LG(LALT))
+#define RIGHT_MEH            RC(RG(RALT))
+#define LMEH                 LEFT_MEH
+#define RMEH                 RIGHT_MEH
+// Meh Key function like LG and RG
+#define LM(keycode)            LC(LG(LA(keycode)))
+#define RM(keycode)            RC(RG(RA(keycode)))
+
+// Shortcuts
+#define X_UNDO               LG(Z)
+#define X_REDO               LS(LG(Z))
+#define X_CUT                LG(X)
+#define X_COPY               LG(C)
+#define X_PASTE              LG(V)
+#define X_PASTE_P            LS(LG(V))
+#define X_BCK                LG(LBKT)
+#define X_FWD                LG(RBKT)
+#define X_TPREV              LS(LC(TAB))
+#define X_TNEXT              LC(TAB)
+#define X_SPREV              LC(LEFT)
+#define X_SNEXT              LC(RIGHT)
+
+
+#define CT(KEY) &mt LC(KEY) KEY
+

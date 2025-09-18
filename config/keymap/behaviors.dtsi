@@ -2,7 +2,7 @@
 #include <behaviors/rgbled_widget.dtsi>
 
 &caps_word {
-    continue-list = <BACKSPACE DELETE DE_UNDER DE_MINUS>;
+    continue-list = <BACKSPACE DELETE UNDER MINUS>;
 };
 
 &sk {
@@ -71,36 +71,146 @@
             bindings = <&kp>, <&qu>;
             display-name = "Hold-Qu";
         };
+
+        hrml: home_row_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_R >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        hrmr: home_row_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_L >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        hrsl: home_row_mods_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_R >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        hrsr: home_row_mods_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            //require-prior-idle-ms = <125>;
+            hold-trigger-key-positions = < KEYS_L >;
+            //hold-trigger-on-release; // delay positional check until key release
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        // /omit-if-no-ref/ hrsq: home_row_semi_quote {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        //     quick-tap-ms = <150>;
+        //     flavor = "balanced";
+        //     require-prior-idle-ms = <125>;
+        //     //hold-trigger-key-positions = <list of all lhs keys>;
+        //     //hold-trigger-on-release; // delay positional check until key release
+        //     bindings =
+        //         <&kp>,
+        //         <&semiquote>;
+        // };
+        lttp: layer_tap_tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings =
+                <&mo>,
+                <&kp>;
+        };
+        lthp: layer_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "hold-preferred";
+            bindings =
+                <&mo>,
+                <&kp>;
+        };
+        mttp: mod_tap_tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "tap-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
+        mthp: mod_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            //require-prior-idle-ms = <125>;
+            flavor = "hold-preferred";
+            bindings =
+                <&kp>,
+                <&kp>;
+        };
     };
 };
 
 
-#define HM(NAME, DISPLAY_NAME, TAP, HT_KEYPOS, RPI, ...)    \
-    NAME: NAME {                                            \
-        compatible = "zmk,behavior-hold-tap";               \
-        #binding-cells = <2>;                               \
-        flavor = "balanced";                                \
-        tapping-term-ms = <280>;                            \
-        quick-tap-ms = <175>;                               \
-        require-prior-idle-ms = <RPI>;                      \
-        bindings = <&kp>, <TAP>;                            \
-        hold-trigger-key-positions = <HT_KEYPOS THUMBS>;    \
-        hold-trigger-on-release;                            \
-        display-name = #DISPLAY_NAME;                       \
-        __VA_ARGS__                                         \
-    };
+// #define HM(NAME, DISPLAY_NAME, TAP, HT_KEYPOS, RPI, TTM, QTM ...)    \
+//     NAME: NAME {                                            \
+//         compatible = "zmk,behavior-hold-tap";               \
+//         #binding-cells = <2>;                               \
+//         flavor = "balanced";                                \
+//         tapping-term-ms = <TTM>;                            \
+//         quick-tap-ms = <QTM>;                               \
+//         // require-prior-idle-ms = <RPI>;                      \
+//         bindings = <&kp>, <TAP>;                            \
+//         hold-trigger-key-positions = <HT_KEYPOS THUMBS>;    \
+//         // hold-trigger-on-release; // delay positional check until key release \
+//         display-name = #DISPLAY_NAME;                       \
+//         __VA_ARGS__                                         \
+//     };
 
-/ {
-    home-row-mod {
-        HM(hsl,   HRM Shift Left,      &kp,  KEYS_R,   0, hold-while-undecided;)
-        HM(hcl,   HRM Ctrl Left,       &kp,  KEYS_R, 200, hold-while-undecided;)
-        HM(hml,   HRM Mods Left,       &kp,  KEYS_R, 200)
-        HM(hml_m, HRM Mods-Mouse Left, &mkp, KEYS_R, 200)
-        HM(hsr,   HRM Shift Right,     &kp,  KEYS_L,   0, hold-while-undecided;)
-        HM(hcr,   HRM Ctrl Right,      &kp,  KEYS_L, 200, hold-while-undecided;)
-        HM(hmr,   HRM Mods Left,       &kp,  KEYS_L, 200)
-    };
-};
+// / {
+//     home-row-mod {
+//         HM(hsl,   HRM Shift Left,      &kp,  KEYS_R,   0, hold-while-undecided;)
+//         HM(hcl,   HRM Ctrl Left,       &kp,  KEYS_R, 200, hold-while-undecided;)
+//         HM(hml,   HRM Mods Left,       &kp,  KEYS_R, 200)
+//         HM(hml_m, HRM Mods-Mouse Left, &mkp, KEYS_R, 200)
+//         HM(hsr,   HRM Shift Right,     &kp,  KEYS_L,   0, hold-while-undecided;)
+//         HM(hcr,   HRM Ctrl Right,      &kp,  KEYS_L, 200, hold-while-undecided;)
+//         HM(hmr,   HRM Mods Left,       &kp,  KEYS_L, 200)
+//     };
+// };
 
 
 #define SM(NAME, DISPLAY_NAME, TAP, SHIFTED)    \
@@ -109,28 +219,56 @@
         #binding-cells = <0>;                   \
         bindings = <TAP>, <SHIFTED>;            \
         mods = <(MOD_RSFT|MOD_LSFT)>;           \
-        keep-mods = <(MOD_RSFT)>;               \
         display-name = #DISPLAY_NAME;           \
     };
-
-#define CM(NAME, DISPLAY_NAME, TAP, CONTROLED)  \
+#define SMK(NAME, DISPLAY_NAME, TAP, MODDED)    \
     NAME: NAME {                                \
         compatible = "zmk,behavior-mod-morph";  \
         #binding-cells = <0>;                   \
-        bindings = <TAP>, <CONTROLED>;          \
+        bindings = <TAP>, <MODDED>;            \
+        mods = <(MOD_RSFT|MOD_LSFT)>;           \
+        keep-mods = <(MOD_LSFT|MOD_RSFT)>;               \
+        display-name = #DISPLAY_NAME;           \
+    };
+
+
+#define CM(NAME, DISPLAY_NAME, TAP, MODDED)  \
+    NAME: NAME {                                \
+        compatible = "zmk,behavior-mod-morph";  \
+        #binding-cells = <0>;                   \
+        bindings = <TAP>, <MODDED>;          \
         mods = <(MOD_RCTL|MOD_LCTL)>;           \
         display-name = #DISPLAY_NAME;           \
     };
 
-#define GM(NAME, DISPLAY_NAME, TAP, GUIED)      \
+#define CMK(NAME, DISPLAY_NAME, TAP, MODDED)  \
     NAME: NAME {                                \
         compatible = "zmk,behavior-mod-morph";  \
         #binding-cells = <0>;                   \
-        bindings = <TAP>, <GUIED>;              \
-        mods = <(MOD_RGUI|MOD_LGUI)>;           \
+        bindings = <TAP>, <MODDED>;          \
+        mods = <(MOD_RCTL|MOD_LCTL)>;           \
+        keep-mods = <(MOD_LCTL|MOD_RCTL)>;               \
         display-name = #DISPLAY_NAME;           \
     };
 
+
+#define GM(NAME, DISPLAY_NAME, TAP, MODDED)      \
+    NAME: NAME {                                \
+        compatible = "zmk,behavior-mod-morph";  \
+        #binding-cells = <0>;                   \
+        bindings = <TAP>, <MODDED>;              \
+        mods = <(MOD_RGUI|MOD_LGUI)>;           \
+        display-name = #DISPLAY_NAME;           \
+    };
+#define GMK(NAME, DISPLAY_NAME, TAP, MODDED)      \
+    NAME: NAME {                                \
+        compatible = "zmk,behavior-mod-morph";  \
+        #binding-cells = <0>;                   \
+        bindings = <TAP>, <MODDED>;              \
+        mods = <(MOD_RGUI|MOD_LGUI)>;           \
+        keep-mods = <(MOD_LGUI|MOD_RGUI)>;               \
+        display-name = #DISPLAY_NAME;           \
+    };
 #define MASKED(NAME, DISPLAY_NAME, MODS, BINDING)   \
     NAME: NAME {                                    \
         compatible = "zmk,behavior-mod-morph";      \
@@ -142,20 +280,23 @@
 
 / {
     mod-morph {
-        SM(qexcl,    SM Qmark-Excl, &kp DE_QMARK,  &kp DE_EXCL)
+        SM(qexcl,    SM Qmark-Excl, &kp QMARK,  &kp EXCL)
+        SM(comma_semi_meh, SM Comma-Semi-Meh, &hrmr RMEH COMMA, &kp SEMI)
+        SM(dot_colon_gui, SM -Colon-Gui, &hrmr RGUI DOT, &kp COLON)
+
         SM(bspc_del, SM BSp-Del,    &kp BSPC,      &kp DEL)
 
-        SM(sqt_dqt,       SM Sqt-Dqt,       &kp DE_SQT,   &kp DE_DQT)
-        CM(qt_grv,        CM Qt-Grv,        &sqt_dqt,     &kp DE_ACUTE)
+        SM(sqt_dqt,       SM Sqt-Dqt,       &kp SQT,   &kp DQT)
+        CM(qt_grv,        CM Qt-Grv,        &sqt_dqt,     &kp GRAVE)
         SM(sqt_dqt_macro, SM Macro Sqt-Dqt, &sqt_macro,   &dqt_macro)
-        SM(grv_dgrv,      SM Grv-DGrqu,     &kp DE_GRAVE, &dgrv_macro)
+        SM(grv_dgrv,      SM Grv-DGrqu,     &kp GRAVE, &dgrv_macro)
 
-        SM(lpar_lbkt, SM LPar-LBkt,     &kp DE_LPAR, &kp DE_LBKT)
-        SM(rpar_rbkt, SM RPar-RBkt,     &kp DE_RPAR, &kp DE_RBKT)
+        SM(lpar_lbkt, SM LPar-LBkt,     &kp LPAR, &kp LBKT)
+        SM(rpar_rbkt, SM RPar-RBkt,     &kp RPAR, &kp RBKT)
         SM(par_bkt,   SM Macro Par-Bkt, &par_macro,  &bkt_macro)
 
-        SM(lbrc_lt, SM LBrc-LT,       &kp DE_LBRC, &kp DE_LT)
-        SM(rbrc_gt, SM RBrc-GT,       &kp DE_RBRC, &kp DE_GT)
+        SM(lbrc_lt, SM LBrc-LT,       &kp LBRC, &kp LT)
+        SM(rbrc_gt, SM RBrc-GT,       &kp RBRC, &kp GT)
         SM(brc_lgt, SM Macro Brc-LGT, &brc_macro,  &lgt_macro)
 
         SM(p_tab_desk, SM Prev Tab-Desk, &kp LC(LS(TAB)), &kp LC(LG(LEFT)))
@@ -227,8 +368,8 @@
             compatible = "zmk,behavior-antecedent-morph";
             #binding-cells = <0>;
             defaults = <&kp U>;
-            bindings =   <&kp DE_EQUAL>, <&kp DE_EQUAL>;
-            antecedents = <DE_LT           DE_GT>;
+            bindings =   <&kp EQUAL>, <&kp EQUAL>;
+            antecedents = <LT           GT>;
             max-delay-ms = <1000>;
             display-name = "Adaptive U";
         };
@@ -236,9 +377,9 @@
         ad_comma: adaptive_comma {
             compatible = "zmk,behavior-antecedent-morph";
             #binding-cells = <0>;
-            defaults = <&kp DE_COMMA>;
-            bindings =   <&kp DE_EQUAL>, <&include_macro>, <&kp DE_FSLH>;
-            antecedents = <DE_EXCL         DE_HASH           DE_DOT>;
+            defaults = <&kp COMMA>;
+            bindings =   <&kp EQUAL>, <&include_macro>, <&kp FSLH>;
+            antecedents = <EXCL         HASH           DOT>;
             max-delay-ms = <1000>;
             display-name = "Adaptive Comma";
         };
@@ -247,8 +388,8 @@
             compatible = "zmk,behavior-antecedent-morph";
             #binding-cells = <0>;
             defaults = <&kp E>;
-            bindings =   <&kp DE_GT>, <&kp DE_GT>, <&kp DE_GT>;
-            antecedents = <DE_MINUS     DE_EQUAL     DE_PIPE>;
+            bindings =   <&kp GT>, <&kp GT>, <&kp GT>;
+            antecedents = <MINUS     EQUAL     PIPE>;
             max-delay-ms = <1000>;
             display-name = "Adaptive E";
         };
