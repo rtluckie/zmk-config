@@ -1,167 +1,115 @@
 layout: {zmk_keyboard: akohekohe}
 layers:
   DEF:
+  - Q
   - W
-  - F
-  - P
-  - B
-  - J
-  - L
+  - {t: E, h: Sft+Ctl+Gui+ALT}
   - U
+  - T
   - Y
-  - {t: R, h: '$$mdi:microsoft-windows$$'}
-  - {t: S, h: ALT}
-  - {t: T, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
-  - K
-  - X
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: I, h: ALT}
-  - {t: O, h: '$$mdi:microsoft-windows$$'}
-  - {t: C, h: RALT}
+  - U
+  - {t: I, h: Sft+Ctl+Gui+RALT}
+  - A
+  - {t: S, h: LCTL}
+  - {t: D, h: ALT}
+  - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
   - G
-  - D
-  - M
-  - {t: ',', s: ;}
-  - {t: ., h: RALT, s: ':'}
-  - {t: '$$mdi:keyboard-space$$', h: NAV}
+  - H
+  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: K, h: RALT}
+  - {t: L, h: '$$mdi:apple-keyboard-control$$'}
+  - ;
+  - {t: X, h: '$$mdi:microsoft-windows$$'}
+  - {t: C, h: Ctl+Gui+ALT}
+  - {t: V, h: '$$mdi:microsoft-windows$$'}
+  - {t: M, h: '$$mdi:microsoft-windows$$'}
+  - {t: ',', h: Ctl+Gui+RALT, s: ;}
+  - {t: ., h: '$$mdi:microsoft-windows$$'}
+  - {t: ESC, s: '`'}
   - {t: E, h: NUM}
-  NAV:
-  - {t: '$$mdi:arrow-left-bold-box$$', s: '$$mdi:arrow-left-bold-box-outline$$'}
-  - {t: '$$mdi:arrow-right-bold-box$$', s: '$$mdi:arrow-right-bold-box-outline$$'}
-  - $$mdi:swap-horizontal$$
-  - {t: '$$mdi:close-box-outline$$', s: '$$mdi:open-in-new$$'}
-  - Page Up
-  - HOME
-  - $$mdi:arrow-up$$
-  - END
-  - $$mdi:microsoft-windows$$
-  - {t: '$$mdi:cursor-default-click-outline$$', h: ALT, s: '4', type: text_with_symbol}
-  - {t: '$$mdi:cursor-default-click-outline$$', h: '$$mdi:apple-keyboard-control$$', s: '5', type: text_with_symbol}
-  - {t: '$$mdi:text-search$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - $$mdi:select-all$$
-  - Page Down
-  - $$mdi:arrow-left$$
-  - $$mdi:arrow-down$$
-  - $$mdi:arrow-right$$
-  - {t: '$$mdi:select-compare$$', s: '$$mdi:arrow-right-thin$$', type: text_with_symbol}
-  - $$mdi:content-cut$$
-  - $$mdi:content-copy$$
-  - $$mdi:content-paste$$
-  - $$mdi:backspace-outline$$
-  - $$mdi:keyboard-tab$$
-  - $$mdi:backspace-reverse-outline$$
-  - {type: held}
-  - {t: '$$mdi:keyboard-return$$', h: NUM}
+  NAV: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
   NUM:
-  - $$mdi:volume-minus$$
-  - $$mdi:volume-plus$$
-  - {t: '$$mdi:play-pause$$', s: '$$mdi:skip-forward$$'}
-  - $$phosphor:bold/sun$$
-  - {t: ., s: ':'}
-  - '7'
-  - '8'
-  - '9'
-  - $$mdi:microsoft-windows$$
-  - ALT
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-shift$$
-  - $$phosphor:bold/sun-dim$$
-  - '0'
-  - '4'
-  - '5'
-  - '6'
-  - $$mdi:keyboard-return$$
-  - INS
-  - Pause Break
-  - $$mdi:monitor-screenshot$$
-  - '1'
-  - '2'
-  - '3'
-  - {t: MSE, h: NAV}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {type: held}
   FUN:
-  - F7
-  - F8
-  - F9
-  - F12
-  - {t: '$$mdi:bluetooth$$', s: '$$mdi:close-thick$$', type: text_with_symbol}
-  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
-  - {t: '$$mdi:bluetooth$$', s: '$$mdi:help-circle-outline$$', type: text_with_symbol}
-  - $$mdi:battery-heart-outline$$
-  - $$mdi:progress-download$$
-  - F4
-  - F5
-  - F6
-  - F10
-  - $$mdi:usb$$
-  - {t: '$$mdi:bluetooth-connect$$', s: '0', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', s: '1', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', s: '2', type: text_with_symbol}
-  - $$mdi:progress-download$$
-  - F1
-  - F2
-  - F3
-  - $$mdi:apple-keyboard-caps$$
-  - {t: '$$mdi:keyboard-variant$$', s: '$$mdi:arrow-up-bold$$', type: text_with_symbol}
-  - $$mdi:power$$
-  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {type: held}
   INT:
   - {type: held}
   - {type: held}
   - {type: held}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - Ü
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - ß
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - Ä
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - Ö
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  MSE:
   - ''
   - ''
   - ''
   - ''
-  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
-  - {t: '$$mdi:cursor-default-click-outline$$', s: '4', type: text_with_symbol}
-  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-up$$', type: text_with_symbol}
-  - {t: '$$mdi:cursor-default-click-outline$$', s: '5', type: text_with_symbol}
-  - $$mdi:microsoft-windows$$
-  - ALT
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-shift$$
-  - ''
-  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-down-thin$$', type: text_with_symbol}
-  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-left$$', type: text_with_symbol}
-  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-down$$', type: text_with_symbol}
-  - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-right$$', type: text_with_symbol}
   - ''
   - ''
   - ''
   - ''
-  - $$mdi:cursor-default-click$$
-  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-left-thin$$', type: text_with_symbol}
-  - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-right-thin$$', type: text_with_symbol}
-  - {type: held}
-  - {t: '$$mdi:cursor-default-click-outline$$', type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  MSE: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [2, 3]
   k: '%'
@@ -173,7 +121,7 @@ combos:
   k: ^
   l: [DEF]
 - p: [21, 13]
-  k: {t: '''', s: ´}
+  k: {t: '''', s: '`'}
   l: [DEF]
 - p: [2, 11]
   k: $
@@ -189,9 +137,6 @@ combos:
   l: [DEF]
 - p: [10, 19]
   k: \
-  l: [DEF]
-- p: [9, 18]
-  k: €
   l: [DEF]
 - p: [5, 14]
   k: +
@@ -279,10 +224,10 @@ combos:
   k: F11
   l: [FUN]
 - p: [18, 19]
-  k: $$mdi:undo$$
+  k: Gui+Z
   l: [NAV]
 - p: [19, 20]
-  k: $$mdi:redo$$
+  k: Sft+Gui+Z
   l: [NAV]
 - p: [0, 1]
   k: $$mdi:volume-mute$$

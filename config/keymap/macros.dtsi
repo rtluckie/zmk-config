@@ -12,13 +12,13 @@
 
 / {
     macros {
-        AP(par_macro,  Macro Par,  &kp DE_LPAR,  &kp DE_RPAR)
-        AP(bkt_macro,  Macro Bkt,  &kp DE_LBKT,  &kp DE_RBKT)
-        AP(sqt_macro,  Macro Sqt,  &kp DE_SQT,   &kp DE_SQT)
-        AP(dqt_macro,  Macro Dqt,  &kp DE_DQT,   &kp DE_DQT)
-        AP(dgrv_macro, Macro Grv,  &kp DE_GRAVE, &kp DE_GRAVE)
-        AP(brc_macro,  Macro Brc , &kp DE_LBRC,  &kp DE_RBRC)
-        AP(lgt_macro,  Macro GLT,  &kp DE_LT,    &kp DE_GT)
+        AP(par_macro,  Macro Par,  &kp LPAR,  &kp RPAR)
+        AP(bkt_macro,  Macro Bkt,  &kp LBKT,  &kp RBKT)
+        AP(sqt_macro,  Macro Sqt,  &kp SQT,   &kp SQT)
+        AP(dqt_macro,  Macro Dqt,  &kp DQT,   &kp DQT)
+        AP(dgrv_macro, Macro Grv,  &kp GRAVE, &kp GRAVE)
+        AP(brc_macro,  Macro Brc , &kp LBRC,  &kp RBRC)
+        AP(lgt_macro,  Macro GLT,  &kp LT,    &kp GT)
 
         ZMK_MACRO(qu,
             bindings
