@@ -14,37 +14,78 @@ layers:
   - P
   - $$mdi:progress-download$$
   - ''
-  - A
+  - {t: A, h: SHRT0}
   - {t: S, h: LCTL}
   - {t: D, h: ALT}
   - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
   - G
   - H
-  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: J, h: '$$material:shift$$'}
   - {t: K, h: RALT}
   - {t: L, h: '$$mdi:apple-keyboard-control$$'}
-  - ;
+  - {t: ;, h: SHRT0}
   - $$mdi:repeat$$
   - {t: MSE, h: '$$mdi:toggle-switch$$'}
-  - Z
-  - {t: X, h: '$$mdi:microsoft-windows$$'}
+  - {t: Z, h: ACT0}
+  - {t: X, h: '$$tabler:command$$'}
   - {t: C, h: Ctl+Gui+ALT}
-  - {t: V, h: '$$mdi:microsoft-windows$$'}
+  - {t: V, h: '$$tabler:command$$'}
   - B
   - N
-  - {t: M, h: '$$mdi:microsoft-windows$$'}
+  - {t: M, h: '$$tabler:command$$'}
   - {t: ',', h: Ctl+Gui+RALT, s: ;}
-  - {t: ., h: '$$mdi:microsoft-windows$$', s: ':'}
-  - {t: '?', s: '!'}
+  - {t: ., h: '$$tabler:command$$', s: ':'}
+  - {t: '?', h: ACT0, s: '!'}
   - ''
-  - ''
-  - {t: '$$mdi:backspace-outline$$', s: '$$mdi:backspace-reverse-outline$$'}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:backspace-outline$$', h: NAV, s: '$$mdi:backspace-reverse-outline$$'}
   - {t: ESC, s: '`'}
-  - {t: E, h: NUM}
+  - NUM
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-return$$
-  NAV: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
-    '', '', '']
+  NAV:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Page Up
+  - HOME
+  - $$mdi:arrow-up$$
+  - END
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Page Down
+  - $$mdi:arrow-left$$
+  - $$mdi:arrow-down$$
+  - $$mdi:arrow-right$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
   NUM:
   - ''
   - ''
@@ -53,6 +94,9 @@ layers:
   - ''
   - ''
   - ''
+  - '7'
+  - '8'
+  - '9'
   - ''
   - ''
   - ''
@@ -62,6 +106,9 @@ layers:
   - ''
   - ''
   - ''
+  - '4'
+  - '5'
+  - '6'
   - ''
   - ''
   - ''
@@ -70,16 +117,10 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - '0'
+  - '1'
+  - '2'
+  - '3'
   - ''
   - ''
   - ''
@@ -89,53 +130,53 @@ layers:
   - ''
   - ''
   FUN:
+  - $$mdi:progress-download$$
+  - Q
+  - F9
+  - {t: F8, h: Sft+Ctl+Gui+ALT}
+  - F7
+  - F12
+  - F24
+  - F19
+  - {t: F20, h: Sft+Ctl+Gui+RALT}
+  - F21
+  - P
+  - $$mdi:progress-download$$
+  - ''
+  - A
+  - {t: F6, h: LCTL}
+  - {t: F5, h: ALT}
+  - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
+  - F11
+  - F23
+  - {t: F16, h: '$$material:shift$$'}
+  - {t: F17, h: RALT}
+  - {t: F18, h: '$$mdi:apple-keyboard-control$$'}
+  - ;
+  - $$mdi:repeat$$
+  - {t: MSE, h: '$$mdi:toggle-switch$$'}
+  - Z
+  - {t: F3, h: '$$tabler:command$$'}
+  - {t: F2, h: Ctl+Gui+ALT}
+  - {t: F1, h: '$$tabler:command$$'}
+  - F10
+  - F22
+  - {t: F13, h: '$$tabler:command$$'}
+  - {t: F14, h: Ctl+Gui+RALT}
+  - {t: F15, h: '$$tabler:command$$'}
+  - {t: '?', s: '!'}
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {type: held}
-  - ''
-  - ''
+  - {t: '$$mdi:backspace-outline$$', s: '$$mdi:backspace-reverse-outline$$', type: held}
+  - {t: ESC, s: '`'}
+  - {t: E, h: NUM, type: held}
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-return$$
   MSE:
   - {t: DEF, h: '$$mdi:toggle-switch$$'}
   - ''
   - ''
-  - {type: held}
+  - {t: Sft+Ctl+Gui+ALT, type: held}
   - {type: held}
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
@@ -145,9 +186,9 @@ layers:
   - ''
   - ''
   - ''
-  - $$mdi:microsoft-windows$$
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - LCTL
   - ALT
-  - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-down-thin$$', type: text_with_symbol}
@@ -158,9 +199,9 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
+  - $$tabler:command$$
+  - Ctl+Gui+ALT
+  - $$tabler:command$$
   - ''
   - ''
   - $$mdi:cursor-default-click$$
@@ -178,7 +219,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - Sft+Ctl+Gui+ALT
   - ''
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
@@ -188,9 +229,9 @@ layers:
   - ''
   - ''
   - ''
-  - $$mdi:microsoft-windows$$
+  - $$tabler:command$$
+  - LCTL
   - ALT
-  - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-down-thin$$', type: text_with_symbol}
@@ -201,9 +242,9 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
+  - $$tabler:command$$
+  - Ctl+Gui+ALT
+  - $$tabler:command$$
   - ''
   - ''
   - $$mdi:cursor-default-click$$
@@ -217,43 +258,261 @@ layers:
   - $$mdi:cursor-default-click-outline$$
   - $$mdi:cursor-default-click$$
   - ''
+  SHRT0:
+  - ''
+  - ''
+  - Y
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: SHRT1, type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SHRT1
+  - ''
+  - ''
+  - ACT0
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ACT0
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  SHRT1:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
+  - ''
+  - ACT0
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  ACT0:
+  - ''
+  - ''
+  - '&mc_bck'
+  - '&swapper'
+  - '&mc_fwd'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SHRT0
+  - '&mc_tprev'
+  - ''
+  - '&mc_tnext'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SHRT0
+  - ''
+  - ''
+  - {t: ACT1, type: held}
+  - '&mc_wprev'
+  - ''
+  - '&mc_wnext'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ACT1
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  ACT1:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  SYS:
+  - $$mdi:backup-restore$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$mdi:usb$$
+  - $$mdi:bluetooth$$
+  - ''
+  - ''
+  - ''
+  - $$mdi:backup-restore$$
+  - $$mdi:progress-download$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:bluetooth$$', s: '$$mdi:close-thick$$', type: text_with_symbol}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - $$mdi:progress-download$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
 combos:
+- p: [4, 3, 2]
+  k: {t: DEF, h: '$$mdi:toggle-switch$$'}
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, SHRT0, SHRT1, ACT0, ACT1]
 - p: [5, 17]
   k: '%'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [14, 26]
   k: '`'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [29, 17]
   k: '~'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [6, 18]
   k: ^
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [18, 30]
   k: _
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [4, 16]
   k: $
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [3, 15]
   k: '#'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [2, 14]
   k: '@'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [16, 28]
   k: '='
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [15, 27]
   k: \
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [7, 8]
   k: $$mdi:backspace-outline$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [8, 9]
   k: $$mdi:backspace-reverse-outline$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [7, 19]
   k: +
   l: [DEF, NUM]
@@ -262,46 +521,46 @@ combos:
   l: [DEF, NUM]
 - p: [9, 21]
   k: '&'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [20, 32]
   k: /
   l: [DEF, NUM]
 - p: [21, 33]
   k: '|'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [27, 28]
-  k: Gui+V
-  l: [DEF]
+  k: $$mdi:content-paste$$
+  l: [DEF, NAV, NUM]
 - p: [26, 27]
   k: '&td_copy_cut'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [3, 4]
   k: MSE
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [2, 3]
   k: {t: ESC, s: '`'}
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [14, 15]
   k: $$mdi:keyboard-tab$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [19, 31]
   k: '-'
   l: [DEF, NUM]
 - p: [31, 32]
   k: '['
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [32, 33]
   k: ']'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [19, 20]
   k: {t: (, s: <}
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [20, 21]
   k: {t: ), s: '>'}
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [16, 19]
   k: $$mdi:caps-lock$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [13, 22]
   k: $$mdi:progress-download$$
   l: [FUN]

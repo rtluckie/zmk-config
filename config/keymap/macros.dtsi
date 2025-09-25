@@ -59,6 +59,54 @@
             display-name = "Select Line (Next)";
         )
 
+        ZMK_MACRO(mc_swapper,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&macro_tap &kp LG(TAB)>;
+            display-name = "swapper";
+        )
+        ZMK_MACRO(mc_fwd,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&kp LG(RBKT)>;
+            display-name = "forward";
+        )
+        
+        ZMK_MACRO(mc_bck,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&kp LG(LBKT)>;
+            display-name = "backward";
+        )
+
+        ZMK_MACRO(mc_tprev,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&kp LG(LS(LEFT_BRACE))>;
+            display-name = "previous tab";
+        )
+        
+        ZMK_MACRO(mc_tnext,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&kp LG(LS(RIGHT_BRACE))>;
+            display-name = "next tab";
+        )
+
+        ZMK_MACRO(mc_wnext,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&kp LG(GRAVE)>;
+            display-name = "next tab";
+        )
+
+        ZMK_MACRO(mc_wprev,
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings = <&kp LG(LS(GRAVE))>;
+            display-name = "previous tab";
+        )
+
 
         ZMK_MACRO1(bts,
             bindings

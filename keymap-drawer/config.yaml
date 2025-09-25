@@ -295,32 +295,34 @@ parse_config:
     LC(LG(RIGHT)): $$mdi:arrow-right-bold-box-outline$$
     
     LC(LS(LALT)): $$mdi:star-three-points-outline$$
+
     LC(LS(LA(LGUI))): $$mdi:star-four-points-outline$$
+    
+    
+
     LC(HOME): $$mdi:format-vertical-align-top$$
     LC(END): $$mdi:format-vertical-align-bottom$$
 
-    LC(INS): $$mdi:content-copy$$
-    LC(C): $$mdi:content-copy$$
-    LS(INS): $$mdi:content-paste$$
-    LC(V): $$mdi:content-paste$$
+    LG(INS): $$mdi:content-copy$$
+    LG(C): $$mdi:content-copy$$
+    LG(V): $$mdi:content-paste$$
+    LG(V): $$mdi:content-paste$$
     LS(DEL): $$mdi:content-cut$$
-    LC(X): $$mdi:content-cut$$
-    LC(DE_Z): $$mdi:undo$$
-    LC(DE_Y): $$mdi:redo$$
-    LC(LS(DE_Z)): $$mdi:redo$$
+    LG(X): $$mdi:content-cut$$
+    
 
-    LC(A): $$mdi:select-all$$
-    LC(F): $$mdi:text-search$$
-    LC(W): $$mdi:close-box-outline$$
-    LA(F4)': $$mdi:close-box-outline$$
+    LG(A): $$mdi:select-all$$
+    LG(F): $$mdi:text-search$$
+    LG(W): $$mdi:close-box-outline$$
+    
 
-    LC(DE_PLUS)': $$mdi:magnify-plus-outline$$
-    LC(DE_MINUS)': $$mdi:magnify-minus-outline$$
+
     LC(N0)': $$mdi:magnify-remove-outline$$
 
     LG(L)': $$mdi:lock-outline$$
     
     LALT: ALT
+    
     
     SPACE: $$mdi:keyboard-space$$
     # ESC: $$mdi:keyboard-esc$$
@@ -334,22 +336,49 @@ parse_config:
     DELETE: $$mdi:backspace-reverse-outline$$
     DEL: $$mdi:backspace-reverse-outline$$
     
+
+    LSHFT: $$mdi:apple-keyboard-shift$$
+    LSHIFT: $$mdi:apple-keyboard-shift$$
+    LEFT_SHIFT: $$mdi:apple-keyboard-shift$$
+    
+    RSHFT: $$material:shift$$ 
+    RSHIFT: $$material:shift$$
+    RIGHT_SHIFT: $$material:shift$$
+    RS: $$material:shift$$
+
+
     LCTRL: $$mdi:apple-keyboard-control$$
     LEFT_CONTROL: $$mdi:apple-keyboard-control$$
     
     RCTRL: $$mdi:apple-keyboard-control$$
     RIGHT_CONTROL: $$mdi:apple-keyboard-control$$
     
-    LSHFT: $$mdi:apple-keyboard-shift$$
-    LSHIFT: $$mdi:apple-keyboard-shift$$
-    LEFT_SHIFT: $$mdi:apple-keyboard-shift$$
-    
-    RSHFT: $$mdi:apple-keyboard-shift$$
-    RSHIFT: $$mdi:apple-keyboard-shift$$
-    RIGHT_SHIFT: $$mdi:apple-keyboard-shift$$
 
-    LGUI: $$mdi:microsoft-windows$$
-    RGUI: $$mdi:microsoft-windows$$
+
+    LGUI: $$material:keyboard_command_key$$
+    RGUI: $$material:keyboard_command_key$$
+
+
+    LEFT_GUI: $$tabler:command$$
+    LGUI: $$tabler:command$$
+    LG: $$tabler:command$$
+    LEFT_WIN: $$tabler:command$$
+    LWIN: $$tabler:command$$
+    LEFT_COMMAND: $$tabler:command$$
+    LCMD: $$tabler:command$$
+    LEFT_META: $$tabler:command$$
+    LMETA: $$tabler:command$$
+
+    RIGHT_GUI: $$tabler:command$$
+    RGUI: $$tabler:command$$
+    RG: $$tabler:command$$
+    RIGHT_WIN: $$tabler:command$$
+    RWIN: $$tabler:command$$
+    RIGHT_COMMAND: $$tabler:command$$
+    RCMD: $$tabler:command$$
+    RIGHT_META: $$tabler:command$$
+    RMETA: $$tabler:command$$
+
     
     TAB: $$mdi:keyboard-tab$$
 

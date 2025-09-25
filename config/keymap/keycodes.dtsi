@@ -5,8 +5,8 @@
 #define LHYP                   LEFT_HYPER
 #define RHYP                   RIGHT_HYPER
 // Hyper Key function like LG and RG
-#define LH(keycode)            LS(LA(LC(LG(keycode))))
-#define RH(keycode)            RS(RA(RC(RG(keycode))))
+#define LH(keycode)            LS(LC(LG(LA(keycode))))
+#define RH(keycode)            RS(RC(RG(RA(keycode))))
 
 // Meh Key: ⇧ ⌥ ^ (Shift + Alt + Control)
 #define LEFT_MEH             LC(LG(LALT))

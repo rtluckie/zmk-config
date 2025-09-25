@@ -11,27 +11,57 @@ layers:
   - {t: I, h: Sft+Ctl+Gui+RALT}
   - O
   - P
-  - A
+  - {t: A, h: SHRT0}
   - {t: S, h: LCTL}
   - {t: D, h: ALT}
   - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
   - G
   - H
-  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: J, h: '$$material:shift$$'}
   - {t: K, h: RALT}
   - {t: L, h: '$$mdi:apple-keyboard-control$$'}
-  - ;
-  - {t: X, h: '$$mdi:microsoft-windows$$'}
+  - {t: ;, h: SHRT0}
+  - {t: X, h: '$$tabler:command$$'}
   - {t: C, h: Ctl+Gui+ALT}
-  - {t: V, h: '$$mdi:microsoft-windows$$'}
-  - {t: M, h: '$$mdi:microsoft-windows$$'}
+  - {t: V, h: '$$tabler:command$$'}
+  - {t: M, h: '$$tabler:command$$'}
   - {t: ',', h: Ctl+Gui+RALT, s: ;}
-  - {t: ., h: '$$mdi:microsoft-windows$$', s: ':'}
-  - {t: '$$mdi:backspace-outline$$', s: '$$mdi:backspace-reverse-outline$$'}
+  - {t: ., h: '$$tabler:command$$', s: ':'}
+  - {t: '$$mdi:backspace-outline$$', h: NAV, s: '$$mdi:backspace-reverse-outline$$'}
   - {t: ESC, s: '`'}
-  - {t: E, h: NUM}
+  - NUM
   - $$mdi:keyboard-space$$
-  NAV: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  NAV:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Page Up
+  - HOME
+  - $$mdi:arrow-up$$
+  - END
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Page Down
+  - $$mdi:arrow-left$$
+  - $$mdi:arrow-down$$
+  - $$mdi:arrow-right$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
   NUM:
   - ''
   - ''
@@ -39,6 +69,9 @@ layers:
   - ''
   - ''
   - ''
+  - '7'
+  - '8'
+  - '9'
   - ''
   - ''
   - ''
@@ -46,58 +79,55 @@ layers:
   - ''
   - ''
   - ''
+  - '4'
+  - '5'
+  - '6'
   - ''
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - '1'
+  - '2'
+  - '3'
   - ''
   - ''
   - {type: held}
   - ''
   FUN:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {type: held}
-  - ''
+  - Q
+  - F9
+  - {t: F8, h: Sft+Ctl+Gui+ALT}
+  - F7
+  - F12
+  - F24
+  - F19
+  - {t: F20, h: Sft+Ctl+Gui+RALT}
+  - F21
+  - P
+  - A
+  - {t: F6, h: LCTL}
+  - {t: F5, h: ALT}
+  - {t: F4, h: '$$mdi:apple-keyboard-shift$$'}
+  - F11
+  - F23
+  - {t: F16, h: '$$material:shift$$'}
+  - {t: F17, h: RALT}
+  - {t: F18, h: '$$mdi:apple-keyboard-control$$'}
+  - ;
+  - {t: F3, h: '$$tabler:command$$'}
+  - {t: F2, h: Ctl+Gui+ALT}
+  - {t: F1, h: '$$tabler:command$$'}
+  - {t: F13, h: '$$tabler:command$$'}
+  - {t: F14, h: Ctl+Gui+RALT}
+  - {t: F15, h: '$$tabler:command$$'}
+  - {t: '$$mdi:backspace-outline$$', s: '$$mdi:backspace-reverse-outline$$', type: held}
+  - {t: ESC, s: '`'}
+  - {t: E, h: NUM, type: held}
+  - $$mdi:keyboard-space$$
   MSE:
   - ''
   - ''
-  - {type: held}
+  - {t: Sft+Ctl+Gui+ALT, type: held}
   - {type: held}
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
@@ -105,9 +135,9 @@ layers:
   - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-up$$', type: text_with_symbol}
   - {t: '$$mdi:cursor-default-click-outline$$', s: '5', type: text_with_symbol}
   - ''
-  - $$mdi:microsoft-windows$$
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - LCTL
   - ALT
-  - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-down-thin$$', type: text_with_symbol}
@@ -115,9 +145,9 @@ layers:
   - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-down$$', type: text_with_symbol}
   - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-right$$', type: text_with_symbol}
   - ''
-  - ''
-  - ''
-  - ''
+  - $$tabler:command$$
+  - Ctl+Gui+ALT
+  - $$tabler:command$$
   - $$mdi:cursor-default-click$$
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-left-thin$$', type: text_with_symbol}
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-right-thin$$', type: text_with_symbol}
@@ -128,7 +158,7 @@ layers:
   MSE_F:
   - ''
   - ''
-  - ''
+  - Sft+Ctl+Gui+ALT
   - ''
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
@@ -136,9 +166,9 @@ layers:
   - {t: '$$mdi:mouse-outline$$', s: '$$mdi:arrow-up$$', type: text_with_symbol}
   - {t: '$$mdi:cursor-default-click-outline$$', s: '5', type: text_with_symbol}
   - ''
-  - $$mdi:microsoft-windows$$
+  - $$tabler:command$$
+  - LCTL
   - ALT
-  - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-shift$$
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-down-thin$$', type: text_with_symbol}
@@ -146,9 +176,9 @@ layers:
   - '&fmmv MOVE_DOWN'
   - '&fmmv MOVE_RIGHT'
   - ''
-  - ''
-  - ''
-  - ''
+  - $$tabler:command$$
+  - Ctl+Gui+ALT
+  - $$tabler:command$$
   - $$mdi:cursor-default-click$$
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-left-thin$$', type: text_with_symbol}
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-right-thin$$', type: text_with_symbol}
@@ -156,34 +186,130 @@ layers:
   - {type: held}
   - $$mdi:cursor-default-click-outline$$
   - $$mdi:cursor-default-click$$
+  SHRT0:
+  - ''
+  - Y
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: SHRT1, type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - SHRT1
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  SHRT1:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  ACT0: ['', '&mc_bck', '&swapper', '&mc_fwd', '', '', '', '', '', '', SHRT0, '&mc_tprev', '', '&mc_tnext', '', '', '', '', '', SHRT0, '&mc_wprev', '', '&mc_wnext',
+    '', '', '', '', '', '', '']
+  ACT1: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  SYS:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - $$mdi:usb$$
+  - $$mdi:bluetooth$$
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:bluetooth$$', s: '$$mdi:close-thick$$', type: text_with_symbol}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
 combos:
 - p: [3, 4]
   k: '%'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [5, 6]
   k: ^
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [3, 13]
   k: $
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [2, 12]
   k: '#'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [1, 11]
   k: '@'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [13, 22]
   k: '='
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [12, 21]
   k: \
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [6, 7]
   k: $$mdi:backspace-outline$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [7, 8]
   k: $$mdi:backspace-reverse-outline$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [6, 16]
   k: +
   l: [DEF, NUM]
@@ -192,46 +318,46 @@ combos:
   l: [DEF, NUM]
 - p: [8, 18]
   k: '&'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [17, 24]
   k: /
   l: [DEF, NUM]
 - p: [18, 25]
   k: '|'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [21, 22]
-  k: Gui+V
-  l: [DEF]
+  k: $$mdi:content-paste$$
+  l: [DEF, NAV, NUM]
 - p: [20, 21]
   k: '&td_copy_cut'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [2, 3]
   k: MSE
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [1, 2]
   k: {t: ESC, s: '`'}
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [11, 12]
   k: $$mdi:keyboard-tab$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [16, 23]
   k: '-'
   l: [DEF, NUM]
 - p: [23, 24]
   k: '['
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [24, 25]
   k: ']'
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [16, 17]
   k: {t: (, s: <}
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [17, 18]
   k: {t: ), s: '>'}
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [13, 16]
   k: $$mdi:caps-lock$$
-  l: [DEF]
+  l: [DEF, NAV, NUM]
 - p: [10, 19]
   k: $$mdi:progress-download$$
   l: [FUN]
