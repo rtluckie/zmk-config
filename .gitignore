@@ -17,3 +17,4 @@ zmk
 draw/base.yaml
 .idea
 .DS_Store
+.cache

@@ -32,14 +32,34 @@ manifest:
           - lvgl
           - tinycrypt 
     # modules
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: v0.3
+      path: modules/zmk/adaptive-key
+    - name: zmk-auto-layer
+      remote: urob
+      revision: v0.3
+      path: modules/zmk/auto-layer
+    - name: zmk-helpers
+      remote: urob
+      revision: v0.3
+      path: modules/zmk/helpers
+    - name: zmk-leader-key
+      remote: urob
+      revision: v0.3
+      path: modules/zmk/leader-key
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
       path: modules/zmk/rgbled-widget
     - name: zmk-tri-state
       remote: urob
-      revision: main
+      revision: v0.3
       path: modules/zmk/tri-state
+    - name: zmk-unicode
+      remote: urob
+      revision: v0.3
+      path: modules/zmk/unicode    
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
@@ -52,9 +72,6 @@ manifest:
       remote: joelspadin
       revision: main
       path: modules/zmk/locales
-    - name: zmk-auto-layer
-      remote: urob
-      revision: v0.3
-      path: modules/zmk/auto-layer
+
   self:
     path: config

@@ -51,73 +51,105 @@
 #define COMBO_RPI_MID 100
 #define COMBO_RPI_FAST 50
 
-#define ALL_LAYERS DEF NAV NUM FUN MSE MSE_F SHRT0 SHRT1 ACT0 ACT1
+#define ALL_LAYERS DEF NAV NUM FUN MSE MSE_F AERO SHRT0 SHRT1 ACT0 ACT1 SYS LAY
+#define NON_AERO_LAYERS DEF NAV NUM FUN MSE MSE_F SHRT0 SHRT1 ACT0 ACT1 SYS LAY
 / {
     combos {
         compatible = "zmk,combos";
 
 #if defined(KEYS_34) || defined(KEYS_42)
-        COMBO(cb_to_def,    &to DEF,   LT1 LT2 LT3,  ALL_LAYERS,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_prcnt,     &kp PRCNT,   LT0 LM0,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_grave,     &kp GRAVE,   LM3 LB3,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_tilde,     &kp TILDE,   LB0 LM0,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        /* Horizontal combos - left hand */ 
+        COMBO(cb_to_def_l,             &to DEF,               LT1 LT2 LT3,       ALL_LAYERS,         COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        /* Horizontal combos - right hand */ 
+        COMBO(cb_to_def_r,             &to DEF,               RT1 RT2 RT3,       ALL_LAYERS,         COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        /* Vertical combos - left hand */
+        COMBO(cb_prcnt,              &kp PRCNT,             LT0 LM0,           ALL_LAYERS,         COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_tilde,              &kp TILDE,             LM0 LB0,           ALL_LAYERS,         COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_grave,              &kp GRAVE,             LM3 LB3,           ALL_LAYERS,         COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        /* Vertical combos - right hand */
+        COMBO(cb_caret,              &kp CARET,             RT0 RM0,           ALL_LAYERS,         COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_under,              &kp UNDER,             RM0 RB0,           ALL_LAYERS,         COMBO_TERM_MID,  COMBO_RPI_FAST)
+        /* Cross split combos */
 
-        COMBO(cb_caret,     &kp CARET,   RT0 RM0,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        // COMBO(cb_qt_grv,    &qt_grv,     LM3 LB3,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_under,     &kp UNDER,   RM0 RB0,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_FAST)
 
 #else
-        COMBO(cb_prcnt,     &kp PRCNT,   LT1 LT0,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        // COMBO(cb_grave,     &kp TILDE,   LB1 LM0,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-
-        COMBO(cb_caret,     &kp CARET,   RT0 RT1,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        // COMBO(cb_qt_grv,    &qt_grv,     RB1 RM0,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        /* Horizontal combos - left hand */     
+        /* Horizontal combos - right hand */ 
+        COMBO(cb_caret,              &kp CARET,             RT0 RT1,           ALL_LAYERS,         COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        /* Vertical combos - left hand */
+        COMBO(cb_prcnt,              &kp PRCNT,             LT1 LT0,           ALL_LAYERS,         COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        /* Vertical combos - right hand */
+        /* Cross split combos */
+        
 #endif
+        /* Horizontal combos - left hand */ 
+        COMBO(cb_mse,                &smart_mouse,          LT1 LT2,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_FAST)
+        COMBO(cb_gresc,              &gresc,                LT2 LT3,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_FAST)
+        COMBO(cb_ret,                &kp RET,               LM1 LM2,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_tab,                &kp TAB,               LM2 LM3,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_paste,              &kp LG(V),             LB1 LB2,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_FAST)
+        COMBO(cb_copy_cut,           &td_copy_cut,          LB2 LB3,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_FAST)
 
-        COMBO(cb_dllr,      &kp DLLR,    LT1 LM1,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_hash,      &kp HASH,    LT2 LM2,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_at,        &kp AT,      LT3 LM3,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_equal,     &kp EQUAL,   LM1 LB1,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_bslh,      &kp BSLH,    LM2 LB2,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        // COMBO(cb_euro,      &kp EURO,    LM3 LB3,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        /* Horizontal combos - right hand */ 
+        COMBO(cb_bspc,               &kp BSPC,              RT1 RT2,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_del,                &kp DEL,               RT2 RT3,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_lpar_lt,            &mm_lpar_lt,           RM1 RM2,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_rpar_gt,            &mm_rpar_gt,           RM2 RM3,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_lbkt,               &kp LBKT,              RB1 RB2,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        COMBO(cb_rbkt,               &kp RBKT,              RB2 RB3,            ALL_LAYERS,        COMBO_TERM_MID,  COMBO_RPI_SLOW)
+               
 
-        COMBO(cb_bspc,      &kp BSPC,    RT1 RT2,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        COMBO(cb_del,       &kp DEL,     RT2 RT3,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        COMBO(cb_plus,      &kp PLUS,    RT1 RM1,     DEF NUM, COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_star,      &kp STAR,    RT2 RM2,     DEF NUM, COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_amps,      &kp AMPS,    RT3 RM3,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_fslh,      &kp FSLH,    RM2 RB2,     DEF NUM, COMBO_TERM_FAST, COMBO_RPI_SLOW)
-        COMBO(cb_pipe,      &kp PIPE,    RM3 RB3,  DEF NAV NUM,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        /* Vertical combos - left hand */
+        COMBO(cb_dllr,               &kp DLLR,              LT1 LM1,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_hash,               &kp HASH,              LT2 LM2,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_at,                 &kp AT,                LT3 LM3,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_equal,              &kp EQUAL,             LM1 LB1,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_bslh,               &kp BSLH,              LM2 LB2,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
 
-        COMBO(cb_paste,         &kp LG(V),       LB2 LB1,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_FAST)
-        COMBO(cb_copy_cut,         &td_copy_cut,       LB3 LB2,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_FAST)
-        COMBO(cb_mse,         &mo MSE,          LT2 LT1,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_FAST)
-        COMBO(cb_gresc,     &gresc,        LT3 LT2,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_FAST)
-        COMBO(cb_tab,       &kp TAB,        LM3 LM2,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        // COMBO(cb_ret,       &kp RET,        LM2 LM1,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        /* Vertical combos - right hand */
+        COMBO(cb_plus,               &kp PLUS,              RT1 RM1,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_star,               &kp STAR,              RT2 RM2,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_amps,               &kp AMPS,              RT3 RM3,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_minus,              &kp MINUS,             RM1 RB1,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
+        COMBO(cb_fslh,               &kp FSLH,              RM2 RB2,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)        
+        COMBO(cb_pipe,               &kp PIPE,              RM3 RB3,            ALL_LAYERS,        COMBO_TERM_FAST, COMBO_RPI_SLOW)
 
-        // COMBO(cb_int,       &sl INT,        LT3 LT2 LT1,  DEF NAV NUM,      COMBO_TERM_SLOW, COMBO_RPI_MID)
-
-        // COMBO(cb_qe,        &qexcl,         RB2 RB3,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_FAST)
-        // COMBO(cb_qe,        &qexcl,         RB2 RB3,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_FAST)
-        COMBO(cb_minus,     &kp MINUS,   RM1 RB1,     DEF NUM, COMBO_TERM_FAST, COMBO_RPI_SLOW)
-
-
-        COMBO(cb_lbkt,      &kp LBKT,          RB1 RB2,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        COMBO(cb_rbkt,      &kp RBKT,          RB2 RB3,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        COMBO(cb_lpar_lt,   &mm_lpar_lt,     RM1 RM2,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        COMBO(cb_rpar_gt,   &mm_rpar_gt,     RM2 RM3,  DEF NAV NUM,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
-        // COMBO(cb_par,       &mm_par_bkt,       RM1 RM2 RM3,  DEF NAV NUM,      COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-        // COMBO(cb_brc,       &mm_brc_lgt,       RB1 RB2 RB3,  DEF NAV NUM,      COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-
-        COMBO(cb_cw,        &caps_word,     LM1 RM1,  DEF NAV NUM,      COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-        COMBO(cb_bl,        &bootloader,    LM4 RM4,     FUN,     COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-        COMBO(cb_su,        &studio_unlock, LT0 RT0,     FUN,     COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-        // COMBO(cb_f11,       &kp F11,        LT0 LM0,     FUN,     COMBO_TERM_MID,  COMBO_RPI_SLOW)
-
-        // COMBO(cb_undo,      &kp X_UNDO,      LB3 LB2,     NAV,     COMBO_TERM_MID,  COMBO_RPI_MID)
-        // COMBO(cb_redo,      &kp X_REDO,      LB2 LB1,     NAV,     COMBO_TERM_MID,  COMBO_RPI_MID)
-
-        // COMBO(cb_mute,      &kp C_MUTE,     LT3 LT2,     NUM,     COMBO_TERM_MID,  COMBO_RPI_SLOW)
+        /* Cross split combos */
+        COMBO(cb_su,                 &studio_unlock,        LT0 RT0,            FUN,               COMBO_TERM_SLOW, COMBO_RPI_SLOW)        
+        // COMBO(cb_none,               &none,                 LM0 RM0,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LB0 RB0,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LT1 RT1,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW) 
+        COMBO(cb_cw,                 &caps_word,            LM1 RM1,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LB1 RB1,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW) 
+         // COMBO(cb_none,               &none,                 LT4 RT4,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        COMBO(cb_bl,                 &bootloader,           LM4 RM4,            FUN,               COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LB4 RB4,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        COMBO(cb_sl_sys,             &sl SYS,               LT5 RT5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LM5 RM5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        COMBO(cb_sl_lay,             &sl LAY,               LB5 RB5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+                
+        COMBO(cb_aero_act,           &mc_aerospace,    LH0 RH0,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_aero_deact,         &mc_aero_deact_tap,  LH0 RH0,            AERO,              COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LH1 RH1,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LH2 RH2,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
     };
 };
+
+
+
+
+/* OLD COMBOS */
+    // COMBO(cb_brc,       &mm_brc_lgt,       RB1 RB2 RB3,  ALL_LAYERS,      COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+    // COMBO(cb_euro,      &kp EURO,    LM3 LB3,  ALL_LAYERS,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
+    // COMBO(cb_f11,       &kp F11,        LT0 LM0,     FUN,     COMBO_TERM_MID,  COMBO_RPI_SLOW)
+    // COMBO(cb_grave,     &kp TILDE,   LB1 LM0,  ALL_LAYERS,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
+    // COMBO(cb_int,       &sl INT,        LT3 LT2 LT1,  ALL_LAYERS,      COMBO_TERM_SLOW, COMBO_RPI_MID)
+    // COMBO(cb_mute,      &kp C_MUTE,     LT3 LT2,     NUM,     COMBO_TERM_MID,  COMBO_RPI_SLOW)
+    // COMBO(cb_par,       &mm_par_bkt,       RM1 RM2 RM3,  ALL_LAYERS,      COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+    // COMBO(cb_qe,        &qexcl,         RB2 RB3,  ALL_LAYERS,      COMBO_TERM_MID,  COMBO_RPI_FAST)
+    // COMBO(cb_qe,        &qexcl,         RB2 RB3,  ALL_LAYERS,      COMBO_TERM_MID,  COMBO_RPI_FAST)
+    // COMBO(cb_qt_grv,    &qt_grv,     LM3 LB3,  ALL_LAYERS,      COMBO_TERM_FAST, COMBO_RPI_SLOW)
+    // COMBO(cb_qt_grv,    &qt_grv,     RB1 RM0,  ALL_LAYERS,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
+    // COMBO(cb_redo,      &kp X_REDO,      LB2 LB1,     NAV,     COMBO_TERM_MID,  COMBO_RPI_MID)
+    // COMBO(cb_ret,       &kp RET,        LM2 LM1,  ALL_LAYERS,      COMBO_TERM_MID,  COMBO_RPI_SLOW)
+    // COMBO(cb_undo,      &kp X_UNDO,      LB3 LB2,     NAV,     COMBO_TERM_MID,  COMBO_RPI_MID)
