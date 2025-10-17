@@ -70,7 +70,9 @@
         COMBO(cb_caret,              &kp CARET,             RT0 RM0,           ALL_LAYERS,         COMBO_TERM_FAST, COMBO_RPI_SLOW)
         COMBO(cb_under,              &kp UNDER,             RM0 RB0,           ALL_LAYERS,         COMBO_TERM_MID,  COMBO_RPI_FAST)
         /* Cross split combos */
-
+        COMBO(cb_sl_lay,             &sl LAY,               LB5 RB5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        COMBO(cb_sl_sys,             &sl SYS,               LT5 RT5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+        // COMBO(cb_none,               &none,                 LM5 RM5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
 
 #else
         /* Horizontal combos - left hand */     
@@ -124,9 +126,7 @@
          // COMBO(cb_none,               &none,                 LT4 RT4,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
         COMBO(cb_bl,                 &bootloader,           LM4 RM4,            FUN,               COMBO_TERM_SLOW, COMBO_RPI_SLOW)
         // COMBO(cb_none,               &none,                 LB4 RB4,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-        COMBO(cb_sl_sys,             &sl SYS,               LT5 RT5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-        // COMBO(cb_none,               &none,                 LM5 RM5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
-        COMBO(cb_sl_lay,             &sl LAY,               LB5 RB5,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
+
                 
         COMBO(cb_aero_act,           &mc_aerospace,    LH0 RH0,            ALL_LAYERS,        COMBO_TERM_SLOW, COMBO_RPI_SLOW)
         // COMBO(cb_aero_deact,         &mc_aero_deact_tap,  LH0 RH0,            AERO,              COMBO_TERM_SLOW, COMBO_RPI_SLOW)
