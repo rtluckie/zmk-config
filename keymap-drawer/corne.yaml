@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
   DEF:
-  - $$mdi:progress-download$$
+  - ''
   - Q
   - W
   - {t: E, h: Sft+Ctl+Gui+ALT}
@@ -12,7 +12,7 @@ layers:
   - {t: I, h: Sft+Ctl+Gui+RALT}
   - O
   - P
-  - $$mdi:progress-download$$
+  - ''
   - ''
   - {t: A, h: SHRT0}
   - {t: S, h: LCTL}
@@ -24,8 +24,8 @@ layers:
   - {t: K, h: RALT}
   - {t: L, h: '$$mdi:apple-keyboard-control$$'}
   - {t: ;, h: SHRT0}
-  - $$mdi:repeat$$
-  - {t: MSE, h: '$$mdi:toggle-switch$$'}
+  - ''
+  - ''
   - {t: Z, h: ACT0}
   - {t: X, h: '$$tabler:command$$'}
   - {t: C, h: Ctl+Gui+ALT}
@@ -37,17 +37,17 @@ layers:
   - {t: ., h: '$$tabler:command$$', s: ':'}
   - {t: '?', h: ACT0, s: '!'}
   - ''
-  - $$mdi:keyboard-space$$
+  - {t: ESCAPE, h: NAV, s: '`'}
   - {t: '$$mdi:backspace-outline$$', h: NAV, s: '$$mdi:backspace-reverse-outline$$'}
   - {t: ESC, s: '`'}
-  - NUM
+  - '&smart_num 2 0'
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-return$$
   NAV:
   - ''
   - ''
   - ''
-  - ''
+  - Sft+Ctl+Gui+ALT
   - ''
   - ''
   - Page Up
@@ -57,78 +57,37 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - SHRT0
+  - LCTL
+  - ALT
+  - $$mdi:apple-keyboard-shift$$
   - ''
   - Page Down
   - $$mdi:arrow-left$$
   - $$mdi:arrow-down$$
   - $$mdi:arrow-right$$
+  - SHRT0
+  - ''
+  - ''
+  - ACT0
+  - $$tabler:command$$
+  - Ctl+Gui+ALT
+  - $$tabler:command$$
   - ''
   - ''
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {type: held}
-  - ''
-  - ''
-  - ''
-  - ''
-  NUM:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '7'
-  - '8'
-  - '9'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '4'
-  - '5'
-  - '6'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '0'
-  - '1'
-  - '2'
-  - '3'
-  - ''
-  - ''
-  - ''
-  - ''
+  - ACT0
   - ''
   - {type: held}
-  - ''
-  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  NUM: ['', '', '', '', '', '', '', '7', '8', '9', '', '', '', '', '', '', '', '', '', '4', '5', '6', '', '', '', '', '', '', '', '', '0', '1', '2', '3', '', '',
+    '', '', '', '', '', '']
   FUN:
   - $$mdi:progress-download$$
   - Q
@@ -166,18 +125,18 @@ layers:
   - {t: F15, h: '$$tabler:command$$'}
   - {t: '?', s: '!'}
   - ''
-  - ''
-  - {t: '$$mdi:backspace-outline$$', s: '$$mdi:backspace-reverse-outline$$', type: held}
+  - {type: held}
+  - {t: '$$mdi:backspace-outline$$', s: '$$mdi:backspace-reverse-outline$$'}
   - {t: ESC, s: '`'}
-  - {t: E, h: NUM, type: held}
+  - {t: E, h: NUM}
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-return$$
   MSE:
   - {t: DEF, h: '$$mdi:toggle-switch$$'}
   - ''
   - ''
-  - {t: Sft+Ctl+Gui+ALT, type: held}
-  - {type: held}
+  - Sft+Ctl+Gui+ALT
+  - ''
   - ''
   - {t: '$$mdi:mouse-scroll-wheel$$', s: '$$mdi:arrow-up-thin$$', type: text_with_symbol}
   - {t: '$$mdi:cursor-default-click-outline$$', s: '4', type: text_with_symbol}
@@ -258,6 +217,49 @@ layers:
   - $$mdi:cursor-default-click-outline$$
   - $$mdi:cursor-default-click$$
   - ''
+  AERO:
+  - ''
+  - ''
+  - '9'
+  - {t: '8', h: Sft+Ctl+Gui+ALT}
+  - '7'
+  - ''
+  - Page Up
+  - HOME
+  - {t: '$$mdi:arrow-up$$', h: Sft+Ctl+Gui+RALT}
+  - END
+  - ''
+  - ''
+  - ''
+  - SHRT0
+  - {t: '6', h: LCTL}
+  - {t: '5', h: ALT}
+  - {t: '4', h: '$$mdi:apple-keyboard-shift$$'}
+  - ''
+  - Page Down
+  - {t: '$$mdi:arrow-left$$', h: '$$material:shift$$'}
+  - {t: '$$mdi:arrow-down$$', h: RALT}
+  - {t: '$$mdi:arrow-right$$', h: RCTL}
+  - {t: ;, h: SHRT0}
+  - ''
+  - ''
+  - ACT0
+  - {t: '3', h: '$$tabler:command$$'}
+  - {t: '2', h: Ctl+Gui+ALT}
+  - {t: '1', h: '$$tabler:command$$'}
+  - '0'
+  - ''
+  - {t: '$$mdi:keyboard-tab$$', h: '$$tabler:command$$'}
+  - {t: ',', h: Ctl+Gui+RALT, s: ;}
+  - {t: ., h: '$$tabler:command$$', s: ':'}
+  - {t: '?', h: ACT0, s: '!'}
+  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
   SHRT0:
   - ''
   - ''
@@ -431,7 +433,7 @@ layers:
   - ''
   - ''
   SYS:
-  - $$mdi:backup-restore$$
+  - {t: '$$mdi:backup-restore$$', type: held}
   - ''
   - ''
   - ''
@@ -442,7 +444,7 @@ layers:
   - ''
   - ''
   - ''
-  - $$mdi:backup-restore$$
+  - {t: '$$mdi:backup-restore$$', type: held}
   - $$mdi:progress-download$$
   - ''
   - ''
@@ -473,97 +475,155 @@ layers:
   - ''
   - ''
   - ''
+  LAY:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
 combos:
 - p: [4, 3, 2]
   k: {t: DEF, h: '$$mdi:toggle-switch$$'}
-  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, SHRT0, SHRT1, ACT0, ACT1]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [7, 8, 9]
+  k: {t: DEF, h: '$$mdi:toggle-switch$$'}
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [5, 17]
   k: '%'
-  l: [DEF, NAV, NUM]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [17, 29]
+  k: '~'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [14, 26]
   k: '`'
-  l: [DEF, NAV, NUM]
-- p: [29, 17]
-  k: '~'
-  l: [DEF, NAV, NUM]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [6, 18]
   k: ^
-  l: [DEF, NAV, NUM]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [18, 30]
   k: _
-  l: [DEF, NAV, NUM]
-- p: [4, 16]
-  k: $
-  l: [DEF, NAV, NUM]
-- p: [3, 15]
-  k: '#'
-  l: [DEF, NAV, NUM]
-- p: [2, 14]
-  k: '@'
-  l: [DEF, NAV, NUM]
-- p: [16, 28]
-  k: '='
-  l: [DEF, NAV, NUM]
-- p: [15, 27]
-  k: \
-  l: [DEF, NAV, NUM]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [24, 35]
+  k: {t: LAY, h: '$$mdi:circle-small$$'}
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [0, 11]
+  k: {t: SYS, h: '$$mdi:circle-small$$'}
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [4, 3]
+  k: '&smart_mouse'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [3, 2]
+  k: {t: ESC, s: '`'}
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [16, 15]
+  k: $$mdi:keyboard-return$$
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [15, 14]
+  k: $$mdi:keyboard-tab$$
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [28, 27]
+  k: $$mdi:content-paste$$
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [27, 26]
+  k: '&td_copy_cut'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [7, 8]
   k: $$mdi:backspace-outline$$
-  l: [DEF, NAV, NUM]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [8, 9]
   k: $$mdi:backspace-reverse-outline$$
-  l: [DEF, NAV, NUM]
-- p: [7, 19]
-  k: +
-  l: [DEF, NUM]
-- p: [8, 20]
-  k: '*'
-  l: [DEF, NUM]
-- p: [9, 21]
-  k: '&'
-  l: [DEF, NAV, NUM]
-- p: [20, 32]
-  k: /
-  l: [DEF, NUM]
-- p: [21, 33]
-  k: '|'
-  l: [DEF, NAV, NUM]
-- p: [27, 28]
-  k: $$mdi:content-paste$$
-  l: [DEF, NAV, NUM]
-- p: [26, 27]
-  k: '&td_copy_cut'
-  l: [DEF, NAV, NUM]
-- p: [3, 4]
-  k: MSE
-  l: [DEF, NAV, NUM]
-- p: [2, 3]
-  k: {t: ESC, s: '`'}
-  l: [DEF, NAV, NUM]
-- p: [14, 15]
-  k: $$mdi:keyboard-tab$$
-  l: [DEF, NAV, NUM]
-- p: [19, 31]
-  k: '-'
-  l: [DEF, NUM]
-- p: [31, 32]
-  k: '['
-  l: [DEF, NAV, NUM]
-- p: [32, 33]
-  k: ']'
-  l: [DEF, NAV, NUM]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [19, 20]
   k: {t: (, s: <}
-  l: [DEF, NAV, NUM]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [20, 21]
   k: {t: ), s: '>'}
-  l: [DEF, NAV, NUM]
-- p: [16, 19]
-  k: $$mdi:caps-lock$$
-  l: [DEF, NAV, NUM]
-- p: [13, 22]
-  k: $$mdi:progress-download$$
-  l: [FUN]
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [31, 32]
+  k: '['
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [32, 33]
+  k: ']'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [4, 16]
+  k: $
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [3, 15]
+  k: '#'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [2, 14]
+  k: '@'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [16, 28]
+  k: '='
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [15, 27]
+  k: \
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [7, 19]
+  k: +
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [8, 20]
+  k: '*'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [9, 21]
+  k: '&'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [19, 31]
+  k: '-'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [20, 32]
+  k: /
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [21, 33]
+  k: '|'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
 - p: [5, 6]
   k: $$mdi:lock-open-outline$$
   l: [FUN]
+- p: [16, 19]
+  k: $$mdi:caps-lock$$
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
+- p: [13, 22]
+  k: $$mdi:progress-download$$
+  l: [FUN]
+- p: [38, 39]
+  k: '&mc_aerospace'
+  l: [DEF, NAV, NUM, FUN, MSE, MSE_F, AERO, SHRT0, SHRT1, ACT0, ACT1, SYS, LAY]
